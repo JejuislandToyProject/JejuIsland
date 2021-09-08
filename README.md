@@ -1,4 +1,4 @@
-# _🍊 JejuIsland Project🍊
+# _🍊 JejuIsland Project🍊_
 ***
 ### Period : August 2021,  2weeks
 ### Personnel : 6 명.  
