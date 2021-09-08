@@ -1,11 +1,11 @@
-# _🍊 JejuIsland Project🍊_
+# _🍊JejuIsland Project🍊_
 ***
-### Period : August 2021,  2weeks
-### Personnel : 6 명.  
+### Period : October 2021,  1 month
+### Personnel : ? 명
 ***
 ## 📌 _Environment_       
 > UI
-> > Java Swing
+> > Html,CSS,JavaScript
 
 > Programming Language
 > > Java version 11.0.1
@@ -26,21 +26,7 @@
 *** 
 ## 📌 _Important_
 
-- 디자인 패턴
 
-  - MVC 패턴을 기반으로한 패키지 구성
-
-![mvc](https://user-images.githubusercontent.com/84116965/129394319-e93b844f-7ddc-4608-b708-b31ccc3b31bb.png)
-
-- Java Swing에 영상 출력
-
-  - mp4파일을 gif로 변환 후 화면에 출력(https://ezgif.com/video-to-gif)
-
-
-
-- Swing의 Timer 클래스를 이용한 동적인 처리
-
-  - 해당 시간이 지난 후 이벤트 발생
 ***
 ## 📌 _Core Trouble shooting_   
 
