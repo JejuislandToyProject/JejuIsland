@@ -31,6 +31,12 @@
 
 ![image](https://user-images.githubusercontent.com/77534863/132796595-c6000ba2-68f1-4c25-8ee4-377778ea5dfe.png)
 
+![image](https://user-images.githubusercontent.com/77534863/132796683-55d80f24-4749-4967-ba92-54d925e67dad.png)
+
+![image](https://user-images.githubusercontent.com/77534863/132796708-a8fd4815-b765-4de4-8dfc-cf5f5291bbee.png)
+
+
+
 
 *** 
 ### 📌 _ER Diagram_
