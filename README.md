@@ -19,6 +19,8 @@
 
 ![image](https://user-images.githubusercontent.com/77534863/132796195-458c5d85-8814-4f15-820f-7c68bbfae3ea.png)
 
+![image](https://user-images.githubusercontent.com/77534863/132796267-989bad01-a86f-44b7-9e90-cc0774c75ce7.png)
+
 *** 
 ### 📌 _ER Diagram_
 
