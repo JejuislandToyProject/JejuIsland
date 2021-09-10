@@ -21,6 +21,17 @@
 
 ![image](https://user-images.githubusercontent.com/77534863/132796313-d93412e3-2284-4b94-b959-83f80307911a.png)
 
+![image](https://user-images.githubusercontent.com/77534863/132796408-3ab66f8a-6a64-440b-a7b3-d69a78c5c469.png)
+
+![image](https://user-images.githubusercontent.com/77534863/132796461-aafd93fd-1d01-44d9-8565-7bf10cea95d9.png)
+
+![image](https://user-images.githubusercontent.com/77534863/132796498-8ec530cb-edba-4df7-82c0-bf34a914af1d.png)
+
+![image](https://user-images.githubusercontent.com/77534863/132796553-6c450e4d-4586-49e0-bb8d-eb376d8a7791.png)
+
+![image](https://user-images.githubusercontent.com/77534863/132796595-c6000ba2-68f1-4c25-8ee4-377778ea5dfe.png)
+
+
 *** 
 ### 📌 _ER Diagram_
 
