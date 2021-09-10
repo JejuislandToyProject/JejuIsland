@@ -17,7 +17,7 @@
 ***
 ### ⚙️ _Blueprint_
 
-![image](https://user-images.githubusercontent.com/77534863/132795920-523d061b-6273-4a72-bfb0-7aba868c995a.png)
+![image](https://user-images.githubusercontent.com/77534863/132796195-458c5d85-8814-4f15-820f-7c68bbfae3ea.png)
 
 *** 
 ### 📌 _ER Diagram_
