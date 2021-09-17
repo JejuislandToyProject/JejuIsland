@@ -1,6 +1,6 @@
 # _🍊JejuIsland Project🍊_
 ***
-### Period : October 2021,  1 month
+### Period : October 2021,  1 month. 
 ### Personnel : ? 명
 ***
 ## 📌 _Environment_       
