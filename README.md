@@ -13,7 +13,7 @@
 > DataBase
 > > Oracle DB version 18c
 > > > 외부 라이브러리
-> > > > ojdbc6.jar/HikariCP.jar/sql.jar
+> > > > ojdbc6.jar/HikariCP.jar/sql.jar. 
 ***      
 ### ⚙️ _Blueprint_  
 
