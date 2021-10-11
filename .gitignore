@@ -61,13 +61,13 @@ local.properties
 .scala_dependencies
 .worksheet
 
-# Uncomment this line if you wish to ignore the project description file.
-# Typically, this file would be tracked if it contains build/dependency configurations:
+# Eclipse Project Files
 *.project
 *.classpath
-/target/
-/Servers/
-
+/JeJu/target/
+.settings/
+/bin/
+Servers/
 ### Eclipse Patch ###
 # Spring Boot Tooling
 .sts4-cache/
