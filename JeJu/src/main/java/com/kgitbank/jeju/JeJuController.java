@@ -11,7 +11,14 @@ public class JeJuController {
 	
 	@GetMapping("/login")
 	public String login() {
-		return "redirect:/jeju/login/NaverCallback.jsp";
+		log.info("Naver Login");
+		return "/login/login";
+	}
+	
+	@GetMapping("/callbak")
+	public String callback() {
+		log.info("Naver Callabck");
+		return "/login/NaverCallback";
 	}
 
 }
