@@ -2,7 +2,8 @@
 # Edit at https://www.toptal.com/developers/gitignore?templates=eclipse,java
 
 # ignore properties file
-config.properties
+JeJu/src/main/resources/config/
+
 ### Eclipse ###
 .metadata
 bin/
