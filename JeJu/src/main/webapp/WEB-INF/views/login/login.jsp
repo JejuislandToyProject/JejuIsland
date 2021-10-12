@@ -62,7 +62,7 @@
                                         <a href="index.html" class="btn btn-primary btn-user btn-block">
                                             Login
                                         </a>
-                                        
+                                        <a href="${naverAuthUrl }" class="btn btn-user btn-block"><img height="50" src="http://static.nid.naver.com/oauth/small_g_in.PNG"/></a>
                                     </form>
                                     <hr>
                                     
