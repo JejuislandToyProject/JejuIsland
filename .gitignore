@@ -2,8 +2,8 @@
 # Edit at https://www.toptal.com/developers/gitignore?templates=eclipse,java
 
 # ignore properties file
-DBconfig.properties
-NaverLoginConfig.properties
+JeJu/src/main/resources/config/
+
 ### Eclipse ###
 .metadata
 bin/
