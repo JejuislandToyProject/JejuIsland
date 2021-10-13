@@ -1,6 +1,7 @@
 package com.kgitbank.jeju.controller;
 
 import java.io.IOException;
+import java.net.URLEncoder;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -67,39 +68,46 @@ public class LoginController {
 			if(oauthToken == null) {
 				model.addAttribute("msg", "네이버 로그인 access 토큰 발급 오류 입니다.");
 				model.addAttribute("url", "/");
+				log.info("oauthToken null");
 				return "/login/callback";
 			}
 			
 			// 로그인 사용자 정보를 읽어온다
 			String apiResult = naverLoginBO.getUserProfile(oauthToken, serverUrl);
 			
+			log.info("apiResult : " + apiResult);
 			
 			JsonElement element = JsonParser.parseString(apiResult);
 			JsonObject object = element.getAsJsonObject();
 			JsonObject response_obj = (JsonObject) object.get("response");
 			
 			String id = response_obj.get("id").getAsString();
-			String gender = response_obj.get("gender").getAsString();
 			
 			// 세션에 사용자 정보 등록
 			session.setAttribute("islogin_r", "Y");
 			session.setAttribute("id", id);
-			session.setAttribute("gender", gender);
 			
-			return "redirect:/";
+			log.info("naver ID : " + id);
+			
+			return "redirect:/login/callback";
 		}
 		@RequestMapping(value = "/kakaoAuth", method = { RequestMethod.GET, RequestMethod.POST })
 		public String kakaoOauth2ClientCallback(HttpServletRequest request, HttpServletResponse response, Model model, @RequestParam String code, @RequestParam String state, HttpSession session) throws Exception {
+
 			
 			String serverUrl = request.getScheme()+"://"+request.getServerName();
 			if(request.getServerPort() != 80) {
 				serverUrl = serverUrl + ":" + request.getServerPort();
 			}
+
+//			log.info("AuthCode:: "+code);
+//			OAuth2AccessToken oauthToken;
+//			oauthToken = kakaoLoginBO.getAccessToken(session, code, state, serverUrl);
 			
-			OAuth2AccessToken oauthToken;
-			oauthToken = kakaoLoginBO.getAccessToken(session, code, state, serverUrl);
+			String oauthToken = kakaoLoginBO.getAccessToken(request, code);
+			log.info(oauthToken);
 			if(oauthToken == null) {
-				model.addAttribute("msg", "네이버 로그인 access 토큰 발급 오류 입니다.");
+				model.addAttribute("msg", "카카오 로그인 access 토큰 발급 오류 입니다.");
 				model.addAttribute("url", "/");
 				return "/login/callback";
 			}
@@ -107,20 +115,18 @@ public class LoginController {
 			// 로그인 사용자 정보를 읽어온다
 			String apiResult = kakaoLoginBO.getUserProfile(oauthToken, serverUrl);
 			
-			
+			log.info("apiResult : "+apiResult);
 			JsonElement element = JsonParser.parseString(apiResult);
 			JsonObject object = element.getAsJsonObject();
-			JsonObject response_obj = (JsonObject) object.get("response");
 			
-			String id = response_obj.get("id").getAsString();
-			String gender = response_obj.get("gender").getAsString();
+			String id = object.get("id").getAsString();
 			
+			log.info("kakao ID : " + id);
 			// 세션에 사용자 정보 등록
 			session.setAttribute("islogin_r", "Y");
 			session.setAttribute("id", id);
-			session.setAttribute("gender", gender);
 			
-			return "redirect:/";
+			return "redirect:/login/callback";
 		}
 		
 		//로그아웃 

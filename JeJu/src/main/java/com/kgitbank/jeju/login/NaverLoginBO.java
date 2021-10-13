@@ -26,7 +26,7 @@ public class NaverLoginBO {
 	@Value("#{property['naverClientSecret']}")
 	private String NAVER_CLIENT_SECRET;
 	
-	private final static String NAVER_REDIRECT_URI = "/jeju/login/callback";
+	private final static String NAVER_REDIRECT_URI = "/jeju/naverAuth";
 	
 	private final static String SESSION_STATE = "naver_oauth_state";
 	private final static String PROFILE_API_URL = "https://openapi.naver.com/v1/nid/me";

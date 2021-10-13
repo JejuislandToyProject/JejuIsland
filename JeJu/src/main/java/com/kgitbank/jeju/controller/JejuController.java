@@ -11,5 +11,6 @@ public class JejuController {
 	
 	@GetMapping("/login/callback")
 	public void callback() {
+		log.info("controller = callback");
 	}
 }
