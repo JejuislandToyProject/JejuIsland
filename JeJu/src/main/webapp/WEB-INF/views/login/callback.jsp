@@ -8,5 +8,8 @@
 </head>
 <body>
 	<h3>CallBack</h3>
+	
+	<p>${msg }</p>
+	<p>»ç¿ëÀÚ ${sessionScope.id }</p>
 </body>
 </html>
