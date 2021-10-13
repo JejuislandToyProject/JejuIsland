@@ -2,7 +2,7 @@
     pageEncoding="utf-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="kr">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -39,37 +39,21 @@
                             <div class="col-lg-6 d-none d-lg-block bg-login-image"></div>
                             <div class="col-lg-6">
                                 <div class="p-5">
-                                    <div class="text-center">
-                                        <h1 class="h4 text-gray-900 mb-4">Welcome Back!</h1>
-                                    </div>
                                     <form class="user">
-                                        <div class="form-group">
-                                            <input type="email" class="form-control form-control-user"
-                                                id="exampleInputEmail" aria-describedby="emailHelp"
-                                                placeholder="Enter Email Address...">
+                                        <div style="text-align: center; font-size: 18px;  font-family :'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif">
+                                            <h1><b>Join</b></h1>
+                                            <p>기존에 사용하시는 계정으로<br> 간단하게 회원가입 하세요.</p>
                                         </div>
                                         <div class="form-group">
-                                            <input type="password" class="form-control form-control-user"
-                                                id="exampleInputPassword" placeholder="Password">
+                                            <a href="${naverAuthUrl }" class="btn btn-user btn-block"><img style="width: 298px; height: 65px; " src="assets/img/btn_naver.png"/></a>   
                                         </div>
                                         <div class="form-group">
-                                            <div class="custom-control custom-checkbox small">
-                                                <input type="checkbox" class="custom-control-input" id="customCheck">
-                                                <label class="custom-control-label" for="customCheck">Remember
-                                                    Me</label>
-                                            </div>
+                                            <a href="${kakaoAuthUrl }"><img style="width: 298px; height: 65px; margin-left: 23px;" src="assets/img/kakao_login_large_wide.png"></a>
                                         </div>
-                                        <a href="index.html" class="btn btn-primary btn-user btn-block">
+                                        <!-- <a href="index.html" class="btn btn-primary btn-user btn-block">
                                             Login
-                                        </a>
-                                        <a href="${naverAuthUrl }" class="btn btn-user btn-block"><img height="50" src="http://static.nid.naver.com/oauth/small_g_in.PNG"/></a>
-                                    	<a href="${kakaoAuthUrl }"><img width="230" height="53" src="http://static.nid.naver.com/oauth/small_g_in.PNG"></a>
+                                        </a> -->                
                                     </form>
-                                    <hr>
-                                    
-                                    <div class="text-center">
-                                        <a class="small" href="register.html">Create an Account!</a>
-                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -81,6 +65,7 @@
         </div>
 
     </div>
+
 
     <!-- Bootstrap core JavaScript-->
     <script src="vendor/jquery/jquery.min.js"></script>
