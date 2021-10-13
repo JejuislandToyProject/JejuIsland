@@ -4,6 +4,7 @@ import java.util.UUID;
 
 import javax.servlet.http.HttpSession;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.util.StringUtils;
 
 import com.github.scribejava.core.builder.ServiceBuilder;
@@ -14,11 +15,13 @@ import com.github.scribejava.core.model.Verb;
 import com.github.scribejava.core.oauth.OAuth20Service;
 
 public class KakaoLoginBO {
-		// 카카오 로그인 정보
-		private final static String KAKAO_CLIENT_ID = "c8f5b7dae3d4e5d5b49649c5c16ea9de";
-		//private final static String KAKAO_CLIENT_SECRET = "시크리트 키";
-		private final static String KAKAO_REDIRECT_URI = "/login/callback";
+		@Value("#{property['kakaoClientId']}")
+		private String KAKAO_CLIENT_ID;
 		
+		@Value("#{property['kakaoClientSecret']}")
+		private String KAKAO_CLIENT_SECRET;
+		
+		private final static String KAKAO_REDIRECT_URI = "/jeju/login/callback";
 		private final static String SESSION_STATE = "kakao_oauth_state";
 		private final static String PROFILE_API_URL = "https://kapi.kakao.com/v2/user/me";
 
@@ -28,7 +31,7 @@ public class KakaoLoginBO {
 			setSession(session, state);
 			
 			OAuth20Service oauthService = new ServiceBuilder(KAKAO_CLIENT_ID)
-					//.apiSecret(KAKAO_CLIENT_SECRET)
+					.apiSecret(KAKAO_CLIENT_SECRET)
 					.callback(serverUrl + KAKAO_REDIRECT_URI)
 					.build(KakaoLoginApi.instance());
 			return oauthService.getAuthorizationUrl(state);
@@ -39,7 +42,7 @@ public class KakaoLoginBO {
 			String sessionState = getSession(session);
 			if (StringUtils.pathEquals(sessionState, state)) {
 				OAuth20Service oauthService = new ServiceBuilder(KAKAO_CLIENT_ID)
-						//.apiSecret(KAKAO_CLIENT_SECRET)
+						.apiSecret(KAKAO_CLIENT_SECRET)
 						.callback(serverUrl + KAKAO_REDIRECT_URI)
 						.build(KakaoLoginApi.instance());
 				OAuth2AccessToken accessToken = oauthService.getAccessToken(code);
@@ -50,7 +53,7 @@ public class KakaoLoginBO {
 
 		public String getUserProfile(OAuth2AccessToken oauthToken, String serverUrl) throws Exception {
 			OAuth20Service oauthService = new ServiceBuilder(KAKAO_CLIENT_ID)
-					//.apiSecret(KAKAO_CLIENT_SECRET)
+					.apiSecret(KAKAO_CLIENT_SECRET)
 					.callback(serverUrl + KAKAO_REDIRECT_URI)
 					.build(KakaoLoginApi.instance());
 			OAuthRequest request = new OAuthRequest(Verb.GET, PROFILE_API_URL);
