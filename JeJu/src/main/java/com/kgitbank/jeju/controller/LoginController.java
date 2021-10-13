@@ -67,6 +67,7 @@ public class LoginController {
 			if(oauthToken == null) {
 				model.addAttribute("msg", "네이버 로그인 access 토큰 발급 오류 입니다.");
 				model.addAttribute("url", "/");
+				log.info("oauthToken null");
 				return "/login/callback";
 			}
 			
@@ -79,14 +80,14 @@ public class LoginController {
 			JsonObject response_obj = (JsonObject) object.get("response");
 			
 			String id = response_obj.get("id").getAsString();
-			String gender = response_obj.get("gender").getAsString();
+			//String gender = response_obj.get("gender").getAsString();
 			
 			// 세션에 사용자 정보 등록
 			session.setAttribute("islogin_r", "Y");
 			session.setAttribute("id", id);
-			session.setAttribute("gender", gender);
+			//session.setAttribute("gender", gender);
 			
-			return "redirect:/";
+			return "redirect:/login/callback";
 		}
 		@RequestMapping(value = "/kakaoAuth", method = { RequestMethod.GET, RequestMethod.POST })
 		public String kakaoOauth2ClientCallback(HttpServletRequest request, HttpServletResponse response, Model model, @RequestParam String code, @RequestParam String state, HttpSession session) throws Exception {
@@ -96,10 +97,12 @@ public class LoginController {
 				serverUrl = serverUrl + ":" + request.getServerPort();
 			}
 			
+			log.info(code);
 			OAuth2AccessToken oauthToken;
 			oauthToken = kakaoLoginBO.getAccessToken(session, code, state, serverUrl);
+			log.info(oauthToken);
 			if(oauthToken == null) {
-				model.addAttribute("msg", "네이버 로그인 access 토큰 발급 오류 입니다.");
+				model.addAttribute("msg", "카카오 로그인 access 토큰 발급 오류 입니다.");
 				model.addAttribute("url", "/");
 				return "/login/callback";
 			}
@@ -113,14 +116,16 @@ public class LoginController {
 			JsonObject response_obj = (JsonObject) object.get("response");
 			
 			String id = response_obj.get("id").getAsString();
-			String gender = response_obj.get("gender").getAsString();
+			//String gender = response_obj.get("gender").getAsString();
 			
+			log.info(response_obj);
+			log.info("naver ID : " + id);
 			// 세션에 사용자 정보 등록
 			session.setAttribute("islogin_r", "Y");
 			session.setAttribute("id", id);
-			session.setAttribute("gender", gender);
+			//session.setAttribute("gender", gender);
 			
-			return "redirect:/";
+			return "redirect:/login/callback";
 		}
 		
 		//로그아웃 
