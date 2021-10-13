@@ -19,7 +19,6 @@ import com.github.scribejava.core.model.OAuth2AccessToken;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
-import com.kgitbank.jeju.login.KakaoLoginApiTest;
 import com.kgitbank.jeju.login.KakaoLoginBO;
 import com.kgitbank.jeju.login.NaverLoginBO;
 
