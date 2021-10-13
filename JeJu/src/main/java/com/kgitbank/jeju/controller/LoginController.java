@@ -75,6 +75,7 @@ public class LoginController {
 			// 로그인 사용자 정보를 읽어온다
 			String apiResult = naverLoginBO.getUserProfile(oauthToken, serverUrl);
 			
+			log.info("apiResult : " + apiResult);
 			
 			JsonElement element = JsonParser.parseString(apiResult);
 			JsonObject object = element.getAsJsonObject();
@@ -85,6 +86,8 @@ public class LoginController {
 			// 세션에 사용자 정보 등록
 			session.setAttribute("islogin_r", "Y");
 			session.setAttribute("id", id);
+			
+			log.info("naver ID : " + id);
 			
 			return "redirect:/login/callback";
 		}
@@ -112,7 +115,7 @@ public class LoginController {
 			// 로그인 사용자 정보를 읽어온다
 			String apiResult = kakaoLoginBO.getUserProfile(oauthToken, serverUrl);
 			
-			log.info("apiResult= "+apiResult);
+			log.info("apiResult : "+apiResult);
 			JsonElement element = JsonParser.parseString(apiResult);
 			JsonObject object = element.getAsJsonObject();
 			
