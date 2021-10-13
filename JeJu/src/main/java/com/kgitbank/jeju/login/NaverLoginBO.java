@@ -20,13 +20,13 @@ import lombok.extern.log4j.Log4j;
 public class NaverLoginBO {
 	// 네이버 로그인 정보
 	
-	@Value("#{property['clientId']}")
+	@Value("#{property['naverClientId']}")
 	private String NAVER_CLIENT_ID;
 	
-	@Value("#{property['clientSecret']}")
+	@Value("#{property['naverClientSecret']}")
 	private String NAVER_CLIENT_SECRET;
 	
-	private final static String NAVER_REDIRECT_URI = "/login/callback";
+	private final static String NAVER_REDIRECT_URI = "/jeju/login/callback";
 	
 	private final static String SESSION_STATE = "naver_oauth_state";
 	private final static String PROFILE_API_URL = "https://openapi.naver.com/v1/nid/me";
