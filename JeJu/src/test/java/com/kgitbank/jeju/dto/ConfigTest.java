@@ -26,18 +26,20 @@ public class ConfigTest {
 	@Value("#{property['kakaoClientSecret']}")
 	private String ClientSeceret;
 	
-	@Ignore
+	
 	@Test
 	public void dbConnTest() {
+		log.info(sqlsessionfactory);
 		assertNotNull(sqlsessionfactory.openSession());
 	}
 	
+	@Ignore
 	@Test
 	public void configIdTest() {
 		log.info(ClientID);
 		assertNotNull(ClientID);
 	}
-	
+	@Ignore
 	@Test
 	public void configSecretTest() {
 		log.info(ClientSeceret);
