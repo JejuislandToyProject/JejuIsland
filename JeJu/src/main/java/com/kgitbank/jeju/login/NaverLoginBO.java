@@ -14,9 +14,7 @@ import com.github.scribejava.core.model.Response;
 import com.github.scribejava.core.model.Verb;
 import com.github.scribejava.core.oauth.OAuth20Service;
 
-import lombok.extern.log4j.Log4j;
 
-@Log4j
 public class NaverLoginBO {
 	// 네이버 로그인 정보
 	

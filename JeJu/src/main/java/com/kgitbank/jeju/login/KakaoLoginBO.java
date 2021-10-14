@@ -6,7 +6,6 @@ import java.io.UnsupportedEncodingException;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.net.URLEncoder;
-import java.nio.charset.CharsetEncoder;
 import java.util.UUID;
 
 import javax.servlet.http.HttpServletRequest;
@@ -119,37 +118,6 @@ public class KakaoLoginBO {
 			Response response = oauthService.execute(request);
 			return response.getBody();
 		}
-		
-		
-/*//Access Token error (session state 값 서로 같지 않음 + code 값이 변환되서 오는 듯?)
-		public OAuth2AccessToken getAccessToken(HttpSession session, String state, String code, String serverUrl) throws Exception {
-			String sessionState = getSession(session);
-			
-			if (StringUtils.pathEquals(sessionState, state)) {
-				OAuth20Service oauthService = new ServiceBuilder(KAKAO_CLIENT_ID)
-						//.apiSecret(KAKAO_CLIENT_SECRET)
-						.callback(serverUrl + KAKAO_REDIRECT_URI)
-						.build(KakaoLoginApi.instance());
-				System.out.println("url:: "+oauthService.getAuthorizationUrl());
-				System.out.println(KAKAO_CLIENT_ID);
-				OAuth2AccessToken accessToken = oauthService.getAccessToken(code);
-				return accessToken;
-			}
-			return null;
-		}
-
-		
-		public String getUserProfile(OAuth2AccessToken oauthToken, String serverUrl) throws Exception {
-			OAuth20Service oauthService = new ServiceBuilder(KAKAO_CLIENT_ID)
-					//.apiSecret(KAKAO_CLIENT_SECRET)
-					.callback(serverUrl + KAKAO_REDIRECT_URI)
-					.build(KakaoLoginApi.instance());
-			OAuthRequest request = new OAuthRequest(Verb.GET, PROFILE_API_URL);
-			oauthService.signRequest(oauthToken, request);
-			Response response = oauthService.execute(request);
-			return response.getBody();
-		}
-*/
 		
 		/* 세션 유효성 검증을 위한 난수 생성기 */
 		private String generateRandomString() {
