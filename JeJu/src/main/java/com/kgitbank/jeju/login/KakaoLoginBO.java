@@ -31,8 +31,8 @@ public class KakaoLoginBO {
 		@Value("#{property['kakaoClientId']}")
 		private String KAKAO_CLIENT_ID;
 		
-		//@Value("#{property['kakaoClientSecret']}")
-		//private String KAKAO_CLIENT_SECRET;
+		@Value("#{property['kakaoClientSecret']}")
+		private String KAKAO_CLIENT_SECRET;
 		
 		private final static String KAKAO_REDIRECT_URI = "/jeju/kakaoAuth";
 		private final static String SESSION_STATE = "kakao_oauth_state";
@@ -44,7 +44,7 @@ public class KakaoLoginBO {
 			setSession(session, state);
 			
 			OAuth20Service oauthService = new ServiceBuilder(KAKAO_CLIENT_ID)
-					//.apiSecret(KAKAO_CLIENT_SECRET)
+					.apiSecret(KAKAO_CLIENT_SECRET)
 					.callback(serverUrl + KAKAO_REDIRECT_URI)
 					.build(KakaoLoginApi.instance());
 			return oauthService.getAuthorizationUrl(state);
@@ -53,13 +53,14 @@ public class KakaoLoginBO {
 		/* 카카오아이디로 Callback 처리 및 AccessToken 획득 Method */
 		public String getAccessToken(HttpServletRequest request, String autorizeCode) throws UnsupportedEncodingException {
 		    String clientId = KAKAO_CLIENT_ID;
+		    String clientSecret = KAKAO_CLIENT_SECRET;
 			String code = autorizeCode;
 		    String state = request.getParameter("state");
 		    String redirectURI = URLEncoder.encode("http://localhost:8080/jeju/kakaoAuth", "UTF-8");
 		    String apiURL;
 		    apiURL = "https://kauth.kakao.com/oauth/token?grant_type=authorization_code&";
 		    apiURL += "client_id=" + clientId;
-		    //apiURL += "&client_secret=" + clientSecret;
+		    apiURL += "&client_secret=" + clientSecret;
 		    apiURL += "&redirect_uri=" + redirectURI;
 		    apiURL += "&code=" + code;
 		    apiURL += "&state=" + state;
@@ -110,7 +111,7 @@ public class KakaoLoginBO {
 		
 		public String getUserProfile(String oauthToken, String serverUrl) throws Exception {
 			OAuth20Service oauthService = new ServiceBuilder(KAKAO_CLIENT_ID)
-					//.apiSecret(KAKAO_CLIENT_SECRET)
+					.apiSecret(KAKAO_CLIENT_SECRET)
 					.callback(serverUrl + KAKAO_REDIRECT_URI)
 					.build(KakaoLoginApi.instance());
 			OAuthRequest request = new OAuthRequest(Verb.GET, PROFILE_API_URL);
