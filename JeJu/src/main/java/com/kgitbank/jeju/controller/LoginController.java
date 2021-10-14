@@ -18,7 +18,6 @@ import com.kgitbank.jeju.login.KakaoLoginBO;
 import com.kgitbank.jeju.login.NaverLoginBO;
 import com.kgitbank.jeju.mapper.UserMapper;
 import com.kgitbank.jeju.service.LoginService;
-import com.kgitbank.jeju.service.impl.LoginServiceImpl;
 
 import lombok.extern.log4j.Log4j;
 
