@@ -30,4 +30,5 @@
 	</bean>
 	
 	<mybatis-spring:scan base-package="com.kgitbank.jeju.mapper"/>
+	
 </beans>
