@@ -3,6 +3,7 @@ package com.kgitbank.jeju.dto;
 import static org.junit.Assert.assertNotNull;
 
 import org.apache.ibatis.session.SqlSessionFactory;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,17 +20,29 @@ public class ConfigTest {
 	@Autowired
 	SqlSessionFactory sqlsessionfactory;
 	
-	@Value("#{property['clientId']}")
+	@Value("#{property['kakaoClientId']}")
 	private String ClientID;
+	
+	@Value("#{property['kakaoClientSecret']}")
+	private String ClientSeceret;
+	
 	
 	@Test
 	public void dbConnTest() {
+		log.info(sqlsessionfactory);
 		assertNotNull(sqlsessionfactory.openSession());
 	}
 	
+	@Ignore
 	@Test
-	public void naverConfigTest() {
+	public void configIdTest() {
 		log.info(ClientID);
 		assertNotNull(ClientID);
+	}
+	@Ignore
+	@Test
+	public void configSecretTest() {
+		log.info(ClientSeceret);
+		assertNotNull(ClientSeceret);
 	}
 }

@@ -2,7 +2,7 @@
     pageEncoding="utf-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="kr">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -37,6 +37,7 @@
                         <!-- Nested Row within Card Body -->
                         <div class="row header">
                             <div class="col-lg-6 d-none d-lg-block bg-login-image"></div>
+
                                 <div class="col-lg-6">
                                     <div class="p-5">
                                         <form class="user">
@@ -52,6 +53,7 @@
                                             </div>               
                                         </form>
                                     </div> 
+
                                 </div>
                             <svg class="waves" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
                                 <defs>
@@ -70,6 +72,8 @@
             </div>
         </div>
     </div>
+
+
     <!-- Bootstrap core JavaScript-->
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>

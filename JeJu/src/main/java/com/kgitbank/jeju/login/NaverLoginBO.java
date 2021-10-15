@@ -26,7 +26,7 @@ public class NaverLoginBO {
 	@Value("#{property['naverClientSecret']}")
 	private String NAVER_CLIENT_SECRET;
 	
-	private final static String NAVER_REDIRECT_URI = "/jeju/login/callback";
+	private final static String NAVER_REDIRECT_URI = "/jeju/naverAuth";
 	
 	private final static String SESSION_STATE = "naver_oauth_state";
 	private final static String PROFILE_API_URL = "https://openapi.naver.com/v1/nid/me";
@@ -35,8 +35,7 @@ public class NaverLoginBO {
 	/* 네이버 아이디로 인증 URL 생성 Method */
 	public String getAuthorizationUrl(HttpSession session, String serverUrl) {
 		String state = generateRandomString();
-		setSession(session, state);
-		
+		log.info("session: "+state);
 		OAuth20Service oauthService = new ServiceBuilder(NAVER_CLIENT_ID)
 				.apiSecret(NAVER_CLIENT_SECRET)
 				.callback(serverUrl + NAVER_REDIRECT_URI)
@@ -46,7 +45,9 @@ public class NaverLoginBO {
 
 	/* 네이버아이디로 Callback 처리 및 AccessToken 획득 Method */
 	public OAuth2AccessToken getAccessToken(HttpSession session, String code, String state, String serverUrl) throws Exception {
+		
 		String sessionState = getSession(session);
+		
 		if (StringUtils.pathEquals(sessionState, state)) {
 			OAuth20Service oauthService = new ServiceBuilder(NAVER_CLIENT_ID)
 					.apiSecret(NAVER_CLIENT_SECRET)

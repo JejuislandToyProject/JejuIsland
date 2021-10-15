@@ -20,4 +20,6 @@ public class KakaoLoginApi extends DefaultApi20 {
 	protected String getAuthorizationBaseUrl() {
 		return "https://kauth.kakao.com/oauth/authorize";
 	}
+	
+	
 }
