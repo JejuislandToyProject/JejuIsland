@@ -11,9 +11,6 @@
   <select id="listUser" resultType="com.kgitbank.jeju.dto.User">
     SELECT * FROM user_info WHERE user_id = #{user_id}
   </select>
-  <select id="existUser" resultType="int">
-    SELECT count(*) FROM user_info WHERE user_id = #{user_id}
-  </select>
 
   <insert id="addUser">
     INSERT INTO user_info
