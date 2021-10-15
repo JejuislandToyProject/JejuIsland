@@ -53,7 +53,6 @@ public class LoginServiceImpl implements LoginService{
 		}
 		
 		// 세션에 사용자 정보 등록
-		session.setAttribute("islogin_r", "Y");
 		session.setAttribute("id", id);
 
 	}
@@ -83,7 +82,6 @@ public class LoginServiceImpl implements LoginService{
 		}
 		
 		// 세션에 사용자 정보 등록
-		session.setAttribute("islogin_r", "Y");
 		session.setAttribute("id", id);
 
 	}
