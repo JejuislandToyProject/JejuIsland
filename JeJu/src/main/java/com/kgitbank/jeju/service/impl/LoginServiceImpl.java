@@ -35,26 +35,26 @@ public class LoginServiceImpl implements LoginService{
 		String apiResult = naverLoginBO.getUserProfile(oauthToken, serverUrl);
 		log.info("apiResult : " + apiResult);
 		
-//		JsonElement element = JsonParser.parseString(apiResult);
-//		JsonObject object = element.getAsJsonObject();
-//		JsonObject response_obj = (JsonObject) object.get("response");
-//		
-//		String id = response_obj.get("id").getAsString();
-//		String nickname = response_obj.get("nickname").getAsString();
-//		
-//		log.info("naver ID : " + id);
-//		log.info("naver nickname : " + nickname);
-//		
-//		log.info(usermapper);
-//		User user = new User(id, nickname);
-//		
-//		if(usermapper.listUser(id) == null) {
-//			usermapper.addUser(user);
-//		}
-//		
-//		// 세션에 사용자 정보 등록
-//		session.setAttribute("islogin_r", "Y");
-//		session.setAttribute("id", id);
+		JsonElement element = JsonParser.parseString(apiResult);
+		JsonObject object = element.getAsJsonObject();
+		JsonObject response_obj = (JsonObject) object.get("response");
+		
+		String id = response_obj.get("id").getAsString();
+		String nickname = response_obj.get("nickname").getAsString();
+		
+		log.info("naver ID : " + id);
+		log.info("naver nickname : " + nickname);
+		
+		log.info(usermapper);
+		User user = new User(id, nickname);
+		
+		if(usermapper.listUser(id) == null) {
+			usermapper.addUser(user);
+		}
+		
+		// 세션에 사용자 정보 등록
+		session.setAttribute("islogin_r", "Y");
+		session.setAttribute("id", id);
 
 	}
 	
