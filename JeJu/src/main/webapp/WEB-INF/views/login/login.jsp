@@ -45,12 +45,12 @@
                                                 <h1><b>Join</b></h1>
                                                 <p>기존에 사용하시는 계정으로<br> 간단하게 회원가입 하세요.</p>
                                             </div>
-                                            <div class="form-group">
-                                                <a href="${naverAuthUrl }" class="btn btn-user btn-block"><img style="width: 298px; height: 65px; " src="assets/img/btn_naver.png"/></a>   
-                                            </div>
-                                            <div class="form-group">
-                                                <a href="${kakaoAuthUrl }"><img style="width: 298px; height: 65px; margin-left: 3px;" src="assets/img/kakao_login_large_wide.png"/></a>
-                                            </div>               
+											<div class="form-group">
+	                                            <a href="${naverAuthUrl }" class="btn btn-user btn-block"><img style="width: 298px; height: 65px; " src="<c:url value="/resources/img/img/login/btn_naver.png"/>"/></a>   
+	                                        </div>
+	                                        <div class="form-group">
+	                                            <a href="${kakaoAuthUrl }"><img style="width: 298px; height: 65px; margin-left: 23px;" src="<c:url value="/resources/img/img/login/kakao_login_large_wide.png"/>"></a>
+	                                        </div>             
                                         </form>
                                     </div> 
 
