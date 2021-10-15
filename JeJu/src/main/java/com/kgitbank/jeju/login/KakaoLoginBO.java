@@ -14,13 +14,11 @@ import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Value;
 
 import com.github.scribejava.core.builder.ServiceBuilder;
-import com.github.scribejava.core.model.OAuth2AccessToken;
 import com.github.scribejava.core.model.OAuthRequest;
 import com.github.scribejava.core.model.Response;
 import com.github.scribejava.core.model.Verb;
 import com.github.scribejava.core.oauth.OAuth20Service;
 import com.google.gson.JsonElement;
-import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 
 import lombok.extern.log4j.Log4j;
@@ -40,6 +38,7 @@ public class KakaoLoginBO {
 		/* 카카오 아이디로 인증 URL 생성 Method */
 		public String getAuthorizationUrl(HttpSession session, String serverUrl) {
 			String state = generateRandomString();
+			log.info("state: "+state);
 			setSession(session, state);
 			
 			OAuth20Service oauthService = new ServiceBuilder(KAKAO_CLIENT_ID)

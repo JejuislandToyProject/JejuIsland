@@ -14,7 +14,9 @@ import com.github.scribejava.core.model.Response;
 import com.github.scribejava.core.model.Verb;
 import com.github.scribejava.core.oauth.OAuth20Service;
 
+import lombok.extern.log4j.Log4j;
 
+@Log4j
 public class NaverLoginBO {
 	// 네이버 로그인 정보
 	
@@ -33,8 +35,7 @@ public class NaverLoginBO {
 	/* 네이버 아이디로 인증 URL 생성 Method */
 	public String getAuthorizationUrl(HttpSession session, String serverUrl) {
 		String state = generateRandomString();
-		setSession(session, state);
-		
+		log.info("session: "+state);
 		OAuth20Service oauthService = new ServiceBuilder(NAVER_CLIENT_ID)
 				.apiSecret(NAVER_CLIENT_SECRET)
 				.callback(serverUrl + NAVER_REDIRECT_URI)
@@ -44,7 +45,9 @@ public class NaverLoginBO {
 
 	/* 네이버아이디로 Callback 처리 및 AccessToken 획득 Method */
 	public OAuth2AccessToken getAccessToken(HttpSession session, String code, String state, String serverUrl) throws Exception {
+		
 		String sessionState = getSession(session);
+		
 		if (StringUtils.pathEquals(sessionState, state)) {
 			OAuth20Service oauthService = new ServiceBuilder(NAVER_CLIENT_ID)
 					.apiSecret(NAVER_CLIENT_SECRET)

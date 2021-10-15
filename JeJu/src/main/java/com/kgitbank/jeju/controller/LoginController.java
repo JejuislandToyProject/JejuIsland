@@ -60,7 +60,6 @@ public class LoginController {
 		// 네이버 로그인 성공시 callback
 		@RequestMapping(value = "/naverAuth", method = { RequestMethod.GET, RequestMethod.POST })
 		public String naverOauth2ClientCallback(HttpServletRequest request, HttpServletResponse response, Model model, @RequestParam String code, @RequestParam String state, HttpSession session) throws Exception {
-
 			String serverUrl = request.getScheme()+"://"+request.getServerName();
 			if(request.getServerPort() != 80) {
 				serverUrl = serverUrl + ":" + request.getServerPort();
@@ -82,7 +81,6 @@ public class LoginController {
 		}
 		@RequestMapping(value = "/kakaoAuth", method = { RequestMethod.GET, RequestMethod.POST })
 		public String kakaoOauth2ClientCallback(HttpServletRequest request, HttpServletResponse response, Model model, @RequestParam String code, @RequestParam String state, HttpSession session) throws Exception {
-
 			String serverUrl = request.getScheme()+"://"+request.getServerName();
 			if(request.getServerPort() != 80) {
 				serverUrl = serverUrl + ":" + request.getServerPort();
@@ -98,7 +96,6 @@ public class LoginController {
 			
 			log.info("userMapper: "+usermapper);
 			loginservice.kakaoLogin(session, oauthToken, serverUrl);
-			
 			return "redirect:/login/callback";
 		}
 		
