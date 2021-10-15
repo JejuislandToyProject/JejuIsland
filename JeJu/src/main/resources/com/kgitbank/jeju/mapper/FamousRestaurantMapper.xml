@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.kgitbank.jeju.mapper.FamousRestaurantMapper">
+
+  <select id="list" resultType="com.kgitbank.jeju.dto.FamousRestaurant">
+    SELECT * FROM famous_restaurant INNER JOIN user_info USING (user_id);
+  </select>
+
+  <select id="listByUser" resultType="com.kgitbank.jeju.dto.FamousRestaurant">
+    SELECT * FROM famous_restaurant  INNER JOIN user_info USING (user_id)
+    WHERE user_id LIKE #{user_id}
+  </select>
+  
+  <insert id="addRestaurant">
+    INSERT INTO famous_restaurant
+    VALUES(FR_ID_SEQ.nextval, #{name}, #{user_id}, #{title}, 
+    		#{image}, #{description}, #{hashtag}, #{address},
+    		#{location}, #{positive_num}, #{negative_num},
+    		#{type}, sysdate)
+  </insert>
+</mapper>
