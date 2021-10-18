@@ -63,7 +63,7 @@
 		<div class="container px-4 px-lg-5 text-center">
 			<h1 class="mb-1">Travel Jeju</h1>
 
-			<img src="" alt="">
+
 			<h3 class="mb-5">
 				<em><span style="color: whitesmoke;">Start Jeju Island
 						Travel Plan</span></em>
@@ -113,7 +113,7 @@
 				</div>
 				<div class="col-xl-5 col-xxl-6 d-none d-xl-block text-center">
 					<img class="img-fluid rounded-3 my-5"
-						src="./assets/img/여행코스.png" alt="...">
+						src="<c:url value="resources/img/여행코스.png"/>" alt="travel cource">
 				</div>
 			</div>
 		</div>
@@ -133,7 +133,7 @@
 		<div class="container-fluid p-0">
 			<div class="row g-0">
 				<div class="col-lg-6 order-lg-2 text-white showcase-img"
-					style="background-image: url('assets/img/제주도 나눈사진.png')"></div>
+					style="background-image: url('./resources/img/제주도 나눈사진.png')"></div>
 				<div class="col-lg-6 order-lg-1 my-auto showcase-text">
 					<h2>행정구역별 맛집 찾기</h2>
 					<p class="lead mb-0">
@@ -142,97 +142,89 @@
 					</p>
 				</div>
 			</div>
+		</div>
 
-			<div class="row g-0">
-				<div class="col-md-8 mx-auto">
-					<div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
-						<div class="carousel-indicators">
-							<button type="button" data-bs-target="#myCarousel"
-								data-bs-slide-to="0" class="active" aria-current="true"
-								aria-label="Slide 1"></button>
-							<button type="button" data-bs-target="#myCarousel"
-								data-bs-slide-to="1" aria-label="Slide 2"></button>
-							<button type="button" data-bs-target="#myCarousel"
-								data-bs-slide-to="2" aria-label="Slide 3"></button>
+		<div class="row g-0">
+			<div class="col-md-8 mx-auto">
+				<div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
+					<div class="carousel-indicators">
+						<button type="button" data-bs-target="#myCarousel"
+							data-bs-slide-to="0" class="active" aria-current="true"
+							aria-label="Slide 1"></button>
+						<button type="button" data-bs-target="#myCarousel"
+							data-bs-slide-to="1" aria-label="Slide 2"></button>
+						<button type="button" data-bs-target="#myCarousel"
+							data-bs-slide-to="2" aria-label="Slide 3"></button>
+					</div>
+					<div class="carousel-inner">
+						<div class="carousel-item active">
+							<div class="col-xs-3 col-sm-3 col-md-3" data-bs-interval="10000">
+								<img
+									src="https://image.shutterstock.com/z/stock-photo-sleeping-disorders-as-a-reason-for-insomnia-293777093.jpg">
+							</div>
+							<div class="col-xs-3 col-sm-3 col-md-3">
+								<img
+									src="https://image.shutterstock.com/z/stock-photo-sleeping-disorders-as-a-reason-for-insomnia-293777093.jpg">
+							</div>
+							<div class="col-xs-3 col-sm-3 col-md-3">
+								<img
+									src="https://image.shutterstock.com/z/stock-photo-sleeping-disorders-as-a-reason-for-insomnia-293777093.jpg">
+							</div>
+							<div class="col-xs-3 col-sm-3 col-md-3">
+								<img
+									src="https://image.shutterstock.com/z/stock-photo-sleeping-disorders-as-a-reason-for-insomnia-293777093.jpg">
+							</div>
 						</div>
-						<div class="carousel-inner">
-							<!-- <div class="carousel-item active" data-bs-interval="10000">
-                    <img src="https://www.codingfactory.net/wp-content/uploads/abc.jpg" class="d-block w-100" alt="...">
-                  </div>
-                  <div class="carousel-item" data-bs-interval="2000">
-                    <img src="https://t1.daumcdn.net/cfile/tistory/24283C3858F778CA2E" class="d-block w-100" alt="...">
-                  </div>
-                  <div class="carousel-item">
-                    <img src="http://t1.daumcdn.net/friends/prod/editor/dc8b3d02-a15a-4afa-a88b-989cf2a50476.jpg" class="d-block w-100" alt="...">
-                  </div> -->
-
-							<div class="carousel-item active">
-								<div class="col-xs-3 col-sm-3 col-md-3" data-bs-interval="10000">
-									<img
-										src="https://image.shutterstock.com/z/stock-photo-sleeping-disorders-as-a-reason-for-insomnia-293777093.jpg">
-								</div>
-								<div class="col-xs-3 col-sm-3 col-md-3">
-									<img
-										src="https://image.shutterstock.com/z/stock-photo-sleeping-disorders-as-a-reason-for-insomnia-293777093.jpg">
-								</div>
-								<div class="col-xs-3 col-sm-3 col-md-3">
-									<img
-										src="https://image.shutterstock.com/z/stock-photo-sleeping-disorders-as-a-reason-for-insomnia-293777093.jpg">
-								</div>
-								<div class="col-xs-3 col-sm-3 col-md-3">
-									<img
-										src="https://image.shutterstock.com/z/stock-photo-sleeping-disorders-as-a-reason-for-insomnia-293777093.jpg">
-								</div>
+						<div class="carousel-item" data-bs-interval="10000">
+							<div class="col-xs-3 col-sm-3 col-md-3">
+								<img
+									src="https://image.shutterstock.com/z/stock-photo-sleeping-disorders-as-a-reason-for-insomnia-293777093.jpg">
 							</div>
-							<div class="carousel-item" data-bs-interval="10000">
-								<div class="col-xs-3 col-sm-3 col-md-3">
-									<img
-										src="https://image.shutterstock.com/z/stock-photo-sleeping-disorders-as-a-reason-for-insomnia-293777093.jpg">
-								</div>
-								<div class="col-xs-3 col-sm-3 col-md-3">
-									<img
-										src="https://image.shutterstock.com/z/stock-photo-sleeping-disorders-as-a-reason-for-insomnia-293777093.jpg">
-								</div>
-								<div class="col-xs-3 col-sm-3 col-md-3">
-									<img
-										src="https://image.shutterstock.com/z/stock-photo-sleeping-disorders-as-a-reason-for-insomnia-293777093.jpg">
-								</div>
-								<div class="col-xs-3 col-sm-3 col-md-3">
-									<img
-										src="https://image.shutterstock.com/z/stock-photo-sleeping-disorders-as-a-reason-for-insomnia-293777093.jpg">
-								</div>
+							<div class="col-xs-3 col-sm-3 col-md-3">
+								<img
+									src="https://image.shutterstock.com/z/stock-photo-sleeping-disorders-as-a-reason-for-insomnia-293777093.jpg">
 							</div>
-							<div class="carousel-item">
-								<div class="col-xs-3 col-sm-3 col-md-3">
-									<img
-										src="https://image.shutterstock.com/z/stock-photo-sleeping-disorders-as-a-reason-for-insomnia-293777093.jpg">
-								</div>
-								<div class="col-xs-3 col-sm-3 col-md-3">
-									<img
-										src="https://image.shutterstock.com/z/stock-photo-sleeping-disorders-as-a-reason-for-insomnia-293777093.jpg">
-								</div>
-								<div class="col-xs-3 col-sm-3 col-md-3">
-									<img
-										src="https://image.shutterstock.com/z/stock-photo-sleeping-disorders-as-a-reason-for-insomnia-293777093.jpg">
-								</div>
-								<div class="col-xs-3 col-sm-3 col-md-3">
-									<img
-										src="https://image.shutterstock.com/z/stock-photo-sleeping-disorders-as-a-reason-for-insomnia-293777093.jpg">
-								</div>
+							<div class="col-xs-3 col-sm-3 col-md-3">
+								<img
+									src="https://image.shutterstock.com/z/stock-photo-sleeping-disorders-as-a-reason-for-insomnia-293777093.jpg">
 							</div>
-							<button class="carousel-control-prev" type="button"
-								data-bs-target="#myCarousel" data-bs-slide="prev">
-								<span class="carousel-control-prev-icon" aria-hidden="true"></span>
-								<span class="visually-hidden">Previous</span>
-							</button>
-							<button class="carousel-control-next" type="button"
-								data-bs-target="#myCarousel" data-bs-slide="next">
-								<span class="carousel-control-next-icon" aria-hidden="true"></span>
-								<span class="visually-hidden">Next</span>
-							</button>
+							<div class="col-xs-3 col-sm-3 col-md-3">
+								<img
+									src="https://image.shutterstock.com/z/stock-photo-sleeping-disorders-as-a-reason-for-insomnia-293777093.jpg">
+							</div>
 						</div>
+						<div class="carousel-item">
+							<div class="col-xs-3 col-sm-3 col-md-3">
+								<img
+									src="https://image.shutterstock.com/z/stock-photo-sleeping-disorders-as-a-reason-for-insomnia-293777093.jpg">
+							</div>
+							<div class="col-xs-3 col-sm-3 col-md-3">
+								<img
+									src="https://image.shutterstock.com/z/stock-photo-sleeping-disorders-as-a-reason-for-insomnia-293777093.jpg">
+							</div>
+							<div class="col-xs-3 col-sm-3 col-md-3">
+								<img
+									src="https://image.shutterstock.com/z/stock-photo-sleeping-disorders-as-a-reason-for-insomnia-293777093.jpg">
+							</div>
+							<div class="col-xs-3 col-sm-3 col-md-3">
+								<img
+									src="https://image.shutterstock.com/z/stock-photo-sleeping-disorders-as-a-reason-for-insomnia-293777093.jpg">
+							</div>
+						</div>
+						<button class="carousel-control-prev" type="button"
+							data-bs-target="#myCarousel" data-bs-slide="prev">
+							<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+							<span class="visually-hidden">Previous</span>
+						</button>
+						<button class="carousel-control-next" type="button"
+							data-bs-target="#myCarousel" data-bs-slide="next">
+							<span class="carousel-control-next-icon" aria-hidden="true"></span>
+							<span class="visually-hidden">Next</span>
+						</button>
 					</div>
 				</div>
+			</div>
+		</div>
 	</section>
 	<!-- Portfolio-->
 	<section class="content-section" id="reservation">
@@ -253,7 +245,7 @@
 										예매하러 가기! </span>
 								</p>
 							</div>
-						</div> <img class="img-fluid" src="assets/img/airplane1.png" alt="..." />
+						</div> <img class="img-fluid" src="<c:url value="resources/img/airplane1.png"/>" alt="airplane" />
 					</a>
 				</div>
 				<div class="col-lg-6">
@@ -267,7 +259,7 @@
 										비교하여 최고의 예약을! </span>
 								</p>
 							</div>
-						</div> <img class="img-fluid" src="assets/img/hotel.png" alt="..." />
+						</div> <img class="img-fluid" src="<c:url value="resources/img/hotel.png"/>" alt="hotel" />
 					</a>
 				</div>
 				<div class="col-lg-6">
@@ -281,7 +273,7 @@
 										실시간 가격비교 </span>
 								</p>
 							</div>
-						</div> <img class="img-fluid" src="assets/img/car.png" alt="..." />
+						</div> <img class="img-fluid" src="<c:url value="resources/img/car.png"/>" alt="rent car" />
 					</a>
 				</div>
 				<div class="col-lg-6">
@@ -294,7 +286,7 @@
 										관광명소&맛집 한번에 알아보기 </span>
 								</p>
 							</div>
-						</div> <img class="img-fluid" src="assets/img/관광지.png" alt="..." />
+						</div> <img class="img-fluid" src="<c:url value="resources/img/관광지.png"/>" alt="popular place" />
 					</a>
 				</div>
 			</div>
