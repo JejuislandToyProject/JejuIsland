@@ -32,7 +32,9 @@ public class JejuController {
 	}
 	
 	@GetMapping("/login/callback")
-	public void callback() {}
+	public String callback() {
+		return "redirect:/";
+	}
 	
 	@GetMapping("/mypage")
 	public String mypage(HttpSession session, Model model) {
