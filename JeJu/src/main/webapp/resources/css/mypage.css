@@ -1,0 +1,181 @@
+*{
+    box-sizing: border-box;
+    background-color: rgba(245, 238, 223, 0.918);
+}
+
+#header{
+    width: 100%;
+    height: 60px;
+    font-size: 30px;
+    margin-top: 10px;
+    padding-left: 35px;
+    font-weight: bold;
+}
+.navbar-brand {
+    margin-right: 35%;
+    font-size: 1.5rem;
+    text-decoration: none;
+    white-space: nowrap;
+    color: rgba(0, 0, 0, 0.9);
+}
+
+#middle{
+    width: 100%;
+    display: flex;
+}
+
+#aside{
+    width: 22.5%;
+    height: 100%;
+    float: left;
+    background-color: rgba(238, 238, 238, 0.801);
+    border-right: 1px solid #ddd;
+    padding-left: 5px;  
+    position: fixed;
+    border-right: 2px solid;
+    border-color: rgb(224, 224, 224);
+}
+
+h1{
+    font-size: 32px;
+    padding: 5px;
+    text-align: center;
+}
+
+.icon1{
+    position: fixed;
+    margin-top: 28px;
+    margin-left: 4.3%;
+}
+.icon2{
+    position: fixed;
+    margin-top: -75px;
+    margin-left: 15.2%;
+}
+.menu li a{
+    height: 30px;
+    line-height: 30px;
+    display: block;
+    padding: 0 20px;
+    font-size: 16px;
+    color: #555;
+    background-color: rgba(238, 238, 238, 0.801);
+}
+
+.menu li a:hover {
+    background-color: #FAE3DC;
+    color: black;
+}
+
+#section{
+    width: 77.5%;
+    height: 700px;
+    float: left;
+}
+
+.cont1{
+    width: 800px;
+    height: 650px; 
+    margin: 150px;
+    margin-top: 125px;
+    margin-left: 36%;
+}
+
+
+.jejuimg1{
+    position: fixed;
+    top: 20%;
+    right: 5%;
+}
+
+
+/* 게시판 css*/
+
+.sub_news,.sub_news th,.sub_news td{border:0}
+.sub_news a{color:#383838;text-decoration:none}
+.sub_news{width:100%;border-bottom:2px solid #999;color:#666;font-size:12px;table-layout:fixed}
+.sub_news caption{display:none}
+.sub_news th{padding:15px 0 16px;border-top:solid 1px #999;border-bottom:solid 1px #b2b2b2;background-color:#f1f1f4;color:#333;font-weight:bold;line-height:20px;vertical-align:top}
+.sub_news td{padding:18px 0 19px;border-bottom:solid 1px #d2d2d2;text-align:center;line-height:18px;}
+.sub_news .date,.sub_news .hit{padding:0;font-family:Tahoma;font-size:11px;line-height:normal}
+.sub_news .title{text-align:left; padding-left:15px; font-size:13px;}
+.sub_news .title .pic,.sub_news .title .new{margin:0 0 2px;vertical-align:middle}
+.sub_news .title a.comment{padding:0;background:none;color:#f00;font-size:12px;font-weight:bold}
+.sub_news tr .title a{padding-left:16px;background:url(첨부파일/ic_reply.png) 0 1px no-repeat}
+
+.img_sample {background:url(/snippet/image?idx=59) no-repeat 0 0}
+.paging_comm {font-weight:bold;font-size:14px;line-height:14px;text-align:center;vertical-align:top}
+.paging_comm .link_page {display:inline-block;padding:4px 6px 3px 5px;margin-right:1px;border:1px solid #eaeaea;text-decoration:none}
+.paging_comm .link_page:hover,
+.paging_comm em.link_page {border:1px solid #536fe5;color:#536fe5;font-weight:bold}
+.paging_comm .img_sample {display:inline-block;padding:6px 2px 4px 3px;border:0 none;font-weight:normal;color:#999;text-decoration:none}
+.paging_comm .link_page:hover {text-decoration:none}
+.paging_comm .btn_prev {padding-left:6px;background-position:0 10px}
+.paging_comm .btn_next {padding-right:7px;background-position:100% -10px}
+.paging_comm a.btn_prev:hover {background-position:0 -30px;color:#333}
+.paging_comm a.btn_next:hover {background-position:100% -50px;color:#333}
+.paging_comm span.btn_prev {background-position:0 10px;color:#999}
+.paging_comm span.btn_next {background-position:100% -10px;color:#999}
+
+/* nav bar*/
+:root {
+    --color: #333333;
+  }
+  
+.navbar{
+    width: 100%;
+    background-color: rgb(209, 209, 209);
+    padding: 3px;
+    text-align: center;
+    font-family: Lato, sans-serif;
+    font-weight: bold;
+    font-size: 17px;
+    border-top: 2px solid;
+    border-bottom: 2px solid;
+    border-color: rgb(187, 187, 187);
+}
+
+.navbar ul{
+    background-color: rgb(209, 209, 209);
+    list-style: none;
+    margin: 1px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 1em 0;
+}
+
+.navbar li a {
+    background-color: rgb(209, 209, 209);
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    padding-right: 12em;
+    padding-left: 1.5em;
+    position: relative;
+    transition: all ease-in-out 250ms;
+}
+
+.navbar li a::after {
+    content: "";
+    position: absolute;
+    display: block;
+    height: 0.4em;
+    width: 0%;
+    background-color: var(--color);
+    bottom: -1em;
+    transition: all ease-in-out 250ms;
+}
+
+.navbar li a:hover::after {
+    width: 45%;
+}
+
+.navbar li a:hover {
+    color: var(--color);
+}
+
+.navbar li:first-child {
+    margin-right: auto;
+    margin-left: 3em;
+}
+
