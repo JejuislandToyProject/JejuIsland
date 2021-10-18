@@ -10,21 +10,23 @@
 <meta name="description" content="" />
 <meta name="author" content="" />
 <title>Jeju Island</title>
-<!-- Font Awesome icons (free version)-->
+<!-- 
+Font Awesome icons (free version)
 <script src="https://use.fontawesome.com/releases/v5.15.3/js/all.js"
 	crossorigin="anonymous"></script>
 <script src="https://kit.fontawesome.com/6e314f7ee2.js"
 	crossorigin="anonymous"></script>
-<!-- Simple line icons-->
+Simple line icons
 <link
 	href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.5.5/css/simple-line-icons.min.css"
 	rel="stylesheet" />
-<!-- Google fonts-->
+Google fonts
 <link
 	href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic"
 	rel="stylesheet" type="text/css" />
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-	rel="stylesheet">
+	rel="stylesheet"> 
+-->
 <!-- Core theme CSS (includes Bootstrap)-->
 <link href="<c:url value="/resources/css/styles.css"/>" rel="stylesheet">
 <link href="<c:url value="/resources/css/css모달.css"/>" rel="stylesheet">
@@ -52,7 +54,7 @@
 					<li class="nav-item"><a class="nav-link" href="#bestpick">Best
 							Pick</a></li>
 					<li class="nav-item"><a class="nav-link" href="#">Board</a></li>
-					<li class="nav-item"><a class="nav-link" href="./login.html">Login</a></li>
+					<li class="nav-item"><a class="nav-link" href="<c:url value="/login"/>">Login</a></li>
 				</ul>
 
 			</div>
@@ -130,7 +132,7 @@
             </div>
         </section> -->
 	<section class="showcase">
-		<div class="container-fluid p-0">
+		<div class="container-fluid p-0 my-5">
 			<div class="row g-0">
 				<div class="col-lg-6 order-lg-2 text-white showcase-img"
 					style="background-image: url('./resources/img/제주도 나눈사진.png')"></div>
@@ -145,8 +147,10 @@
 		</div>
 
 		<div class="row g-0">
-			<div class="col-md-8 mx-auto">
-				<div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
+			<div class="col-md-8 mx-auto mt-4">
+				<h2 class="text-center my-3">제주도 관광 명소 찾기</h2>
+				<p class="text-center lead  mb-0">수 많은 관광지 속 숨은 진주까지 프로계획러들을 위한 서비스!</p>
+				<div id="myCarousel" class="carousel slide my-4" data-bs-ride="carousel">
 					<div class="carousel-indicators">
 						<button type="button" data-bs-target="#myCarousel"
 							data-bs-slide-to="0" class="active" aria-current="true"
@@ -160,55 +164,55 @@
 						<div class="carousel-item active">
 							<div class="col-xs-3 col-sm-3 col-md-3" data-bs-interval="10000">
 								<img
-									src="https://image.shutterstock.com/z/stock-photo-sleeping-disorders-as-a-reason-for-insomnia-293777093.jpg">
+									src="<c:url value="/resources/img/관광지.png"/>"/>
 							</div>
 							<div class="col-xs-3 col-sm-3 col-md-3">
 								<img
-									src="https://image.shutterstock.com/z/stock-photo-sleeping-disorders-as-a-reason-for-insomnia-293777093.jpg">
+									src="<c:url value="/resources/img/관광지.png"/>"/>
 							</div>
 							<div class="col-xs-3 col-sm-3 col-md-3">
 								<img
-									src="https://image.shutterstock.com/z/stock-photo-sleeping-disorders-as-a-reason-for-insomnia-293777093.jpg">
+									src="<c:url value="/resources/img/관광지.png"/>"/>
 							</div>
 							<div class="col-xs-3 col-sm-3 col-md-3">
 								<img
-									src="https://image.shutterstock.com/z/stock-photo-sleeping-disorders-as-a-reason-for-insomnia-293777093.jpg">
-							</div>
-						</div>
-						<div class="carousel-item">
-							<div class="col-xs-3 col-sm-3 col-md-3">
-								<img
-									src="https://image.shutterstock.com/z/stock-photo-sleeping-disorders-as-a-reason-for-insomnia-293777093.jpg">
-							</div>
-							<div class="col-xs-3 col-sm-3 col-md-3">
-								<img
-									src="https://image.shutterstock.com/z/stock-photo-sleeping-disorders-as-a-reason-for-insomnia-293777093.jpg">
-							</div>
-							<div class="col-xs-3 col-sm-3 col-md-3">
-								<img
-									src="https://image.shutterstock.com/z/stock-photo-sleeping-disorders-as-a-reason-for-insomnia-293777093.jpg">
-							</div>
-							<div class="col-xs-3 col-sm-3 col-md-3">
-								<img
-									src="https://image.shutterstock.com/z/stock-photo-sleeping-disorders-as-a-reason-for-insomnia-293777093.jpg">
+									src="<c:url value="/resources/img/관광지.png"/>"/>
 							</div>
 						</div>
 						<div class="carousel-item">
 							<div class="col-xs-3 col-sm-3 col-md-3">
 								<img
-									src="https://image.shutterstock.com/z/stock-photo-sleeping-disorders-as-a-reason-for-insomnia-293777093.jpg">
+									src="<c:url value="/resources/img/관광지.png"/>"/>
 							</div>
 							<div class="col-xs-3 col-sm-3 col-md-3">
 								<img
-									src="https://image.shutterstock.com/z/stock-photo-sleeping-disorders-as-a-reason-for-insomnia-293777093.jpg">
+									src="<c:url value="/resources/img/관광지.png"/>"/>
 							</div>
 							<div class="col-xs-3 col-sm-3 col-md-3">
 								<img
-									src="https://image.shutterstock.com/z/stock-photo-sleeping-disorders-as-a-reason-for-insomnia-293777093.jpg">
+									src="<c:url value="/resources/img/관광지.png"/>"/>
 							</div>
 							<div class="col-xs-3 col-sm-3 col-md-3">
 								<img
-									src="https://image.shutterstock.com/z/stock-photo-sleeping-disorders-as-a-reason-for-insomnia-293777093.jpg">
+									src="<c:url value="/resources/img/관광지.png"/>"/>
+							</div>
+						</div>
+						<div class="carousel-item">
+							<div class="col-xs-3 col-sm-3 col-md-3">
+								<img
+									src="<c:url value="/resources/img/관광지.png"/>"/>
+							</div>
+							<div class="col-xs-3 col-sm-3 col-md-3">
+								<img
+									src="<c:url value="/resources/img/관광지.png"/>"/>
+							</div>
+							<div class="col-xs-3 col-sm-3 col-md-3">
+								<img
+									src="<c:url value="/resources/img/관광지.png"/>"/>
+							</div>
+							<div class="col-xs-3 col-sm-3 col-md-3">
+								<img
+									src="<c:url value="/resources/img/관광지.png"/>"/>
 							</div>
 						</div>
 						<button class="carousel-control-prev" type="button"
