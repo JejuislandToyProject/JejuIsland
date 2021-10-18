@@ -26,11 +26,12 @@ public class JejuController {
 	FamousRestaurantMapper restaurantMapper;
 	
 	@RequestMapping(value="/", method = {RequestMethod.GET, RequestMethod.POST})
-	@GetMapping("/login/callback")
 	public String index() {
 		log.info("show main");
 		return "/index";
 	}
+	
+	@GetMapping("/login/callback")
 	public void callback() {
 		log.info("controller = callback");
 	}
@@ -45,6 +46,8 @@ public class JejuController {
 		
 		List<FamousRestaurant> restaurants = restaurantMapper.listByUser(id);
 		model.addAttribute("restaurants", restaurants);
+		
+		log.info(restaurants);
 		return "/mypage/test";
 	}
 }
