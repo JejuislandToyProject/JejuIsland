@@ -45,9 +45,9 @@
         <div id="middle">
 
             <aside id="aside">
-                <img class="icon1" src="<c:url value="/resources/img/stone1.PNG" alt="icon1" style="width: 40px; height: 45px; background-color: rgba(238, 238, 238, 0.801);">
+                <img class="icon1" src="<c:url value="/resources/img/stone1.PNG"/>" alt="icon1" style="width: 40px; height: 45px; background-color: rgba(238, 238, 238, 0.801);">
                 <h1 style="background-color: rgba(238, 238, 238, 0.801);">나의 일지</h1>
-                <img class="icon2" src="<c:url value="/resources/img/stone1.PNG" alt="icon2" style="width: 40px; height: 45px; background-color: rgba(238, 238, 238, 0.801);">
+                <img class="icon2" src="<c:url value="/resources/img/stone1.PNG"/>" alt="icon2" style="width: 40px; height: 45px; background-color: rgba(238, 238, 238, 0.801);">
                 <ul class="menu" style="background-color: rgba(238, 238, 238, 0.801); list-style: none;">
                     <li style="padding-bottom: 5px; background-color: rgba(238, 238, 238, 0.801);"><a href="#notice">공지사항</a></li> 
                     <li style="padding-bottom: 5px; background-color: rgba(238, 238, 238, 0.801);"><a href="#mywrite">내가 쓴 글</a></li> 
@@ -138,7 +138,7 @@
                     </div>
                 </article>
                 <div class="jejuimg1">
-                    <img src="<c:url value="/resources/img/jejuimg1.PNG" alt="jejuimg1" style="width: 400px; height: 450px;">
+                    <img src="<c:url value="/resources/img/jejuimg1.PNG"/>" alt="jejuimg1" style="width: 400px; height: 450px;">
                 </div>
             </section>
         </div>
