@@ -32,9 +32,7 @@ public class JejuController {
 	}
 	
 	@GetMapping("/login/callback")
-	public void callback() {
-		log.info("controller = callback");
-	}
+	public void callback() {}
 	
 	@GetMapping("/mypage")
 	public String mypage(HttpSession session, Model model) {
@@ -48,6 +46,6 @@ public class JejuController {
 		model.addAttribute("restaurants", restaurants);
 		
 		log.info(restaurants);
-		return "/mypage/test";
+		return "/mypage/mypage";
 	}
 }
