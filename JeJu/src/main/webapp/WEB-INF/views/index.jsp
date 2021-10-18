@@ -175,7 +175,7 @@
 									src="https://image.shutterstock.com/z/stock-photo-sleeping-disorders-as-a-reason-for-insomnia-293777093.jpg">
 							</div>
 						</div>
-						<div class="carousel-item" data-bs-interval="10000">
+						<div class="carousel-item">
 							<div class="col-xs-3 col-sm-3 col-md-3">
 								<img
 									src="https://image.shutterstock.com/z/stock-photo-sleeping-disorders-as-a-reason-for-insomnia-293777093.jpg">
