@@ -1,7 +1,6 @@
 package com.kgitbank.jeju.controller;
 
-import java.util.List;
-
+import java.text.ParseException;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,16 +10,17 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.google.gson.JsonParser;
-import com.kgitbank.jeju.dto.FamousRestaurant;
 import com.kgitbank.jeju.mapper.FamousRestaurantMapper;
+import com.kgitbank.jeju.service.MyPageService;
 
 import lombok.extern.log4j.Log4j;
 
 @Log4j
 @Controller
 public class JejuController {
+	
+	@Autowired
+	MyPageService mypageService;
 	
 	@Autowired
 	FamousRestaurantMapper restaurantMapper;
@@ -37,17 +37,14 @@ public class JejuController {
 	}
 	
 	@GetMapping("/mypage")
-	public String mypage(HttpSession session, Model model) {
+	public String mypage(HttpSession session, Model model) throws ParseException {
 		String id = (String) session.getAttribute("id");
 		if(id == null) {
 			return "redirect:/login";
 		}
-
 		
-		List<FamousRestaurant> restaurants = restaurantMapper.listByUser(id);
-		model.addAttribute("restaurants", restaurants);
+		mypageService.setModel(model, id);
 		
-		log.info(restaurants);
 		return "/mypage/mypage";
 	}
 }
