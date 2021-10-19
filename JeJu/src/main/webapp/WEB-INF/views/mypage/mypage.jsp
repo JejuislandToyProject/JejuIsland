@@ -11,7 +11,7 @@
 <body>
 	<header>
 		<h1 class="m-3">Travel Jeju</h1>
-		<p class="lead m-3 mb-5 text-center">홍길동님의 마이페이지</p>
+		<p class="lead m-3 mb-5 text-center">${restaurants[0].nickname }님의 마이페이지</p>
 		<ul class="nav nav-pills justify-content-end top-nav">
 			<li class="nav-item"><a class="nav-link" href="<c:url value="/"/>">Home</a></li>
 			<li class="nav-item"><a class="nav-link"  href="<c:url value="/logout"/>">Logout</a></li>
@@ -53,10 +53,15 @@
 									<tr>
 										<th scope="col">제목</th>
 										<th scope="col">글쓴이</th>
-										<th scope="col">날짜</th>
+										<th scope="col">날짜</th>
 									</tr>
 								</thead>
 								<tbody>
+									<c:forEach var="restaurant" items="${restaurants }" varStatus="status">
+										<td class="title"><a href="#">${restaurant.title }</a></td>
+										<td class="name">${restaurant.nickname }</td>
+										<td class="date">${registerDate[status.index] }</td>
+									</c:forEach>
 									<tr>
 										<td class="title"><a href="#">게시판 제목이 들어갑니다.</a> <img
 											width="13" height="12" class="pic" alt="첨부이미지"
