@@ -1,149 +1,206 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
-    pageEncoding="utf-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+	pageEncoding="utf-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset='utf-8'>
-    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>MyPage</title>
-    <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
-    <script src='main.js'></script>
-    <link href="<c:url value="/resources/css/mypage.css"/>" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/8eb5905426.js" crossorigin="anonymous"></script>
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">     
-
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,400i,700">
-    <link href="<c:url value="/resources/css/jquery-sakura.css"/>" rel="stylesheet">
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-    <script src="<c:url value="/resources/js/jquery-sakura.js"/>"></script>
-    <script>
-        $(window).load(function () {
-            $('body').sakura();
-        });
-        </script>
+<link href="<c:url value="/resources/css/styles.css"/>" rel="stylesheet">
+<link href="<c:url value="/resources/css/mypage.css"/>" rel="stylesheet">
+<title>MyPage</title>
 </head>
 <body>
-    
-    <div id="page">
+	<header>
+		<h1 class="m-3">Travel Jeju</h1>
+		<p class="lead m-3 mb-5 text-center">홍길동님의 마이페이지</p>
+		<ul class="nav nav-pills nav-tabs justify-content-end top-nav">
+			<li class="nav-item"><a class="nav-link" data-bs-toggle="tab" aria-current="page" href="#">Home</a></li>
+			<li class="nav-item"><a class="nav-link"  data-bs-toggle="tab" href="#">Logout</a></li>
+		</ul>
+	</header>
+	<div id="page">
+		
 
-        <header id="header" style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">
-            <a class="navbar-brand" >🍊Travel Jeju🍊</a>
-            나의 제주 일지
-        </header>
+		<div class="container-fluid p-0 ">
+			<div class="row" role="tabpanel">
 
-        <nav class="navbar" >
-            <ul>
-            <li><a href="#">HOME</a></li>
-            <li><a href="#">List1</a></li>
-            <li><a href="#">List2</a></li>
-            <li><a href="#">List3</a></li>
-            </ul>
-        </nav>
+				<!-- List group -->
+				<div class="list-group col-lg-2 g-0" id="list-tab" role="tablist">
+					<a href="#notice"
+						class="list-group-item list-group-item-action active"
+						id="list-notice-list" data-bs-toggle="list" href="#notice"
+						role="tab"> 공지사항 </a> <a href="#mywrite"
+						class="list-group-item list-group-item-action"
+						id="list-mywrite-list" data-bs-toggle="list" href="#mywrite"
+						role="tab"> 내가 쓴글 </a> <a href="#route"
+						class="list-group-item list-group-item-action"
+						id="list-route-list" data-bs-toggle="list" href="#route"
+						role="tab"> 내가 만든 경로 </a>
+				</div>
 
-        <div id="middle">
+				<!-- Tab panes -->
+				<div id="content" class="col g-0">
+					<div class="tab-content w-75 mx-5 mt-5">
+						<div class="tab-pane fade show active" id="notice" role="tabpanel">
+							notice</div>
+						<div class="tab-pane fade show" id="mywrite" role="tabpanel">
+							<table class="table table-stripted" summary="게시판의 글제목 리스트">
+								<colgroup>
+									<col width="330">
+									<col width="100">
+									<col width="80">
+								</colgroup>
+								<thead>
+									<tr>
+										<th scope="col">제목</th>
+										<th scope="col">글쓴이</th>
+										<th scope="col">날짜</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td class="title"><a href="#">게시판 제목이 들어갑니다.</a> <img
+											width="13" height="12" class="pic" alt="첨부이미지"
+											src="첨부파일 ic_pic.gif"> <a class="comment" href="#">[5]</a>
+										</td>
+										<td class="name">글쓴이이름</td>
+										<td class="date">2021/10/15</td>
+									</tr>
 
-            <aside id="aside">
-                <img class="icon1" src="<c:url value="/resources/img/stone1.PNG"/>" alt="icon1" style="width: 40px; height: 45px; background-color: rgba(238, 238, 238, 0.801);">
-                <h1 style="background-color: rgba(238, 238, 238, 0.801);">나의 일지</h1>
-                <img class="icon2" src="<c:url value="/resources/img/stone1.PNG"/>" alt="icon2" style="width: 40px; height: 45px; background-color: rgba(238, 238, 238, 0.801);">
-                <ul class="menu" style="background-color: rgba(238, 238, 238, 0.801); list-style: none;">
-                    <li style="padding-bottom: 5px; background-color: rgba(238, 238, 238, 0.801);"><a href="#notice">공지사항</a></li> 
-                    <li style="padding-bottom: 5px; background-color: rgba(238, 238, 238, 0.801);"><a href="#mywrite">내가 쓴 글</a></li> 
-                    <li style="padding-bottom: 5px; background-color: rgba(238, 238, 238, 0.801);"><a href="#myroute">내가 만든 경로</a></li>
-                </ul>
-            </aside>
+									<tr>
+										<td class="title"><a href="#">게시판 제목이 들어갑니다.2.</a> <a
+											class="comment" href="#"></a></td>
+										<td class="name">글쓴이이름</td>
+										<td class="date">2021/10/15</td>
+									</tr>
 
-            <section id="section" >
-                <article id="mywrite"> 
-                    <div class="cont1">
-                        <table class="sub_news" cellspacing="0" summary="게시판의 글제목 리스트">
-                            <caption>게시판 리스트</caption>
-                            <colgroup>
-                                <col width="330">
-                                <col width="100">
-                                <col width="80">
-                            </colgroup>
-                            <thead>
-                                <tr>
-                                    <th scope="col">제목</th>
-                                    <th scope="col">글쓴이</th>
-                                    <th scope="col">날짜</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td class="title">
-                                        <a href="#">게시판 제목이 들어갑니다.</a>
-                                        <img width="13" height="12" class="pic" alt="첨부이미지" src="첨부파일 ic_pic.gif">
-                                        <a class="comment" href="#">[5]</a>
-                                    </td>
-                                    <td class="name">글쓴이이름</td>
-                                    <td class="date">2021/10/15</td>
-                                </tr>
+									<tr>
+										<td class="title"><a href="#">게시판 제목이 들어갑니다.3.</a> <a
+											class="comment" href="#">[2]</a></td>
+										<td class="name">글쓴이이름</td>
+										<td class="date">2021/10/15</td>
+									</tr>
 
-                                <tr>
-                                    <td class="title">
-                                        <a href="#">게시판 제목이 들어갑니다.2.</a>
-                                        <a class="comment" href="#"></a>
-                                    </td>
-                                    <td class="name">글쓴이이름</td>
-                                    <td class="date">2021/10/15</td>
-                                </tr>
+									<tr>
+										<td class="title"><a href="#">게시판 제목이 들어갑니다.4.</a> <a
+											class="comment" href="#">[2]</a></td>
+										<td class="name">글쓴이이름</td>
+										<td class="date">2021/10/15</td>
+									</tr>
 
-                                <tr>
-                                    <td class="title">
-                                        <a href="#">게시판 제목이 들어갑니다.3.</a>
-                                        <a class="comment" href="#">[2]</a>
-                                    </td>
-                                    <td class="name">글쓴이이름</td>
-                                    <td class="date">2021/10/15</td>
-                                </tr>
+									<tr>
+										<td class="title"><a href="#">게시판 제목이 들어갑니다.5.</a> <a
+											class="comment" href="#">[2]</a></td>
+										<td class="name">글쓴이이름</td>
+										<td class="date">2021/10/15</td>
+									</tr>
+								</tbody>
+							</table>
+							<br>
+							<nav aria-label="Page navigation">
+								<ul class="pagination justify-content-center">
+									<li class="page-item"><a class="page-link" href="#"
+										aria-label="Previous"> <span aria-hidden="true">&laquo;</span>
+											<span class="sr-only">Previous</span>
+									</a></li>
+									<li class="page-item"><a class="page-link" href="#">1</a></li>
+									<li class="page-item"><a class="page-link" href="#">2</a></li>
+									<li class="page-item"><a class="page-link" href="#">3</a></li>
+									<li class="page-item"><a class="page-link" href="#"
+										aria-label="Next"> <span aria-hidden="true">&raquo;</span>
+											<span class="sr-only">Next</span>
+									</a></li>
+								</ul>
+							</nav>
+						</div>
+						<div class="tab-pane fade show" id="route" role="tabpanel">
+							route</div>
+					</div>
+				</div>
 
-                                <tr>
-                                    <td class="title">
-                                        <a href="#">게시판 제목이 들어갑니다.4.</a>
-                                        <a class="comment" href="#">[2]</a>
-                                    </td>
-                                    <td class="name">글쓴이이름</td>
-                                    <td class="date">2021/10/15</td>
-                                </tr>
 
-                                <tr>
-                                    <td class="title">
-                                        <a href="#">게시판 제목이 들어갑니다.5.</a>
-                                        <a class="comment" href="#">[2]</a>
-                                    </td>
-                                    <td class="name">글쓴이이름</td>
-                                    <td class="date">2021/10/15</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                        <br>
-                        <div class="paging_comm">
-                            <a href="#none" class="img_sample btn_prev">이전</a>
-                            <a href="#none" class="link_page">1</a>
-                            <a href="#none" class="link_page">2</a>
-                            <a href="#none" class="link_page">3</a>
-                            <a href="#none" class="link_page">4</a>
-                            <a href="#none" class="link_page">5</a>
-                            <a href="#none" class="link_page">6</a>
-                            <a href="#none" class="link_page">7</a>
-                            <a href="#none" class="link_page">8</a>
-                            <a href="#none" class="link_page">9</a>
-                            <a href="#none" class="link_page">10</a>
-                            <a href="#none" class="img_sample btn_next">다음</a>
-                            </div>
-                    </div>
-                </article>
-                <div class="jejuimg1">
-                    <img src="<c:url value="/resources/img/jejuimg1.PNG"/>" alt="jejuimg1" style="width: 400px; height: 450px;">
-                </div>
-            </section>
-        </div>
-    </div>
+				<%-- <div class="cont1">
+							<table class="table table-stripted" summary="게시판의 글제목 리스트">
+								<colgroup>
+									<col width="330">
+									<col width="100">
+									<col width="80">
+								</colgroup>
+								<thead>
+									<tr>
+										<th scope="col">제목</th>
+										<th scope="col">글쓴이</th>
+										<th scope="col">날짜</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td class="title"><a href="#">게시판 제목이 들어갑니다.</a> <img
+											width="13" height="12" class="pic" alt="첨부이미지"
+											src="첨부파일 ic_pic.gif"> <a class="comment" href="#">[5]</a>
+										</td>
+										<td class="name">글쓴이이름</td>
+										<td class="date">2021/10/15</td>
+									</tr>
 
+									<tr>
+										<td class="title"><a href="#">게시판 제목이 들어갑니다.2.</a> <a
+											class="comment" href="#"></a></td>
+										<td class="name">글쓴이이름</td>
+										<td class="date">2021/10/15</td>
+									</tr>
+
+									<tr>
+										<td class="title"><a href="#">게시판 제목이 들어갑니다.3.</a> <a
+											class="comment" href="#">[2]</a></td>
+										<td class="name">글쓴이이름</td>
+										<td class="date">2021/10/15</td>
+									</tr>
+
+									<tr>
+										<td class="title"><a href="#">게시판 제목이 들어갑니다.4.</a> <a
+											class="comment" href="#">[2]</a></td>
+										<td class="name">글쓴이이름</td>
+										<td class="date">2021/10/15</td>
+									</tr>
+
+									<tr>
+										<td class="title"><a href="#">게시판 제목이 들어갑니다.5.</a> <a
+											class="comment" href="#">[2]</a></td>
+										<td class="name">글쓴이이름</td>
+										<td class="date">2021/10/15</td>
+									</tr>
+								</tbody>
+							</table>
+							<br>
+							<nav aria-label="Page navigation">
+								<ul class="pagination justify-content-center">
+									<li class="page-item">
+										<a class="page-link" href="#" aria-label="Previous"> 
+											<span aria-hidden="true">&laquo;</span>
+											<span class="sr-only">Previous</span>
+										</a>
+									</li>
+									<li class="page-item"><a class="page-link" href="#">1</a></li>
+									<li class="page-item"><a class="page-link" href="#">2</a></li>
+									<li class="page-item"><a class="page-link" href="#">3</a></li>
+									<li class="page-item">
+										<a class="page-link" href="#" aria-label="Next"> 
+											<span aria-hidden="true">&raquo;</span>
+											<span class="sr-only">Next</span>
+										</a>
+									</li>
+								</ul>
+							</nav>
+						</div>
+					</article> --%>
+				</section>
+
+			</div>
+		</div>
+	</div>
+	<script
+		src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
+	<script src="<c:url value="/resources/js/scripts.js"/>"></script>
 </body>
 </html>
 
