@@ -10,17 +10,17 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.kgitbank.jeju.dto.User;
 import com.kgitbank.jeju.mapper.FamousRestaurantMapper;
-import com.kgitbank.jeju.service.MyPageService;
+import com.kgitbank.jeju.mapper.UserMapper;
 
 import lombok.extern.log4j.Log4j;
 
 @Log4j
 @Controller
 public class JejuController {
-	
 	@Autowired
-	MyPageService mypageService;
+	UserMapper userMapper;
 	
 	@Autowired
 	FamousRestaurantMapper restaurantMapper;
@@ -42,8 +42,8 @@ public class JejuController {
 		if(id == null) {
 			return "redirect:/login";
 		}
-		
-		mypageService.setModel(model, id);
+		User user = userMapper.listUser(id);
+		model.addAttribute(user);
 		
 		return "/mypage/mypage";
 	}
