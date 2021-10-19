@@ -56,64 +56,17 @@
 										<th scope="col">날짜</th>
 									</tr>
 								</thead>
-								<tbody>
-									<c:forEach var="restaurant" items="${restaurants }" varStatus="status">
+								<tbody id="myWriteTable">
+<%-- 									<c:forEach var="restaurant" items="${restaurants }" varStatus="status">
 										<td class="title"><a href="#">${restaurant.title }</a></td>
 										<td class="name">${restaurant.nickname }</td>
 										<td class="date">${registerDate[status.index] }</td>
-									</c:forEach>
-									<tr>
-										<td class="title"><a href="#">게시판 제목이 들어갑니다.</a> <img
-											width="13" height="12" class="pic" alt="첨부이미지"
-											src="첨부파일 ic_pic.gif"> <a class="comment" href="#">[5]</a>
-										</td>
-										<td class="name">글쓴이이름</td>
-										<td class="date">2021/10/15</td>
-									</tr>
-
-									<tr>
-										<td class="title"><a href="#">게시판 제목이 들어갑니다.2.</a> <a
-											class="comment" href="#"></a></td>
-										<td class="name">글쓴이이름</td>
-										<td class="date">2021/10/15</td>
-									</tr>
-
-									<tr>
-										<td class="title"><a href="#">게시판 제목이 들어갑니다.3.</a> <a
-											class="comment" href="#">[2]</a></td>
-										<td class="name">글쓴이이름</td>
-										<td class="date">2021/10/15</td>
-									</tr>
-
-									<tr>
-										<td class="title"><a href="#">게시판 제목이 들어갑니다.4.</a> <a
-											class="comment" href="#">[2]</a></td>
-										<td class="name">글쓴이이름</td>
-										<td class="date">2021/10/15</td>
-									</tr>
-
-									<tr>
-										<td class="title"><a href="#">게시판 제목이 들어갑니다.5.</a> <a
-											class="comment" href="#">[2]</a></td>
-										<td class="name">글쓴이이름</td>
-										<td class="date">2021/10/15</td>
-									</tr>
+									</c:forEach> --%>
 								</tbody>
 							</table>
 							<br>
 							<nav aria-label="Page navigation">
-								<ul class="pagination justify-content-center">
-									<li class="page-item"><a class="page-link" href="#"
-										aria-label="Previous"> <span aria-hidden="true">&laquo;</span>
-											<span class="sr-only">Previous</span>
-									</a></li>
-									<li class="page-item"><a class="page-link" href="#">1</a></li>
-									<li class="page-item"><a class="page-link" href="#">2</a></li>
-									<li class="page-item"><a class="page-link" href="#">3</a></li>
-									<li class="page-item"><a class="page-link" href="#"
-										aria-label="Next"> <span aria-hidden="true">&raquo;</span>
-											<span class="sr-only">Next</span>
-									</a></li>
+								<ul id="pagination" class="pagination justify-content-center">
 								</ul>
 							</nav>
 						</div>
@@ -121,91 +74,15 @@
 							route</div>
 					</div>
 				</div>
-
-
-				<%-- <div class="cont1">
-							<table class="table table-stripted" summary="게시판의 글제목 리스트">
-								<colgroup>
-									<col width="330">
-									<col width="100">
-									<col width="80">
-								</colgroup>
-								<thead>
-									<tr>
-										<th scope="col">제목</th>
-										<th scope="col">글쓴이</th>
-										<th scope="col">날짜</th>
-									</tr>
-								</thead>
-								<tbody>
-									<tr>
-										<td class="title"><a href="#">게시판 제목이 들어갑니다.</a> <img
-											width="13" height="12" class="pic" alt="첨부이미지"
-											src="첨부파일 ic_pic.gif"> <a class="comment" href="#">[5]</a>
-										</td>
-										<td class="name">글쓴이이름</td>
-										<td class="date">2021/10/15</td>
-									</tr>
-
-									<tr>
-										<td class="title"><a href="#">게시판 제목이 들어갑니다.2.</a> <a
-											class="comment" href="#"></a></td>
-										<td class="name">글쓴이이름</td>
-										<td class="date">2021/10/15</td>
-									</tr>
-
-									<tr>
-										<td class="title"><a href="#">게시판 제목이 들어갑니다.3.</a> <a
-											class="comment" href="#">[2]</a></td>
-										<td class="name">글쓴이이름</td>
-										<td class="date">2021/10/15</td>
-									</tr>
-
-									<tr>
-										<td class="title"><a href="#">게시판 제목이 들어갑니다.4.</a> <a
-											class="comment" href="#">[2]</a></td>
-										<td class="name">글쓴이이름</td>
-										<td class="date">2021/10/15</td>
-									</tr>
-
-									<tr>
-										<td class="title"><a href="#">게시판 제목이 들어갑니다.5.</a> <a
-											class="comment" href="#">[2]</a></td>
-										<td class="name">글쓴이이름</td>
-										<td class="date">2021/10/15</td>
-									</tr>
-								</tbody>
-							</table>
-							<br>
-							<nav aria-label="Page navigation">
-								<ul class="pagination justify-content-center">
-									<li class="page-item">
-										<a class="page-link" href="#" aria-label="Previous"> 
-											<span aria-hidden="true">&laquo;</span>
-											<span class="sr-only">Previous</span>
-										</a>
-									</li>
-									<li class="page-item"><a class="page-link" href="#">1</a></li>
-									<li class="page-item"><a class="page-link" href="#">2</a></li>
-									<li class="page-item"><a class="page-link" href="#">3</a></li>
-									<li class="page-item">
-										<a class="page-link" href="#" aria-label="Next"> 
-											<span aria-hidden="true">&raquo;</span>
-											<span class="sr-only">Next</span>
-										</a>
-									</li>
-								</ul>
-							</nav>
-						</div>
-					</article> --%>
-				</section>
-
 			</div>
 		</div>
 	</div>
 	<script
 		src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
 	<script src="<c:url value="/resources/js/scripts.js"/>"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	<script src="<c:url value="/resources/js/jquery.twbsPagination.min.js"/>"></script>
+	<script src="<c:url value="/resources/js/mypage.js"/>"></script>
 </body>
 </html>
 
