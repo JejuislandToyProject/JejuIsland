@@ -12,9 +12,9 @@
 	<header>
 		<h1 class="m-3">Travel Jeju</h1>
 		<p class="lead m-3 mb-5 text-center">홍길동님의 마이페이지</p>
-		<ul class="nav nav-pills nav-tabs justify-content-end top-nav">
-			<li class="nav-item"><a class="nav-link" data-bs-toggle="tab" aria-current="page" href="#">Home</a></li>
-			<li class="nav-item"><a class="nav-link"  data-bs-toggle="tab" href="#">Logout</a></li>
+		<ul class="nav nav-pills justify-content-end top-nav">
+			<li class="nav-item"><a class="nav-link" href="<c:url value="/"/>">Home</a></li>
+			<li class="nav-item"><a class="nav-link"  href="<c:url value="/logout"/>">Logout</a></li>
 		</ul>
 	</header>
 	<div id="page">
