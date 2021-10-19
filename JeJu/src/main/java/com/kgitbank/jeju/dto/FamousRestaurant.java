@@ -2,6 +2,8 @@ package com.kgitbank.jeju.dto;
 
 import java.util.Date;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -23,6 +25,8 @@ public class FamousRestaurant {
 	private Integer positive_num;
 	private Integer negative_num;
 	private String type;
+	
+	@JsonFormat(shape=JsonFormat.Shape.STRING, pattern="yyyy/MM/dd")
 	private Date registration_time;
 	
 }
