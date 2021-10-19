@@ -44,6 +44,7 @@ const addRecord = (record) => {
     const tr = document.createElement('tr');
     tr.innerHTML += `<td>${record.title }</td>`;
     tr.innerHTML += `<td>${record.nickname }</td>`;
+    tr.innerHTML += `<td>${record.registration_time }</td>`;
     tableBody.appendChild(tr);
 }
 
