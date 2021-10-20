@@ -105,15 +105,14 @@
 					</c:forEach>
 				</Select>
 	             
-	              <label class="mt-4">내용</label>
+	              <label class="mt-4 form-label">내용</label>
 	              <p class="form-text text-muted text-xs ms-1">
 	                이곳을 추천하는 이유를 적어주세요
 	              </p>
-	              <div id="editor" class="ql-container ql-snow">
-	                <div name="description" id="description" class="form-control" data-gramm="false" contenteditable="true" >
-	                  
-	                </div>
-	              </div>
+	              <!-- <div id="editor" class="ql-container ql-snow"> -->
+	                <input name="description" id="description" class="form-control" data-gramm="false" contenteditable="true" />
+
+<!-- 	              </div> -->
 	              <label class="mt-4 form-label">Tags</label>
 	              <input name="hashtag" type="text" class="form-control mt-2" id="hasheTag">
 	              
