@@ -23,7 +23,7 @@
     image) 
     VALUES(
     <!-- db에 시퀀스 넣어주기 -->
-    fr_id_seq.nextval,
+    ts_id_seq.nextval,
     #{name},
     #{title},
     #{description},
@@ -41,7 +41,7 @@
 	 <!-- ddl 에  view cnt 넣어주기 -->
 	 <update id="addPositive">
 	 UPDATE tourist_spot SET positive_num  = positive_num +1
-	 WHERE tourist_spot_id = #{tourist_spot_id};
+	 WHERE tourist_spot_id = #{tourist_spot_id}
 	 </update> 
 	
 	<update id="updateTourist">
