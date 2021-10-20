@@ -99,8 +99,8 @@
 	              <label for="projectName" class="form-label mt-2">명소이름</label>
 	              <input type="text" class="form-control" name="name" id="name" placeholder="이름을 적어주세요">
 	              <Select name="location_id ">
-					<c:forEach items="${locations }" var="locations" varStatus="i">
-					<option id="location" name="location" value="${location.location_id }">${location.location_name } </option>
+					<c:forEach items="${locations }" var="location" varStatus="i">
+					<option id="location" name="location" value="${location.location_id }">${location.location } </option>
 						<br>
 					</c:forEach>
 				</Select>
@@ -162,9 +162,9 @@
 	        </div>
 	    </footer>
 	    <!-- scripts -->
-	    <script src="<c:url value='/assets/js/scripts.js' />"></script>
+	    <script src="<c:url value='/resources/js/scripts.js' />"></script>
 	   
-	   <scaript src="<c:url value='/assets/js/form.js/'/>" ></scaript>
+	   <script src="<c:url value='/resources/js/form.js/'/>" ></script>
 	   
 	  
 	</body>
