@@ -60,10 +60,13 @@ public class BoardController {
 	
 
 	// 2. insert commit
-	@RequestMapping(value="/addTourist/success", method=RequestMethod.POST)
+	@RequestMapping(value="/addTourist/success", method=RequestMethod.POST, headers = ("content-type=multipart/*"))
 	public String addTourist(@RequestParam("image") MultipartFile multi, 
-			@RequestParam("location") String location, Model model,
-			@ModelAttribute TouristSpot tourisSpot) throws Exception{
+			@RequestParam("location_id") String location, 
+			@RequestParam("name") String name,
+			@RequestParam("description") String description,
+//			@ModelAttribute("touristSpot") TouristSpot touristSpot,
+			Model model) throws Exception{
 		
 		model.addAttribute("locations",locationMapper.getList());
 		try {
@@ -76,15 +79,17 @@ public class BoardController {
 		    
 		    model.addAttribute("fileName", multi.getOriginalFilename());
 		    model.addAttribute(file.getAbsolutePath());
-		    return "redirect:list";
+		    return "redirect:listTourist";
 		   }
 		
 		}catch(Exception e) {
 			log.info("error : "+e);
 		}
 		
-		touristSpotMapper.addTourist(tourisSpot);
-		return "redirect:list";
+//		touristSpotMapper.addTourist(touristSpot);
+		
+		//			
+		return "redirect:listTourist";
 	}
 	
 	// detail and click count
