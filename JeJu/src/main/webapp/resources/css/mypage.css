@@ -1,0 +1,16 @@
+*{
+    box-sizing: border-box;
+}
+html {
+	overflow: hidden;
+}
+.list-group-item.active {
+  z-index: 2;
+  color: #242424;
+  background-color: rgba(245, 238, 223, 0.918);
+  border-color: rgba(245, 238, 223, 0.918);
+ 
+}
+.top-nav {
+	padding-right: 50px;
+}
