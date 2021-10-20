@@ -28,7 +28,6 @@ import lombok.extern.slf4j.Slf4j;
 
 @Log4j
 @Slf4j
-@RequestMapping("/")
 @Controller
 public class BoardController {
 	
@@ -75,18 +74,14 @@ public class BoardController {
 		    multi.transferTo(file);
 		    
 		    touristSpot.setImage(uploadPath + multi.getOriginalFilename());
-		    model.addAttribute("fileName", multi.getOriginalFilename());
-		    model.addAttribute(file.getAbsolutePath());
-		    
-		    return "redirect:listTourist";
 		   }
 		
 		}catch(Exception e) {
 			log.info("error : "+e);
 		}
-		
+		log.info(touristSpot);
 		touristSpotMapper.addTourist(touristSpot);	
-		return "redirect:listTourist";
+		return "redirect:/listTourist";
 	}
 	
 	// detail and click count
