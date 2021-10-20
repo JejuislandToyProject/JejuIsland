@@ -25,9 +25,6 @@
     <!-- Border CSS-->
     
     <link rel="stylesheet" type="text/css" href="<c:url value='/resources/css/border.css' />">
-    
-   
-    
 </head>
 <body>
     <!-- Navigation-->
@@ -47,17 +44,7 @@
             </div>
         </div>
     </nav>
-    
-    <!-- border top navigation -->
-    <!--<div>
-      <ul>
-        <li>맛집 정보</li>
-        <li>관광지 명소</li>
-        <li>게스트 하우스</li>
-        <li>제주도 여행 코스</li>
-        <li>제주도 새 소식</li>
-      </ul>
-    </div>-->
+
     
     <!-- body -->
     <div id="body">
@@ -70,7 +57,7 @@
                   <p class="lead mb-5 mt-2">
                   
                     제주도의 유명한 명소 
-                    <c:forEach items="${tourist_spot }" var="tourist" />
+                    <c:forEach items="${tourist_spot }" var="tourist" varStatus="i" />
                     ${tourist.location}<br>
                     소개합니다
                   </p>
@@ -78,6 +65,30 @@
           </div>
       </div>
   </section>
+  
+    <!-- border top navigation -->
+  <!-- 기능 만들어야 함-->
+  <div class="card shadow-sm rounded-3">
+  <div class="nav-wrapper position-relative end-0">
+    <ul class="nav nav-pills nav-fill p-1" role="tablist" id="nav-top">
+      <li class="nav-item">
+        <a class="nav-link" href="./login.html">관광지 명소</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="./login.html">맛집 정보</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="./login.html">게스트 하우스</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="./login.html">여행 코스</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="./login.html">제주도 새 소식</a>
+        </li>
+    </ul>
+  </div>
+</div>
       
       <!-- card layout -->
       <c:forEach var ="tourist" items="${tourist_spot }">
@@ -87,7 +98,7 @@
           <div class="card shadow-sm rounded-3">
             <div class="card-header p-0 mx-3 mt-3 position-relative z-index-1">
               <a href="javascript:;" class="d-block">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSBtUtdChvj-FUfBPR4j2DBj0z5XNkSkkLKmg&usqp=CAU" class="img-fluid border-radius-lg">
+                <img src=${tourist.image } class="img-fluid border-radius-lg">
               </a>
             </div>
         
@@ -115,8 +126,6 @@
 		</div>
       </div>
         </c:forEach>
-        
-        <button type="button" name="button" class="btn btn-light btn-outline-dark m-0">글쓰기</button>
       <!--Page 버튼 수정해야함-->
       <nav>
         <ul class="pagination justify-content-center">

@@ -13,20 +13,22 @@ import com.kgitbank.jeju.mapper.TouristSpotMapper;
 
 import lombok.extern.slf4j.Slf4j;
 
+
 @Slf4j
 @Controller
+@RequestMapping("/board")
 public class TouristController {
 	
 	@Autowired
 	private TouristSpotMapper touristSpotMapper;
 	
-	@RequestMapping(value = "/border", method = RequestMethod.GET)
+	@RequestMapping(value = "/tourist", method = RequestMethod.GET)
 	public String TourList(Model model) throws Exception {
-		List<TouristSpot> test = touristSpotMapper.listTourist();
-		log.info("현재 위치" + test + toString());
-		model.addAttribute("tourist_spot", test);
 		
-		return "border/touristBoard";
+		model.addAttribute("tourist_spot", touristSpotMapper.listTourist());
+
+		return "board/touristBoard";
 	}
+
 	
 }
