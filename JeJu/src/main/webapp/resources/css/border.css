@@ -1,0 +1,50 @@
+*{
+    box-sizing: border-box;
+}
+
+#borad-bar {
+    width: 100%;
+    height: 200px;
+}
+
+#body-text{
+    width: 100%;
+    height: 150px;
+}
+
+#nav-top {
+    font-size: 15px;
+    font-weight: bold;
+}
+
+
+#icon {
+    display: flex;
+    justify-content: space-around;
+}
+
+#card-body {
+    margin: 3%;
+    padding: 5%;
+}
+
+.nav-link {
+    color: black;
+}
+
+.card-group{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-column-gap: 30px;
+    grid-row-gap: 30px;
+}
+
+#card-title {
+    text-decoration: none;
+    color:black;
+}
+
+#footer {
+    width: 100%;
+    height: 50px;
+}
