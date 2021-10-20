@@ -61,11 +61,8 @@ public class BoardController {
 
 	// 2. insert commit
 	@RequestMapping(value="/addTourist/success", method=RequestMethod.POST, headers = ("content-type=multipart/*"))
-	public String addTourist(@RequestParam("image") MultipartFile multi, 
-			@RequestParam("location_id") String location, 
-			@RequestParam("name") String name,
-			@RequestParam("description") String description,
-//			@ModelAttribute("touristSpot") TouristSpot touristSpot,
+	public String addTourist(@RequestParam("imageFile") MultipartFile multi, 
+			@ModelAttribute("touristSpot") TouristSpot touristSpot,
 			Model model) throws Exception{
 		
 		model.addAttribute("locations",locationMapper.getList());
@@ -77,8 +74,10 @@ public class BoardController {
 		    File file =new File(uploadPath, multi.getOriginalFilename());
 		    multi.transferTo(file);
 		    
+		    touristSpot.setImage(uploadPath + multi.getOriginalFilename());
 		    model.addAttribute("fileName", multi.getOriginalFilename());
 		    model.addAttribute(file.getAbsolutePath());
+		    
 		    return "redirect:listTourist";
 		   }
 		
@@ -86,9 +85,7 @@ public class BoardController {
 			log.info("error : "+e);
 		}
 		
-//		touristSpotMapper.addTourist(touristSpot);
-		
-		//			
+		touristSpotMapper.addTourist(touristSpot);	
 		return "redirect:listTourist";
 	}
 	

@@ -130,7 +130,7 @@
 							placeholder="이름을 적어주세요"> <label for="projectName"
 							class="form-label mt-2">명소이름</label>
 						<div class="col-6">
-							<Select name="location_id ">
+							<Select name="location">
 								<c:forEach items="${locations }" var="location" varStatus="i">
 									<option id="location" name="location"
 										value="${location.location_id }">${location.location }
@@ -151,7 +151,7 @@
 							class="mt-4 form-label">Starting Files</label>
 						<!-- file add -->
 
-						<input type="file" name="image" id="image">
+						<input type="file" name="imageFile" id="image">
 
 
 
