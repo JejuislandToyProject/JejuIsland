@@ -32,7 +32,7 @@ Google fonts
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 <!-- Core theme CSS (includes Bootstrap)-->
 <link href="<c:url value="/resources/css/styles.css"/>" rel="stylesheet">
-<link href="<c:url value="/resources/css/css모달.css"/>" rel="stylesheet">
+<link href="<c:url value="/resources/css/cssmodal.css"/>" rel="stylesheet">
 <link href="<c:url value="/resources/css/index.css"/>" rel="stylesheet">
 </head>
 <body id="page-top">
@@ -56,36 +56,47 @@ Google fonts
 					<li class="nav-item"><a class="nav-link" href="#bestpick">Best
 							Pick</a></li>
 					<li class="nav-item"><a class="nav-link" href="#">Board</a></li>
-					<li class="nav-item"><a class="nav-link" href="<c:url value="/login"/>">Login</a></li>
-					<li class="nav-item dropdown">
-			          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-			            <i class="fa fa-user-circle fa-lg"></i>
-			          </a>
-			          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-						<li><a class="dropdown-item" href="#">
-								<i class="fa fa-home fa-lg"></i> 
-								<font style="vertical-align: inherit;">
-									<font style="vertical-align: inherit;"> Mypage</font>
-								</font>
-						</a></li>
-						<li class="divider dropdown-divider"></li>
-						<li><a class="dropdown-item" href="#"> 
-							<i class="material-icons">
-								<font style="vertical-align: inherit;"> 
-									<font style="vertical-align: inherit; top: 10px;"></font>
-								</font>
-							</i> 
-							<font style="vertical-align: inherit;"> 
-								<font style="vertical-align: inherit;">Logout</font>
-							</font>
-							</a></li>
-			          </ul>
-			        </li>
+					
+					<c:choose>
+						<c:when test="${sessionScope.id ne null}">
+							<li class="nav-item dropdown">
+					          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+					            <i class="fa fa-user-circle fa-lg"></i>
+					          </a>
+					          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+								<li><a class="dropdown-item" href="<c:url value="/mypage"/>">
+										<i class="fa fa-home fa-lg"></i> 
+										<font style="vertical-align: inherit;">
+											<font style="vertical-align: inherit;">Mypage</font>
+										</font>
+								</a></li>
+								<li class="divider dropdown-divider"></li>
+								<li><a class="dropdown-item" href="<c:url value="/logout"/>"> 
+									<i class="material-icons">
+										<font style="vertical-align: inherit;"> 
+											<font style="vertical-align: inherit; top: 10px;"></font>
+										</font>
+									</i> 
+									<font style="vertical-align: inherit;"> 
+										<font style="vertical-align: inherit;">Logout</font>
+									</font>
+									</a></li>
+					          </ul>
+					        </li>
+						</c:when>
+						<c:otherwise>
+							<li class="nav-item"><a class="nav-link" href="<c:url value="/login"/>">Login</a></li>
+						</c:otherwise>
+					</c:choose>
+					
+					
+
 				</ul>
 
 			</div>
 		</div>
 	</nav>
+
 	<!-- Header-->
 	<header class="masthead d-flex align-items-center">
 		<div class="container px-4 px-lg-5 text-center">
