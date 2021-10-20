@@ -18,14 +18,15 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
-
+import com.kgitbank.jeju.dto.Locations;
 import com.kgitbank.jeju.dto.TouristSpot;
 import com.kgitbank.jeju.mapper.LocationMapper;
 import com.kgitbank.jeju.mapper.TouristSpotMapper;
 
-
+import lombok.extern.log4j.Log4j;
 import lombok.extern.slf4j.Slf4j;
 
+@Log4j
 @Slf4j
 @RequestMapping("/")
 @Controller
@@ -50,7 +51,10 @@ public class BoardController {
 	
 	// 2. insert form
 	@ RequestMapping(value="/addTourist", method = RequestMethod.GET)
-	public String addTourist() throws IllegalStateException, IOException {
+	public String addTourist(Model model) throws IllegalStateException, IOException {
+		List<Locations> list = locationMapper.getList();
+		log.info(list);
+		model.addAttribute("locations", locationMapper.getList());
 		return "board/form";
 	}
 	
