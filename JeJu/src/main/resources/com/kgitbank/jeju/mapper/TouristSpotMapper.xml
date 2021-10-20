@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.kgitbank.jeju.mapper.TouristSpotMapper">
+
+   
+	
+    <select id="listTourist" resultType="com.kgitbank.jeju.dto.TouristSpot">
+        SELECT * FROM tourist_spot
+    </select>
+    
+    <insert id="addTourist">
+    INSERT INTO tourist_spot(
+    tourist_spot_id,
+    name,
+    title,
+    description,
+    hashtag,
+    location,
+    image) 
+    VALUES(
+    <!-- db에 시퀀스 넣어주기 -->
+    ts_id_seq.nextval,
+    #{name},
+    #{title},
+    #{description},
+    #{hashtag },
+    #{location },
+    #{image }
+    )
+    </insert>
+	
+	<select id="listById" resultType="com.kgitbank.jeju.dto.TouristSpot">
+	SELECT * FROM tourist_spot
+	WHERE tourist_spot_id = #{tourist_spot_id}
+	 </select>
+	 
+	 <!-- ddl 에  view cnt 넣어주기 -->
+	 <update id="addPositive">
+	 UPDATE tourist_spot SET positive_num  = positive_num +1
+	 WHERE tourist_spot_id = #{tourist_spot_id}
+	 </update> 
+	
+	<update id="updateTourist">
+	UPDATE tourist_spot SET
+	name = #{name},
+	title = #{title},
+	description=#{description},
+	image=#{image}
+	</update>
+	
+	<delete id="deleteTourist">
+	DELETE FROM tourist_spot
+	WHERE tourist_spot_id = #{tourist_spot_id}
+	</delete>
+		 
+</mapper>

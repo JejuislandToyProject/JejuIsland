@@ -11490,7 +11490,7 @@ footer.footer .social-link:hover {
   height: auto;
   padding-top: 8rem;
   padding-bottom: 8rem;
-  background: linear-gradient(90deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.1) 100%), url("../img/bg-masthead.jpg");
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.1) 100%), url("../assets/img/bg-masthead.jpg");
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -11609,7 +11609,7 @@ footer.footer .social-link:hover {
   height: 80%;
   border-top-left-radius: 25px;
   border-top-right-radius: 25px;
-  background-image: url("../img/이번달 관광명소.jpeg");
+  background-image: url("../assets/img/이번달\ 관광명소.jpeg");
   background-size: cover;
   background-position: center;
 }
@@ -11619,7 +11619,7 @@ footer.footer .social-link:hover {
   height: 80%;
   border-top-left-radius: 25px;
   border-top-right-radius: 25px;
-  background-image: url("../img/우진해장국.png");
+  background-image: url("../assets/img/우진해장국.png");
   background-size: cover;
   background-position: center;
 }
