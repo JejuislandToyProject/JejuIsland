@@ -24,14 +24,6 @@ public class MyPageRestController {
 	public List<FamousRestaurant> getMyWrite(HttpSession session) {
 		String id = (String) session.getAttribute("id");
 		List<FamousRestaurant> restaurants = restaurantMapper.listByUser(id);
-		List<String> registerDate = new ArrayList<String>();
-		
-		
-		for(FamousRestaurant restaurant: restaurants) {
-			DateFormat format = new SimpleDateFormat("yyyy/MM/dd");
-			String dateStr = format.format(restaurant.getRegistration_time());
-			registerDate.add(dateStr);
-		}
 		
 		return restaurants;
 	}
