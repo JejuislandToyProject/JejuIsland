@@ -45,7 +45,6 @@ public class LoginServiceImpl implements LoginService{
 		log.info("naver ID : " + id);
 		log.info("naver nickname : " + nickname);
 		
-		log.info(usermapper);
 		User user = new User(id, nickname);
 		
 		if(usermapper.listUser(id) == null) {
@@ -75,7 +74,6 @@ public class LoginServiceImpl implements LoginService{
 		log.info("kakao ID : " + id);
 		log.info("kakao nickname : " + nickname);
 		
-		log.info(usermapper);
 		User user = new User(id, nickname);
 		if(usermapper.listUser(id) == null) {
 			usermapper.addUser(user);
