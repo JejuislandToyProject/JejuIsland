@@ -91,61 +91,12 @@
 </div>
       
       <!-- card layout -->
-      <c:forEach var ="tourist" items="${tourist_spot }">
-      <div id="card-body">
-        <div class="card-group">
-          <!--card no.01-->
-          <div class="card shadow-sm rounded-3">
-            <div class="card-header p-0 mx-3 mt-3 position-relative z-index-1">
-              <a href="javascript:;" class="d-block">
-                <img src=${tourist.image } class="img-fluid border-radius-lg">
-              </a>
-            </div>
-        
-            <div class="card-body pt-2">
-              <a href="javascript:;" class="card-title h5 d-block text-darker text-center mt-3"
-              id="card-title">
-                ${tourist.name }
-              </a>
-              <p class="card-description text-center mb-4">
-                <small class="text-muted">${tourist.description }</small>
-              </p>
-            </div>
-            <!-- 아이콘 기능 만들어야 함-->
-            <div class="author align-items-center">
-              <div class="mt-6" id="icon">
-                <i id="icon" onclick="changeThumbs()" class="far fa-thumbs-up"></i>
-                <i class="far fa-thumbs-down"></i>
-              </div>
-              <div class="mt-2" id="icon">
-                <p>좋아요</p>
-                <p>싫어요</p>
-              </div>
-            </div>
-          </div>
-		</div>
+      <div id="contents-body">
       </div>
-        </c:forEach>
       <!--Page 버튼 수정해야함-->
-      <nav>
-        <ul class="pagination justify-content-center">
-          <li class="page-item">
-            <a class="page-link" href="javascript:;" aria-label="Previous">
-              <i class="fa fa-angle-left"></i>
-              <span class="sr-only">Previous</span>
-            </a>
-          </li>
-          <li class="page-item"><a class="page-link" href="javascript:;">1</a></li>
-          <li class="page-item"><a class="page-link" href="javascript:;">2</a></li>
-          <li class="page-item"><a class="page-link" href="javascript:;">3</a></li>
-          <li class="page-item"><a class="page-link" href="javascript:;">4</a></li>
-          <li class="page-item"><a class="page-link" href="javascript:;">5</a></li>
-          <li class="page-item">
-            <a class="page-link" href="javascript:;" aria-label="Next">
-              <i class="fa fa-angle-right"></i>
-              <span class="sr-only">Next</span>
-            </a>
-          </li>
+      <nav aria-label="Page navigation">
+        <ul id="pagination" class="pagination justify-content-center">
+          
         </ul>
       </nav>
     <!-- Footer 부분 수정해야함-->
@@ -169,7 +120,10 @@
           <p class="text-muted small mb-0">Jeju Island</p>
       </div>
   </footer>
-
+  
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	<script src="<c:url value="/resources/js/jquery.twbsPagination.min.js"/>"></script>
+  	<script src="<c:url value="/resources/js/touristBoard.js"/>"></script>
  
 </body>
 </html>
