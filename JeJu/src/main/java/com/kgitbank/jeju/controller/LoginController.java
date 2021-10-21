@@ -16,7 +16,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import com.github.scribejava.core.model.OAuth2AccessToken;
 import com.kgitbank.jeju.login.KakaoLoginBO;
 import com.kgitbank.jeju.login.NaverLoginBO;
-import com.kgitbank.jeju.mapper.UserMapper;
 import com.kgitbank.jeju.service.LoginService;
 
 import lombok.extern.log4j.Log4j;
@@ -29,9 +28,6 @@ public class LoginController {
 		
 		@Autowired
 		private KakaoLoginBO kakaoLoginBO;
-		
-		@Autowired
-		private UserMapper usermapper;
 		
 		@Autowired
 		private LoginService loginservice;
@@ -51,8 +47,6 @@ public class LoginController {
 			
 			model.addAttribute("kakaoAuthUrl", kakaoAuthUrl);
 			model.addAttribute("naverAuthUrl", naverAuthUrl);
-			log.info("naver URL"+naverAuthUrl);
-			log.info("kakao URL"+kakaoAuthUrl);
 
 			return "/login/login";
 		}
@@ -64,17 +58,16 @@ public class LoginController {
 			if(request.getServerPort() != 80) {
 				serverUrl = serverUrl + ":" + request.getServerPort();
 			}
-
+			
 			OAuth2AccessToken oauthToken;
 			oauthToken = naverLoginBO.getAccessToken(session, code, state, serverUrl);
 			if(oauthToken == null) {
 				model.addAttribute("msg", "네이버 로그인 access 토큰 발급 오류 입니다.");
 				model.addAttribute("url", "/");
 				log.info("oauthToken null");
-				return "/login/callback";
+				return "/login/login";
 			}
 
-			log.info("userMapper: "+usermapper);
 			loginservice.naverLogin(session, oauthToken, serverUrl);
 			
 			return "redirect:/login/callback";
@@ -87,14 +80,13 @@ public class LoginController {
 			}
 			
 			String oauthToken = kakaoLoginBO.getAccessToken(request, code);
-			log.info(oauthToken);
+
 			if(oauthToken == null) {
 				model.addAttribute("msg", "카카오 로그인 access 토큰 발급 오류 입니다.");
 				model.addAttribute("url", "/");
-				return "/login/callback";
+				return "/login/login";
 			}
 			
-			log.info("userMapper: "+usermapper);
 			loginservice.kakaoLogin(session, oauthToken, serverUrl);
 			return "redirect:/login/callback";
 		}

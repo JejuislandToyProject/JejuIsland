@@ -35,7 +35,8 @@ public class NaverLoginBO {
 	/* 네이버 아이디로 인증 URL 생성 Method */
 	public String getAuthorizationUrl(HttpSession session, String serverUrl) {
 		String state = generateRandomString();
-		log.info("session: "+state);
+
+		setSession(session, state);
 		OAuth20Service oauthService = new ServiceBuilder(NAVER_CLIENT_ID)
 				.apiSecret(NAVER_CLIENT_SECRET)
 				.callback(serverUrl + NAVER_REDIRECT_URI)
@@ -47,7 +48,7 @@ public class NaverLoginBO {
 	public OAuth2AccessToken getAccessToken(HttpSession session, String code, String state, String serverUrl) throws Exception {
 		
 		String sessionState = getSession(session);
-		
+
 		if (StringUtils.pathEquals(sessionState, state)) {
 			OAuth20Service oauthService = new ServiceBuilder(NAVER_CLIENT_ID)
 					.apiSecret(NAVER_CLIENT_SECRET)
