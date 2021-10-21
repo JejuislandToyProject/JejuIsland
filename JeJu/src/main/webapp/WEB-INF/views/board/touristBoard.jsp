@@ -129,23 +129,7 @@
       <!--Page 버튼 수정해야함-->
       <nav>
         <ul class="pagination justify-content-center">
-          <li class="page-item">
-            <a class="page-link" href="javascript:;" aria-label="Previous">
-              <i class="fa fa-angle-left"></i>
-              <span class="sr-only">Previous</span>
-            </a>
-          </li>
-          <li class="page-item"><a class="page-link" href="javascript:;">1</a></li>
-          <li class="page-item"><a class="page-link" href="javascript:;">2</a></li>
-          <li class="page-item"><a class="page-link" href="javascript:;">3</a></li>
-          <li class="page-item"><a class="page-link" href="javascript:;">4</a></li>
-          <li class="page-item"><a class="page-link" href="javascript:;">5</a></li>
-          <li class="page-item">
-            <a class="page-link" href="javascript:;" aria-label="Next">
-              <i class="fa fa-angle-right"></i>
-              <span class="sr-only">Next</span>
-            </a>
-          </li>
+          
         </ul>
       </nav>
     <!-- Footer 부분 수정해야함-->
@@ -169,7 +153,12 @@
           <p class="text-muted small mb-0">Jeju Island</p>
       </div>
   </footer>
-
+  
+  	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
+	<script src="<c:url value="/resources/js/scripts.js"/>"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	<script src="<c:url value="/resources/js/jquery.twbsPagination.min.js"/>"></script>
+  	<script src="<c:url value="/resources/js/touristBoard.js"/>"></script>
  
 </body>
 </html>
