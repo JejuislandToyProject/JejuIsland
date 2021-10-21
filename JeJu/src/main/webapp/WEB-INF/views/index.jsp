@@ -10,39 +10,18 @@
 <meta name="description" content="" />
 <meta name="author" content="" />
 <title>Jeju Island</title>
-<!-- 
-Font Awesome icons (free version)
-<script src="https://use.fontawesome.com/releases/v5.15.3/js/all.js"
-	crossorigin="anonymous"></script>
-<script src="https://kit.fontawesome.com/6e314f7ee2.js"
-	crossorigin="anonymous"></script>
-Simple line icons
-<link
-	href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.5.5/css/simple-line-icons.min.css"
-	rel="stylesheet" />
-Google fonts
-<link
-	href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic"
-	rel="stylesheet" type="text/css" />
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-	rel="stylesheet"> 
--->
 
-<link rel="stylesheet"
-	href="https://fonts.googleapis.com/icon?family=Material+Icons">
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<!-- <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"> -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 <!-- Core theme CSS (includes Bootstrap)-->
 <link href="<c:url value="/resources/css/styles.css"/>" rel="stylesheet">
-<link href="<c:url value="/resources/css/cssmodal.css"/>"
-	rel="stylesheet">
+<link href="<c:url value="/resources/css/cssmodal.css"/>" rel="stylesheet">
 <link href="<c:url value="/resources/css/index.css"/>" rel="stylesheet">
 
 <!-- polygon css -->
 <link rel="stylesheet" href="<c:url value="/resources/css/Area.css"/>">
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-<script src="https://kit.fontawesome.com/cc0398a704.js"
-	crossorigin="anonymous"></script>
+<script src="https://kit.fontawesome.com/cc0398a704.js" crossorigin="anonymous"></script>
 </head>
 <body id="page-top">
 	<!-- Navigation-->
@@ -74,23 +53,22 @@ Google fonts
 									<i class="fa fa-user-circle fa-lg"></i>
 							</a>
 								<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-									<li><a class="dropdown-item"
-										href="<c:url value="/mypage"/>"> <i
-											class="fa fa-home fa-lg"></i> <font
-											style="vertical-align: inherit;"> <font
-												style="vertical-align: inherit;">Mypage</font>
+									<li><a class="dropdown-item" href="<c:url value="/mypage"/>"> 
+										<i class="fa fa-home fa-lg"></i> 
+										<font style="vertical-align: inherit;"> 
+											<font style="vertical-align: inherit;">Mypage</font>
 										</font>
 									</a></li>
+									
 									<li class="divider dropdown-divider"></li>
-									<li><a class="dropdown-item"
-										href="<c:url value="/logout"/>"> <i class="material-icons">
-												<font style="vertical-align: inherit;"> <font
-													style="vertical-align: inherit; top: 10px;"></font>
-											</font>
-										</i> <font style="vertical-align: inherit;"> <font
-												style="vertical-align: inherit;">Logout</font>
+									
+									<li><a class="dropdown-item" href="<c:url value="/logout"/>"> 
+										<i class="fas fa-power-off fa-lg"></i> 
+										<font style="vertical-align: inherit;"> 
+											<font style="vertical-align: inherit;">Logout</font>
 										</font>
 									</a></li>
+									
 								</ul></li>
 						</c:when>
 						<c:otherwise>
@@ -1298,7 +1276,6 @@ Google fonts
 
 <script src="<c:url value="/resources/js/scripts.js"/>"></script>
 <script src="<c:url value="/resources/js/js모달.js"/>"></script>
-<script type="text/javascript"
-	src="//dapi.kakao.com/v2/maps/sdk.js?appkey=115edfd07bd1f09ac3a8881810a2bb4b"></script>
+<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=115edfd07bd1f09ac3a8881810a2bb4b"></script>
 <script src="<c:url value="/resources/js/polygon.js"/>"></script>
 </html>
