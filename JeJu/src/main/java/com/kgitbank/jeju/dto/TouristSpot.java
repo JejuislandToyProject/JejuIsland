@@ -2,6 +2,8 @@ package com.kgitbank.jeju.dto;
 
 import java.util.Date;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -23,8 +25,7 @@ public class TouristSpot {
 	private int positive_num;
 	private int nagative_num;
 	private String type;
+	
+	@JsonFormat(shape=JsonFormat.Shape.STRING, pattern="yyyy/MM/dd")
 	private Date registration_time;
-	
-	
-
 }
