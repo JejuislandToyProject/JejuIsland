@@ -54,7 +54,7 @@ public class KakaoLoginBO {
 		    String clientSecret = KAKAO_CLIENT_SECRET;
 			String code = autorizeCode;
 		    String state = request.getParameter("state");
-		    String redirectURI = URLEncoder.encode("http://localhost:8080/jeju/kakaoAuth", "UTF-8");
+		    String redirectURI = URLEncoder.encode("http://localhost:8081/jeju/kakaoAuth", "UTF-8");
 		    String apiURL;
 		    apiURL = "https://kauth.kakao.com/oauth/token?grant_type=authorization_code&";
 		    apiURL += "client_id=" + clientId;
@@ -62,23 +62,18 @@ public class KakaoLoginBO {
 		    apiURL += "&redirect_uri=" + redirectURI;
 		    apiURL += "&code=" + code;
 		    apiURL += "&state=" + state;
-		    
-		    log.info("apiURL="+apiURL);
-		    
-		    
+
 		    String access_token = "";
 		    String refresh_token = "";
 		    
 		    try {
 		      URL url = new URL(apiURL);
 		      HttpURLConnection con = (HttpURLConnection)url.openConnection();
+		      con.setRequestProperty("Content-Type", "application/x-www-form-urlencoded");
 		      con.setRequestMethod("POST");
-		      //con.setDoInput(true);
 		      
 		      int responseCode = con.getResponseCode();
-		      log.info("responseCode="+responseCode);
-		      
-		      
+		
 		      BufferedReader br;
 		      if(responseCode==200) { // 정상 호출
 		        br = new BufferedReader(new InputStreamReader(con.getInputStream()));
@@ -97,6 +92,8 @@ public class KakaoLoginBO {
 				JsonElement element = JsonParser.parseString(res.toString());
 				access_token = element.getAsJsonObject().get("access_token").getAsString();
 				refresh_token = element.getAsJsonObject().get("refresh_token").getAsString();
+		      } else {
+		    	  access_token = null;
 		      }
 		      br.close();
 		      
