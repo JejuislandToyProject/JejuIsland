@@ -6,14 +6,14 @@
 	box-sizing: border-box;
 }
 
-body {
+/* body {
 	font-weight: 300;
 	color: black;
 	font-size: 15px;
 	line-height: 1.6em;
-}
+} */
 
-.modal {
+.polygon-modal {
  position: fixed;
  top: 50%;
  left: 50%;
@@ -26,14 +26,14 @@ body {
  /* visibility: hidden; */
 }
 
-.modal.active {
+.polygon-modal.polygon-active {
 	opacity: 1;
 	transform: translate(-50%, -50%);
 	pointer-events: all;
 	/* visibility: visible; */
 }
 
-.modal-content{
+.polygon-modal-content{
 	width: 1410px;
 	height: 450px;
 	background-color: white;
@@ -42,20 +42,20 @@ body {
 	display: flex;
 }
 
-.modal-content > :nth-child(2){
+.polygon-modal-content > :nth-child(2){
 	padding: 70px;
 	margin-left:20px;
 }
-.image-box{
+.polygon-image-box{
 	flex: 1;
 	background-size: cover;
 }
-.text-box{
+.polygon-text-box{
 	flex: 2;
 	text-align: left;
 }
 
-.overlay{
+.polygon-overlay{
 	background-color: rgba(0, 0, 0, 0.3);
 	position: fixed;
 	width: 100%;
@@ -69,13 +69,13 @@ body {
 	pointer-events: none;
 }
 
-.overlay.active {
+.polygon-overlay.polygon-active {
 	opacity: 1;
 	/*  visibility: visible;  */
 	pointer-events: all;
 }
 
-.btn-close{
+.polygon-btn-close{
 	position: absolute;
 	top: 10px;
 	right: 10px;
@@ -86,44 +86,44 @@ body {
 	cursor: pointer;
 }
 
-.btn-close:hover{
+.polygon-btn-close:hover{
 	color: black;
 }
 
-#text-desc {
+#polygon-text-desc {
 	overflow: hidden;
 	height: 100px;
 }
 
 @media (max-width: 900px){
-	.modal-content{
+	.polygon-modal-content{
 	flex-direction: low;
 	width: 100%;
 	}
 	
-	.modal-content{
+	.polygon-modal-content{
 	width: 700px;
 	}
 	
 }
-.zero_padding20{
+.polygon-zero_padding20{
 	height: 20px;
 }
 
-#title{
+#polygon-title{
 	height: 40px;
 	font-weight: 700;
 	font-family: 'Josefin Sans', sans-serif;
 	font-size: 30px;
 }
 
-#location {
+#polygon-location {
 	height: 30px;
 	font-size:20px;
 	font-weight: 400;
 }
 
-#modalBtn{
+#polygon-modalBtn{
 	width: 120px;
 	height: 50px;
 	background-color: rgb(000, 204, 204);
@@ -135,30 +135,30 @@ body {
 	font-weight: bold; 
 }
 
-#modalBtn:active{
+#polygon-modalBtn:active{
 	top: 5px;
 	left: 5px;
 	box-shadow: 0 0 7px black;
 }
-.icon-pasing{
+.polygon-icon-pasing{
 	height: 120px;
 }
 
 
-.icon-pasing > i{
+.polygon-icon-pasing > i{
 	padding-left:100px;
 	font-size : 50px;
 }
 
-.icon-pasing > :nth-child(2){
+.polygon-icon-pasing > :nth-child(2){
 	padding-left: 150px;
 }
 
-.icon-pasing > :nth-child(3){
+.polygon-icon-pasing > :nth-child(3){
 	padding-left: 150px;
 }
 
-.icon-pasing > :last-child{
+.polygon-icon-pasing > :last-child{
 	padding-left: 150px;
 }
 
