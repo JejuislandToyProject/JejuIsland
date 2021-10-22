@@ -29,7 +29,7 @@
 		class="navbar navbar-expand-lg navbar-light fixed-top py-3 navbar-shrink"
 		id="mainNav">
 		<div class="container px-4 px-lg-5">
-			<a class="navbar-brand" href="#page-top">🍊Travel Jeju🍊</a>
+			<h1 class="fs-4 fw-normal"><a class="navbar-brand" href="#page-top">TRAVEL JEJU</a></h1>
 			<button class="navbar-toggler navbar-toggler-right" type="button"
 				data-bs-toggle="collapse" data-bs-target="#navbarResponsive"
 				aria-controls="navbarResponsive" aria-expanded="false"
@@ -88,7 +88,7 @@
 	<!-- Header-->
 	<header class="masthead d-flex align-items-center">
 		<div class="container px-4 px-lg-5 text-center">
-			<h1 class="mb-1">Travel Jeju</h1>
+			<h2 class="h1 mb-1">Travel Jeju</h2>
 
 
 			<h3 class="mb-5">
