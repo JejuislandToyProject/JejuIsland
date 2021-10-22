@@ -14,7 +14,7 @@
 
 #nav-top {
     font-size: 15px;
-    font-weight: bold;
+    font-weight:  bold;
 }
 
 
@@ -24,19 +24,25 @@
 }
 
 #contents-body {
+	display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-column-gap: 30px;
+    grid-row-gap: 30px;
     margin: 3%;
     padding: 5%;
 }
 
-.nav-link {
-    color: black;
+.img-fluid {
+	width: auto;
+	height: 120px;
 }
 
-.card-group{
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-column-gap: 30px;
-    grid-row-gap: 30px;
+.text-break {
+	overflow-wrap: break-word;
+}
+
+.nav-link {
+    color: black;
 }
 
 #card-title {
