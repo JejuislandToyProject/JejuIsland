@@ -5,6 +5,9 @@ import java.io.File;
 import java.io.IOException;
 import java.util.List;
 
+import javax.inject.Inject;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,10 +21,13 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
+
 import com.kgitbank.jeju.dto.Locations;
 import com.kgitbank.jeju.dto.TouristSpot;
 import com.kgitbank.jeju.mapper.LocationMapper;
 import com.kgitbank.jeju.mapper.TouristSpotMapper;
+import com.kgitbank.jeju.service.BoardService;
+import com.kgitbank.jeju.service.impl.BoardServiceImpl;
 
 import lombok.extern.log4j.Log4j;
 import lombok.extern.slf4j.Slf4j;
@@ -37,22 +43,27 @@ public class BoardController {
 	@Autowired
 	LocationMapper locationMapper; 
 	
+	@Inject
+	BoardService boardService;
+	
 	// list
-	@RequestMapping(value="/listTourist", method= RequestMethod.GET)
+	/*@RequestMapping(value="/listTourist", method= RequestMethod.GET)
 	public ModelAndView listTourist() throws Exception {
-		List<TouristSpot> list = touristSpotMapper.listTourist();
-		ModelAndView mav = new ModelAndView();
-		mav.setViewName("board/list");
-		mav.addObject("list",list);
 		
+		ModelAndView mav = new ModelAndView();
+		mav.setViewName("board/touristBoard");
+		mav.addObject("tourist_spot",touristSpotMapper.listTourist());
+		mav.addObject("locations",locationMapper.getList());
 		return mav;
 	}
-	
+	*/
 	// 2. insert form
 	@ RequestMapping(value="/addTourist", method = RequestMethod.GET)
-	public String addTourist(Model model) throws IllegalStateException, IOException {
+	public String addTourist(Model model, HttpSession session) throws IllegalStateException, IOException {
 		List<Locations> list = locationMapper.getList();
-		log.info(list);
+		session.getAttribute("id");
+		log.info(session.getAttribute("id")+" 값");
+		
 		model.addAttribute("locations", locationMapper.getList());
 		return "board/form";
 	}
@@ -62,18 +73,24 @@ public class BoardController {
 	@RequestMapping(value="/addTourist/success", method=RequestMethod.POST, headers = ("content-type=multipart/*"))
 	public String addTourist(@RequestParam("imageFile") MultipartFile multi, 
 			@ModelAttribute("touristSpot") TouristSpot touristSpot,
-			Model model) throws Exception{
+			Model model, HttpSession session) throws Exception{
+		
+		session.getAttribute("id");
 		
 		model.addAttribute("locations",locationMapper.getList());
+		model.addAttribute("user_id", touristSpot.getUser_id());
+		
+		
+		
 		try {
 			String uploadPath = "d:\\";
-			String originFileName = multi.getOriginalFilename();
 			
 		if (!multi.getOriginalFilename().isEmpty()) {
 		    File file =new File(uploadPath, multi.getOriginalFilename());
 		    multi.transferTo(file);
 		    
 		    touristSpot.setImage(uploadPath + multi.getOriginalFilename());
+		    
 		   }
 		
 		}catch(Exception e) {
@@ -85,14 +102,12 @@ public class BoardController {
 	}
 	
 	// detail and click count
-	@RequestMapping(value="/listById", method=RequestMethod.GET)
-	public ModelAndView listById (@RequestParam int tourist_spot_id, HttpSession session) throws Exception{
-		touristSpotMapper.addPositive(tourist_spot_id, session);
+	@RequestMapping(value="/listById", method= {RequestMethod.GET, RequestMethod.POST})
+	public ModelAndView listById (@RequestParam("tourist_spot_id") int tourist_spot_id, HttpSession session) throws Exception{
 		ModelAndView mav = new ModelAndView();
-		// 자세히 보기 페이지
 		mav.setViewName("board/view");
-		mav.addObject("touristSpot",touristSpotMapper.listById(tourist_spot_id));
-		log.info(mav+"ehlfk");
+		mav.addObject("tourist_spot",boardService.listById(tourist_spot_id));
+		log.info(mav);
 		return mav;
 	}
 	
