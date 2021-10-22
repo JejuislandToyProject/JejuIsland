@@ -1,0 +1,86 @@
+@charset "UTF-8";
+
+.right-box{
+	background-color: rgb(245,245,245);
+}
+
+#right-box1{
+   width:100%;
+   padding: 6px 0px;
+   display: flex;
+}
+
+#right-box1 > input{
+
+   border:none;
+   background-color: white;
+   width: 86%;
+   text-align: center;
+   height: 40px;
+   color: gray;
+}
+
+#right-box1 > input:focus{
+   outline:none;
+}
+
+#right-box1 > input::placeholder {
+  color: lightgray;
+  font-style: italic;
+}
+
+#right-box1 > #magBtn{
+   width:14%;
+   border: none;
+   cursor:pointer;
+   height: 40px;
+   color: rgb(175,238,238);
+   background-color:white;
+   font-size:20px;
+}
+
+#right-box1 > #magBtn:focus{
+   outline:none;
+}
+
+#right-box2{
+   text-align: center;
+   display: flex;
+    justify-content: space-around;
+    padding: 8px 0;
+}
+
+#right-box2 > button{
+   outline:none;
+}
+#right-box2 > #restaurantBtn,#spotBtn{
+   width:50%;
+   height: 35px;
+   outline: 0;
+   border: 0;
+   background-color: white;
+}
+
+#right-box2 > #restaurantBtn:focus{
+   background-color: rgb(175,238,238);
+}
+
+#right-box2 > #spotBtn:focus{
+   background-color: rgb(175,238,238);
+}
+
+#right-box3{
+text-align : center;
+   overflow-y: scroll;
+   height: 872px;
+}
+
+.sidebarPadding {
+   padding: 16px 8px 0px 8px;
+}
+
+.sidebar-section-title {
+   font-size: 0.95rem;
+   margin: 8px;
+   text-align: center;
+}

@@ -7,15 +7,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
-@RequestMapping("/area")
+@RequestMapping("/travelCourse")
 @Controller
-public class NomalAreaContoller {
-	@GetMapping("/area")
-	public void getAreas() {
-		log.info("아리아 노멀.");
-	}
+public class courseContoller {
 	
-	@GetMapping("/nomal")
+	@GetMapping("/course")
 	public void getGrid() {
 		
 	}

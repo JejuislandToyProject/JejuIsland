@@ -1,0 +1,126 @@
+@charset "UTF-8";
+
+.btn {
+   margin-bottom: 1rem;
+   letter-spacing: -0.025rem;
+   text-transform: uppercase;
+   box-shadow: 0 4px 7px -1px rgba(0, 0, 0, 0.11), 0 2px 4px -1px
+      rgba(0, 0, 0, 0.07);
+   background-size: 150%;
+   background-position-x: 25%;
+}
+
+.center-box{
+	background-color: white;
+}
+
+.btn-lg, .btn-group-lg>.btn {
+   padding: 0.875rem 4rem;
+   font-size: 0.875rem;
+   border-radius: 0.5rem;
+}
+
+.btn-info, .btn.bg-gradient-info {
+   color: #fff;
+}
+
+.btn-info:hover, .btn.bg-gradient-info:hover {
+   color: #fff;
+}
+
+.bg-gradient-info {
+   background-image: linear-gradient(310deg, #2152ff 0%, #21d4fd 100%);
+}
+.btn.bg-gradient-danger:hover {
+  background-color: #ea0606;
+  border-color: #ea0606; }
+ 
+.bg-gradient-danger {
+  background-image: linear-gradient(310deg, #ea0606 0%, #ff667c 100%);
+ }
+
+.btn-danger .btn.bg-outline-danger,
+.btn.bg-gradient-danger .btn.bg-outline-danger {
+  border: 1px solid #ea0606; }
+
+.btn.bg-gradient-warning:hover {
+  background-color: #fbcf33;
+  border-color: #fbcf33; }
+
+.btn.bg-gradient-warning .btn.bg-outline-warning {
+  border: 1px solid #fbcf33; }
+
+.bg-gradient-warning {
+  background-image: linear-gradient(310deg, #f53939 0%, #fbcf33 100%); }
+  
+.btn-90 {
+  width: 90% !important; }
+  
+ /* 버튼 박스 ===================================================================== */ 
+.btn-box{
+   display: flex;
+   flex-direction: column;
+   position: relative;
+   z-index: 980;
+   top: -970px;
+   width: 220px;
+   margin: 15px;
+}
+    
+#useMethodBtn{
+   position: relative;
+   border: 0;
+   outline: 0;
+}
+
+#rollbackBtn{
+   position: relative;
+   border: 0;
+   outline: 0;
+}
+
+#enrollRestaurantBtn{
+   position: relative;
+   border: 0;
+   outline: 0;
+}
+
+#enrollSpotBtn{
+   position: relative;
+   border: 0;
+   outline: 0;
+}
+
+#jsonImg{
+   height: 70px; 
+   width: 120px;   
+}
+
+#jsonLocation{
+   color: lightgray; 
+   font-size: 10px;
+}
+
+#img-size{
+   width:120px;
+   height: 70px;
+}
+.cardSmallBtn {
+   border : none;
+   outline : none;
+   background-color : white;
+   
+}
+
+.select-btn-style{
+   background-color: #FFFFFF; 
+   opacity: 0.8; 
+   color: #242424;
+   font-weight: 600;
+}
+
+.customoverlay {position:relative;bottom:85px;border-radius:6px;border: 1px solid #ccc;border-bottom:2px solid #ddd;float:left;}
+.customoverlay:nth-of-type(n) {border:0; box-shadow:0px 1px 2px #888;}
+.customoverlay a {display:block;text-decoration:none;color:#000;text-align:center;border-radius:6px;font-size:14px;font-weight:bold;overflow:hidden;background: #d95050;background: #d95050 no-repeat right 14px center;}
+.customoverlay .title {display:block;text-align:center;background:#fff;margin-right:35px;padding:10px 15px;font-size:14px;font-weight:bold;}
+.customoverlay:after {content:'';position:absolute;margin-left:-12px;left:50%;bottom:-12px;width:22px;height:12px;background:url('https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/vertex_white.png')}
