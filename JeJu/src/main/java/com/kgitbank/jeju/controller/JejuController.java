@@ -47,4 +47,10 @@ public class JejuController {
 		
 		return "/mypage/mypage";
 	}
+	
+	@GetMapping("/admin/login")
+	public String admin() {
+		return "/admin/adminLogin";
+		
+	}
 }
