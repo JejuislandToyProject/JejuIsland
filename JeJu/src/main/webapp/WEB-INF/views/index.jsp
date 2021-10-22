@@ -159,10 +159,7 @@
 	<section class="showcase">
 	<div class="polygon-modal">
 					<div class="polygon-modal-content">
-						<div class="polygon-image-box">
-							<img
-								src="https://i2.wp.com/blog.findmybucketlist.com/wp-content/uploads/2020/10/%EC%A0%9C%EC%A3%BC%EB%8F%84-2.jpg?resize=792%2C446&ssl=1"
-								style="width: 100%; height: 450px;">
+						<div id="polygon-image-box">
 						</div>
 
 						<div class="polygon-text-box">
@@ -176,7 +173,7 @@
 							<div id="polygon-text-desc"></div>
 							<div class="polygon-icon-pasing">
 								<i class="far fa-thumbs-up"></i> <i class="fas fa-bolt"></i> <i
-									class="fas fa-globe-americas"></i> <i class="fas fa-piggy-bank"></i>
+									class="fas fa-globe-americas"></i>
 							</div>
 							<input id="polygon-modalBtn" type="submit" value="상세보기">
 						</div>

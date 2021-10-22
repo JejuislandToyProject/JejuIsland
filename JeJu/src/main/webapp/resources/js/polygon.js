@@ -1,7 +1,8 @@
  // 지도에 폴리곤으로 표시할 영역데이터 배열입니다 
+
 var areas = [
      {
-        name : '남원읍',
+        name : 'Namwon',
         path : [
         	new kakao.maps.LatLng(33.395054923937245,126.65341899579978),
         	new kakao.maps.LatLng(33.39019007349997,126.62633467550624),
@@ -49,7 +50,7 @@ var areas = [
         	new kakao.maps.LatLng(33.395054923937245,126.65341899579978)
         ]
     }, {
-        name : '대정읍',
+        name : 'Daejeong',
         path : [
         	new kakao.maps.LatLng(33.285005289129145,126.22894429810759),
         	new kakao.maps.LatLng(33.29550444205661,126.20270330234871),
@@ -76,7 +77,7 @@ var areas = [
         	new kakao.maps.LatLng(33.285005289129145,126.22894429810759)
         ]
     }, {
-        name : '애월읍',
+        name : 'Aewol',
         path : [
         	new kakao.maps.LatLng(33.490732304450404,126.42090917694645),
         	new kakao.maps.LatLng(33.484106288706315,126.39454195163984),
@@ -130,7 +131,7 @@ var areas = [
         	new kakao.maps.LatLng(33.490732304450404,126.42090917694645)
         ]
     }, {
-        name : '조천읍',
+        name : 'Jocheon',
         path : [
         	new kakao.maps.LatLng(33.55315203359222 ,126.70572132465578),
         	new kakao.maps.LatLng(33.54847357631735 ,126.68808093217658),
@@ -185,7 +186,7 @@ var areas = [
             
         ]
     }, {
-        name : '한림읍',
+        name : 'Hanlim',
         path : [
         	new kakao.maps.LatLng(33.446501847354966,126.29777463176504),
         	new kakao.maps.LatLng(33.44262504604774,126.27792939978087),
@@ -226,7 +227,7 @@ var areas = [
         	new kakao.maps.LatLng(33.446501847354966,126.29777463176504)
         ]
     }, {
-        name : '구좌읍',
+        name : 'Gujwa',
         path : [
         	new kakao.maps.LatLng(33.44658971771423,126.81649479752389),
         	new kakao.maps.LatLng(33.46705804475581,126.85773664430977),
@@ -260,7 +261,7 @@ var areas = [
         	new kakao.maps.LatLng(33.44658971771423,126.81649479752389)
         ]
     }, {
-        name : '한경면',
+        name : 'Hankyung',
         path : [
         	new kakao.maps.LatLng(33.37301229874418,126.2155177232405),
         	new kakao.maps.LatLng(33.37502527837367,126.21336751846175),
@@ -296,7 +297,7 @@ var areas = [
         	new kakao.maps.LatLng(33.37301229874418,126.2155177232405)
         ]
     } , {
-        name : '성산읍',
+        name : 'Seongsan',
         path : [
         	new kakao.maps.LatLng(33.336780603150466,126.84955394091513),
         	new kakao.maps.LatLng(33.35472313206925,126.86817869146431),
@@ -319,7 +320,7 @@ var areas = [
            
         ]
     }, {
-        name : '표선면',
+        name : 'Pyoseon',
         path : [
         	new kakao.maps.LatLng(33.30705600380676,126.77599925868009),
         	new kakao.maps.LatLng(33.30362580297348,126.79180304518907),
@@ -352,7 +353,7 @@ var areas = [
         	new kakao.maps.LatLng(33.30705600380676,126.77599925868009)  
         ]
     }, {
-        name : 'jeju',
+        name : 'Jeju',
         path : [
         	new kakao.maps.LatLng(33.373159336828145 ,126.55968500376463),
         	new kakao.maps.LatLng(33.390433557859744 ,126.58627722174091),
@@ -421,7 +422,7 @@ var areas = [
         	new kakao.maps.LatLng(33.373159336828145 ,126.55968500376463)
         ]
     }, {
-        name : '서귀포시',
+        name : 'Seogwipo',
         path : [
         	new kakao.maps.LatLng(33.23514803821773,126.3681945183294),
         	new kakao.maps.LatLng(33.235466186630674,126.38615966815381),
@@ -484,7 +485,7 @@ var areas = [
         	new kakao.maps.LatLng(33.23514803821773,126.3681945183294)
         ]
     }, {
-        name : '안덕면',
+        name : 'Andeok',
         path : [
         	new kakao.maps.LatLng(33.2180012523362,126.29370045629935),
         	new kakao.maps.LatLng(33.226842759588585,126.3011567314909),
@@ -537,6 +538,8 @@ var map = new kakao.maps.Map(mapContainer, mapOption),
     customOverlay = new kakao.maps.CustomOverlay({}),
     infowindow = new kakao.maps.InfoWindow({removable: true});
 
+	map.setDraggable(false);
+
 // 지도에 영역데이터를 폴리곤으로 표시합니다 
 for (var i = 0, len = areas.length; i < len; i++) {
     displayArea(areas[i]);
@@ -564,8 +567,7 @@ function displayArea(area) {
         /* customOverlay.setContent('<div class="area">' + area.name + '</div>'); */
         
          var content = '<div class="info">' + 
-                    '   <div class="title">' + area.name + '</div>' +
-                    '   <div class="size">총 면적 : 약 ' + Math.floor(polygon.getArea()) + ' m<sup>2</sup></area>' +
+                    '   <div class="title">' + area.name + '</div>' +     
                     '</div>';
 
         infowindow.setContent(content); 
@@ -593,6 +595,7 @@ function displayArea(area) {
 	const text_title = document.getElementById('polygon-title');
 	const text_location = document.getElementById('polygon-location');
 	const text_desc = document.getElementById('polygon-text-desc');
+	const image_box = document.getElementById('polygon-image-box');
 	let title = area.name;
 	
 	const addToList = (Area) => {	
@@ -600,6 +603,11 @@ function displayArea(area) {
 			text_title.innerHTML = Area.title;
 			text_location.innerHTML = Area.location;
 			text_desc.innerHTML = Area.text;
+			console.log(Area.image);
+        	image_box.innerHTML = "<img src="+Area.image+" style='width:100%;height:450px;'/>";
+	
+
+//"<c:url value='/' />/images/btn/add.png" />
 	};
 	
     // 다각형에 click 이벤트를 등록하고 이벤트가 발생하면 다각형의 이름과 면적을 인포윈도우에 표시합니다 

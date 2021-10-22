@@ -24,9 +24,7 @@ public class AreaController {
 
 	@GetMapping(value ="/getArea/{title}", produces ="application/json; charset=UTF-8") 
 	public Area getIntroduce(@PathVariable("title") String title) { 
-		log.info("Rest Areas : "+title); 
-		log.info(areaMapper.getIntroduce(title).toString()); 
-		
+
 		return areaMapper.getIntroduce(title); 
 	}
 	
