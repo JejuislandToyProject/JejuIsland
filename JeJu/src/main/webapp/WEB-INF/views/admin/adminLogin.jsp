@@ -39,16 +39,16 @@
   <body class="text-center">
     
 <main class="form-signin">
-  <form>
+  <form name="f" action="<c:url value="/perform_login"/>" method="POST">
     <h1 class="logo fw-normal">TRAVEL JEJU</h1>
     <h2 class="h3 mb-3 fw-normal">Please sign in</h2>
 
     <div class="form-floating">
-      <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+      <input name="id" type="id" class="form-control" id="floatingInput" placeholder="id">
       <label for="floatingInput">ID</label>
     </div>
     <div class="form-floating">
-      <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+      <input name="password" type="password" class="form-control" id="floatingPassword" placeholder="Password">
       <label for="floatingPassword">Password</label>
     </div>
 
@@ -57,6 +57,7 @@
         <input type="checkbox" value="remember-me"> Remember me
       </label>
     </div>
+    <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
     <button class="w-100 btn btn-lg btn-primary align-middle" type="submit">Sign in</button>
     <p class="mt-5 mb-3 text-muted">&copy; travel Jeju 2021</p>
   </form>
