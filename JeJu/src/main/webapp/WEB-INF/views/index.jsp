@@ -10,23 +10,6 @@
 <meta name="description" content="" />
 <meta name="author" content="" />
 <title>Jeju Island</title>
-<!-- 
-Font Awesome icons (free version)
-<script src="https://use.fontawesome.com/releases/v5.15.3/js/all.js"
-	crossorigin="anonymous"></script>
-<script src="https://kit.fontawesome.com/6e314f7ee2.js"
-	crossorigin="anonymous"></script>
-Simple line icons
-<link
-	href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.5.5/css/simple-line-icons.min.css"
-	rel="stylesheet" />
-Google fonts
-<link
-	href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic"
-	rel="stylesheet" type="text/css" />
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-	rel="stylesheet"> 
--->
 
 <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -34,6 +17,11 @@ Google fonts
 <link href="<c:url value="/resources/css/styles.css"/>" rel="stylesheet">
 <link href="<c:url value="/resources/css/cssmodal.css"/>" rel="stylesheet">
 <link href="<c:url value="/resources/css/index.css"/>" rel="stylesheet">
+
+<!-- polygon css -->
+<link rel="stylesheet" href="<c:url value="/resources/css/Area.css"/>">
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://kit.fontawesome.com/cc0398a704.js" crossorigin="anonymous"></script>
 </head>
 <body id="page-top">
 	<!-- Navigation-->
@@ -41,7 +29,7 @@ Google fonts
 		class="navbar navbar-expand-lg navbar-light fixed-top py-3 navbar-shrink"
 		id="mainNav">
 		<div class="container px-4 px-lg-5">
-			<a class="navbar-brand" href="#page-top">🍊Travel Jeju🍊</a>
+			<h1 class="fs-4 fw-normal"><a class="navbar-brand" href="#page-top">TRAVEL JEJU</a></h1>
 			<button class="navbar-toggler navbar-toggler-right" type="button"
 				data-bs-toggle="collapse" data-bs-target="#navbarResponsive"
 				aria-controls="navbarResponsive" aria-expanded="false"
@@ -56,40 +44,40 @@ Google fonts
 					<li class="nav-item"><a class="nav-link" href="#bestpick">Best
 							Pick</a></li>
 					<li class="nav-item"><a class="nav-link" href="#">Board</a></li>
-					
+
 					<c:choose>
 						<c:when test="${sessionScope.id ne null}">
-							<li class="nav-item dropdown">
-					          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-					            <i class="fa fa-user-circle fa-lg"></i>
-					          </a>
-					          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-								<li><a class="dropdown-item" href="<c:url value="/mypage"/>">
+							<li class="nav-item dropdown"><a
+								class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
+								role="button" data-bs-toggle="dropdown" aria-expanded="false">
+									<i class="fa fa-user-circle fa-lg"></i>
+							</a>
+								<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+									<li><a class="dropdown-item" href="<c:url value="/mypage"/>"> 
 										<i class="fa fa-home fa-lg"></i> 
-										<font style="vertical-align: inherit;">
+										<font style="vertical-align: inherit;"> 
 											<font style="vertical-align: inherit;">Mypage</font>
 										</font>
-								</a></li>
-								<li class="divider dropdown-divider"></li>
-								<li><a class="dropdown-item" href="<c:url value="/logout"/>"> 
-									<i class="material-icons">
-										<font style="vertical-align: inherit;"> 
-											<font style="vertical-align: inherit; top: 10px;"></font>
-										</font>
-									</i> 
-									<font style="vertical-align: inherit;"> 
-										<font style="vertical-align: inherit;">Logout</font>
-									</font>
 									</a></li>
-					          </ul>
-					        </li>
+									
+									<li class="divider dropdown-divider"></li>
+									
+									<li><a class="dropdown-item" href="<c:url value="/logout"/>"> 
+										<i class="fas fa-power-off fa-lg"></i> 
+										<font style="vertical-align: inherit;"> 
+											<font style="vertical-align: inherit;">Logout</font>
+										</font>
+									</a></li>
+									
+								</ul></li>
 						</c:when>
 						<c:otherwise>
-							<li class="nav-item"><a class="nav-link" href="<c:url value="/login"/>">Login</a></li>
+							<li class="nav-item"><a class="nav-link"
+								href="<c:url value="/login"/>">Login</a></li>
 						</c:otherwise>
 					</c:choose>
-					
-					
+
+
 
 				</ul>
 
@@ -100,7 +88,7 @@ Google fonts
 	<!-- Header-->
 	<header class="masthead d-flex align-items-center">
 		<div class="container px-4 px-lg-5 text-center">
-			<h1 class="mb-1">Travel Jeju</h1>
+			<h2 class="h1 mb-1">Travel Jeju</h2>
 
 
 			<h3 class="mb-5">
@@ -169,10 +157,43 @@ Google fonts
             </div>
         </section> -->
 	<section class="showcase">
+	<div class="polygon-modal">
+					<div class="polygon-modal-content">
+						<div id="polygon-image-box">
+						</div>
+
+						<div class="polygon-text-box">
+
+							<div class="polygon-text-title">
+								<div id="polygon-title"></div>
+								<div id="polygon-location"></div>
+								<div class="polygon-zero_padding20"></div>
+								<button class="polygon-btn-close">&times;</button>
+							</div>
+							<div id="polygon-text-desc"></div>
+							<div class="polygon-icon-pasing">
+								<i class="far fa-thumbs-up"></i> <i class="fas fa-bolt"></i> <i
+									class="fas fa-globe-americas"></i>
+							</div>
+							<input id="polygon-modalBtn" type="submit" value="상세보기">
+						</div>
+					</div>
+				</div>
+				<div class="polygon-overlay"></div>
 		<div class="container-fluid p-0 my-5">
 			<div class="row g-0">
-				<div class="col-lg-6 order-lg-2 text-white showcase-img"
-					style="background-image: url('./resources/img/제주도 나눈사진.png')"></div>
+
+				<!-- 폴리곤이 들어가야할 구역. -->
+				<div id="map" style="width: 50%; height: 350px;"></div>
+			
+				
+
+
+				<!-- <div class="col-lg-6 order-lg-2 text-white showcase-img"
+					style="background-image: url('./resources/img/제주도 나눈사진.png')"></div> -->
+
+				<!-- 폴리곤이 들어가야할 구역. -->
+
 				<div class="col-lg-6 order-lg-1 my-auto showcase-text">
 					<h2>행정구역별 맛집 찾기</h2>
 					<p class="lead mb-0">
@@ -186,8 +207,10 @@ Google fonts
 		<div class="row g-0">
 			<div class="col-md-8 mx-auto mt-4">
 				<h2 class="text-center my-3">제주도 관광 명소 찾기</h2>
-				<p class="text-center lead  mb-0">수 많은 관광지 속 숨은 진주까지 프로계획러들을 위한 서비스!</p>
-				<div id="myCarousel" class="carousel slide my-4" data-bs-ride="carousel">
+				<p class="text-center lead  mb-0">수 많은 관광지 속 숨은 진주까지 프로계획러들을 위한
+					서비스!</p>
+				<div id="myCarousel" class="carousel slide my-4"
+					data-bs-ride="carousel">
 					<div class="carousel-indicators">
 						<button type="button" data-bs-target="#myCarousel"
 							data-bs-slide-to="0" class="active" aria-current="true"
@@ -200,56 +223,44 @@ Google fonts
 					<div class="carousel-inner">
 						<div class="carousel-item active">
 							<div class="col-xs-3 col-sm-3 col-md-3" data-bs-interval="10000">
-								<img
-									src="<c:url value="/resources/img/관광지.png"/>"/>
+								<img src="<c:url value="/resources/img/관광지.png"/>" />
 							</div>
 							<div class="col-xs-3 col-sm-3 col-md-3">
-								<img
-									src="<c:url value="/resources/img/관광지.png"/>"/>
+								<img src="<c:url value="/resources/img/관광지.png"/>" />
 							</div>
 							<div class="col-xs-3 col-sm-3 col-md-3">
-								<img
-									src="<c:url value="/resources/img/관광지.png"/>"/>
+								<img src="<c:url value="/resources/img/관광지.png"/>" />
 							</div>
 							<div class="col-xs-3 col-sm-3 col-md-3">
-								<img
-									src="<c:url value="/resources/img/관광지.png"/>"/>
+								<img src="<c:url value="/resources/img/관광지.png"/>" />
 							</div>
 						</div>
 						<div class="carousel-item">
 							<div class="col-xs-3 col-sm-3 col-md-3">
-								<img
-									src="<c:url value="/resources/img/관광지.png"/>"/>
+								<img src="<c:url value="/resources/img/관광지.png"/>" />
 							</div>
 							<div class="col-xs-3 col-sm-3 col-md-3">
-								<img
-									src="<c:url value="/resources/img/관광지.png"/>"/>
+								<img src="<c:url value="/resources/img/관광지.png"/>" />
 							</div>
 							<div class="col-xs-3 col-sm-3 col-md-3">
-								<img
-									src="<c:url value="/resources/img/관광지.png"/>"/>
+								<img src="<c:url value="/resources/img/관광지.png"/>" />
 							</div>
 							<div class="col-xs-3 col-sm-3 col-md-3">
-								<img
-									src="<c:url value="/resources/img/관광지.png"/>"/>
+								<img src="<c:url value="/resources/img/관광지.png"/>" />
 							</div>
 						</div>
 						<div class="carousel-item">
 							<div class="col-xs-3 col-sm-3 col-md-3">
-								<img
-									src="<c:url value="/resources/img/관광지.png"/>"/>
+								<img src="<c:url value="/resources/img/관광지.png"/>" />
 							</div>
 							<div class="col-xs-3 col-sm-3 col-md-3">
-								<img
-									src="<c:url value="/resources/img/관광지.png"/>"/>
+								<img src="<c:url value="/resources/img/관광지.png"/>" />
 							</div>
 							<div class="col-xs-3 col-sm-3 col-md-3">
-								<img
-									src="<c:url value="/resources/img/관광지.png"/>"/>
+								<img src="<c:url value="/resources/img/관광지.png"/>" />
 							</div>
 							<div class="col-xs-3 col-sm-3 col-md-3">
-								<img
-									src="<c:url value="/resources/img/관광지.png"/>"/>
+								<img src="<c:url value="/resources/img/관광지.png"/>" />
 							</div>
 						</div>
 						<button class="carousel-control-prev" type="button"
@@ -286,7 +297,8 @@ Google fonts
 										예매하러 가기! </span>
 								</p>
 							</div>
-						</div> <img class="img-fluid" src="<c:url value="resources/img/airplane1.png"/>" alt="airplane" />
+						</div> <img class="img-fluid"
+						src="<c:url value="resources/img/airplane1.png"/>" alt="airplane" />
 					</a>
 				</div>
 				<div class="col-lg-6">
@@ -300,7 +312,8 @@ Google fonts
 										비교하여 최고의 예약을! </span>
 								</p>
 							</div>
-						</div> <img class="img-fluid" src="<c:url value="resources/img/hotel.png"/>" alt="hotel" />
+						</div> <img class="img-fluid"
+						src="<c:url value="resources/img/hotel.png"/>" alt="hotel" />
 					</a>
 				</div>
 				<div class="col-lg-6">
@@ -314,7 +327,8 @@ Google fonts
 										실시간 가격비교 </span>
 								</p>
 							</div>
-						</div> <img class="img-fluid" src="<c:url value="resources/img/car.png"/>" alt="rent car" />
+						</div> <img class="img-fluid"
+						src="<c:url value="resources/img/car.png"/>" alt="rent car" />
 					</a>
 				</div>
 				<div class="col-lg-6">
@@ -327,7 +341,8 @@ Google fonts
 										관광명소&맛집 한번에 알아보기 </span>
 								</p>
 							</div>
-						</div> <img class="img-fluid" src="<c:url value="resources/img/관광지.png"/>" alt="popular place" />
+						</div> <img class="img-fluid"
+						src="<c:url value="resources/img/관광지.png"/>" alt="popular place" />
 					</a>
 				</div>
 			</div>
@@ -338,8 +353,7 @@ Google fonts
 		<h2 style="text-align: center;">
 			<i class="fas fa-crown" style="color: gold;"></i>이번 달 Best Pick
 		</h2>
-		<br>
-		<br>
+		<br> <br>
 		<div class="best-img1">
 			<section class="contents project-card">
 				<section class="project-thumbnail1" id="project-macbook"></section>
@@ -1259,5 +1273,6 @@ Google fonts
 
 <script src="<c:url value="/resources/js/scripts.js"/>"></script>
 <script src="<c:url value="/resources/js/js모달.js"/>"></script>
-
+<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=115edfd07bd1f09ac3a8881810a2bb4b"></script>
+<script src="<c:url value="/resources/js/polygon.js"/>"></script>
 </html>

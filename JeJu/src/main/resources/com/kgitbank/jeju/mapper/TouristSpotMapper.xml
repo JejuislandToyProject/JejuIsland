@@ -4,7 +4,9 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
 <mapper namespace="com.kgitbank.jeju.mapper.TouristSpotMapper">
+
     <select id="listTourist" resultType="com.kgitbank.jeju.dto.TouristSpot">
         select * from tourist_spot 
     </select>

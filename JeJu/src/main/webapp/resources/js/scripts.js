@@ -62,6 +62,15 @@ window.addEventListener('DOMContentLoaded', event => {
         }
     })
 })
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    document.getElementById("mainNav").style.backgroundColor = "rgba( 255, 255, 255, 0.5 )";
+  } else {
+    document.getElementById("mainNav").style.backgroundColor = "transparent";
+  }
+}
 
 function fadeOut(el) {
     el.style.opacity = 1;
