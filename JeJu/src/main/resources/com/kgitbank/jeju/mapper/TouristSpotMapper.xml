@@ -4,10 +4,11 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.kgitbank.jeju.mapper.TouristSpotMapper">  
-	
+
+<mapper namespace="com.kgitbank.jeju.mapper.TouristSpotMapper">
+
     <select id="listTourist" resultType="com.kgitbank.jeju.dto.TouristSpot">
-        SELECT * FROM tourist_spot
+        select * from tourist_spot 
     </select>
     
     <insert id="addTourist">
@@ -16,29 +17,47 @@
     name,
     title,
     description,
+    location_id,
+    image,
     hashtag,
-    location,
-    image) 
+    latitude,
+    longitude,
+    user_id) 
     VALUES(
     <!-- db에 시퀀스 넣어주기 -->
     ts_id_seq.nextval,
     #{name},
     #{title},
     #{description},
-    #{hashtag },
-    #{location },
-    #{image }
+    #{location_id },
+    #{image },
+    #{hashtag},
+    #{latitude},
+    #{longitude},
+    #{user_id}
     )
     </insert>
 	
 	<select id="listById" resultType="com.kgitbank.jeju.dto.TouristSpot">
-	SELECT * FROM tourist_spot
-	WHERE tourist_spot_id = #{tourist_spot_id}
+	SELECT * FROM tourist_spot INNER JOIN locations USING(location_id)
+	 WHERE tourist_spot_id = #{tourist_id}
+	 </select>
+	 
+	 <select id="listByUserd" resultType="com.kgitbank.jeju.dto.TouristSpot">
+	SELECT * FROM tourist_spot INNER JOIN user_info USING(user_id)
+	WHERE user_id = #{user_id}
 	 </select>
 	 
 	 <!-- ddl 에  view cnt 넣어주기 -->
+	
+	 
 	 <update id="addPositive">
 	 UPDATE tourist_spot SET positive_num  = positive_num +1
+	 WHERE tourist_spot_id = #{tourist_spot_id}
+	 </update> 
+	
+	 <update id="addNagative">
+	 UPDATE tourist_spot SET positive_num  = nagative_num +1
 	 WHERE tourist_spot_id = #{tourist_spot_id}
 	 </update> 
 	

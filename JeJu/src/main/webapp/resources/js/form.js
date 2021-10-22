@@ -1,8 +1,12 @@
 /**
  * 
  */
+document.getElementById("user_id").style.display="none";
+
 $(document).ready(function(){
         $("#btnSave").click(function(){
+           var user_id = $("#user_id").val();
+           
            var title = $("#title").val();
            var name = $("#name").val();
            var description = $("#description").val();
@@ -25,6 +29,9 @@ $(document).ready(function(){
                 alert("이미지를 선택하세요");
                 document.form1.image.focus();
            }
-
+			if(user_id ==""){
+	            alert("로그인해주세요");
+	            document.form1.user_id.focus();
+	       }
         });
 });

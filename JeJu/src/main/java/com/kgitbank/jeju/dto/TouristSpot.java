@@ -16,6 +16,7 @@ public class TouristSpot {
 	private int tourist_spot_id;
 	private String name;
 	private String user_id;
+	private String nick_name;
 	private String title;
 	private String image;
 	private String description;

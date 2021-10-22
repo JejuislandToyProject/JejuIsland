@@ -5,14 +5,18 @@ import java.util.List;
 import javax.servlet.http.HttpSession;
 
 import com.kgitbank.jeju.dto.TouristSpot;
+import com.kgitbank.jeju.mapper.TouristSpotMapper;
 
 public interface BoardService {
+
+	List<TouristSpot> listTourist();
 	
-	public void create(TouristSpot touristSpot) throws Exception;
-	public TouristSpot read(int tourist_spot_id) throws Exception;
-	public void update(TouristSpot touristSpot) throws Exception;
-	public void delete(int tourist_spot_id) throws Exception;
-	public List<TouristSpot> listAll() throws Exception;
-	public void increaseView(int tourist_spot_id, HttpSession session) throws Exception;
+	void updateTourist(TouristSpot touristSpot);
+	void addTourist(TouristSpot touristSpot);
+	TouristSpot listById(int tourist_spot_id);
+	void deleteTourist(int tourist_spot_id);
+	
+	List<TouristSpot> listByUserd(String user_id, HttpSession session);
+	List<TouristSpot> listByUserd(String user_id);
 	
 }
