@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -47,7 +48,7 @@
 
     
     <!-- body -->
-    <div id="body">
+    <div id="body"></div>
     <!-- About-->
     <section class="content-section bg-light" id="about">
       <div class="container px-4 px-lg-5 text-center">
@@ -64,6 +65,7 @@
               </div>
           </div>
       </div>
+
   </section>
   
     <!-- border top navigation -->
@@ -93,7 +95,30 @@
       <!-- card layout -->
       <div id="contents-body">
       </div>
-      <!--Page 버튼 수정해야함-->
+      
+            <!-- navbar -->
+      <!-- Navbar Transparent -->
+	<nav
+	  class="navbar navbar-expand-lg top-0 z-index-3 w-100 shadow-none my-3  navbar-transparent ">
+	  <div class="container">
+	    <div class="collapse navbar-collapse" id="navigation">
+	      <ul class="navbar-nav navbar-nav-hover ms-auto">
+	        <div class="row">
+	          <div class="col-auto">
+	            <div class="bg-white border-radius-lg d-flex me-2">
+	              <input type="text" class="form-control border-0 ps-3" placeholder="Type here...">
+	              <button class="btn bg-gradient-primary my-1 me-1">Search</button>
+	            </div>
+	          </div>
+	        </div>
+	      </ul>
+	    </div>
+	  </div>
+	</nav>
+	<!-- End Navbar -->
+      
+      
+      <!--Page-->
       <nav aria-label="Page navigation">
         <ul id="pagination" class="pagination justify-content-center">
           

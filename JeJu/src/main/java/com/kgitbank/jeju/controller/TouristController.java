@@ -23,9 +23,7 @@ public class TouristController {
 	private TouristSpotMapper touristSpotMapper;
 	
 	@RequestMapping(value = "/tourist", method = RequestMethod.GET)
-	public String TourList(Model model) throws Exception {
-		
-		model.addAttribute("tourist_spot", touristSpotMapper.listTourist());
+	public String TourList() throws Exception {
 
 		return "board/touristBoard";
 	}

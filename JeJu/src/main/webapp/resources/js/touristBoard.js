@@ -64,12 +64,12 @@ const addCardHeader = (card) => {
     cardHeader.classList.add('card-header');
     cardHeader.classList.add('p-0');
     cardHeader.classList.add('mx-3');
-    cardHeader.classList.add('mt-3');
+    cardHeader.classList.add('mt-3'); 
     cardHeader.classList.add('position-relative');
     cardHeader.classList.add('z-index-1');
 
     cardHeader.innerHTML += `<a href="javascript:;" class="d-block"> 
-                            <img src=${card.image } class="img-fluid border-radius-lg"> 
+                            <img src=${card.image } class="img-fluid border-radius-lg" > 
                             </a>`;
     return cardHeader;
 }
@@ -82,7 +82,9 @@ const addCardBody = (card) => {
                                 ${card.name }
                             </a>
                             <p class="card-description text-center mb-4">
-                            <small class="text-muted">${card.description }</small>
+                            	<small class="text-break text-muted">
+											${card.description}
+                            	</small>
                             </p>`;
     return cardBody;
 }
@@ -94,6 +96,7 @@ const addIconPart = () => {
 
     outerDiv.classList.add('author');
     outerDiv.classList.add('align-items-center');
+    outerDiv.classList.add('p-2');
 
     innerDiv1.classList.add('mt-6');
     innerDiv2.classList.add('mt-2');
@@ -101,7 +104,7 @@ const addIconPart = () => {
     innerDiv1.setAttribute('id', 'icon');
     innerDiv2.setAttribute('id', 'icon');
 
-    innerDiv1.innerHTML += '<i id="icon" onclick="changeThumbs()" class="far fa-thumbs-up"></i>';
+    innerDiv1.innerHTML += '<i id="icon" onclick="" class="far fa-thumbs-up"></i>';
     innerDiv1.innerHTML += '<i class="far fa-thumbs-down"></i>';
 
     innerDiv2.innerHTML += '<p>좋아요</p>';
