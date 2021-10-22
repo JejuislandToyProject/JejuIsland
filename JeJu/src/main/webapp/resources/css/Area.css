@@ -46,8 +46,8 @@
 	padding: 70px;
 	margin-left:20px;
 }
-.polygon-image-box{
-	flex: 1;
+#polygon-image-box{
+	flex: 1.5;
 	background-size: cover;
 }
 .polygon-text-box{
@@ -150,11 +150,11 @@
 	font-size : 50px;
 }
 
-.polygon-icon-pasing > :nth-child(2){
+.polygon-icon-pasing > :nth-child(1){
 	padding-left: 150px;
 }
 
-.polygon-icon-pasing > :nth-child(3){
+.polygon-icon-pasing > :nth-child(2){
 	padding-left: 150px;
 }
 
@@ -163,7 +163,10 @@
 }
 
 
-
+.modalImageSize{
+	width: 100%;
+	height: 450px; 
+}
 
  
  
