@@ -14,6 +14,7 @@ import lombok.NoArgsConstructor;
 public class FamousRestaurant {
 	private Integer famous_restaurant_id;
 	private String user_id;
+	private String nickname;
 	private String name;
 	private String title;
 	private String image;
