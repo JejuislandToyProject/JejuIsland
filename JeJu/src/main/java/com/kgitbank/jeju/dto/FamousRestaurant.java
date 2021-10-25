@@ -13,20 +13,22 @@ import lombok.NoArgsConstructor;
 @Data
 public class FamousRestaurant {
 	private Integer famous_restaurant_id;
-	private String name;
 	private String user_id;
-	private String nickname;
+	private String name;
 	private String title;
 	private String image;
 	private String description;
-	private String hashtag;
 	private String address;
-	private String location;
+	private String hashtag;
 	private Integer positive_num;
-	private Integer negative_num;
-	private String type;
 	
 	@JsonFormat(shape=JsonFormat.Shape.STRING, pattern="yyyy/MM/dd")
 	private Date registration_time;
+	
+	private String location;
+	private Float latitude;
+	private Float longitude;
+	
+	
 	
 }

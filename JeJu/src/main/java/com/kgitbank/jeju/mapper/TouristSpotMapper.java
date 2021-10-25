@@ -13,6 +13,7 @@ public interface TouristSpotMapper {
 	public void updateTourist(TouristSpot touristSpot);
 	public void deleteTourist(int tourist_spot_id);
 	public List<TouristSpot> listTourist();
-	
-	
+	public List<TouristSpot> courseList();
+	public TouristSpot searchSpot(String title);
+		
 }

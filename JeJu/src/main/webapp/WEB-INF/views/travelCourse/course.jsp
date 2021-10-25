@@ -15,6 +15,10 @@
 <link rel="stylesheet" href="<c:url value="/resources/css/courseCSS/modal.css"/>">
 <link rel="stylesheet" href="<c:url value="/resources/css/courseCSS/main.css"/>">
 
+<!-- 드래그 앤 드롭 -->
+<link href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.min.js" ></script>
+<script type="text/javascript" src="https://code.jquery.com/ui/1.12.1/jquery-ui.js" ></script>
 
 </head>
 <body>
@@ -90,7 +94,7 @@
 				</div>
 			</div>
 
-			<div id="leftSidebar-3"></div>
+			<ul id="leftSidebar-3"></ul>
 		</div>
 
 		<div class="center-box">
@@ -161,6 +165,7 @@
 		src="//dapi.kakao.com/v2/maps/sdk.js?appkey=115edfd07bd1f09ac3a8881810a2bb4b"></script>
 
  <script src="<c:url value="/resources/js/courseJS/courseMap.js"/>"></script>
+ <script src="<c:url value="/resources/js/courseJS/draggable.js"/>"></script>
  <script src="<c:url value="/resources/js/courseJS/mapBtn.js"/>"></script>
  <script src="<c:url value="/resources/js/courseJS/cardList.js"/>"></script>
  <script src="<c:url value="/resources/js/courseJS/createCard.js"/>"></script>
