@@ -106,7 +106,7 @@
 				<button type="button" id="rollbackBtn" class="btn btn-md"
 					style="background-color: #FFFFFF; opacity: 0.8; color: #242424;">지도
 					원위치</button>
-				<button type="button" id="enrollRestaurantBtn"
+				<button type="button"id="enrollRestaurantBtn"
 					onclick="location.href=''" class="btn btn-md"
 					style="background-color: #FFFFFF; opacity: 0.8; color: #242424;">맛집등록
 					하기</button>
