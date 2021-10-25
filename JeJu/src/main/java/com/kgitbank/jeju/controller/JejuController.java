@@ -42,8 +42,6 @@ public class JejuController {
 		if(id == null) {
 			return "redirect:/login";
 		}
-		User user = userMapper.listUser(id);
-		model.addAttribute(user);
 		
 		return "/mypage/mypage";
 	}
