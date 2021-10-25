@@ -15,7 +15,7 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 import org.springframework.stereotype.Service;
 
-import com.kgitbank.jeju.dto.weatherDto;
+import com.kgitbank.jeju.dto.Weather;
 
 
 @Service
@@ -41,8 +41,8 @@ public class WeatherServiceImpl {
 		return datas;
 	}
 	
-	public weatherDto getWeather() throws Exception {
-		weatherDto weather_dto = new weatherDto();
+	public Weather getWeather() throws Exception {
+		Weather weather_dto = new Weather();
 		// 1. weather_dto 필요한 날씨 정보를 받아 리턴해줄 객체
 		String sky = null, temp = null, pty = null, pop = null;
 		// 2. sky, pty 하늘상태 temp온도 , pop 강수량

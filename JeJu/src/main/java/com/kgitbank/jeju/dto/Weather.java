@@ -3,7 +3,7 @@ package com.kgitbank.jeju.dto;
 import lombok.Data;
 
 @Data
-public class weatherDto {
+public class Weather {
 	
 	private String sky;
 	private String pty;

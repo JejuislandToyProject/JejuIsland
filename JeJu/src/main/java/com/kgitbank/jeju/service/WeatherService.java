@@ -2,11 +2,11 @@ package com.kgitbank.jeju.service;
 
 import org.springframework.ui.Model;
 
-import com.kgitbank.jeju.dto.weatherDto;
+import com.kgitbank.jeju.dto.Weather;
 
 
 public interface WeatherService {
 	
-	public weatherDto getJejuWeather();
+	public Weather getJejuWeather();
 
 }

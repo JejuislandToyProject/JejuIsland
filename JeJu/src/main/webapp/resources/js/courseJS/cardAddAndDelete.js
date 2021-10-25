@@ -127,11 +127,12 @@ const allDelete = document.getElementById('allDelete');
           markers[i].setMap(null);
           ovarlays[i].setMap(null); 
       }
+	  names = [];
+	  markers = [];
+      ovarlays = [];
       for (var i = 0; i < lines.length; i++){
           lines[i].setMap(null);
       }              
       lines = [];
-      names = [];
-	  markers = [];
-      ovarlays = [];
+      
 });
