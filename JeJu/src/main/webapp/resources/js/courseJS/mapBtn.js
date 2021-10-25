@@ -31,15 +31,17 @@ saveCourseBtn.addEventListener('click', event => {
       $(document).ready(function() {
             $(courseItems).empty();
       });
-      var sumNames = "";
-      for(var i = 0; i < names.length; i++){
-    	  sumNames += names[i];
-    	  if (i < names.length -1) {
-    		  sumNames += ',';
-    	  }
-      }
-      submitModal(sumNames);
-      console.log(sumNames);
+ 		var vcheck = document.querySelectorAll('.cardSmallBtn');
+
+		names = [];
+		for(var j = 0; j < vcheck.length; ++j){
+			var checker = vcheck[j].getAttribute('id');
+			console.log('네임스에 들어가는 값들 : '+checker);
+			names.push(checker);
+		};
+		
+
+      submitModal(names);
       
       map.panTo(moveLatLon);    
 });
@@ -64,8 +66,9 @@ $('.save-modal, .save-overlay').removeClass('active')
 });
 
 // ajax로 RestController를 통해 DB 데이터를 json형식으로 가져다주는 기능 
-function submitModal(sumNames){
+function submitModal(names){
 	   const xhttp = new XMLHttpRequest();
+	  
 
 	   xhttp.addEventListener('readystatechange', (e) => {
 	       const readyState = e.target.readyState;
@@ -83,10 +86,8 @@ function submitModal(sumNames){
 	           }    
 	         
 	       }
-	     });
-	   
-	     xhttp.open('GET', './modalSearch/' + sumNames, true);
+	     });  
+	     xhttp.open('GET', './modalSearch/' + names, true);
 	     xhttp.setRequestHeader('content-type', 'application/json;charset=UTF-8');
-
 	     xhttp.send();
 };

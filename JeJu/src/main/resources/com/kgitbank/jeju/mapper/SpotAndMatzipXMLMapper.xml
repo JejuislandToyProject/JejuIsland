@@ -5,10 +5,14 @@
 <mapper namespace="com.kgitbank.jeju.mapper.SpotAndMatzipXMLMapper">
 	
 	<select id="getItem" resultType="com.kgitbank.jeju.dto.SpotAndMatzipDto">
-		SELECT * FROM (SELECT * FROM spot UNION SELECT * FROM matzip)WHERE title = #{title}
+		SELECT title, image, positive_num, latitude, longitude FROM 
+		(SELECT title, image, positive_num, latitude, longitude FROM tourist_spot 
+		UNION SELECT title, image, positive_num, latitude, longitude FROM famous_restraurant)WHERE title = #{title}
 	</select>
 	<select id="getSearch" resultType="com.kgitbank.jeju.dto.SpotAndMatzipDto">
-		SELECT * FROM (SELECT * FROM spot UNION SELECT * FROM matzip)WHERE title LIKE '%'||#{textValue}||'%'
+		SELECT title, image, positive_num, latitude, longitude FROM 
+		(SELECT title, image, positive_num, latitude, longitude FROM tourist_spot 
+		UNION SELECT title, image, positive_num, latitude, longitude FROM famous_restraurant)WHERE title LIKE '%'||#{textValue}||'%'
 	</select>
 
 </mapper>

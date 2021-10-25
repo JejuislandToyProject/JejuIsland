@@ -12,9 +12,9 @@ import com.kgitbank.jeju.dto.Area;
 import com.kgitbank.jeju.dto.SpotAndMatzipDto;
 import com.kgitbank.jeju.dto.weatherDto;
 import com.kgitbank.jeju.mapper.AreaXMLMapper;
+import com.kgitbank.jeju.mapper.FamousRestaurantMapper;
 import com.kgitbank.jeju.mapper.SpotAndMatzipXMLMapper;
-import com.kgitbank.jeju.mapper.matzipXMLMapper;
-import com.kgitbank.jeju.mapper.spotXMLMapper;
+import com.kgitbank.jeju.mapper.TouristSpotMapper;
 import com.kgitbank.jeju.service.impl.WeatherServiceImpl;
 
 import lombok.extern.slf4j.Slf4j;
@@ -28,10 +28,10 @@ public class courseRestController {
 	AreaXMLMapper areaMapper;
 	
 	@Autowired
-	spotXMLMapper spotMapper;
+	TouristSpotMapper spotMapper;
 	
 	@Autowired
-	matzipXMLMapper matzipMapper;
+	FamousRestaurantMapper matzipMapper;
 	
 	@Autowired
 	SpotAndMatzipXMLMapper spotAndMatzipMapper;
@@ -43,9 +43,9 @@ public class courseRestController {
 	public List<?> getList(@PathVariable("title") String title) {
 
 		if (title.equals("matzip")) {
-			return matzipMapper.getList();
+			return matzipMapper.famousList();
 		} else {
-			return spotMapper.getList();
+			return spotMapper.courseList();
 		}
 	}
 	

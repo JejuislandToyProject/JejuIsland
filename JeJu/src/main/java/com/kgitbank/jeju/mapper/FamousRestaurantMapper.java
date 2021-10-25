@@ -8,4 +8,6 @@ public interface FamousRestaurantMapper {
 	public List<FamousRestaurant> list();
 	public List<FamousRestaurant> listByUser(String user_id);
 	public int addRestaurant(FamousRestaurant fr);
+	public List<FamousRestaurant> famousList();
+	public FamousRestaurant getFamous(String title);
 }

@@ -1,7 +1,7 @@
 // 컨트롤러를 통해 넘어온 데이터들을 자바스크립트단에서 카드로 만들어 주는 기능 
 const addToList = (jsonData) => {
-      
-     const jsonDataDiv = document.createElement('hs');
+
+     const jsonDataDiv = document.createElement('div');
      jsonDataDiv.setAttribute('id','jsonData');
    
       const div1 = document.createElement('div');
@@ -16,7 +16,7 @@ const addToList = (jsonData) => {
       const div_image = document.createElement('div');
       div_image.setAttribute('class', 'col-4');
       div_image.setAttribute('id','jsonImg');
-      div_image.innerHTML = "<img id=img-size src="+ jsonData.image + ">";
+      div_image.innerHTML = "<img id=img-size src="+ jsonData.image + "/>";
       const div4 = document.createElement('div');
       div4.setAttribute('class', 'col-6');
       
@@ -27,13 +27,13 @@ const addToList = (jsonData) => {
       
       const div_location = document.createElement('div');
       div_location.setAttribute('id', 'jsonLocation');
-      div_location.innerText = jsonData.location;
-      
+      div_location.innerText = '좋아요 : ' + jsonData.positive_num;
+
       const btn_plus = document.createElement('button');
-      btn_plus.setAttribute('class', "cardSmallBtn");
+      btn_plus.setAttribute('class', "rightCardSmallBtn");
       btn_plus.setAttribute('id', jsonData.title);
       btn_plus.setAttribute('value', jsonData.latitude +'/'+ jsonData.longitude);
-      btn_plus.setAttribute('onClick', `deleteRow(this),addCard(this.id, this.value)`);
+      btn_plus.setAttribute('onClick', `deleteRow(this,'this.id','jsonData'),addCard(this.id, this.value)`);
       btn_plus.innerText = '+';
    
       right_box3.appendChild(jsonDataDiv);
@@ -52,7 +52,7 @@ const addToList = (jsonData) => {
 const leftSidebar_3 = document.getElementById('leftSidebar-3');
 const addToListLeft = (jsonDataLeft) => {
         
-         const jsonDataDiv = document.createElement('hs');
+         const jsonDataDiv = document.createElement('li');
          jsonDataDiv.setAttribute('id','jsonDataLeft');
        
           const div1 = document.createElement('div');
@@ -80,13 +80,14 @@ const addToListLeft = (jsonDataLeft) => {
           
           const div_location = document.createElement('div');
           div_location.setAttribute('id', 'jsonLocation');
-          div_location.innerText = jsonDataLeft.location;
+          div_location.innerText = '좋아요 : ' + jsonDataLeft.positive_num;
           
           const btn_plus = document.createElement('button');
           btn_plus.setAttribute('class', "cardSmallBtn");
           btn_plus.setAttribute('id', jsonDataLeft.title);
           btn_plus.setAttribute('value', jsonDataLeft.latitude +'/'+ jsonDataLeft.longitude);
-          btn_plus.setAttribute('onClick', `deleteRow(this, this.id), deleteMarkers(map, this.value)`);
+		   console.log("벨류 : "+jsonDataLeft.latitude +'/'+ jsonDataLeft.longitude);
+          btn_plus.setAttribute('onClick', `deleteRow(this, this.id, 'jsonDataLeft'), deleteMarkers(map, this.value)`);
           btn_plus.innerText = 'x';
 
           leftSidebar_3.appendChild(jsonDataDiv);
@@ -105,7 +106,7 @@ const addToListLeft = (jsonDataLeft) => {
 // 여행경로 저장 버튼 클릭 시 데이터들을 모달에 카드형식으로 만들어 주는 기능 
 const addSaveCourseModal = (jsonData) => {
      
-     const maindiv = document.createElement('hs');
+     const maindiv = document.createElement('div');
      maindiv.setAttribute('class','modalcard');
      
      const divfirst = document.createElement('div');

@@ -603,7 +603,6 @@ function displayArea(area) {
 			text_title.innerHTML = Area.title;
 			text_location.innerHTML = Area.location;
 			text_desc.innerHTML = Area.text;
-			console.log(Area.image);
         	image_box.innerHTML = "<img src="+Area.image+" style='width:100%;height:450px;'/>";
 	
 

@@ -8,8 +8,17 @@
 <mapper namespace="com.kgitbank.jeju.mapper.TouristSpotMapper">
 
     <select id="listTourist" resultType="com.kgitbank.jeju.dto.TouristSpot">
-        select * from tourist_spot 
+        select * from tourist_spot
     </select>
+    
+    <select id="courseList" resultType="com.kgitbank.jeju.dto.TouristSpot">
+        select title, image, positive_num, latitude, longitude from tourist_spot ORDER BY positive_num DESC
+    </select>
+   
+    <select id="searchSpot" resultType="com.kgitbank.jeju.dto.TouristSpot">
+        select * from tourist_spot WHERE title =#{title}
+    </select>
+    
     
     <insert id="addTourist">
     INSERT INTO tourist_spot(
