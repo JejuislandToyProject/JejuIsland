@@ -8,7 +8,7 @@
 <mapper namespace="com.kgitbank.jeju.mapper.TouristSpotMapper">
 
     <select id="listTourist" resultType="com.kgitbank.jeju.dto.TouristSpot">
-        select * from tourist_spot
+        select * from tourist_spot INNER JOIN user_info USING (user_id)
     </select>
     
     <select id="courseList" resultType="com.kgitbank.jeju.dto.TouristSpot">
