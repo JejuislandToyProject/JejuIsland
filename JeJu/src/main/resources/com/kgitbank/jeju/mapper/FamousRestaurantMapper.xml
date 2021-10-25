@@ -26,6 +26,6 @@
     </select>
    
     <select id="getFamous" resultType="com.kgitbank.jeju.dto.FamousRestaurant">
-        select * from famous_restraurant WHERE title =#{title}
+        select title, image, positive_num, latitude, longitude from famous_restraurant WHERE title =#{title}
     </select>
 </mapper>

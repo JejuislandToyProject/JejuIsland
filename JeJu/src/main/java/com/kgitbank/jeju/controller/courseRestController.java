@@ -9,11 +9,11 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import com.kgitbank.jeju.dto.Area;
-import com.kgitbank.jeju.dto.SpotAndMatzipDto;
-import com.kgitbank.jeju.dto.weatherDto;
+import com.kgitbank.jeju.dto.SpotAndRestaurant;
+import com.kgitbank.jeju.dto.Weather;
 import com.kgitbank.jeju.mapper.AreaXMLMapper;
 import com.kgitbank.jeju.mapper.FamousRestaurantMapper;
-import com.kgitbank.jeju.mapper.SpotAndMatzipXMLMapper;
+import com.kgitbank.jeju.mapper.SpotAndRestaurantXMLMapper;
 import com.kgitbank.jeju.mapper.TouristSpotMapper;
 import com.kgitbank.jeju.service.impl.WeatherServiceImpl;
 
@@ -34,7 +34,7 @@ public class courseRestController {
 	FamousRestaurantMapper matzipMapper;
 	
 	@Autowired
-	SpotAndMatzipXMLMapper spotAndMatzipMapper;
+	SpotAndRestaurantXMLMapper spotAndMatzipMapper;
 	
 	@Autowired
 	WeatherServiceImpl weatherServiceImpl;
@@ -50,26 +50,26 @@ public class courseRestController {
 	}
 	
 	@GetMapping(value="/select/{title}", produces = "application/json; charset=UTF-8")
-	public SpotAndMatzipDto getSelecte(@PathVariable("title") String title) {
+	public SpotAndRestaurant getSelecte(@PathVariable("title") String title) {
 		
 		return spotAndMatzipMapper.getItem(title);
 
 	}
 	
 	@GetMapping(value="/search/{textValue}", produces = "application/json; charset=UTF-8")
-	public List<SpotAndMatzipDto> getSearch(@PathVariable("textValue") String textValue) {
+	public List<SpotAndRestaurant> getSearch(@PathVariable("textValue") String textValue) {
 			
 		return spotAndMatzipMapper.getSearch(textValue);
 	}
 	
 	@GetMapping(value="/modalSearch/{title}", produces = "application/json; charset=UTF-8")
-	public List<SpotAndMatzipDto> getSearch2(@PathVariable("title") String title) {
+	public List<SpotAndRestaurant> getSearch2(@PathVariable("title") String title) {
 		
 		String names[] = title.split(",");
-		List<SpotAndMatzipDto> list = new ArrayList<>();
+		List<SpotAndRestaurant> list = new ArrayList<>();
 		
 		for(int i =0; i < names.length; ++i) {
-			list.add((SpotAndMatzipDto) spotAndMatzipMapper.getItem(names[i]));
+			list.add((SpotAndRestaurant) spotAndMatzipMapper.getItem(names[i]));
 			
 		}
 		return list;	
@@ -83,7 +83,7 @@ public class courseRestController {
 	
 	
 	@GetMapping(value = "/weather", produces ="application/json; charset=UTF-8")
-	public weatherDto getWeather(Model model) throws Exception {
+	public Weather getWeather(Model model) throws Exception {
 		
 		return weatherServiceImpl.getWeather();	
 	}	
