@@ -22,10 +22,10 @@
   </insert>
   
    <select id="famousList" resultType="com.kgitbank.jeju.dto.FamousRestaurant">
-        select title, image, positive_num, latitude, longitude from famous_restraurant ORDER BY positive_num DESC
+        select title, image, positive_num, latitude, longitude from famous_restaurant ORDER BY positive_num DESC
     </select>
    
     <select id="getFamous" resultType="com.kgitbank.jeju.dto.FamousRestaurant">
-        select title, image, positive_num, latitude, longitude from famous_restraurant WHERE title =#{title}
+        select title, image, positive_num, latitude, longitude from famous_restaurant WHERE title =#{title}
     </select>
 </mapper>
