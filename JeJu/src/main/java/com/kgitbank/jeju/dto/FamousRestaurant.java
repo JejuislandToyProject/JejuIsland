@@ -26,8 +26,8 @@ public class FamousRestaurant {
 	private Date registration_time;
 	
 	private String location;
-	private Float latitude;
-	private Float longitude;
+	private double latitude;
+	private double longitude;
 	
 	
 	

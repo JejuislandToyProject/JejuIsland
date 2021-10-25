@@ -16,7 +16,7 @@
     </select>
    
     <select id="searchSpot" resultType="com.kgitbank.jeju.dto.TouristSpot">
-        select * from tourist_spot WHERE title =#{title}
+        select title, image, positive_num, latitude, longitude from tourist_spot WHERE title =#{title}
     </select>
     
     
