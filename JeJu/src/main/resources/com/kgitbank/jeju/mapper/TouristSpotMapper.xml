@@ -73,5 +73,21 @@
 	DELETE FROM tourist_spot
 	WHERE tourist_spot_id = #{tourist_spot_id}
 	</delete>
+	
+	<select id="selectSearchList" resultType="com.kgitbank.jeju.dto.TouristSpot">
+	SELECT * FROM tourist_spot
+	WHERE
+		<choose>
+			<when test="type !=null and type.equals('name')">
+				name LIKE CONCAT('%', #{keyword}, '%')
+			</when>
+			<when test="type !=null and type.equals('description')">
+				description LIKE CONCAT('%', #{keyword}, '%')
+			</when>
+			<when test="type !=null and type.equals('hashtag')">
+				hashtag LIKE CONCAT('%', #{keyword}, '%')
+			</when>
+		</choose>
+	</select>
 		 
 </mapper>

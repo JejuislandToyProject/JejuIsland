@@ -6,6 +6,7 @@ import javax.inject.Inject;
 import javax.servlet.http.HttpSession;
 
 import org.apache.ibatis.session.SqlSession;
+import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -18,8 +19,6 @@ public class BoardServiceImpl implements BoardService {
 	@Autowired
 	TouristSpotMapper touristSpotMapper;
 	
-	// write
-	
 	@Override
 	public void addTourist(TouristSpot touristSpot) {
 		String name = touristSpot.getName();
@@ -27,6 +26,7 @@ public class BoardServiceImpl implements BoardService {
 		String description = touristSpot.getDescription();
 		String image = touristSpot.getImage();
 		String location = touristSpot.getLocation();
+		String hashtag = touristSpot.getHashtag();
 		
 		title = title.replace("<", "&lt;");
 		title = title.replace(">", "&gt;");
@@ -92,8 +92,5 @@ public class BoardServiceImpl implements BoardService {
 		// TODO Auto-generated method stub
 		return null;
 	}
-
-
-
 	
 }

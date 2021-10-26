@@ -13,20 +13,25 @@ import lombok.NoArgsConstructor;
 @Data
 public class TouristSpot {
 	
+	
 	private int tourist_spot_id;
-	private String name;
 	private String user_id;
-	private String nick_name;
+	private String nickname;
+	private String name;
 	private String title;
 	private String image;
 	private String description;
 	private String hashtag;
-	private String address;
-	private String location;
 	private int positive_num;
-	private int nagative_num;
-	private String type;
 	
 	@JsonFormat(shape=JsonFormat.Shape.STRING, pattern="yyyy/MM/dd")
 	private Date registration_time;
+	
+	private String location;
+	private double latitude;
+	private double longitude;
+	
+	//°Ë»ö
+	private String type;
+	private String keyword;
 }

@@ -53,12 +53,14 @@ const addCard = (card) => {
     
     cardBorder.appendChild(addCardHeader(card));
     cardBorder.appendChild(addCardBody(card));
+    cardBorder.appendChild(addHashTag(card));
     cardBorder.appendChild(addIconPart());
 
     cardGroup.appendChild(cardBorder);
 
     cardBody.appendChild(cardGroup);
 }
+
 const addCardHeader = (card) => {
     const cardHeader = document.createElement('div');
     cardHeader.classList.add('card-header');
@@ -73,20 +75,29 @@ const addCardHeader = (card) => {
                             </a>`;
     return cardHeader;
 }
+
 const addCardBody = (card) => {
     const cardBody = document.createElement('div');
     cardBody.classList.add('card-body');
     cardBody.classList.add('pt-2');
 
-    cardBody.innerHTML += `<a href="javascript:;" class="card-title h5 d-block text-darker text-center mt-3" id="card-title">
+    cardBody.innerHTML += `<a href="/jeju/listById?tourist_spot_id=${card.tourist_spot_id }" class="card-title h5 d-block text-darker text-center mt-3" id="card-title">
                                 ${card.name }
                             </a>
                             <p class="card-description text-center mb-4">
-                            	<small class="text-break text-muted">
-											${card.description}
+                            	<small class="text-muted">
+											${card.description.substr(0,30) }...
                             	</small>
                             </p>`;
     return cardBody;
+}
+
+const addHashTag = (card) => {
+    const hashTag = document.createElement('div');
+    hashTag.classList.add('hashTag');
+
+    hashTag.innerHTML += '<p class="text-muted">${card.hashtag }</p>';
+    return hashTag;
 }
 
 const addIconPart = () => {
@@ -105,10 +116,8 @@ const addIconPart = () => {
     innerDiv2.setAttribute('id', 'icon');
 
     innerDiv1.innerHTML += '<i id="icon" onclick="" class="far fa-thumbs-up"></i>';
-    innerDiv1.innerHTML += '<i class="far fa-thumbs-down"></i>';
 
     innerDiv2.innerHTML += '<p>좋아요</p>';
-    innerDiv2.innerHTML += '<p>싫어요</p>';
 
     outerDiv.appendChild(innerDiv1);
     outerDiv.appendChild(innerDiv2);
@@ -135,4 +144,22 @@ const applyPagination = ()=> {
             generateCard();
         }
     });
+    
+    function getSearchList(){
+	$.ajax({
+		type : 'GET',
+		url : "/board/getSearchList",
+		data : $("form[name=search-form]").serialize(),
+		success : function(result){
+			$('#contents-body').empty();
+			const generateCard = () => {
+			    cardBody.innerHTML = "";
+			
+			    for(let i = 0; i < displayCards.length; i++) {
+			        addCard(displayCards[i]);
+			    }
+			}
+   	 }
+	});
+}
 }

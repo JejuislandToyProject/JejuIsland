@@ -6,6 +6,7 @@ import javax.servlet.http.HttpSession;
 
 import com.kgitbank.jeju.dto.TouristSpot;
 import com.kgitbank.jeju.mapper.TouristSpotMapper;
+import com.kgitbank.jeju.service.impl.BoardServiceImpl;
 
 public interface BoardService {
 
@@ -18,5 +19,4 @@ public interface BoardService {
 	
 	List<TouristSpot> listByUserd(String user_id, HttpSession session);
 	List<TouristSpot> listByUserd(String user_id);
-	
 }

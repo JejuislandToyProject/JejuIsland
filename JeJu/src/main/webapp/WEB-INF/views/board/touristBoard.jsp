@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -91,32 +91,39 @@
     </ul>
   </div>
 </div>
+
+	            <!-- navbar -->
+      <!-- Navbar Transparent -->
+	<nav
+	  class="navbar navbar-expand-lg top-0 z-index-3 w-100 shadow-none my-3  navbar-transparent ">
+			  <div class="container">
+			    <div class="collapse navbar-collapse" id="navigation">
+			      <ul class="navbar-nav navbar-nav-hover ms-auto">
+			        <div class="row">
+			          <div class="col-auto">
+			            <div class="bg-white border-radius-lg d-flex me-2">
+			            	<form name="search-form" autocomplete="off">
+			            		<select name="type">
+			            			<option selected value ="">검색 내용 선택</option>
+			            			<option value="name">관광지</option>
+			            			<option value="description">내용</option>
+			            			<option value="hashtag">해시태그</option>
+			            		</select>
+				              	<input type="text" class="form-control border-0 ps-3" placeholder="Search here...">
+				              	<button class="btn bg-gradient-primary my-1 me-1" onclick="getSerchList()">search</button>
+			              	</form>
+			            </div>
+			          </div>
+			        </div>
+			      </ul>
+			    </div>
+			  </div>
+	</nav>
+	<!-- End Navbar -->
       
       <!-- card layout -->
       <div id="contents-body">
       </div>
-      
-            <!-- navbar -->
-      <!-- Navbar Transparent -->
-	<nav
-	  class="navbar navbar-expand-lg top-0 z-index-3 w-100 shadow-none my-3  navbar-transparent ">
-	  <div class="container">
-	    <div class="collapse navbar-collapse" id="navigation">
-	      <ul class="navbar-nav navbar-nav-hover ms-auto">
-	        <div class="row">
-	          <div class="col-auto">
-	            <div class="bg-white border-radius-lg d-flex me-2">
-	              <input type="text" class="form-control border-0 ps-3" placeholder="Type here...">
-	              <button class="btn bg-gradient-primary my-1 me-1">Search</button>
-	            </div>
-	          </div>
-	        </div>
-	      </ul>
-	    </div>
-	  </div>
-	</nav>
-	<!-- End Navbar -->
-      
       
       <!--Page-->
       <nav aria-label="Page navigation">
