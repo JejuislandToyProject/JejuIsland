@@ -8,31 +8,47 @@ let displayRecords = [];
 let page = 1;
 let totalPages = 0;
 
-makeRequest();
+
+const makeRequest = (method, url) => {
+	return new Promise(function (resolve, reject) {
+	    let xhttp = new XMLHttpRequest();
+	    xhttp.onload = function () {
+	        if (this.status >= 200 && this.status < 300) {
+	          resolve(xhttp.response);
+	        } else {
+	          reject({
+	            status: this.status,
+	            statusText: xhttp.statusText
+	          });
+	        }
+	      };
+	
+	    xhttp.open(method, url, true);
+	    xhttp.send();
+	})
+};
 
 
-var xhttp;
-function makeRequest() {
-    xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = setVariable;
+promises = [makeRequest('GET', 'getMyFamousRestaurantWrite'), makeRequest('GET', 'getMyTouristSpotWrite')];
 
-    xhttp.open('GET', 'getMyWrite', true);
-    xhttp.send();
-}
+/* process after sucess request-response   */
+Promise.all(promises).then(responses => {
+    let JSONString = "";
+    responses.forEach((response)=> {
+            JSONString += response.trim();
+    });
+	JSONString = JSONString.replace('\]\[', ', ');
+	
+    records = JSON.parse(JSONString);
+    totalRecords = records.length;
+    totalPages = Math.ceil(totalRecords/recordPerPage);
+    applyPagination();
+    
+}).catch((error) => {
+    console.error(error);
+});
 
-function setVariable() {
-    if(xhttp.readyState === XMLHttpRequest.DONE) {
-        if(xhttp.status === 200) {
-            console.dir(xhttp);
-            records = JSON.parse(xhttp.responseText);
-            console.log(records);
-            totalRecords = records.length;
-            totalPages = Math.ceil(totalRecords/recordPerPage);
-            
-            applyPagination();
-        }
-    }
-}
+
 const generateTable = () => {
     tableBody.innerHTML = "";
 
