@@ -8,11 +8,19 @@ html {
 	overflow: hidden;
 }
 h1 {
+	user-select: none;
 	margin: 2rem 0 1.5rem 3.4rem;
 	font-family: 'Bebas Neue', cursive, sans-serif;
 }
 h1:hover {
 	cursor:pointer;
+}
+h1 a {
+	text-decoration: none;
+	color: #212529;
+}
+h1 a:hover {
+	color: #212529;
 }
 .list-group-item.active {
   z-index: 2;
