@@ -6,7 +6,7 @@
 
 	<security:http pattern="/resources/**" security="none"/>
 
-	<security:http auto-config="true" use-expressions="true">
+	<security:http pattern="/admin/**" auto-config="true" use-expressions="true">
 		<security:csrf disabled="true"/>
         <!-- <security:intercept-url pattern="/admin/login" access="hasRole('ROLE_USER')" /> -->
         <security:form-login
@@ -14,11 +14,13 @@
 	        password-parameter="password"
 	        login-page="/admin/login"
 	        default-target-url="/"
-			login-processing-url="/perform_login" 
+			login-processing-url="/admin/perform_login" 
 			authentication-failure-url="/admin/login?error=true"
 			always-use-default-target="true"
     	/>
+    	<security:logout logout-url="/admin/logout" logout-success-url="/admin/login"/>
     </security:http>
+    
 
     <security:authentication-manager>
         <security:authentication-provider user-service-ref="adminLogin">
