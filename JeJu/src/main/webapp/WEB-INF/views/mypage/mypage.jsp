@@ -57,11 +57,6 @@
 									</tr>
 								</thead>
 								<tbody id="myWriteTable">
-<%-- 									<c:forEach var="restaurant" items="${restaurants }" varStatus="status">
-										<td class="title"><a href="#">${restaurant.title }</a></td>
-										<td class="name">${restaurant.nickname }</td>
-										<td class="date">${registerDate[status.index] }</td>
-									</c:forEach> --%>
 								</tbody>
 							</table>
 							<br>
