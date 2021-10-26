@@ -46,25 +46,26 @@ public class BoardController {
 	@Inject
 	BoardService boardService;
 	
+	
 	// list
-	/*@RequestMapping(value="/listTourist", method= RequestMethod.GET)
+	@RequestMapping(value="/listTourist", method= RequestMethod.GET)
 	public ModelAndView listTourist() throws Exception {
 		
 		ModelAndView mav = new ModelAndView();
 		mav.setViewName("board/touristBoard");
 		mav.addObject("tourist_spot",touristSpotMapper.listTourist());
-		mav.addObject("locations",locationMapper.getList());
+		mav.addObject("locations",locationMapper.ListLocations());
 		return mav;
 	}
-	*/
+	
 	// 2. insert form
 	@ RequestMapping(value="/addTourist", method = RequestMethod.GET)
 	public String addTourist(Model model, HttpSession session) throws IllegalStateException, IOException {
-		List<Locations> list = locationMapper.getList();
+		List<Locations> list = locationMapper.ListLocations();
 		session.getAttribute("id");
 		log.info(session.getAttribute("id")+" °ª");
 		
-		model.addAttribute("locations", locationMapper.getList());
+		model.addAttribute("locations", locationMapper.ListLocations());
 		return "board/form";
 	}
 	
@@ -73,23 +74,23 @@ public class BoardController {
 	@RequestMapping(value="/addTourist/success", method=RequestMethod.POST, headers = ("content-type=multipart/*"))
 	public String addTourist(@RequestParam("imageFile") MultipartFile multi, 
 			@ModelAttribute("touristSpot") TouristSpot touristSpot,
-			Model model, HttpSession session) throws Exception{
+			Model model, HttpSession session,HttpServletRequest request) throws Exception{
 		
 		session.getAttribute("id");
 		
-		model.addAttribute("locations",locationMapper.getList());
+		model.addAttribute("locations",locationMapper.ListLocations());
 		model.addAttribute("user_id", touristSpot.getUser_id());
 		
 		
 		
 		try {
-			String uploadPath = "d:\\";
-			
+			String root_path = request.getSession().getServletContext().getRealPath("/"); 
+			String attach_path = "resources/img/";
 		if (!multi.getOriginalFilename().isEmpty()) {
-		    File file =new File(uploadPath, multi.getOriginalFilename());
+		    File file =new File(root_path+attach_path, multi.getOriginalFilename());
 		    multi.transferTo(file);
 		    
-		    touristSpot.setImage(uploadPath + multi.getOriginalFilename());
+		    touristSpot.setImage(root_path+attach_path + multi.getOriginalFilename());
 		    
 		   }
 		
@@ -102,11 +103,16 @@ public class BoardController {
 	}
 	
 	// detail and click count
-	@RequestMapping(value="/listById", method= {RequestMethod.GET, RequestMethod.POST})
-	public ModelAndView listById (@RequestParam("tourist_spot_id") int tourist_spot_id, HttpSession session) throws Exception{
+	@RequestMapping(value="/listById", method= RequestMethod.GET)
+	public ModelAndView listById (@RequestParam("tourist_spot_id") int tourist_spot_id, 
+				HttpSession session) throws Exception{
+		
 		ModelAndView mav = new ModelAndView();
 		mav.setViewName("board/view");
-		mav.addObject("tourist_spot",boardService.listById(tourist_spot_id));
+		mav.addObject("tourist_spot_id",tourist_spot_id);
+		mav.addObject("tourist_spot",touristSpotMapper.listView(tourist_spot_id));
+		
+		
 		log.info(mav);
 		return mav;
 	}

@@ -7,5 +7,6 @@ import com.kgitbank.jeju.dto.Locations;
 
 
 public interface LocationMapper {
-	public List<Locations> getList();
+	public List<Locations> ListLocations();
+	
 }

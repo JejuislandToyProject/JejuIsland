@@ -7,18 +7,23 @@
   <select id="list" resultType="com.kgitbank.jeju.dto.FamousRestaurant">
     SELECT * FROM famous_restaurant INNER JOIN user_info USING (user_id)
   </select>
+ 
+   <select id="listByUser" resultType="com.kgitbank.jeju.dto.FamousRestaurant">
+    SELECT * FROM famous_restaurant INNER JOIN user_info USING (user_id)
+  </select>
 
-  <select id="listByUser" resultType="com.kgitbank.jeju.dto.FamousRestaurant">
-    SELECT * FROM famous_restaurant  INNER JOIN user_info USING (user_id)
-    WHERE user_id LIKE #{user_id}
+  <select id="listView" resultType="com.kgitbank.jeju.dto.FamousRestaurant">
+    SELECT * FROM restaurantboard_view 
+    WHERE famous_restaurant_id = #{famous_restaurant_id} 
   </select>
   
   <insert id="addRestaurant">
-    INSERT INTO famous_restaurant
+    INSERT INTO famous_restaurant(famous_restaurant_id,
+    name, user_id, title, image, description, hashtag, location,  
+ 	latitude, longitude, registration_time )
     VALUES(FR_ID_SEQ.nextval, #{name}, #{user_id}, #{title}, 
-    		#{image}, #{description}, #{hashtag}, #{address},
-    		#{location}, #{positive_num}, #{negative_num},
-    		#{type}, sysdate)
+    		#{image}, #{description}, #{hashtag}, 
+    		#{location}, #{latitude}, #{longitude}, sysdate)
   </insert>
   
    <select id="famousList" resultType="com.kgitbank.jeju.dto.FamousRestaurant">

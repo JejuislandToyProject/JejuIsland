@@ -53,7 +53,7 @@ const addCard = (card) => {
     
     cardBorder.appendChild(addCardHeader(card));
     cardBorder.appendChild(addCardBody(card));
-    cardBorder.appendChild(addIconPart());
+    cardBorder.appendChild(addIconPart(card));
 
     cardGroup.appendChild(cardBorder);
 
@@ -78,7 +78,8 @@ const addCardBody = (card) => {
     cardBody.classList.add('card-body');
     cardBody.classList.add('pt-2');
 
-    cardBody.innerHTML += `<a href="javascript:;" class="card-title h5 d-block text-darker text-center mt-3" id="card-title">
+    cardBody.innerHTML += `<a href="/jeju/listById?tourist_spot_id=${card.tourist_spot_id}" 
+    class="card-title h5 d-block text-darker text-center mt-3" id="card-title">
                                 ${card.name }
                             </a>
                             <p class="card-description text-center mb-4">
@@ -104,7 +105,7 @@ const addIconPart = () => {
     innerDiv1.setAttribute('id', 'icon');
     innerDiv2.setAttribute('id', 'icon');
 
-    innerDiv1.innerHTML += '<i id="icon" onclick="" class="far fa-thumbs-up"></i>';
+    innerDiv1.innerHTML += '<i id="icon" onclick="like_func()" class="far fa-thumbs-up"></i>';
     innerDiv1.innerHTML += '<i class="far fa-thumbs-down"></i>';
 
     innerDiv2.innerHTML += '<p>좋아요</p>';
@@ -112,12 +113,11 @@ const addIconPart = () => {
 
     outerDiv.appendChild(innerDiv1);
     outerDiv.appendChild(innerDiv2);
-
+    
     return outerDiv;
 }
 
-
-
+//page number
 const applyPagination = ()=> {
     $pagination.twbsPagination({
         totalPages: totalPages,
@@ -136,3 +136,31 @@ const applyPagination = ()=> {
         }
     });
 }
+
+    //like addPositive
+    function like_func(){
+        var icon_thumbs = $("#icon"); // icon
+        var tourist_spot_id = $(card.tourist_spot_id).val();
+
+        $ajax({
+            url: "/jeju/likeCount",
+            type:"GET",
+            cache: false,
+            dataType:"json",
+            data: 'tourist_spot_id='+tourist_spot_id,
+            seccess: function(data){
+                var mag='';
+                var like_img='';
+                msg += data.msg;
+                alert(msg);
+                  
+                  $('#like_img', frm_read).attr('src', like_img);
+                  $('#like_cnt').html(data.like_cnt);
+                  $('#like_check').html(data.like_check);
+                },
+                error: function(request, status, error){
+                  alert("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
+            }
+        });
+            
+    }

@@ -31,7 +31,7 @@
     hashtag,
     latitude,
     longitude,
-    user_id) 
+    user_id, registration_time) 
     VALUES(
     <!-- db에 시퀀스 넣어주기 -->
     ts_id_seq.nextval,
@@ -43,13 +43,18 @@
     #{hashtag},
     #{latitude},
     #{longitude},
-    #{user_id}
+    #{user_id}, sysdate
     )
     </insert>
 	
 	<select id="listById" resultType="com.kgitbank.jeju.dto.TouristSpot">
-	SELECT * FROM tourist_spot INNER JOIN locations USING(location_id)
-	 WHERE tourist_spot_id = #{tourist_id}
+	SELECT * FROM tourist_spot 
+	 WHERE tourist_spot_id = #{tourist_spot_id}
+	 </select>
+	 
+	 <select id="listView" resultType="com.kgitbank.jeju.dto.TouristSpot">
+	SELECT * FROM touristboard_view 
+	 WHERE tourist_spot_id = #{tourist_spot_id}
 	 </select>
 	 
 	 <select id="listByUserd" resultType="com.kgitbank.jeju.dto.TouristSpot">
