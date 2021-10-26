@@ -10,7 +10,7 @@
 </head>
 <body>
 	<header>
-		<h1 class="m-3">Travel Jeju</h1>
+		<h1>TRAVEL JEJU</h1>
 		<p class="lead m-3 mb-5 text-center">${user.nickname }님의 마이페이지</p>
 		<ul class="nav nav-pills justify-content-end top-nav">
 			<li class="nav-item"><a class="nav-link" href="<c:url value="/"/>">Home</a></li>
