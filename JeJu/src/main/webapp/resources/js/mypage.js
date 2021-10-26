@@ -58,6 +58,15 @@ const generateTable = () => {
 }
 const addRecord = (record) => {
     const tr = document.createElement('tr');
+    tr.onclick = () => {
+        let detailUrl = "";
+        if(record.tourist_spot_id !== null) {
+            detailUrl = `/listById?tourist_spot_id=${record.tourist_spot_id}`;
+        } else {
+            detailUrl = `/listById?famous_restaurant_id=${record.famous_restaurant_id}`;
+        }
+        window.location = detailUrl;
+    }
     tr.innerHTML += `<td>${record.title }</td>`;
     tr.innerHTML += `<td>${record.nickname }</td>`;
     tr.innerHTML += `<td>${record.registration_time }</td>`;
