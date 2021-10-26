@@ -10,7 +10,7 @@
 </head>
 <body>
 	<header>
-		<h1 class="m-3">Travel Jeju</h1>
+		<h1><a href="<c:url value="/"/>">TRAVEL JEJU</a></h1>
 		<p class="lead m-3 mb-5 text-center">${user.nickname }님의 마이페이지</p>
 		<ul class="nav nav-pills justify-content-end top-nav">
 			<li class="nav-item"><a class="nav-link" href="<c:url value="/"/>">Home</a></li>
@@ -57,11 +57,6 @@
 									</tr>
 								</thead>
 								<tbody id="myWriteTable">
-<%-- 									<c:forEach var="restaurant" items="${restaurants }" varStatus="status">
-										<td class="title"><a href="#">${restaurant.title }</a></td>
-										<td class="name">${restaurant.nickname }</td>
-										<td class="date">${registerDate[status.index] }</td>
-									</c:forEach> --%>
 								</tbody>
 							</table>
 							<br>
@@ -79,7 +74,6 @@
 	</div>
 	<script
 		src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
-	<script src="<c:url value="/resources/js/scripts.js"/>"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 	<script src="<c:url value="/resources/js/jquery.twbsPagination.min.js"/>"></script>
 	<script src="<c:url value="/resources/js/mypage.js"/>"></script>

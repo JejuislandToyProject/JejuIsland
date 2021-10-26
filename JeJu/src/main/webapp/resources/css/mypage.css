@@ -1,16 +1,44 @@
 *{
     box-sizing: border-box;
 }
+html, body {
+	background-color: #faf5dd;
+}
 html {
 	overflow: hidden;
 }
+h1 {
+	user-select: none;
+	margin: 2rem 0 1.5rem 3.4rem;
+	font-family: 'Bebas Neue', cursive, sans-serif;
+}
+h1:hover {
+	cursor:pointer;
+}
+h1 a {
+	text-decoration: none;
+	color: #212529;
+}
+h1 a:hover {
+	color: #212529;
+}
 .list-group-item.active {
   z-index: 2;
-  color: #242424;
-  background-color: rgba(245, 238, 223, 0.918);
-  border-color: rgba(245, 238, 223, 0.918);
+  color: #fff;
+  background-color: #198754;
+  border-color: #157347;
  
 }
 .top-nav {
 	padding-right: 50px;
+}
+
+.page-item.active .page-link {
+  background-color: #198754;
+  border-color: #157347;
+}
+
+#myWriteTable tr:hover {
+	cursor: pointer;
+	background-color: #fff;
 }
