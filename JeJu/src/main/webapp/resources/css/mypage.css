@@ -26,3 +26,8 @@ h1 {
   background-color: #198754;
   border-color: #157347;
 }
+
+#myWriteTable tr:hover {
+	cursor: pointer;
+	background-color: #fff;
+}
