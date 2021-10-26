@@ -15,6 +15,7 @@ public interface BoardService {
 	void addTourist(TouristSpot touristSpot);
 	TouristSpot listById(int tourist_spot_id);
 	void deleteTourist(int tourist_spot_id);
+	TouristSpot listView(int tourist_spot_id);
 	
 	List<TouristSpot> listByUserd(String user_id, HttpSession session);
 	List<TouristSpot> listByUserd(String user_id);

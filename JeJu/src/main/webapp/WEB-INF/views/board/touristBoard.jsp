@@ -1,7 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
+    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -58,8 +57,7 @@
                   <p class="lead mb-5 mt-2">
                   
                     제주도의 유명한 명소 
-                    <c:forEach items="${tourist_spot }" var="tourist" varStatus="i" />
-                    ${tourist.location}<br>
+               
                     소개합니다
                   </p>
               </div>
@@ -124,6 +122,7 @@
           
         </ul>
       </nav>
+      <a href='<c:url value='${path}/addTourist'/>' role="button" class="btn btn-outline-info float-end ">글쓰기</a>
     <!-- Footer 부분 수정해야함-->
     <!-- Footer-->
     <footer class="footer text-center">

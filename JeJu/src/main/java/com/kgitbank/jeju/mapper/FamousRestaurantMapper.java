@@ -7,7 +7,8 @@ import com.kgitbank.jeju.dto.FamousRestaurant;
 public interface FamousRestaurantMapper {
 	public List<FamousRestaurant> list();
 	public List<FamousRestaurant> listByUser(String user_id);
-	public int addRestaurant(FamousRestaurant fr);
+	public void addRestaurant(FamousRestaurant fr);
 	public List<FamousRestaurant> famousList();
 	public FamousRestaurant getFamous(String title);
+	public FamousRestaurant listView(int famous_restaurant_id);
 }

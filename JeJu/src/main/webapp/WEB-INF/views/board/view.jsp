@@ -1,10 +1,10 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+
+ 	<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
      <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="EUC-KR">
+<meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
  
@@ -33,7 +33,7 @@
 	<!-- Navigation-->
     <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3 navbar-shrink" id="mainNav">
         <div class="container px-4 px-lg-5">
-            <a class="navbar-brand" href="#page-top">���Travel Jeju���</a>
+            <a class="navbar-brand" href="#page-top">🍊Travel Jeju🍊</a>
             <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ms-auto my-2 my-lg-0">
@@ -77,35 +77,30 @@
     </div>
       <!-- End Navbar -->
     <div class="container-fluid py-4 px-lg-5">
-      <div class="row">
+         
+      <div class="row ">
         <div class="col-lg-9 col-12 mx-auto">
           <div class="card card-body mt-4">
-          
-              <input ><img class="img-thumbnail" src="<c:url value='${tourist_spot.image}'/>" /></input>
-              <h5 class="mb-0 mt-2">
-              <input  type="text" value="제목 : ${tourist_spot.title}"/></h5>
+              <img class="img-fluid border-radius-lg" src="${tourist_spot.image}" />
+              <h5 class="mb-0 mt-2">제목 : ${tourist_spot.title}</h5>
               <p class="text-sm mb-1 mt-1" >
-              <input type="text" value="관광지 이름 : ${tourist_spot.name}"/></p>
-              <div class="col-12 col-md-6">
-                <div class="row">
-                  <input class="col-6 form-label" type="text" value="작성자 : ${tourist_spot.nick_name}" />
-                  <input class="col-6 form-label" type="text" value="조회수 : ${tourist_spot.view}" />
-                </div> 
-                <div class="col-12 md-6">
-                    <div class="row text-end">
-                    <div class="col-6">
-                    <input class="form-label"  type="text" value="좋아요 : ${tourist_spot.positive_num}"/>
-                    </div>
-                    <div class="col-6">
-                    <input class="form-label"  type="text" value="싫어요 : ${tourist_spot.nagative_num}"/>
-                    </div>
-                  </div>
-                </div>
+              <label for="projectName" class="form-label">관광지명 : ${tourist_spot.name}</label>
+              <div class="col-20 col-md-11">   
+                 <div class="row text-end">
+                 <div class="col-6">
+               		<label for="projectName" class="col-6 form-label">글쓴이 : ${tourist_spot.nickname}</label>
+                 </div>
+                 <div class="col-6">
+                	<label for="projectName" class="col-6 form-label">좋아요 : ${tourist_spot.positive_num}</label>                   
+                 </div>
+               </div>
+             
               </div>
               <hr class="horizontal dark my-3">
-            <input for="projectName" class="form-label" type="text" value="주소 : ${tourist_spot.location}"/>
-            <input for="projectName" class="form-label"  type="text" value="설명 : ${tourist_spot.description}">
-            <input for="projectName" class="form-label mt-2" type="text" value="태그 : ${tourist_spot.hashtag}"/>
+            <label for="projectName" class="col-6 form-label">지역명: ${locations.location}</label>
+            <label for="projectName" class="col-6 form-label">설명</label>
+            <label for="projectName" class="col-6 form-label">${tourist_spot.description}</label>
+            <label for="projectName" class="col-6 form-label">해시태그 : ${tourist_spot.hashtag}</label>
             
             <div class="d-flex justify-content-end mt-4">  
               <button type="button" name="button" onclick="history.back()"  class="btn btn-light btn-outline-dark m-0">back</button>
@@ -133,7 +128,7 @@
                 </li>
             </ul> -->
             <div class="logoimg">
-                <!-- <img src="./assets/img/���п���⒰�솽���듄�료���녁�� ���╇�������� ���⒰����.png" alt=""> -->
+                <!-- <img src="./assets/img/占쏙옙占싻울옙占쏙옙�곤옙�쏙옙占쏙옙��占쎈�占쏙옙占쎈��占쏙옙 占쏙옙占썩��占쏙옙占쏙옙占쏙옙占쏙옙 占쏙옙占썩�곤옙占쏙옙占�.png" alt=""> -->
             </div>
             <p class="text-muted small mb-0">Jeju Island</p>
         </div>

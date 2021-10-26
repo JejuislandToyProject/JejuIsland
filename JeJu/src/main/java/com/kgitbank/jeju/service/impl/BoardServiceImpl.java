@@ -93,6 +93,12 @@ public class BoardServiceImpl implements BoardService {
 		return null;
 	}
 
+	@Override
+	public TouristSpot listView(int tourist_spot_id) {
+		// TODO Auto-generated method stub
+		return  touristSpotMapper.listView(tourist_spot_id);
+	}
+
 
 
 	
