@@ -63,7 +63,7 @@ const addRecord = (record) => {
         if(record.tourist_spot_id !== null) {
             detailUrl = `/listById?tourist_spot_id=${record.tourist_spot_id}`;
         } else {
-            detailUrl = `/listById?famous_restaurant_id=${record.famous_restaurant_id}`;
+            detailUrl = `/listFamous?famous_restaurant_id=${record.famous_restaurant_id}`;
         }
         window.location = detailUrl;
     }
