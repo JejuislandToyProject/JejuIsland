@@ -43,6 +43,8 @@ public class JejuController {
 			return "redirect:/login";
 		}
 		
+		model.addAttribute("user", userMapper.listUser(id));
+		
 		return "/mypage/mypage";
 	}
 
