@@ -39,7 +39,7 @@
   <body class="text-center">
     
 <main class="form-signin">
-  <form name="f" action="<c:url value="/perform_login"/>" method="POST">
+  <form name="f" action="<c:url value="/admin/perform_login"/>" method="POST">
     <h1 class="logo fw-normal">TRAVEL JEJU</h1>
     <h2 class="h3 mb-3 fw-normal">Please sign in</h2>
 
