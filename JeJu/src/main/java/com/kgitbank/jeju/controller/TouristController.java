@@ -34,7 +34,7 @@ public class TouristController {
 	@GetMapping("/getSearchList")
 	@ResponseBody
 	private List<TouristSpot> getSearchList(@RequestParam("type") String type,
-			@RequestParam("keyword") String keyword){
+			@RequestParam("keyword") String keyword, Model model){
 		TouristSpot touristSpot = new TouristSpot();
 		touristSpot.setType(type);
 		touristSpot.setKeyword(keyword);

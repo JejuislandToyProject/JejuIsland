@@ -96,7 +96,7 @@ const addHashTag = (card) => {
     const hashTag = document.createElement('div');
     hashTag.classList.add('hashTag');
 
-    hashTag.innerHTML += '<p class="text-muted">${card.hashtag }</p>';
+    hashTag.innerHTML += '<p class="text-muted">해시태그 넣어야함</p>';
     return hashTag;
 }
 
@@ -152,6 +152,13 @@ const applyPagination = ()=> {
 		data : $("form[name=search-form]").serialize(),
 		success : function(result){
 			$('#contents-body').empty();
+			const generateCard = () => {
+    cardBody.innerHTML = "";
+
+    for(let i = 0; i < displayCards.length; i++) {
+        addCard(displayCards[i]);
+    }
+}
    	 }
 	});
 }

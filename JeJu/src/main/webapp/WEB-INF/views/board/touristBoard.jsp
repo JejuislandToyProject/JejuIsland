@@ -89,7 +89,7 @@
   </div>
 </div>
 
-	            <!-- navbar -->
+	            <!--Search navbar -->
       <!-- Navbar Transparent -->
 	<nav
 	  class="navbar navbar-expand-lg top-0 z-index-3 w-100 shadow-none my-3  navbar-transparent ">
