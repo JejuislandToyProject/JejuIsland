@@ -17,7 +17,6 @@ restaurantBtn.addEventListener('click', event =>{
             
             if(readyState == 4 && httpStatus == 200) {
               for(var i = 0; i < Object.keys(JSON.parse(e.target.responseText)).length; ++i){ 
-                 console.log(JSON.parse(e.target.responseText));
                  addToList(JSON.parse(e.target.responseText)[i]);
               }
             }

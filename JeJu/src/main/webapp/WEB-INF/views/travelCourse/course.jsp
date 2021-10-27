@@ -52,11 +52,11 @@
 	<div class="courseTopbar">
 		<div></div>
 		<div class="courseLogoBox">
-			<div>J E J U</div>
-			<div>MAKE YOUR TRAVEL COURSE</div>
+			<div><a href="/jeju">J E J U</a></div>
+			<div><a href="/jeju">MAKE YOUR TRAVEL COURSE</a></div>
 		</div>
 		<div></div>
-		<div>H O M E</div>
+		<div><a href="/jeju">H O M E</a></div>
 	</div>
 
 	<div class="courseGridContainer">
@@ -107,10 +107,10 @@
 					style="background-color: #FFFFFF; opacity: 0.8; color: #242424;">지도
 					원위치</button>
 				<button type="button"id="enrollRestaurantBtn"
-					onclick="location.href=''" class="btn btn-md"
+					onclick="location.href='../addTourist'" class="btn btn-md"
 					style="background-color: #FFFFFF; opacity: 0.8; color: #242424;">맛집등록
 					하기</button>
-				<button type="button" id="enrollSpotBtn" onclick="location.href=''"
+				<button type="button" id="enrollSpotBtn" onclick="location.href='../addTourist'"
 					class="btn btn-md"
 					style="background-color: #FFFFFF; opacity: 0.8; color: #242424;">관광명소
 					등록</button>

@@ -86,7 +86,6 @@ const addToListLeft = (jsonDataLeft) => {
           btn_plus.setAttribute('class', "cardSmallBtn");
           btn_plus.setAttribute('id', jsonDataLeft.title);
           btn_plus.setAttribute('value', jsonDataLeft.latitude +'/'+ jsonDataLeft.longitude);
-		   console.log("벨류 : "+jsonDataLeft.latitude +'/'+ jsonDataLeft.longitude);
           btn_plus.setAttribute('onClick', `deleteRow(this, this.id, 'jsonDataLeft'), deleteMarkers(map, this.value)`);
           btn_plus.innerText = 'x';
 

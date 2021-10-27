@@ -163,7 +163,7 @@
 						</div>
 
 						<div class="polygon-text-box">
-
+						
 							<div class="polygon-text-title">
 								<div id="polygon-title"></div>
 								<div id="polygon-location"></div>
@@ -175,7 +175,9 @@
 								<i class="far fa-thumbs-up"></i> <i class="fas fa-bolt"></i> <i
 									class="fas fa-globe-americas"></i>
 							</div>
-							<input id="polygon-modalBtn" type="submit" value="상세보기">
+							
+							<button id="polygon-modalBtn">상세보기</button>
+							
 						</div>
 					</div>
 				</div>
