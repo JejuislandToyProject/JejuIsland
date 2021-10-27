@@ -24,7 +24,10 @@
 <link href="<c:url value='/resources/css/styles.css'/>" rel="stylesheet" />
 <link rel="stylesheet" type="text/css"
 	href="<c:url value='/resources/css/cssmodal.css'/>">
+<script type="text/javascript" 
+					src="//dapi.kakao.com/v2/maps/sdk.js?appkey=115edfd07bd1f09ac3a8881810a2bb4b"></script>
 
+<script src="/resources/js/polugon.js"></script>
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
 	rel="stylesheet">
 
@@ -60,9 +63,9 @@
 	#placesList .item h5, #placesList .item .info {text-overflow: ellipsis;overflow: hidden;white-space: nowrap;}
 	#placesList .item .info{padding:10px 0 10px 55px;}
 	#placesList .info .gray {color:#8a8a8a;}
-	#placesList .info .jibun {padding-left:26px;background:url(https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/places_jibun.png) no-repeat;}
+	#placesList .info .jibun {padding-left:26px;background:url(https:\/\/t1.daumcdn.net/localimg/localimages/07/mapapidoc/places_jibun.png) no-repeat;}
 	#placesList .info .tel {color:#009900;}
-	#placesList .item .markerbg {float:left;position:absolute;width:36px; height:37px;margin:10px 0 0 10px;background:url(https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/marker_number_blue.png) no-repeat;}
+	#placesList .item .markerbg {float:left;position:absolute;width:36px; height:37px;margin:10px 0 0 10px;background:url(https:\/\/t1.daumcdn.net/localimg/localimages/07/mapapidoc/marker_number_blue.png) no-repeat;}
 	#placesList .item .marker_1 {background-position: 0 -10px;}
 	#placesList .item .marker_2 {background-position: 0 -56px;}
 	#placesList .item .marker_3 {background-position: 0 -102px}
@@ -110,7 +113,7 @@
 			</div>
 		</div>
 	</nav>
-	<c:forEach var="tourist" items="${tourist_spot }" />
+	<c:forEach var="restaurant" items="${famous_restaurant }" />
 	<!--header-->
 	<div class="container pt-5 ps-0">
 		<nav aria-label="breadcrumb">
@@ -155,10 +158,10 @@
 			<div class="col-lg-9 col-12 mx-auto">
 				<div class="card card-body mt-4">
 					<h5 class="mb-0 mt-2">제주의 관광 명소</h5>
-					<p class="text-sm mb-0 mt-1">새로운 제주의 볼거리를 추가해보세요</p>
+					<p class="text-sm mb-0 mt-1">새로운 제주의 먹거리를 추가해보세요</p>
 					<hr class="horizontal dark my-3">
 
-					<form action="<c:url value="/addTourist/success"/>" method="post"
+					<form action="<c:url value="/addRestaurant/success?imageFile=${imageFile }"/>" method="post"
                         enctype="multipart/form-data">
 
 						<label for="projectName" class="form-label">제목</label> <input
@@ -220,7 +223,7 @@
 						    경도 : <div id="longitude"></div>
 						</div>
 
-					<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=115edfd07bd1f09ac3a8881810a2bb4b"></script>
+					
 					<script>
 					// 마커를 담을 배열입니다
 					var markers = [];
@@ -512,7 +515,7 @@
 					</script>
 
 						<div class="d-flex justify-content-end mt-4">
-							<button type="button" onclick="${path }/jeju/addTourist"
+							<button type="button" onclick="<c:url value='/addTourist'/>"
 								name="button" class="btn btn-light btn-outline-dark m-0">Cancel</button>
 							<button id="btnSave" type="submit"
                                 class="btn btn-success m-0 ms-2">Upload</button>
@@ -552,7 +555,7 @@
 	<!-- scripts -->
 	<script src="<c:url value='/resources/js/scripts.js' />"></script>
 
-	<script src="<c:url value='/resources/js/form.js/'/>"></script>
+	<script src="<c:url value='/resources/js/restaurantForm.js/'/>"></script>
 
 
 </body>
