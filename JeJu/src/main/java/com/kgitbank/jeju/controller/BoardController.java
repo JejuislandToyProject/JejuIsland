@@ -13,8 +13,9 @@ import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -24,6 +25,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.kgitbank.jeju.dto.Locations;
 import com.kgitbank.jeju.dto.TouristSpot;
+import com.kgitbank.jeju.mapper.FamousRestaurantMapper;
 import com.kgitbank.jeju.mapper.LocationMapper;
 import com.kgitbank.jeju.mapper.TouristSpotMapper;
 import com.kgitbank.jeju.service.BoardService;
@@ -43,28 +45,31 @@ public class BoardController {
 	@Autowired
 	LocationMapper locationMapper; 
 	
+	@Autowired
+	FamousRestaurantMapper restaurantMapper;
+	
 	@Inject
 	BoardService boardService;
 	
 	
-	// list
+	/* / list
 	@RequestMapping(value="/listTourist", method= RequestMethod.GET)
-	public ModelAndView listTourist() throws Exception {
+	public ModelAndView listTourist(HttpSession session) throws Exception {
+		String id = (String)session.getAttribute("id");
+		
+		log.info(id);
 		
 		ModelAndView mav = new ModelAndView();
 		mav.setViewName("board/touristBoard");
 		mav.addObject("tourist_spot",touristSpotMapper.listTourist());
 		mav.addObject("locations",locationMapper.ListLocations());
 		return mav;
-	}
+	}*/
 	
 	// 2. insert form
 	@ RequestMapping(value="/addTourist", method = RequestMethod.GET)
 	public String addTourist(Model model, HttpSession session) throws IllegalStateException, IOException {
-		List<Locations> list = locationMapper.ListLocations();
-		session.getAttribute("id");
-		log.info(session.getAttribute("id")+" ��");
-		
+		List<Locations> list = locationMapper.ListLocations();		
 		model.addAttribute("locations", locationMapper.ListLocations());
 		return "board/form";
 	}
@@ -76,7 +81,7 @@ public class BoardController {
 			@ModelAttribute("touristSpot") TouristSpot touristSpot,
 			Model model, HttpSession session,HttpServletRequest request) throws Exception{
 		
-		session.getAttribute("id");
+		
 		
 		model.addAttribute("locations",locationMapper.ListLocations());
 		model.addAttribute("user_id", touristSpot.getUser_id());
@@ -115,6 +120,14 @@ public class BoardController {
 		
 		log.info(mav);
 		return mav;
+	}
+	
+	// polygon -> board 검색바 안으로 넘어갈 값.
+	@GetMapping("/pathRestaurant/{title}")
+	public String getRestaurantBoard(@PathVariable("title") String title, Model model) {
+		model.addAttribute("polygonSearch", title);
+		
+		return "listRestaurant";
 	}
 	
 	

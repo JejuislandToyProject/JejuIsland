@@ -67,13 +67,14 @@
 	 
 	 <update id="addPositive">
 	 UPDATE tourist_spot SET positive_num  = positive_num +1
-	 WHERE tourist_spot_id = #{tourist_spot_id}
+	 WHERE tourist_spot_id = #{tourist_spot_id} AND user_id=#{user_id}
 	 </update> 
 	
-	 <update id="addNagative">
-	 UPDATE tourist_spot SET positive_num  = nagative_num +1
-	 WHERE tourist_spot_id = #{tourist_spot_id}
+	<update id="addPositiveCancel">
+	 UPDATE tourist_spot SET positive_num  = 0
+	 WHERE tourist_spot_id = #{tourist_spot_id} AND user_id=#{user_id}
 	 </update> 
+	
 	
 	<update id="updateTourist">
 	UPDATE tourist_spot SET

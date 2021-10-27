@@ -19,26 +19,46 @@ var mapContainer = document.getElementById('map'), // 지도를 표시할 div
       var zoomControl = new kakao.maps.ZoomControl();
       map.addControl(zoomControl, kakao.maps.ControlPosition.RIGHT);
 
-// 맵의 마커끼리 선을 그어주는 기능 
+// 맵의 마커끼리 선을 그어주는 기능 // 경로 저장 버튼을 누르면 여기서 순서를 만들어서 띄워줘야함!
+// 1 이 버튼을 누를때에 기존 마커 텍스트 들을 다 지워버린다.
 const lookCourseBtn = document.getElementById('lookCourseBtn');
       lookCourseBtn.addEventListener('click', event =>{
+	 	
+	for (var i = 0; i < ovarlays.length; i++){
+             ovarlays[i].setMap(null);
+     	}  
+		 ovarlays = [];
          addLine(markers);
+
+	for(var j = 0; j < positions.length; ++j){
+		var content = '<div class="customoverlay">' +
+    	 '  <a>' +
+    	 '   <span id="numbers">'+(j+1)+'</span> <span class="title">'+names[j]+'</span>'
+     	'  </a>' +
+    	 '</div>';
+
+      	 addText(positions[j], content);
+	}
+
+ 
+
       });
       
       function addLine(markers){
          var linePath=[];      
          for (i=0; i < markers.length; ++i){
             linePath.push(markers[i].getPosition()); 
-         }
-         // 선을 구성하는 좌표 배열입니다. 이 좌표들을 이어서 선을 표시합니다     
+         }   
+
+
 
          // 지도에 표시할 선을 생성합니다
          var polyline = new kakao.maps.Polyline({
              path: linePath, // 선을 구성하는 좌표배열 입니다
-             strokeWeight: 5, // 선의 두께 입니다
+             strokeWeight: 2, // 선의 두께 입니다
              strokeColor: 'red', // 선의 색깔입니다
              strokeOpacity: 0.7, // 선의 불투명도 입니다 1에서 0 사이의 값이며 0에 가까울수록 투명합니다
-             strokeStyle: 'dashed' // 선의 스타일입니다
+             strokeStyle: 'solid' // 선의 스타일입니다
          });
          lines.push(polyline);
          // 지도에 선을 표시합니다 
