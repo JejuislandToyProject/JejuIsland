@@ -15,7 +15,7 @@ function makeRequest() {
     xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = setVariable;
 
-    xhttp.open('GET', '/jeju/touristBoard', true);
+    xhttp.open('GET', '/jeju/RestaurantBoard', true);
     xhttp.send();
 }
 
@@ -27,7 +27,6 @@ function setVariable() {
             console.log(cards);
             totalcards = cards.length;
             totalPages = Math.ceil(totalcards/cardPerPage);
-            
             
             applyPagination();
         }
@@ -79,7 +78,7 @@ const addCardBody = (card) => {
     cardBody.classList.add('card-body');
     cardBody.classList.add('pt-2');
 
-    cardBody.innerHTML += `<a href="/jeju/listById?tourist_spot_id=${card.tourist_spot_id}" 
+    cardBody.innerHTML += `<a href="/jeju/listFamous?famous_restaurant_id=${card.famous_restaurant_id}" 
     class="card-title h5 d-block text-darker text-center mt-3" id="card-title">
                                 ${card.name }
                             </a>
@@ -166,4 +165,3 @@ const applyPagination = ()=> {
             
     }
     
-  

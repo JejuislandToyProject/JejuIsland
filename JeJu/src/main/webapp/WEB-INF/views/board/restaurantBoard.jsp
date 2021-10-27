@@ -36,7 +36,7 @@
                 <ul class="navbar-nav ms-auto my-2 my-lg-0">
                     <li class="nav-item"><a class="nav-link" href="#index.html">Home</a></li>
                     <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#reservation">Reservation</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/jeju/listRestaurant">Reservation</a></li>
                     <li class="nav-item"><a class="nav-link" href="#bestpick">Best Pick</a></li>
                     <li class="nav-item"><a class="nav-link" href="#">Board</a></li>
                     <li class="nav-item"><a class="nav-link" href="./login.html">Login</a></li>
@@ -53,10 +53,10 @@
       <div class="container px-4 px-lg-5 text-center">
           <div class="row gx-4 gx-lg-5 justify-content-center">
               <div class="col-lg-10">
-                  <h2>관광지 명소</h2>
+                  <h2>맛집 소개</h2>
                   <p class="lead mb-5 mt-2">
                   
-                    제주도의 유명한 명소 
+                    제주도의 유명한 맛집을 
                
                     소개합니다
                   </p>
@@ -72,10 +72,10 @@
   <div class="nav-wrapper position-relative end-0">
     <ul class="nav nav-pills nav-fill p-1" role="tablist" id="nav-top">
       <li class="nav-item">
-        <a class="nav-link" href="./login.html">관광지 명소</a>
+        <a class="nav-link" href="<c:url value="/board/tourist"/>">관광지 명소</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="./login.html">맛집 정보</a>
+          <a class="nav-link" href="<c:url value="/listRestaurant"/>">맛집 정보</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="./login.html">게스트 하우스</a>
@@ -122,7 +122,7 @@
           
         </ul>
       </nav>
-      <div class="me-5">
+       <div class="me-5">
      <button href="#" onclick="addTourist()" class="btn btn-outline-info float-end me-5"> 글쓰기</button>
       
       <script type="text/javascript">
@@ -132,11 +132,12 @@
           if(uid=="null"){
         	  alert("로그인이 팔요한 항목입니다.")
           }else{
-        	  location.replace("/jeju/addTourist");
+        	  location.replace('<c:url value="${path}/jeju/addRestaurant"/>');
           }
       }
       </script>
       </div>
+     
     <!-- Footer 부분 수정해야함-->
     <!-- Footer-->
     <footer class="footer text-center">
@@ -161,7 +162,7 @@
   
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 	<script src="<c:url value="/resources/js/jquery.twbsPagination.min.js"/>"></script>
-  	<script src="<c:url value="/resources/js/touristBoard.js"/>"></script>
+  	<script src="<c:url value="/resources/js/restaurantBoard.js"/>"></script>
  
 </body>
 </html>

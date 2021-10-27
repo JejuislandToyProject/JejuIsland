@@ -47,22 +47,25 @@ public class BoardController {
 	BoardService boardService;
 	
 	
-	// list
+	/* / list
 	@RequestMapping(value="/listTourist", method= RequestMethod.GET)
-	public ModelAndView listTourist() throws Exception {
+	public ModelAndView listTourist(HttpSession session) throws Exception {
+		String id = (String)session.getAttribute("id");
+		
+		log.info(id);
 		
 		ModelAndView mav = new ModelAndView();
 		mav.setViewName("board/touristBoard");
 		mav.addObject("tourist_spot",touristSpotMapper.listTourist());
 		mav.addObject("locations",locationMapper.ListLocations());
 		return mav;
-	}
+	}*/
 	
 	// 2. insert form
 	@ RequestMapping(value="/addTourist", method = RequestMethod.GET)
 	public String addTourist(Model model, HttpSession session) throws IllegalStateException, IOException {
 		List<Locations> list = locationMapper.ListLocations();
-		session.getAttribute("id");
+		
 		log.info(session.getAttribute("id")+" °ª");
 		
 		model.addAttribute("locations", locationMapper.ListLocations());
@@ -76,7 +79,7 @@ public class BoardController {
 			@ModelAttribute("touristSpot") TouristSpot touristSpot,
 			Model model, HttpSession session,HttpServletRequest request) throws Exception{
 		
-		session.getAttribute("id");
+		
 		
 		model.addAttribute("locations",locationMapper.ListLocations());
 		model.addAttribute("user_id", touristSpot.getUser_id());
