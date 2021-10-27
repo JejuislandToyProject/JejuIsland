@@ -13,7 +13,7 @@
   </select>
 
   <insert id="addUser">
-    INSERT INTO user_info
+    INSERT INTO user_info(user_id, nickname)
     VALUES(#{user_id}, #{nickname})
   </insert>
 </mapper>
