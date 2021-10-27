@@ -47,14 +47,5 @@ public class JejuController {
 		return "/mypage/mypage";
 	}
 
-	@RequestMapping(value="/admin/login", method= {RequestMethod.GET, RequestMethod.POST})
-	public String adminLogin() {
-		return "/admin/adminLogin";
-		
-	}
-	@RequestMapping(value="/admin", method= {RequestMethod.GET, RequestMethod.POST})
-	public String admin() {
-		return "/admin/admin";
-		
-	}
+
 }
