@@ -3,23 +3,25 @@ var markers = [];
 var ovarlays = [];
 var lines = [];
 var names = [];
+var positions = [];
 // 따로 빼둠 값이 고정되어있어서.
- var imageSrc = 'https://cdn.discordapp.com/attachments/867049212196945931/900625341746413598/dolhareubang-3.png', // 마커이미지의 주소입니다    
-     imageSize = new kakao.maps.Size(64, 69), // 마커이미지의 크기입니다
-     imageOption = {offset: new kakao.maps.Point(27, 69)}; // 마커이미지의 옵션입니다. 마커의 좌표와 일치시킬 이미지 안에서의 좌표를 설정합니다.
+var imageSrc = 'https://cdn.discordapp.com/attachments/867049212196945931/900625341746413598/dolhareubang-3.png', // 마커이미지의 주소입니다    
+     imageSize = new kakao.maps.Size(30, 32), // 마커이미지의 크기입니다
+     imageOption = {offset: new kakao.maps.Point(15, 32)}; // 마커이미지의 옵션입니다. 마커의 좌표와 일치시킬 이미지 안에서의 좌표를 설정합니다.
 
  // 마커의 이미지정보를 가지고 있는 마커이미지를 생성합니다
  var markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize, imageOption);
 
 // 맵에 마커 위에 제목을 써주는 기능 
-function addText(pos, con){   
+function addText(pos, con){  // 줘야할 매개변수는  포지션(좌표), 콘탠츠(들어갈 값) : 경로보기를 누를때에 순서가 다 들어가고 드래그앤 드롭시에는 순서를 다시 다 날린다.
           var customOverlay = new kakao.maps.CustomOverlay({
                map: map,
                position: pos,
                content: con,
-               yAnchor: 1     
+               yAnchor: 1
            });      
          ovarlays.push(customOverlay);
+		 
 };
   
 // 오른쪽 카드 선택시 왼쪽으로 카드를 넘겨주는 기능 
@@ -51,14 +53,14 @@ function addCard(cardTitle, value){
  });
 
  var content = '<div class="customoverlay">' +
-     '  <a href="https://map.kakao.com/link/map/11394059" target="_blank">' +
-     '    <span class="title">'+cardTitle+'</span>' +
+     '  <a>' +
+     '   <span id="numbers"></span> <span class="title">'+cardTitle+'</span>'
      '  </a>' +
      '</div>';
  // 커스텀 오버레이가 표시될 위치입니다 
  var position = new kakao.maps.LatLng(checker[0],checker[1]);
        // 커스텀 오버레이를 생성합니다
-       
+       positions.push(position);
        addText(position, content);      
        
      // 마커가 지도 위에 표시되도록 설정합니다
@@ -95,24 +97,25 @@ function deleteRow(ths, thsId, idName){
 	ths.closest('#'+idName).remove();
 };
 
-// 맵에 표시된 마커와 커스텀오버레이 삭제해주는 기능 
+// 맵에 표시된 마커와 커스텀오버레이 삭제해주는 기능
 function deleteMarkers(map, value) {
      var coord = value.split('/');
+	 var latitude = parseFloat(coord[0]).toPrecision(14);
+	 var longitude = parseFloat(coord[1]).toPrecision(14);
 
       for (var i = 0; i < lines.length; i++){
              lines[i].setMap(null);
       }              
       lines = [];
-		console.log('마커스 전 : '+markers[0].getPosition().getLat());
-		console.log('크루드 0 : ' + coord[0]);
-		console.log(markers[0].getPosition().getLat() == coord[0]);
+
       for (var i = 0; i < markers.length; i++) {
-         if ((markers[i].getPosition().getLat()) == coord[0] || (markers[i].getPosition().getLng()) == coord[1]){
-			console.log('이프문 안쪽 반복.');
+         if ((markers[i].getPosition().getLat()).toPrecision(14) == latitude && 
+											(markers[i].getPosition().getLng()).toPrecision(14) == longitude){
               markers[i].setMap(null);
               ovarlays[i].setMap(null);
               markers.splice(i, 1);
               ovarlays.splice(i, 1);
+			  positions.splice(i, 1);
          }
       }    
 
@@ -130,6 +133,7 @@ const allDelete = document.getElementById('allDelete');
 	  names = [];
 	  markers = [];
       ovarlays = [];
+	  positions = [];
       for (var i = 0; i < lines.length; i++){
           lines[i].setMap(null);
       }              

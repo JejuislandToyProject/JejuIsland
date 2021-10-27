@@ -604,9 +604,6 @@ function displayArea(area) {
 			text_location.innerHTML = Area.location;
 			text_desc.innerHTML = Area.text;
         	image_box.innerHTML = "<img src="+Area.image+" style='width:100%;height:450px;'/>";
-	
-
-//"<c:url value='/' />/images/btn/add.png" />
 	};
 	
     // 다각형에 click 이벤트를 등록하고 이벤트가 발생하면 다각형의 이름과 면적을 인포윈도우에 표시합니다 
@@ -635,4 +632,13 @@ function displayArea(area) {
 	$('.polygon-btn-close, .polygon-overlay').click(function(){
 		$('.polygon-modal, .polygon-overlay').removeClass('polygon-active')
 	});
+	
+	const detailBtn = document.getElementById('polygon-modalBtn');
+	const pTitle = document.getElementById('polygon-title');
+	
+	detailBtn.addEventListener('click', ()=>{
+		location.href = './pathRestaurant/' + pTitle.innerHTML;
+		
+	});
+	
 	
