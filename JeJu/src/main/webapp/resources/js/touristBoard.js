@@ -91,34 +91,38 @@ const addCardBody = (card) => {
     return cardBody;
 }
 
-const addIconPart = () => {
-    const outerDiv = document.createElement('div');
+const addIconPart = (card) => {
+    const outerform = document.createElement('div');
     const innerDiv1 = document.createElement('div');
     const innerDiv2 = document.createElement('div');
 
-    outerDiv.classList.add('author');
-    outerDiv.classList.add('align-items-center');
-    outerDiv.classList.add('p-2');
+    outerform.classList.add('author');
+    outerform.classList.add('align-items-center');
+    outerform.classList.add('p-2');
 
     innerDiv1.classList.add('mt-6');
     innerDiv2.classList.add('mt-2');
 
     innerDiv1.setAttribute('id', 'icon');
-    innerDiv2.setAttribute('id', 'icon');
 
-    innerDiv1.innerHTML += '<i id="icon" onclick="like_func()" class="far fa-thumbs-up"></i>';
-    innerDiv1.innerHTML += '<i class="far fa-thumbs-down"></i>';
+    outerform.innerHTML += `<form id="like_form">`;
 
-    innerDiv2.innerHTML += '<p>좋아요</p>';
-    innerDiv2.innerHTML += '<p>싫어요</p>';
+    innerDiv1.innerHTML += `<div class="align-items-center" id="like_result"><i class="far fa-thumbs-up me-3"></i>${card.positive_num}</div>`;
+    innerDiv1.innerHTML += '<input class="align-items-center" type="button" value="좋아요" onclick="like_func()" />';
 
-    outerDiv.appendChild(innerDiv1);
-    outerDiv.appendChild(innerDiv2);
+    innerDiv2.innerHTML += `<input type="hidden" class="like" name="command" value="${card.positive_num}"/>`;
+    innerDiv2.innerHTML += `<input type="hidden" class="tourist_id" name="tourist_spot_id" value="${card.tourist_spot_id}"/>`;
+
+    outerform.appendChild(innerDiv1);
+    outerform.appendChild(innerDiv2);
     
-    return outerDiv;
+    outerform.innerHTML += `</form>`;
+
+    return outerform;
 }
 
 //page number
+
 const applyPagination = ()=> {
     $pagination.twbsPagination({
         totalPages: totalPages,
@@ -140,30 +144,26 @@ const applyPagination = ()=> {
 
     //like addPositive
     function like_func(){
-        var icon_thumbs = $("#icon"); // icon
-        var tourist_spot_id = $(card.tourist_spot_id).val();
-
+       
         $ajax({
-            url: "/jeju/likeCount",
-            type:"GET",
+            url: "/jeju/board/tourist",
+            type:"POST",
             cache: false,
             dataType:"json",
-            data: 'tourist_spot_id='+tourist_spot_id,
-            seccess: function(data){
-                var mag='';
-                var like_img='';
-                msg += data.msg;
-                alert(msg);
-                  
-                  $('#like_img', frm_read).attr('src', like_img);
-                  $('#like_cnt').html(data.like_cnt);
-                  $('#like_check').html(data.like_check);
-                },
-                error: function(request, status, error){
-                  alert("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
+            data: {tourist_spot_id : $("#tourist_id").val(),
+            tourist_spot_id : $("#like").val()
+            },
+            success: function(data){
+                log.info("ajax: "+data);
+                alert("좋아요");
+                $("#like_result").html(data.positive_num);
+            },
+            error: function(request, status, error){
+              alert("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
             }
         });
+    };
             
-    }
+    
     
   
