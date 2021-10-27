@@ -28,7 +28,9 @@
         </security:authentication-provider>
     </security:authentication-manager>
         
-    
+    <bean id="egovStrictHttpFirewall" class="org.springframework.security.web.firewall.StrictHttpFirewall">
+		<property name="allowSemicolon" value="true"/>
+	</bean>
     <bean id="adminLogin" class="com.kgitbank.jeju.admin.service.AdminLoginService"/>
     <bean id="passwordEncoder" class="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder"/>
 </beans>
