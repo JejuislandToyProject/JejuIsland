@@ -11,5 +11,4 @@ public interface FamousRestaurantMapper {
 	public List<FamousRestaurant> famousList();
 	public FamousRestaurant getFamous(String title);
 	public FamousRestaurant listView(int famous_restaurant_id);
-	public List<FamousRestaurant> getAreaRestaurant(String title);
 }

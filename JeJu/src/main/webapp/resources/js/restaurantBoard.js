@@ -24,7 +24,6 @@ function setVariable() {
         if(xhttp.status === 200) {
             console.dir(xhttp);
             cards = JSON.parse(xhttp.responseText);
-            console.log(cards);
             totalcards = cards.length;
             totalPages = Math.ceil(totalcards/cardPerPage);
             
@@ -164,4 +163,6 @@ const applyPagination = ()=> {
         });
             
     }
+
+
     

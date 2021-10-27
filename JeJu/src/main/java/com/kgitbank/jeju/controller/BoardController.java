@@ -122,12 +122,12 @@ public class BoardController {
 		return mav;
 	}
 	
-	// polygon -> board
+	// polygon -> board 검색바 안으로 넘어갈 값.
 	@GetMapping("/pathRestaurant/{title}")
 	public String getRestaurantBoard(@PathVariable("title") String title, Model model) {
-		log.info("도착" + restaurantMapper.getAreaRestaurant(title));
+		model.addAttribute("polygonSearch", title);
 		
-		return null;
+		return "listRestaurant";
 	}
 	
 	
