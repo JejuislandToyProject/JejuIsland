@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import com.kgitbank.jeju.dto.User;
 import com.kgitbank.jeju.mapper.FamousRestaurantMapper;
 import com.kgitbank.jeju.mapper.UserMapper;
 
@@ -48,9 +47,5 @@ public class JejuController {
 		return "/mypage/mypage";
 	}
 
-	@RequestMapping(value="/admin/login", method= {RequestMethod.GET, RequestMethod.POST})
-	public String admin() {
-		return "/admin/adminLogin";
-		
-	}
+
 }

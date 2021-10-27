@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.kgitbank.jeju.mapper.VisitMapper">
+
+  <select id="getTodayVisitCount" resultType="int">
+    SELECT count(*) FROM visit 
+    WHERE TO_CHAR(visit_date, 'YYYYMMDD') 
+    LIKE TO_CHAR(SYSDATE, 'YYYYMMDD')
+  </select>
+
+  <select id="getTotalVisitCount" resultType="int">
+    SELECT count(*) FROM visit
+  </select>
+
+  <insert id="addVisit">
+    INSERT INTO visit
+    VALUES(vi_id_seq.nextval, sysdate)
+  </insert>
+</mapper>
