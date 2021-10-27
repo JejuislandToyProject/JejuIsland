@@ -25,6 +25,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.kgitbank.jeju.dto.Locations;
 import com.kgitbank.jeju.dto.TouristSpot;
+import com.kgitbank.jeju.mapper.FamousRestaurantMapper;
 import com.kgitbank.jeju.mapper.LocationMapper;
 import com.kgitbank.jeju.mapper.TouristSpotMapper;
 import com.kgitbank.jeju.service.BoardService;
@@ -43,6 +44,9 @@ public class BoardController {
 	
 	@Autowired
 	LocationMapper locationMapper; 
+	
+	@Autowired
+	FamousRestaurantMapper restaurantMapper;
 	
 	@Inject
 	BoardService boardService;
@@ -121,7 +125,7 @@ public class BoardController {
 	// polygon -> board
 	@GetMapping("/pathRestaurant/{title}")
 	public String getRestaurantBoard(@PathVariable("title") String title, Model model) {
-		log.info("도착" + title);
+		log.info("도착" + restaurantMapper.getAreaRestaurant(title));
 		
 		return null;
 	}

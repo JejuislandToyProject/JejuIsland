@@ -33,4 +33,8 @@
     <select id="getFamous" resultType="com.kgitbank.jeju.dto.FamousRestaurant">
         select title, image, positive_num, latitude, longitude from famous_restaurant WHERE title =#{title}
     </select>
+    
+    <select id="getAreaRestaurant" resultType="com.kgitbank.jeju.dto.FamousRestaurant">
+    	select title, image, positive_num, hashtag, description from famous_restaurant WHERE address =#{title}
+    </select>
 </mapper>
