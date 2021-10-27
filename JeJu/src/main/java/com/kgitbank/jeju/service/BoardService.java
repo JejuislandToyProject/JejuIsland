@@ -19,4 +19,6 @@ public interface BoardService {
 	
 	List<TouristSpot> listByUserd(String user_id, HttpSession session);
 	List<TouristSpot> listByUserd(String user_id);
+
+	List<TouristSpot> selectSearchList(TouristSpot touristSpot);
 }

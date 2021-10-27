@@ -2,11 +2,14 @@ package com.kgitbank.jeju.mapper;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
 import com.kgitbank.jeju.dto.TouristSpot;
 import com.kgitbank.jeju.service.impl.BoardServiceImpl;
 
 public interface TouristSpotMapper {
 
+	public static final BoardServiceImpl boardService = new BoardServiceImpl();
 	
 	public void addTourist(TouristSpot touristSpot);
 	public TouristSpot listById(int tourist_id);
@@ -15,6 +18,6 @@ public interface TouristSpotMapper {
 	public void deleteTourist(int tourist_spot_id);
 	public List<TouristSpot> listTourist();
 	public static List<TouristSpot> getSearchList(TouristSpot touristSpot) {
-		return null;
+		return boardService.selectSearchList(touristSpot);
 	}
 }

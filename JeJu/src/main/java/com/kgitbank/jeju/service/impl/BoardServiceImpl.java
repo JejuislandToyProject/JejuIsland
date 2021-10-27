@@ -8,6 +8,7 @@ import javax.servlet.http.HttpSession;
 import org.apache.ibatis.session.SqlSession;
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 import com.kgitbank.jeju.mapper.TouristSpotMapper;
@@ -18,6 +19,9 @@ import com.kgitbank.jeju.dto.TouristSpot;
 public class BoardServiceImpl implements BoardService {
 	@Autowired
 	TouristSpotMapper touristSpotMapper;
+	
+	@Autowired
+	public SqlSessionTemplate sqlSession;
 	
 	@Override
 	public void addTourist(TouristSpot touristSpot) {
@@ -71,6 +75,11 @@ public class BoardServiceImpl implements BoardService {
 		return touristSpotMapper.listTourist();
 	}
 	
+	public List<TouristSpot> selectSearchList(TouristSpot touristSpot){
+		return sqlSession.selectList("TouristSpotMapper.selectSearchList", touristSpot);
+	}
+	
+	
 	
 	@Override
 	public List<TouristSpot> listByUserd(String user_id, HttpSession session) {
@@ -92,5 +101,7 @@ public class BoardServiceImpl implements BoardService {
 		// TODO Auto-generated method stub
 		return null;
 	}
+	
+	
 	
 }

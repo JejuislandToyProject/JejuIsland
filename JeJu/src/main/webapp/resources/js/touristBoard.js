@@ -86,7 +86,7 @@ const addCardBody = (card) => {
                             </a>
                             <p class="card-description text-center mb-4">
                             	<small class="text-muted">
-											${card.description.substr(0,30) }...
+											${card.description.substr(0,40) }...
                             	</small>
                             </p>`;
     return cardBody;
@@ -144,7 +144,7 @@ const applyPagination = ()=> {
             generateCard();
         }
     });
-    
+}
     function getSearchList(){
 	$.ajax({
 		type : 'GET',
@@ -152,14 +152,7 @@ const applyPagination = ()=> {
 		data : $("form[name=search-form]").serialize(),
 		success : function(result){
 			$('#contents-body').empty();
-			const generateCard = () => {
-			    cardBody.innerHTML = "";
-			
-			    for(let i = 0; i < displayCards.length; i++) {
-			        addCard(displayCards[i]);
-			    }
-			}
    	 }
 	});
 }
-}
+

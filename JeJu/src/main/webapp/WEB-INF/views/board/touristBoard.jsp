@@ -80,9 +80,6 @@
           <a class="nav-link" href="./login.html">맛집 정보</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="./login.html">게스트 하우스</a>
-        </li>
-        <li class="nav-item">
           <a class="nav-link" href="./login.html">여행 코스</a>
         </li>
         <li class="nav-item">

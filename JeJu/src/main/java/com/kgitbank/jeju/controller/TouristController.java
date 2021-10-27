@@ -34,12 +34,10 @@ public class TouristController {
 	@GetMapping("/getSearchList")
 	@ResponseBody
 	private List<TouristSpot> getSearchList(@RequestParam("type") String type,
-			@RequestParam("keyword") String keyword, Model model){
+			@RequestParam("keyword") String keyword){
 		TouristSpot touristSpot = new TouristSpot();
 		touristSpot.setType(type);
 		touristSpot.setKeyword(keyword);
 		return TouristSpotMapper.getSearchList(touristSpot);
 	}
-
-	
 }
