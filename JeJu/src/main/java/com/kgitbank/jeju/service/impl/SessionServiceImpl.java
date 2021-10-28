@@ -1,5 +1,7 @@
 package com.kgitbank.jeju.service.impl;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -12,7 +14,10 @@ public class SessionServiceImpl implements SessionService{
 	VisitMapper visitMapper;
 	
 	@Override
-	public void addVisit() {
+	public void addVisit(HttpSession session) {
+		if(session.getAttribute("admin") != null) {
+			return;
+		}
 		visitMapper.addVisit();
 	}
 }

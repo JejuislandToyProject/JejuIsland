@@ -2,6 +2,8 @@ package com.kgitbank.jeju.admin.service.impl;
 
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.ui.Model;
@@ -12,9 +14,13 @@ import com.kgitbank.jeju.admin.service.VisitService;
 
 @Service
 public class VisitServiceImpl implements VisitService{
-	
 	@Autowired
 	VisitMapper visitMapper;
+	
+	@Override
+	public void setAdminSession(HttpSession session) {
+		session.setAttribute("admin", session);
+	}
 	@Override
 	public void getDashboardInfo(Model model) {
 		int todayCount = visitMapper.getTodayVisitCount();
@@ -25,7 +31,7 @@ public class VisitServiceImpl implements VisitService{
 	}
 	
 	@Override
-	public List<DailyVisit> getDailyVisit() {
+	public List<DailyVisit> getChartData() {
 		List<DailyVisit> dailyVisit = visitMapper.getDailyVisit();
 		return dailyVisit;
 	}
