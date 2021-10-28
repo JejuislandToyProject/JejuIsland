@@ -87,7 +87,6 @@
 			</div>
 		</div>
 	</nav>
-
     
     <!-- body -->
     <div id="body"></div>
