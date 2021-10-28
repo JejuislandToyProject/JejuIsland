@@ -19,10 +19,12 @@
   </select>
   
   <select id="getDailyVisit" resultType="com.kgitbank.jeju.admin.dto.DailyVisit">
-    SELECT TO_CHAR(visit_date, 'YYYY/MM/DD') AS visit_date, COUNT(*) AS count
-    FROM visit 
+    SELECT * FROM (
+		SELECT TO_CHAR(visit_date, 'YYYY/MM/DD') AS visit_date, COUNT(*) AS count
+    	FROM visit 
+    	GROUP BY TO_CHAR(visit_date, 'YYYY/MM/DD')
+    ) 
     WHERE <![CDATA[ ROWNUM <= 10]]>
-    GROUP BY TO_CHAR(visit_date, 'YYYY/MM/DD')
   </select>
 	
   <insert id="addVisit">
