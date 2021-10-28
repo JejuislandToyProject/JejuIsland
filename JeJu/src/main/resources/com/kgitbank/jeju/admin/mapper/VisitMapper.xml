@@ -18,7 +18,7 @@
     SELECT count(*) FROM visit
   </select>
   
-  <select id="getDailyVisit" resultType="com.kgitbank.jeju.amdin.dto.DailyVisit">
+  <select id="getDailyVisit" resultType="com.kgitbank.jeju.admin.dto.DailyVisit">
     SELECT TO_CHAR(visit_date, 'YYYY/MM/DD') AS visit_date, COUNT(*) AS count
     FROM visit 
     WHERE <![CDATA[ ROWNUM <= 10]]>
