@@ -1,10 +1,8 @@
-package com.kgitbank.jeju;
+package com.kgitbank.jeju.common;
 
 import javax.servlet.http.HttpSessionEvent;
 import javax.servlet.http.HttpSessionListener;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 import org.springframework.web.context.WebApplicationContext;
 import org.springframework.web.context.support.WebApplicationContextUtils;
 import org.springframework.web.servlet.FrameworkServlet;
@@ -20,7 +18,7 @@ public class VisitorCounter implements HttpSessionListener{
 	public void sessionCreated(HttpSessionEvent se) {
 		if(se.getSession().isNew()) {
 			log.info("create new session");
-			getSessionService(se).addVisit();
+			getSessionService(se).addVisit(se.getSession());
 		} else {
 			log.info("already created session");
 		}

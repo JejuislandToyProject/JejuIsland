@@ -31,7 +31,7 @@
 			</div>
 			
 			<div id="courseItems"></div>
-			<div class="saveCourseModalBtn"><button type="button"class="btn btn btn-90"style="color: white; background-color: orange;">저장하기</button></div>
+			<div class="saveCourseModalBtn"><button name="imagesValue" id="courseSaveBtn" type="button"class="btn btn btn-90"style="color: white; background-color: orange;">저장하기</button></div>
 			
 		</div>
 	</div>
@@ -41,23 +41,43 @@
 	<div class="introduce-modal">
 		<div class="modal-content">
 			<button class="introduce-close">&times;</button>
-			<img
-				src="https://i2.wp.com/blog.findmybucketlist.com/wp-content/uploads/2020/10/%EC%A0%9C%EC%A3%BC%EB%8F%84-2.jpg?resize=792%2C446&ssl=1"
-				style="width: 100%; height: 100%;">
+			<div id="carouselExampleControls" class="carousel slide"
+				data-bs-ride="carousel">
+				<div class="carousel-inner">
+					<div class="carousel-item active">
+						<img src="../resources/img/firstModal.png" class="d-block w-100" alt="...">
+					</div>
+					<div class="carousel-item">
+						<img src="../resources/img/twoModal.png" class="d-block w-100" alt="...">
+					</div>
+					<div class="carousel-item">
+						<img src="../resources/img/threeModal.png" class="d-block w-100" alt="…">
+					</div>
+				</div>
+				<button class="carousel-control-prev" type="button"
+					data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+					<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+					<span class="visually-hidden">Previous</span>
+				</button>
+				<button class="carousel-control-next" type="button"
+					data-bs-target="#carouselExampleControls" data-bs-slide="next">
+					<span class="carousel-control-next-icon" aria-hidden="true"></span>
+					<span class="visually-hidden">Next</span>
+				</button>
+			</div>
 		</div>
 	</div>
 	<div class="overlay"></div>
 
-
-	<div class="courseTopbar">
+	 <div class="courseTopbar">
 		<div></div>
 		<div class="courseLogoBox">
-			<div><a href="/jeju">J E J U</a></div>
+			<div><a href="/jeju">TRAVEL JEJU</a></div>
 			<div><a href="/jeju">MAKE YOUR TRAVEL COURSE</a></div>
 		</div>
 		<div></div>
 		<div><a href="/jeju">H O M E</a></div>
-	</div>
+	</div> 
 
 	<div class="courseGridContainer">
 
@@ -172,5 +192,6 @@
  <script src="<c:url value="/resources/js/courseJS/cardAddAndDelete.js"/>"></script>
  <script src="<c:url value="/resources/js/courseJS/search.js"/>"></script>
  <script src="<c:url value="/resources/js/courseJS/weather.js"/>"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </body>
 </html>

@@ -9,6 +9,7 @@
 		(SELECT title, image, positive_num, latitude, longitude FROM tourist_spot 
 		UNION SELECT title, image, positive_num, latitude, longitude FROM famous_restaurant)WHERE title = #{title}
 	</select>
+	
 	<select id="getSearch" resultType="com.kgitbank.jeju.dto.SpotAndRestaurant">
 		SELECT title, image, positive_num, latitude, longitude FROM 
 		(SELECT title, image, positive_num, latitude, longitude FROM tourist_spot 

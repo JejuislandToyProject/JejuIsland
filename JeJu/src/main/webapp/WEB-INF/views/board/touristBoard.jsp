@@ -138,11 +138,27 @@
 	<nav
 	  class="navbar navbar-expand-lg top-0 z-index-3 w-100 shadow-none my-3  navbar-transparent ">
 	  <div class="container">
+
 	  <div class="collapse navbar-collapse" id="navigation">
 	  <ul class="navbar-nav navbar-nav-hover ms-auto">
 		<div class="me-3">
 		<button href="#" onclick="addTourist()" class="btn btn-outline-info float-end me-5 mt-2"> 글쓰기</button>
 			<script type="text/javascript">
+
+	    <div class="collapse navbar-collapse" id="navigation">
+	      <ul class="navbar-nav navbar-nav-hover ms-auto">
+	        <div class="row">
+	          <div class="col-auto">
+	            <div class="bg-white border-radius-lg d-flex me-2">
+	              <input id="searchValue" type="text" class="form-control border-0 ps-3" placeholder="Type here...">
+	              <button id="searchBtn" class="btn bg-gradient-primary my-1 me-1">Search</button>
+	            </div>
+	            
+	              <div class="me-3">
+				     <button href="#" onclick="addTourist()" class="btn btn-outline-info float-end me-5 mt-2"> 글쓰기</button>
+				      
+				      <script type="text/javascript">
+
 				      function addTourist(){
 				          var uid="<%=(String)session.getAttribute("id") %>";
 				          if(uid=="null"){

@@ -21,6 +21,7 @@ var mapContainer = document.getElementById('map'), // 지도를 표시할 div
 
 // 맵의 마커끼리 선을 그어주는 기능 // 경로 저장 버튼을 누르면 여기서 순서를 만들어서 띄워줘야함!
 // 1 이 버튼을 누를때에 기존 마커 텍스트 들을 다 지워버린다.
+// 값을 다시 넣어주려면 innerHTML로 넣어줘야하는데 순서 판별이 어려움. 그러므로 마커의 텍스트 부분을 전부 제거후 다시 그려주는 방식을 사용함
 const lookCourseBtn = document.getElementById('lookCourseBtn');
       lookCourseBtn.addEventListener('click', event =>{
 	 	
@@ -39,10 +40,7 @@ const lookCourseBtn = document.getElementById('lookCourseBtn');
 
       	 addText(positions[j], content);
 	}
-
- 
-
-      });
+});
       
       function addLine(markers){
          var linePath=[];      

@@ -27,7 +27,6 @@
 </head>
 
 <body id="page-top">
-
     <!-- Page Wrapper -->
     <div id="wrapper">
 
@@ -227,8 +226,7 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js"></script>
 
     <!-- Page level custom scripts -->
-    <script src="<c:url value="/resources/js/demo/chart-area-demo.js"/>"></script>
-
+    <script src="<c:url value="/resources/js/admin/admin_visit_chart.js"/>"></script>
 </body>
 
 </html>

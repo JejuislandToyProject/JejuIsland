@@ -28,8 +28,8 @@ function setVariable() {
             totalcards = cards.length;
             totalPages = Math.ceil(totalcards/cardPerPage);
             
-            
             applyPagination();
+            $pagination.twbsPagination("changeTotalPages", totalPages , page);
         }
     }
 }
@@ -57,7 +57,7 @@ const addCard = (card) => {
     cardBorder.appendChild(addHashTag(card));
     cardBorder.appendChild(addIconPart(card));
 
-    cardGroup.appendChild(cardBorder);
+    cardGroup.appendChild(cardBorder); // 그룹 지우면 다 지워짐.
 
     cardBody.appendChild(cardGroup);
 }
@@ -170,3 +170,31 @@ const applyPagination = ()=> {
             }
         });
     };
+
+
+
+	const searchBtn = document.getElementById('searchBtn');
+	const searchValue = document.getElementById('searchValue');
+	searchBtn.addEventListener('click', () =>{
+		
+		$(document).ready(function() {
+        $("#contents-body").empty();
+
+		var textValue = searchValue.value;
+   		searchRequest(textValue);
+ 	});
+});
+
+
+function searchRequest(textValue) {
+    xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = setVariable;
+
+    xhttp.open('GET', '/jeju/search/'+textValue, true);
+    xhttp.send();
+}
+            
+    
+    
+  
+
