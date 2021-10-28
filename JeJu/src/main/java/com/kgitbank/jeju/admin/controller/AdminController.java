@@ -1,6 +1,8 @@
 package com.kgitbank.jeju.admin.controller;
 
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -18,11 +20,12 @@ public class AdminController {
 	
 	
 	@RequestMapping(value="/admin/login", method= {RequestMethod.GET, RequestMethod.POST})
-	public String adminLogin() {
+	public String adminLogin(HttpSession session) {
+		visitService.setAdminSession(session);
 		return "/admin/adminLogin";
 		
 	}
-	@RequestMapping(value="/admin", method= {RequestMethod.GET, RequestMethod.POST})
+	@RequestMapping(value="/admin/main", method= {RequestMethod.GET, RequestMethod.POST})
 	public String admin(Model model) {
 		visitService.getDashboardInfo(model);
 		return "/admin/admin";
