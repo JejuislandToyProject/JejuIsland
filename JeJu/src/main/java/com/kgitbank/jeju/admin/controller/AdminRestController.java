@@ -18,7 +18,7 @@ public class AdminRestController {
 	@Autowired
 	VisitService visitService;
 
-	@RequestMapping(value = "/getChartData", method= RequestMethod.GET, 
+	@RequestMapping(value = "/admin/getChartData", method= RequestMethod.GET, 
 	produces = MediaType.APPLICATION_JSON_VALUE)
 	public List<DailyVisit> getChartData() {
 		List<DailyVisit> dailyVisit = visitService.getChartData();
