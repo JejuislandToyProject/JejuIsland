@@ -28,6 +28,7 @@ function setVariable() {
             totalPages = Math.ceil(totalcards/cardPerPage);
             
             applyPagination();
+			$pagination.twbsPagination("changeTotalPages", totalPages , page);
         }
     }
 }
@@ -163,6 +164,28 @@ const applyPagination = ()=> {
         });
             
     }
+
+const searchBtn = document.getElementById('searchBtn');
+	const searchValue = document.getElementById('searchValue');
+	searchBtn.addEventListener('click', () =>{
+		
+		$(document).ready(function() {
+        $("#body").empty();
+
+		var textValue = searchValue.value;
+		console.log(textValue);
+   		searchRequest(textValue);
+ 	});
+});
+
+
+function searchRequest(textValue) {
+    xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = setVariable;
+
+    xhttp.open('GET', '/jeju/restSearch/'+textValue, true);
+    xhttp.send();
+}
 
 
     

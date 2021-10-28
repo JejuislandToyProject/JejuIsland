@@ -182,7 +182,7 @@ function searchRequest(textValue) {
     xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = setVariable;
 
-    xhttp.open('GET', '/jeju/search/'+textValue, true);
+    xhttp.open('GET', '/jeju/spotSearch/'+textValue, true);
     xhttp.send();
 }
             

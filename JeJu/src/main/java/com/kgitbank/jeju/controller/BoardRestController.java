@@ -53,13 +53,23 @@ public class BoardRestController {
 	return famousRestaurants;
 	}
 	
-	@GetMapping(value="/search/{textValue}", produces = "application/json; charset=UTF-8")
-	public List<TouristSpot> getSearch(@PathVariable("textValue") String textValue) {
-		List<TouristSpot> searchList = touristSpotMapper.getSearch(textValue);
-		
-		log.info(searchList+"");
-		return searchList;
-		
+	@GetMapping(value="/spotSearch/{textValue}", produces = "application/json; charset=UTF-8")
+	public List<TouristSpot> getSpotSearch(@PathVariable("textValue") String textValue) {
+		List<TouristSpot> searchList = touristSpotMapper.getSpotSearch(textValue);
+
+		return searchList;	
 	}
+	
+	@GetMapping(value="/restSearch/{textValue}", produces = "application/json; charset=UTF-8")
+	public List<FamousRestaurant> getRestSearch(@PathVariable("textValue") String textValue) {
+		List<FamousRestaurant> searchList = famousRestaurantMapper.getRestSearch(textValue);
+		log.info(textValue);
+		log.info("칸트롤러 도착");
+		return searchList;	
+	}
+	
+	
+	
+
 	
 }
