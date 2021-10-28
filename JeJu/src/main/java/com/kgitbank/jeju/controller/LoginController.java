@@ -9,6 +9,7 @@ import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -32,7 +33,6 @@ public class LoginController {
 		@Autowired
 		private LoginService loginservice;
 		
-		// �α��� ȭ��
 		@RequestMapping(value = "/login", method = { RequestMethod.GET, RequestMethod.POST })
 		public String login(HttpServletRequest request, HttpServletResponse response, Model model, HttpSession session) {
 
@@ -51,8 +51,6 @@ public class LoginController {
 			return "/login/login";
 		}
 		
-
-		// ���̹� �α��� ������ callback
 		@RequestMapping(value = "/naverAuth", method = { RequestMethod.GET, RequestMethod.POST })
 		public String naverOauth2ClientCallback(HttpServletRequest request, HttpServletResponse response, Model model, @RequestParam String code, @RequestParam String state, HttpSession session) throws Exception {
 			String serverUrl = request.getScheme()+"://"+request.getServerName();
@@ -92,10 +90,15 @@ public class LoginController {
 			return "redirect:/login/callback";
 		}
 		
-		//�α׾ƿ� 
+		//logout
 		@RequestMapping(value = "/logout", method = { RequestMethod.GET, RequestMethod.POST }) 
 		public String logout(HttpSession session)throws IOException { 
-			session.invalidate(); 
+			session.removeAttribute("id");
 			return "redirect:/"; 
+		}
+		
+		@GetMapping("/login/callback")
+		public String callback() {
+			return "redirect:/";
 		}
 }
