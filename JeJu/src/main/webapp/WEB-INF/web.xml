@@ -14,7 +14,7 @@
 		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
 	</listener>
 	<listener>
-          <listener-class>com.kgitbank.jeju.VisitorCounter</listener-class>
+          <listener-class>com.kgitbank.jeju.common.VisitorCounter</listener-class>
      </listener>
      <session-config>
 	    <session-timeout>600</session-timeout>
