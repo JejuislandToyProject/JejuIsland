@@ -17,10 +17,16 @@ public class VisitServiceImpl implements VisitService{
 	VisitMapper visitMapper;
 	@Override
 	public void getDashboardInfo(Model model) {
-		List<DailyVisit> dailyVisit = visitMapper.getDailyVisit();
 		int todayCount = visitMapper.getTodayVisitCount();
+		int totalCount = visitMapper.getTotalVisitCount();
 		model.addAttribute("todayCount", todayCount);
-		model.addAttribute("dailyVisit", dailyVisit);
+		model.addAttribute("totalCount", totalCount);
 		
+	}
+	
+	@Override
+	public List<DailyVisit> getDailyVisit() {
+		List<DailyVisit> dailyVisit = visitMapper.getDailyVisit();
+		return dailyVisit;
 	}
 }
