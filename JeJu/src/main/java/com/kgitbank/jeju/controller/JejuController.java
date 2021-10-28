@@ -30,11 +30,6 @@ public class JejuController {
 		return "/index";
 	}
 	
-	@GetMapping("/login/callback")
-	public String callback() {
-		return "redirect:/";
-	}
-	
 	@GetMapping("/mypage")
 	public String mypage(HttpSession session, Model model) throws ParseException {
 		String id = (String) session.getAttribute("id");
