@@ -4,7 +4,7 @@ Chart.defaults.global.defaultFontColor = '#858796';
 
 var daily_labels = [];
 var daily_data = [];
-window.onload = () => {console.log("load")};
+
 getChartData();
 
 function getChartData() {
@@ -13,17 +13,11 @@ function getChartData() {
 		if (this.status >= 200 && this.status < 300) {
 			let response = e.target.responseText;
 			let jsonData = JSON.parse(response);
-
-			
-
 			
 			for(let i = 0; i < jsonData.length; i++) {
 				daily_labels.push(jsonData[i].visit_date);
 				daily_data.push(jsonData[i].count);
 			}
-			daily_labels = daily_labels.reverse();
-			daily_data = daily_data.reverse();
-
 			myLineChart();
 	    } 
 	};
