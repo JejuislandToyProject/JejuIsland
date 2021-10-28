@@ -88,5 +88,9 @@
 	DELETE FROM tourist_spot
 	WHERE tourist_spot_id = #{tourist_spot_id}
 	</delete>
+	
+	<select id="getSearch" resultType="com.kgitbank.jeju.dto.TouristSpot">
+		SELECT * FROM tourist_spot WHERE title Like '%'||#{textValue}||'%'
+	</select>
 		 
 </mapper>

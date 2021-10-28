@@ -10,7 +10,9 @@ import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -52,7 +54,7 @@ public class RestaurantContoller {
 		public String addRestaurant(Model model, HttpSession session) throws IllegalStateException, IOException {
 			List<Locations> locationList = locationMapper.ListLocations();
 			session.getAttribute("id");
-			log.info(session.getAttribute("id")+" °ª");
+			log.info(session.getAttribute("id")+" ï¿½ï¿½");
 			
 			model.addAttribute("locations", locationMapper.ListLocations());
 			return "board/restaurantForm";
@@ -105,4 +107,6 @@ public class RestaurantContoller {
 			log.info(mav);
 			return mav;
 		}
+		
+
 }
