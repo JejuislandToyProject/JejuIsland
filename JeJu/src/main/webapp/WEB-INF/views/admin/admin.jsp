@@ -27,7 +27,6 @@
 </head>
 
 <body id="page-top">
-
     <!-- Page Wrapper -->
     <div id="wrapper">
 
@@ -228,7 +227,6 @@
 
     <!-- Page level custom scripts -->
     <script src="<c:url value="/resources/js/demo/chart-area-demo.js"/>"></script>
-
 </body>
 
 </html>
