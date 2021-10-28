@@ -16,5 +16,8 @@ public interface TouristSpotMapper {
 	public List<TouristSpot> listTourist();
 	public List<TouristSpot> courseList();
 	public TouristSpot searchSpot(String title);
+	
+	public TouristSpot addPositive(int tourist_spot_id);
+	public int listPositive(int tourist_spot_id);
 		
 }
