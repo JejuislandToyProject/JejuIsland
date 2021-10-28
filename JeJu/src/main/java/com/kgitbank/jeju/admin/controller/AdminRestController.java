@@ -21,7 +21,7 @@ public class AdminRestController {
 	@RequestMapping(value = "/getChartData", method= RequestMethod.GET, 
 	produces = MediaType.APPLICATION_JSON_VALUE)
 	public List<DailyVisit> getChartData() {
-		List<DailyVisit> dailyVisit = visitService.getDailyVisit();
+		List<DailyVisit> dailyVisit = visitService.getChartData();
 		return dailyVisit;
 	};
 }
