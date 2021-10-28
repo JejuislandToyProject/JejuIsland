@@ -2,8 +2,12 @@
 <!DOCTYPE mapper
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.kgitbank.jeju.mapper.VisitMapper">
+<mapper namespace="com.kgitbank.jeju.admin.mapper.VisitMapper">
 
+  <select id="getList" resultType="com.kgitbank.jeju.admin.dto.Visit">
+  	SELECT * FROM visit
+  </select>
+  
   <select id="getTodayVisitCount" resultType="int">
     SELECT count(*) FROM visit 
     WHERE TO_CHAR(visit_date, 'YYYYMMDD') 
@@ -13,7 +17,14 @@
   <select id="getTotalVisitCount" resultType="int">
     SELECT count(*) FROM visit
   </select>
-
+  
+  <select id="getDailyVisit" resultType="com.kgitbank.jeju.amdin.dto.DailyVisit">
+    SELECT TO_CHAR(visit_date, 'YYYY/MM/DD') AS visit_date, COUNT(*) AS count
+    FROM visit 
+    WHERE <![CDATA[ ROWNUM <= 10]]>
+    GROUP BY TO_CHAR(visit_date, 'YYYY/MM/DD')
+  </select>
+	
   <insert id="addVisit">
     INSERT INTO visit
     VALUES(vi_id_seq.nextval, sysdate)

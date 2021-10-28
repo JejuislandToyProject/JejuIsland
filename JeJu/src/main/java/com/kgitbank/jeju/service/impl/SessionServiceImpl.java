@@ -3,7 +3,7 @@ package com.kgitbank.jeju.service.impl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.kgitbank.jeju.mapper.VisitMapper;
+import com.kgitbank.jeju.admin.mapper.VisitMapper;
 import com.kgitbank.jeju.service.SessionService;
 
 @Service("sessionService")

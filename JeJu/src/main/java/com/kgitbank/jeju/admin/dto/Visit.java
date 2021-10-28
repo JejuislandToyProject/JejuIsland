@@ -1,4 +1,4 @@
-package com.kgitbank.jeju.dto;
+package com.kgitbank.jeju.admin.dto;
 
 import java.util.Date;
 
