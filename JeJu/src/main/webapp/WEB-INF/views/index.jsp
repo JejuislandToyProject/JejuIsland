@@ -76,11 +76,7 @@
 								href="<c:url value="/login"/>">Login</a></li>
 						</c:otherwise>
 					</c:choose>
-
-
-
 				</ul>
-
 			</div>
 		</div>
 	</nav>

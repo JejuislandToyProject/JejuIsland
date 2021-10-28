@@ -1,16 +1,19 @@
 var lists = [];
+/*
+<link href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.min.js" ></script>
+<script type="text/javascript" src="https://code.jquery.com/ui/1.12.1/jquery-ui.js" ></script>
+ */
 $(function() {
 
     $("#leftSidebar-3").sortable({
 	// 버튼의 좌표값을 가져오면 실현가능.
 	stop:function(event,ui){ 	
-		positions = [];
+		positions = [];// 바뀐 순서대로 다시 넣어주어야 해서 비워둠
 		names = [];
 		var vcheck = document.querySelectorAll('.cardSmallBtn');  
-		console.log("삭제 돌ㅇ감");
 		for(var i = 0; i < markers.length; ++i){
 			markers[i].setMap(null);
-			console.log("삭제 돌ㅇ감2");
 		}	
 		markers = [];
 		
@@ -54,9 +57,3 @@ $(function() {
     $("#leftSidebar-3").disableSelection();
 
 });
-
-/*
-<link href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" rel="stylesheet" type="text/css" />
-<script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.min.js" ></script>
-<script type="text/javascript" src="https://code.jquery.com/ui/1.12.1/jquery-ui.js" ></script>
- */
