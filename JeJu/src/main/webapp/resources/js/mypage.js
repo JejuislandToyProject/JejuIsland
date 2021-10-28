@@ -1,4 +1,7 @@
-const $pagination = $('#pagination');
+const myWrite = document.getElementById('list-mywrite-list');
+const myCourse = document.getElementById('list-route-list');
+
+const $pagination = $('#myWrite-pagination');
 const tableBody = document.getElementById('myWriteTable');
 
 const recordPerPage = 6;
@@ -7,6 +10,34 @@ let records = [];
 let displayRecords = [];
 let page = 1;
 let totalPages = 0;
+
+window.onload = () => {myWrite.click();};
+
+myCourse.addEventListener('click', () => {
+    makeRequest('GET', 'getMyRoute').then(responses => {
+        console.log(responses);
+    });
+});
+myWrite.addEventListener('click', () => {
+    promises = [makeRequest('GET', 'getMyFamousRestaurantWrite'), makeRequest('GET', 'getMyTouristSpotWrite')];
+
+    /* process after sucess request-response   */
+    Promise.all(promises).then(responses => {
+        let JSONString = "";
+        responses.forEach((response)=> {
+                JSONString += response.trim();
+        });
+        JSONString = JSONString.replace('\]\[', ', ');
+        
+        records = JSON.parse(JSONString);
+        totalRecords = records.length;
+        totalPages = Math.ceil(totalRecords/recordPerPage);
+        applyPagination();
+        
+    }).catch((error) => {
+        console.error(error);
+    });
+});
 
 
 const makeRequest = (method, url) => {
@@ -28,27 +59,6 @@ const makeRequest = (method, url) => {
 	})
 };
 
-
-promises = [makeRequest('GET', 'getMyFamousRestaurantWrite'), makeRequest('GET', 'getMyTouristSpotWrite')];
-
-/* process after sucess request-response   */
-Promise.all(promises).then(responses => {
-    let JSONString = "";
-    responses.forEach((response)=> {
-            JSONString += response.trim();
-    });
-	JSONString = JSONString.replace('\]\[', ', ');
-	
-    records = JSON.parse(JSONString);
-    totalRecords = records.length;
-    totalPages = Math.ceil(totalRecords/recordPerPage);
-    applyPagination();
-    
-}).catch((error) => {
-    console.error(error);
-});
-
-
 const generateTable = () => {
     tableBody.innerHTML = "";
 
@@ -56,6 +66,8 @@ const generateTable = () => {
         addRecord(displayRecords[i]);
     }
 }
+
+
 const addRecord = (record) => {
     const tr = document.createElement('tr');
     tr.onclick = () => {
@@ -67,6 +79,7 @@ const addRecord = (record) => {
         }
         window.location = detailUrl;
     }
+    console.log(typeof(record.famous_restaurant_id));
     tr.innerHTML += `<td>${record.title }</td>`;
     tr.innerHTML += `<td>${record.nickname }</td>`;
     tr.innerHTML += `<td>${record.registration_time }</td>`;

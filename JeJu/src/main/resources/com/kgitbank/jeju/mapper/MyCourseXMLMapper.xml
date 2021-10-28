@@ -8,8 +8,11 @@
 <mapper namespace="com.kgitbank.jeju.mapper.MyCourseXMLMapper">
    
     <insert id="addCourse">
-    INSERT INTO mycourse(id, user_name) VALUES(mycourse_id_seq.nextval, #{user_name})
+    INSERT INTO mycourse(id, user_id) VALUES(mycourse_id_seq.nextval, #{user_id})
     </insert>
    
+   <select id="getListById" resultType="com.kgitbank.jeju.dto.MyCourse">
+   	SELECT * FROM mycourse WHERE user_id = #{id}
+   </select>
 	
 </mapper>
