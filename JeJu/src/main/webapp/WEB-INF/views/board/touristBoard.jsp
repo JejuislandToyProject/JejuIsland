@@ -36,8 +36,8 @@
                 <ul class="navbar-nav ms-auto my-2 my-lg-0">
                     <li class="nav-item"><a class="nav-link" href="#index.html">Home</a></li>
                     <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#reservation">Reservation</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#bestpick">Best Pick</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/jeju/listRestaurant">Reservation</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/jeju/board/tourist">Best Pick</a></li>
                     <li class="nav-item"><a class="nav-link" href="#">Board</a></li>
                     <li class="nav-item"><a class="nav-link" href="./login.html">Login</a></li>
                 </ul>
@@ -72,14 +72,12 @@
   <div class="nav-wrapper position-relative end-0">
     <ul class="nav nav-pills nav-fill p-1" role="tablist" id="nav-top">
       <li class="nav-item">
-        <a class="nav-link" href="./login.html">관광지 명소</a>
+         <a class="nav-link" href="<c:url value="/board/tourist"/>">관광지 명소</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="./login.html">맛집 정보</a>
+          <a class="nav-link" href="<c:url value="/listRestaurant"/>">맛집 정보</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="./login.html">게스트 하우스</a>
-        </li>
+        
         <li class="nav-item">
           <a class="nav-link" href="./login.html">여행 코스</a>
         </li>
@@ -107,6 +105,24 @@
 	              <input type="text" class="form-control border-0 ps-3" placeholder="Type here...">
 	              <button class="btn bg-gradient-primary my-1 me-1">Search</button>
 	            </div>
+	            
+	              <div class="me-3">
+				     <button href="#" onclick="addTourist()" class="btn btn-outline-info float-end me-5 mt-2"> 글쓰기</button>
+				      
+				      <script type="text/javascript">
+				      function addTourist(){
+				          var uid="<%=(String)session.getAttribute("id") %>";
+				          
+				          if(uid=="null"){
+				        	  alert("로그인이 팔요한 항목입니다.")
+				          }else{
+				        	  location.replace("/jeju/addTourist");
+				          }
+				      }
+				      </script>
+			      </div>
+			      
+			      
 	          </div>
 	        </div>
 	      </ul>
@@ -122,21 +138,7 @@
           
         </ul>
       </nav>
-      <div class="me-5">
-     <button href="#" onclick="addTourist()" class="btn btn-outline-info float-end me-5"> 글쓰기</button>
-      
-      <script type="text/javascript">
-      function addTourist(){
-          var uid="<%=(String)session.getAttribute("id") %>";
-          
-          if(uid=="null"){
-        	  alert("로그인이 팔요한 항목입니다.")
-          }else{
-        	  location.replace("/jeju/addTourist");
-          }
-      }
-      </script>
-      </div>
+    
     <!-- Footer 부분 수정해야함-->
     <!-- Footer-->
     <footer class="footer text-center">

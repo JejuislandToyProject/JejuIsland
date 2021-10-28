@@ -515,7 +515,7 @@
 					</script>
 
 						<div class="d-flex justify-content-end mt-4">
-							<button type="button" onclick="<c:url value='/addTourist'/>"
+							<button type="button" onclick="history.back()" 
 								name="button" class="btn btn-light btn-outline-dark m-0">Cancel</button>
 							<button id="btnSave" type="submit"
                                 class="btn btn-success m-0 ms-2">Upload</button>

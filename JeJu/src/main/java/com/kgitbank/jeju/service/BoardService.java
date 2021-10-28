@@ -19,5 +19,6 @@ public interface BoardService {
 	
 	List<TouristSpot> listByUserd(String user_id, HttpSession session);
 	List<TouristSpot> listByUserd(String user_id);
-	
+	public TouristSpot addPositive(int tourist_spot_id);
+	public int listPositive(int tourist_spot_id);
 }

@@ -3,7 +3,7 @@ package com.kgitbank.jeju.controller;
 
 import java.util.List;
 
-
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
@@ -37,7 +37,8 @@ public class BoardRestController {
 					produces = MediaType.APPLICATION_JSON_VALUE)
 	public List<TouristSpot> TourList(Model model) throws Exception {
 		List<TouristSpot> tourlistSpots = touristSpotMapper.listTourist();
-
+		
+		
 		return tourlistSpots;
 	}
 	

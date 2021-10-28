@@ -81,10 +81,7 @@ public class BoardServiceImpl implements BoardService {
 		return touristSpots;
 	}
 	
-	public void addPositive(int tourist_spot_id) {
-		
-	}
-
+	
 
 
 	@Override
@@ -97,6 +94,18 @@ public class BoardServiceImpl implements BoardService {
 	public TouristSpot listView(int tourist_spot_id) {
 		// TODO Auto-generated method stub
 		return  touristSpotMapper.listView(tourist_spot_id);
+	}
+
+	@Override
+	public TouristSpot addPositive(int tourist_spot_id) {
+		// TODO Auto-generated method stub
+		return touristSpotMapper.addPositive(tourist_spot_id);
+	}
+
+	@Override
+	public int listPositive(int tourist_spot_id) {
+		// TODO Auto-generated method stub
+		return touristSpotMapper.listPositive(tourist_spot_id);
 	}
 
 
