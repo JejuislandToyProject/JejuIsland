@@ -132,8 +132,6 @@
 
                     <!-- Content Row -->
                     <div class="row">
-
-
                         <!-- Pending Requests Card Example -->
                         <div class="col-xl-3 col-md-6 mb-4">
                             <div class="card border-left-warning shadow h-100 py-2">
@@ -145,21 +143,42 @@
                                             <div class="h5 mb-0 font-weight-bold text-gray-800">${todayCount }</div>
                                         </div>
                                         <div class="col-auto">
-                                            <i class="fas fa-users fa-2x text-gray-500"></i>
+                                            <i class="fas fa-user-plus fa-3x text-gray-500"></i>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-
                     <!-- Content Row -->
+
+					<!-- Content Row2 -->
+                    <div class="row">
+                        <!-- Pending Requests Card Example2 -->
+                        <div class="col-xl-3 col-md-6 mb-4" style="left: 30%; bottom: 124px;">
+                            <div class="card border-left-warning2 shadow h-100 py-2">
+                                <div class="card-body">
+                                    <div class="row no-gutters align-items-center">
+                                        <div class="col mr-2">
+                                            <div class="text-xs font-weight-bold text-warning2 text-uppercase mb-1">
+                                                총 방문자 수</div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800">${todayCount }</div>
+                                        </div>
+                                        <div class="col-auto">
+                                            <i class="fas fa-users fa-3x text-gray-500"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Content Row2 -->
 
                     <div class="row">
 
                         <!-- Area Chart -->
                         <div class="col-xl-8 col-lg-7">
-                            <div class="card shadow mb-4 chart">
+                            <div class="card shadow mb-4 chart" style="margin-top: -30px;">
                                 <!-- Card Header - Dropdown -->
                                 <div
                                     class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
