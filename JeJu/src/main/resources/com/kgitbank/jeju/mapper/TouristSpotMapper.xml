@@ -88,5 +88,6 @@
 	DELETE FROM tourist_spot
 	WHERE tourist_spot_id = #{tourist_spot_id}
 	</delete>
+	
 		 
 </mapper>

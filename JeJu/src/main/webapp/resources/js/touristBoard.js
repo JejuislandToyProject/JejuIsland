@@ -54,12 +54,14 @@ const addCard = (card) => {
     
     cardBorder.appendChild(addCardHeader(card));
     cardBorder.appendChild(addCardBody(card));
+    cardBorder.appendChild(addHashTag(card));
     cardBorder.appendChild(addIconPart(card));
 
     cardGroup.appendChild(cardBorder);
 
     cardBody.appendChild(cardGroup);
 }
+
 const addCardHeader = (card) => {
     const cardHeader = document.createElement('div');
     cardHeader.classList.add('card-header');
@@ -84,11 +86,19 @@ const addCardBody = (card) => {
                                 ${card.name }
                             </a>
                             <p class="card-description text-center mb-4">
-                            	<small class="text-break text-muted">
-											${card.description}
+                            	<small class="text-muted">
+											${card.description.substr(0,30) }...
                             	</small>
                             </p>`;
     return cardBody;
+}
+
+const addHashTag = (card) => {
+    const hashTag = document.createElement('div');
+    hashTag.classList.add('hashTag');
+
+    hashTag.innerHTML += '<p class="text-muted text-center">해시태그 넣어야함</p>';
+    return hashTag;
 }
 
 const addIconPart = (card) => {
@@ -115,14 +125,11 @@ const addIconPart = (card) => {
 
     outerform.appendChild(innerDiv1);
     outerform.appendChild(innerDiv2);
-    
-    outerform.innerHTML += `</form>`;
 
     return outerform;
 }
 
 //page number
-
 const applyPagination = ()=> {
     $pagination.twbsPagination({
         totalPages: totalPages,
@@ -163,7 +170,3 @@ const applyPagination = ()=> {
             }
         });
     };
-            
-    
-    
-  
