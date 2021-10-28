@@ -29,6 +29,7 @@ function setVariable() {
             totalPages = Math.ceil(totalcards/cardPerPage);
             
             applyPagination();
+            $pagination.twbsPagination("changeTotalPages", totalPages , page);
         }
     }
 }
