@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.kgitbank.jeju.mapper.CourseDetailXMLMapper">
+
+  <insert id="insertCourse">
+
+    <selectKey keyProperty="id" resultType="integer" order="BEFORE">
+        SELECT (MAX(id)) FROM mycourse
+    </selectKey>
+
+    INSERT INTO courseDetail(id, seqs, title, image) VALUES(#{id}, #{seqs}, #{title}, #{image})
+
+</insert>
+
+	
+</mapper>
