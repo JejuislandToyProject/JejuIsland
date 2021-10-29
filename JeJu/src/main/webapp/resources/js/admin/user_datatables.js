@@ -11,9 +11,6 @@ $(document).ready(function() {
         ], 'columnDefs': [
          {
             'targets': 2,
-            'checkboxes': {
-               'selectRow': true
-            },
             'render': function ( data, row ) {
 	                    if ( data === 1 ) {
 	                        return `<label class="switch" style="margin-top: 5px;"><input type="checkbox" class="checkbox" checked><span class="slider round"></span></label>`;
@@ -31,13 +28,13 @@ $(document).ready(function() {
                 	banned = checkbox.checked? 1: 0;
                 	console.log(checkbox.checked);
                     	$.ajax({
-							url: '/jeju/admin/user_ban', // 서버에 전달할 파일명
+							url: '/jeju/admin/user_ban', 
 							dataType: 'application/json',
 							contentType: 'application/json',
 							type: 'post',
 							data: JSON.stringify ({
-								"user_id": id, // 전송할 파라미터 1
-								"banned": banned // 전송할 파라미터 2
+								"user_id": id, 
+								"banned": banned 
 							}),
 							success: function() {
 							      console.log('Success');
