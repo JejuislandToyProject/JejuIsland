@@ -16,24 +16,24 @@ import com.kgitbank.jeju.admin.service.AdminService;
 public class AdminController {
 	
 	@Autowired
-	AdminService visitService;
+	AdminService adminService;
 	
 	
 	@RequestMapping(value="/admin/login", method= {RequestMethod.GET, RequestMethod.POST})
 	public String adminLogin(HttpSession session) {
-		visitService.setAdminSession(session);
+		adminService.setAdminSession(session);
 		return "/admin/adminLogin";
 		
 	}
 	@RequestMapping(value="/admin/main", method= {RequestMethod.GET, RequestMethod.POST})
 	public String admin(Model model) {
-		visitService.getDashboardInfo(model);
+		adminService.getDashboardInfo(model);
 		return "/admin/admin";
 	}
 	 
 	@RequestMapping(value="/admin/user", method= {RequestMethod.GET, RequestMethod.POST})
-	public String userban(Model model) {
-		visitService.getDashboardInfo(model);
+	public String user() {
 		return "/admin/utilities-user-ban";
 	}
+	
 }
