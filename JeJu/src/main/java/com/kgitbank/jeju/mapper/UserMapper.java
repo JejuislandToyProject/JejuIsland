@@ -8,5 +8,5 @@ public interface UserMapper {
 	public List<User> listUsers();
 	public int addUser(User user);
 	public User listUser(String id);
-	public int updateBan();
+	public int updateBan(int banned);
 }
