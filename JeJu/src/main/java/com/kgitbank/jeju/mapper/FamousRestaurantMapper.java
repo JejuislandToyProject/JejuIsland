@@ -13,4 +13,8 @@ public interface FamousRestaurantMapper {
 	public FamousRestaurant getFamous(String title);
 	public FamousRestaurant listView(int famous_restaurant_id);
 	public List<FamousRestaurant> getRestSearch(String textValue);
+	public List<FamousRestaurant> polygonSearch(String textValue);
+	
+	public void addLike(int id);
+	public FamousRestaurant getLike(int id);
 }

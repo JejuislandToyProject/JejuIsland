@@ -40,7 +40,8 @@ public class courseContoller {
 			return "redirect:/login/login";
 		}
 		String user_id = session.getAttribute("id").toString();
-		 MyCourse course = new MyCourse(); course.setUser_name(user_id);
+		 MyCourse course = new MyCourse(); 
+		 course.setUser_name(user_id);
 		 myCourseMapper.addCourse(course);
 		 	
 		  
