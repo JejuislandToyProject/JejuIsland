@@ -31,7 +31,7 @@ public class AdminController {
 		return "/admin/admin";
 	}
 	 
-	@RequestMapping(value="/admin/utilities-user-ban", method= {RequestMethod.GET, RequestMethod.POST})
+	@RequestMapping(value="/admin/user", method= {RequestMethod.GET, RequestMethod.POST})
 	public String userban(Model model) {
 		visitService.getDashboardInfo(model);
 		return "/admin/utilities-user-ban";
