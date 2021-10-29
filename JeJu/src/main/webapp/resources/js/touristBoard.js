@@ -54,6 +54,7 @@ const addCard = (card) => {
     
     cardBorder.appendChild(addCardHeader(card));
     cardBorder.appendChild(addCardBody(card));
+    cardBorder.appendChild(addHashTag(card));
     cardBorder.appendChild(addIconPart(card));
 
     cardGroup.appendChild(cardBorder); // 그룹 지우면 다 지워짐.
@@ -70,7 +71,7 @@ const addCardHeader = (card) => {
     cardHeader.classList.add('position-relative');
     cardHeader.classList.add('z-index-1');
 
-    cardHeader.innerHTML += `<a href="javascript:;" class="d-block"> 
+    cardHeader.innerHTML += `<a href="../board/listById?tourist_spot_id=${card.tourist_spot_id}" class="d-block"> 
                             <img src=${card.image } class="img-fluid border-radius-lg" > 
                             </a>`;
     return cardHeader;
@@ -79,17 +80,26 @@ const addCardBody = (card) => {
     const cardBody = document.createElement('div');
     cardBody.classList.add('card-body');
     cardBody.classList.add('pt-2');
+    cardBody.classList.add('mx-3');
 
-    cardBody.innerHTML += `<a href="/jeju/listById?tourist_spot_id=${card.tourist_spot_id}" 
+    cardBody.innerHTML += `<a href="../board/listById?tourist_spot_id=${card.tourist_spot_id}" 
     class="card-title h5 d-block text-darker text-center mt-3" id="card-title">
                                 ${card.name }
                             </a>
                             <p class="card-description text-center mb-4">
-                            	<small class="text-break text-muted">
-											${card.description}
+                            	<small class="text-muted">
+											${card.description.substr(0,30) }...
                             	</small>
                             </p>`;
     return cardBody;
+}
+
+const addHashTag = (card) => {
+    const hashTag = document.createElement('div');
+    hashTag.classList.add('hashTag');
+
+    hashTag.innerHTML += `<p class="text-muted text-center">${card.hashtag }</p>`;
+    return hashTag;
 }
 
 const addIconPart = (card) => {

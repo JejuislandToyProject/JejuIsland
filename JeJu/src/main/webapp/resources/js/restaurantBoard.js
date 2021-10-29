@@ -62,6 +62,7 @@ const addCard = (card) => {
     
     cardBorder.appendChild(addCardHeader(card));
     cardBorder.appendChild(addCardBody(card));
+    cardBorder.appendChild(addHashTag(card));
     cardBorder.appendChild(addIconPart(card));
 
     cardGroup.appendChild(cardBorder);
@@ -77,7 +78,7 @@ const addCardHeader = (card) => {
     cardHeader.classList.add('position-relative');
     cardHeader.classList.add('z-index-1');
 
-    cardHeader.innerHTML += `<a href="javascript:;" class="d-block"> 
+    cardHeader.innerHTML += `<a href="../board/listFamous?famous_restaurant_id=${card.famous_restaurant_id}" class="d-block"> 
                             <img src=${card.image } class="img-fluid border-radius-lg" > 
                             </a>`;
     return cardHeader;
@@ -87,44 +88,55 @@ const addCardBody = (card) => {
     cardBody.classList.add('card-body');
     cardBody.classList.add('pt-2');
 
-    cardBody.innerHTML += `<a href="/jeju/listFamous?famous_restaurant_id=${card.famous_restaurant_id}" 
+    cardBody.innerHTML += `<a href="../board/listFamous?famous_restaurant_id=${card.famous_restaurant_id}" 
     class="card-title h5 d-block text-darker text-center mt-3" id="card-title">
                                 ${card.name }
                             </a>
                             <p class="card-description text-center mb-4">
-                            	<small class="text-break text-muted">
-											${card.description}
+                            	<small class="text-muted">
+											${card.description.substr(0,30) }...
                             	</small>
                             </p>`;
     return cardBody;
 }
 
+const addHashTag = (card) => {
+    const hashTag = document.createElement('div');
+    hashTag.classList.add('hashTag');
+
+    hashTag.innerHTML += `<p class="text-muted text-center">${card.hashtag }</p>`;
+    return hashTag;
+}
+
 const addIconPart = (card) => {
-    const outerDiv = document.createElement('div');
+    const outerform = document.createElement('div');
     const innerDiv1 = document.createElement('div');
     const innerDiv2 = document.createElement('div');
-
 	
-    outerDiv.classList.add('author');
-    outerDiv.classList.add('align-items-center');
-    outerDiv.classList.add('p-2');
+	outerform.setAttribute('id','likeBtn');
+    outerform.classList.add('author');
+    outerform.classList.add('align-items-center');
+    outerform.classList.add('p-2');
 
     innerDiv1.classList.add('mt-6');
     innerDiv2.classList.add('mt-2');
 
     innerDiv1.setAttribute('id', 'icon');
-    innerDiv2.setAttribute('id', 'icon');
 
-    innerDiv1.innerHTML += `<i id="icon" onclick="like_func(${card.famous_restaurant_id})" class="far fa-thumbs-up"></i>`;
-    innerDiv1.innerHTML += '<i class="far fa-thumbs-down"></i>';
+    outerform.innerHTML += `<form id="like_form">`;
+	
+    innerDiv1.innerHTML += `<input class="align-items-center" type="button" value="좋아요" onclick="like_func(${card.famous_restaurant_id})" />`;
+    innerDiv1.innerHTML += `<div class="align-items-center" id="like_result"><i class="far fa-thumbs-up me-3"></i>${card.positive_num}</div>`;
 
-    innerDiv2.innerHTML += '<p>좋아요</p>';
-    innerDiv2.innerHTML += '<p>싫어요</p>';
+    innerDiv2.innerHTML += `<input type="hidden" class="like" name="command" value="${card.positive_num}"/>`;
+    innerDiv2.innerHTML += `<input type="hidden" class="restaurant_id" name="famous_restaurant_id" value="${card.famous_restaurant_id}"/>`;
 
-    outerDiv.appendChild(innerDiv1);
-    outerDiv.appendChild(innerDiv2);
+    outerform.appendChild(innerDiv1);
+    outerform.appendChild(innerDiv2);
     
-    return outerDiv;
+    outerform.innerHTML += `</form>`;
+
+    return outerform;
 }
 
 //page number
@@ -175,7 +187,7 @@ const applyPagination = ()=> {
  searchBtn.addEventListener('click', () =>{	
 		
 		$(document).ready(function() {
-        $("#body").empty();
+        $("#contents-body").empty();
 		var textValue = searchValue.value;		
  		searchRequest(textValue);
 

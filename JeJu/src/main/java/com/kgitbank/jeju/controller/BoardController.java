@@ -108,7 +108,7 @@ public class BoardController {
 	}
 	
 	// detail and click count
-	@RequestMapping(value="/listById", method= RequestMethod.GET)
+	@RequestMapping(value="board/listById", method= RequestMethod.GET)
 	public ModelAndView listById (@RequestParam("tourist_spot_id") int tourist_spot_id, 
 				HttpSession session) throws Exception{
 		
@@ -122,7 +122,7 @@ public class BoardController {
 		return mav;
 	}
 	
-	// polygon -> board 검색바 안으로 넘어갈 값.
+	// polygon -> board 寃��깋諛� �븞�쑝濡� �꽆�뼱媛� 媛�.
 	@GetMapping("/pathRestaurant/{title}")
 	public String getRestaurantBoard(@PathVariable("title") String title, Model model) {
 		model.addAttribute("polygonSearch", title);

@@ -40,7 +40,7 @@ public class RestaurantContoller {
 	@Autowired
 	LocationMapper locationMapper; 
 	
-	@RequestMapping(value = "/listRestaurant", method = RequestMethod.GET)
+	@RequestMapping(value = "board/restaurant", method = RequestMethod.GET)
 	public String TourList(HttpSession session) throws Exception {
 		String id = (String)session.getAttribute("id");
 		
@@ -94,7 +94,7 @@ public class RestaurantContoller {
 		}
 		
 		// detail and click count
-		@RequestMapping(value="/listFamous", method= RequestMethod.GET)
+		@RequestMapping(value="/board/listFamous", method= RequestMethod.GET)
 		public ModelAndView listById (@RequestParam("famous_restaurant_id") int famous_restaurant_id, 
 					HttpSession session) throws Exception{
 			
