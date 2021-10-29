@@ -2,14 +2,16 @@
     box-sizing: border-box;
 }
 html, body {
+	width: auto;
+	height: auto;
 	background-color: #faf5dd;
 }
 html {
-	overflow: hidden;
+	overflow-x: hidden;
 }
 h1 {
 	user-select: none;
-	margin: 2rem 0 1.5rem 3.4rem;
+	margin: 2rem 0 1.2rem 3.4rem;
 	font-family: 'Bebas Neue', cursive, sans-serif;
 }
 h1:hover {
@@ -44,6 +46,25 @@ h1 a:hover {
 #myWriteTable tr:hover {
 	cursor: pointer;
 	background-color: #fff;
+}
+
+.courseBtn {
+	width: 150px;
+	border-bottom: 1px solid #f4623a;
+	float: right;
+}
+.courseBtn a {
+	display:block;
+	color: #f4623a;
+	text-decoration :none;
+	text-align: center;
+}
+.courseBtn a:hover {
+	color: #c34e2e;
+}
+
+.courseBtn:hover {
+	border-color: #c34e2e;
 }
 #myCourseTable td:nth-child(even) {
 	border-left: 1px solid #000;
