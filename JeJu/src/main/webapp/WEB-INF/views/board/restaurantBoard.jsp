@@ -148,9 +148,7 @@
       
             <!-- navbar -->
       <!-- Navbar Transparent -->
->>>>>>> refs/heads/dev
 	<nav
-<<<<<<< HEAD
 		class="navbar navbar-expand-lg navbar-light fixed-top py-3 navbar-shrink"
 		id="mainNav">
 		<div class="container px-4 px-lg-5">
