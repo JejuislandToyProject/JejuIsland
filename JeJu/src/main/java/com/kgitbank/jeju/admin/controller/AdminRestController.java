@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.kgitbank.jeju.admin.dto.DailyVisit;
 import com.kgitbank.jeju.admin.service.AdminService;
+import com.kgitbank.jeju.dto.User;
 
 @RestController
 public class AdminRestController {
@@ -24,10 +25,9 @@ public class AdminRestController {
 		List<DailyVisit> dailyVisit = visitService.getChartData();
 		return dailyVisit;
 	};
-	@RequestMapping(value = "/admin/getUserData", method= RequestMethod.GET, 
-			produces = MediaType.APPLICATION_JSON_VALUE)
-	public List<DailyVisit> getUserData() {
-		List<DailyVisit> dailyVisit = visitService.getChartData();
-		return dailyVisit;
+	@RequestMapping(value = "/admin/getUserData", method= RequestMethod.GET)
+	public List<User> getUserData() {
+		List<User> data = visitService.getUserData();
+		return data;
 	};
 }

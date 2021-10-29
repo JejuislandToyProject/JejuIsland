@@ -11,11 +11,15 @@ import org.springframework.ui.Model;
 import com.kgitbank.jeju.admin.dto.DailyVisit;
 import com.kgitbank.jeju.admin.mapper.VisitMapper;
 import com.kgitbank.jeju.admin.service.AdminService;
+import com.kgitbank.jeju.dto.User;
+import com.kgitbank.jeju.mapper.UserMapper;
 
 @Service
 public class AdminServiceImpl implements AdminService{
 	@Autowired
 	VisitMapper visitMapper;
+	@Autowired
+	UserMapper userMapper;
 	
 	@Override
 	public void setAdminSession(HttpSession session) {
@@ -34,5 +38,11 @@ public class AdminServiceImpl implements AdminService{
 	public List<DailyVisit> getChartData() {
 		List<DailyVisit> dailyVisit = visitMapper.getDailyVisit();
 		return dailyVisit;
+	}
+	
+	@Override
+	public List<User> getUserData() {
+		List<User> users = userMapper.listUsers();
+		return users;
 	}
 }
