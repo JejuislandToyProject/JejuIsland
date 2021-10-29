@@ -63,7 +63,7 @@
 							</nav>
 						</div>
 						<div class="tab-pane fade show" id="course" role="tabpanel">
-
+							<div class="courseBtn"><a href="<c:url value="/travelCourse/course"/>">Make New Course<a></a></div>
 							<table class="table table-stripted">
 								<colgroup>
 									<col width="10">
@@ -84,15 +84,12 @@
 								</ul>
 							</nav>
 							</div>
-							
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-	</div>
-	<script
-		src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 	<script src="<c:url value="/resources/js/jquery.twbsPagination.min.js"/>"></script>
 	<script src="<c:url value="/resources/js/mypage.js"/>"></script>
