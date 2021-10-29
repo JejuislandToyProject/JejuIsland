@@ -7,7 +7,6 @@ const $myCourse_pagination = $('#myCourse-pagination');
 const myWriteTableBody = document.getElementById('myWriteTable');
 const myCourseTableBody = document.getElementById('myCourseTable');
 
-var test = [];
 const myWriteVariable = {
     recordPerPage: 6,
     totalRecords: 0,
@@ -46,7 +45,7 @@ myCourse.addEventListener('click', () => {
             }
         }
 
-        courses = Object.values(coursesObj);
+        var courses = Object.values(coursesObj);
         myCourseVariable.totalRecords = Object.keys(coursesObj).length;
         myCourseVariable.totalPages = Math.ceil(myCourseVariable.totalRecords/myCourseVariable.recordPerPage);
 
@@ -107,16 +106,14 @@ const generateMyWriteTable = () => {
 
 const addRecord = (record) => {
     const tr = document.createElement('tr');
-    tr.onclick = () => {
-        let detailUrl = "";
-        if(record.tourist_spot_id !== null) {
-            detailUrl = `/listById?tourist_spot_id=${record.tourist_spot_id}`;
-        } else {
-            detailUrl = `/listFamous?famous_restaurant_id=${record.famous_restaurant_id}`;
-        }
-        window.location = detailUrl;
-    }
-    console.log(typeof(record.famous_restaurant_id));
+    if(record.tourist_spot_id != null) {
+    	addURLMappingEvent(tr, record.tourist_spot_id, true);
+            //detailUrl = 'data-url', `/listFamous?tourist_spot_id=${record.tourist_spot_id }`;
+    } else {
+    	addURLMappingEvent(tr, record.famous_restaurant_id, false);
+    } 
+
+
     tr.innerHTML += `<td>${record.title }</td>`;
     tr.innerHTML += `<td>${record.nickname }</td>`;
     tr.innerHTML += `<td>${record.registration_time }</td>`;
@@ -146,7 +143,6 @@ const applyMyWritePagination = ()=> {
 const generateCourseTable = () => {
     myCourseTableBody.innerHTML = "";
 
-	console.log(displayRecords);
     for(let i = 0; i < displayRecords.length; i++) {
         addCourseRecord(displayRecords[i]);
     }
@@ -214,4 +210,16 @@ const applyMyCoursePagination = ()=> {
             generateCourseTable();
         }
     });
+}
+
+const addURLMappingEvent = (ele, id, isTourist)=>{
+	ele.onclick = () => {
+        let detailUrl = "";
+        if(isTourist) {
+            detailUrl = `/jeju/listById?tourist_spot_id=${id}`;
+        } else {
+            detailUrl = `/jeju/listFamous?famous_restaurant_id=${id}`;
+        }
+        window.location = detailUrl;
+    }
 }
