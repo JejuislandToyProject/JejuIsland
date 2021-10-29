@@ -33,18 +33,19 @@ myCourse.addEventListener('click', () => {
     makeRequest('GET', 'getMyRoute').then(responses => {
         myCourseVariable.records = JSON.parse(responses);
 
+		var obj = {};
         let prevId = myCourseVariable.records[0].id;
-        var obj = {};
         obj[prevId] = [myCourseVariable.records[0]];
+        
         for(let i = 1; i < myCourseVariable.records.length ; i++) {
-            //temp.push(myCourseVariable.records[i].id);
             if(prevId !== myCourseVariable.records[i].id) {
                 prevId = myCourseVariable.records[i].id
-            } 
-            obj[prevId].push(myCourseVariable.records[i]);
+                obj[prevId] = [myCourseVariable.records[i]]
+            } else {
+            	obj[prevId].push(myCourseVariable.records[i]);
+            }
         }
         test = Object.values(obj);
-        console.log(test);
         myCourseVariable.totalRecords = Object.keys(obj).length;
         myCourseVariable.totalPages = Math.ceil(myCourseVariable.totalRecords/myCourseVariable.recordPerPage);
 
