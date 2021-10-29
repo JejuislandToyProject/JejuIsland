@@ -86,7 +86,7 @@
                     data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">회원 관리 메뉴</h6>
-                        <a class="collapse-item" href="utilities-user-ban.html">회원 차단&해제</a>
+                        <a class="collapse-item" href="<c:url value="/admin/user"/>">회원 차단&해제</a>
                         <a class="collapse-item" href="utilities-user1.html">회원 기능1</a>
                         <a class="collapse-item" href="utilities-user2.html">회원 기능2</a>
                         <a class="collapse-item" href="utilities-other.html">Other</a>
