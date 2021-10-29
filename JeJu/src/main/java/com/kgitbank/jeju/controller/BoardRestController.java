@@ -59,7 +59,8 @@ public class BoardRestController {
 	@GetMapping(value="/spotSearch/{textValue}", produces = "application/json; charset=UTF-8")
 	public List<TouristSpot> getSpotSearch(@PathVariable("textValue") String textValue) {
 		List<TouristSpot> searchList = touristSpotMapper.getSpotSearch(textValue);
-
+		log.info(textValue);
+		log.info(searchList + "");
 		return searchList;	
 	}
 	
