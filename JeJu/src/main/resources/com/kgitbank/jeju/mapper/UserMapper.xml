@@ -5,7 +5,7 @@
 <mapper namespace="com.kgitbank.jeju.mapper.UserMapper">
 
   <select id="listUsers" resultType="com.kgitbank.jeju.dto.User">
-    SELECT * FROM user_info;
+    SELECT * FROM user_info
   </select>
 
   <select id="listUser" resultType="com.kgitbank.jeju.dto.User">
