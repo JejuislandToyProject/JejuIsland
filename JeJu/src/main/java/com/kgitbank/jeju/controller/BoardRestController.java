@@ -1,8 +1,10 @@
 package com.kgitbank.jeju.controller;
 
 
+import java.util.Arrays;
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,6 +12,7 @@ import org.springframework.http.MediaType;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -53,13 +56,46 @@ public class BoardRestController {
 	return famousRestaurants;
 	}
 	
-	@GetMapping(value="/search/{textValue}", produces = "application/json; charset=UTF-8")
-	public List<TouristSpot> getSearch(@PathVariable("textValue") String textValue) {
-		List<TouristSpot> searchList = touristSpotMapper.getSearch(textValue);
-		
-		log.info(searchList+"");
-		return searchList;
-		
+	@GetMapping(value="/spotSearch/{textValue}", produces = "application/json; charset=UTF-8")
+	public List<TouristSpot> getSpotSearch(@PathVariable("textValue") String textValue) {
+		List<TouristSpot> searchList = touristSpotMapper.getSpotSearch(textValue);
+		log.info(textValue);
+		log.info(searchList + "");
+		return searchList;	
 	}
 	
+	@GetMapping(value="/restSearch/{textValue}", produces = "application/json; charset=UTF-8")
+	public List<FamousRestaurant> getRestSearch(@PathVariable("textValue") String textValue) {
+		String[] location = {"Aewol", "Hanlim", "Hankyung", "Daejeong", "Andeok", "Seogwipo", "Namwon", "Pyoseon" ,"Seongsan" ,"Gujwa" ,"Jocheon" ,"Jeju"};
+		List<FamousRestaurant> searchList;
+		boolean check = false;
+		for(int i = 0; i < location.length; ++i) {
+			if(textValue.equals(location[i])) {
+				check = true;
+			}
+		}				
+		if(check) {
+			searchList = famousRestaurantMapper.polygonSearch(textValue);
+		}else {
+			searchList = famousRestaurantMapper.getRestSearch(textValue);
+		}   
+		return searchList;	
+	}
+	
+	@GetMapping(value="/board/like/{id}", produces = "application/json; charset=UTF-8")
+	public TouristSpot updateLikeCnt(@PathVariable int id) {
+		touristSpotMapper.addLike(id);
+		TouristSpot getLike = touristSpotMapper.getLike(id);
+		 log.info(getLike+""); 
+		return getLike;	
+	}
+	
+	@GetMapping(value="/board/restlike/{id}", produces = "application/json; charset=UTF-8")
+	public FamousRestaurant updateRestLike(@PathVariable int id) {
+		famousRestaurantMapper.addLike(id);
+		FamousRestaurant getLike = famousRestaurantMapper.getLike(id);
+		 log.info(getLike+""); 
+		return getLike;	
+	}
+
 }
