@@ -30,9 +30,9 @@
 						class="list-group-item list-group-item-action active"
 						id="list-mywrite-list" data-bs-toggle="list" href="#mywrite"
 						role="tab"> 내가 쓴글 </a> 
-					<a href="#route"
+					<a href="#course"
 						class="list-group-item list-group-item-action"
-						id="list-route-list" data-bs-toggle="list" href="#route"
+						id="list-course-list" data-bs-toggle="list" href="#course"
 						role="tab"> 내가 만든 경로 </a>
 				</div>
 
@@ -62,7 +62,7 @@
 								</ul>
 							</nav>
 						</div>
-						<div class="tab-pane fade show" id="route" role="tabpanel">
+						<div class="tab-pane fade show" id="course" role="tabpanel">
 
 							<table class="table table-stripted">
 								<colgroup>

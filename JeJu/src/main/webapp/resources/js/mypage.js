@@ -1,5 +1,5 @@
 const myWrite = document.getElementById('list-mywrite-list');
-const myCourse = document.getElementById('list-route-list');
+const myCourse = document.getElementById('list-course-list');
 
 const $myWrite_pagination = $('#myWrite-pagination');
 const $myCourse_pagination = $('#myCourse-pagination');
