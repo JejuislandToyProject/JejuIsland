@@ -9,31 +9,31 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import com.kgitbank.jeju.admin.service.VisitService;
+import com.kgitbank.jeju.admin.service.AdminService;
 
 
 @Controller
 public class AdminController {
 	
 	@Autowired
-	VisitService visitService;
+	AdminService adminService;
 	
 	
 	@RequestMapping(value="/admin/login", method= {RequestMethod.GET, RequestMethod.POST})
 	public String adminLogin(HttpSession session) {
-		visitService.setAdminSession(session);
+		adminService.setAdminSession(session);
 		return "/admin/adminLogin";
 		
 	}
 	@RequestMapping(value="/admin/main", method= {RequestMethod.GET, RequestMethod.POST})
 	public String admin(Model model) {
-		visitService.getDashboardInfo(model);
+		adminService.getDashboardInfo(model);
 		return "/admin/admin";
 	}
 	 
 	@RequestMapping(value="/admin/user", method= {RequestMethod.GET, RequestMethod.POST})
-	public String userban(Model model) {
-		visitService.getDashboardInfo(model);
+	public String user() {
 		return "/admin/utilities-user-ban";
 	}
+	
 }
