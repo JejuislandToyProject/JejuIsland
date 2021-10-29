@@ -162,7 +162,7 @@
                                         <div class="col mr-2">
                                             <div class="text-xs font-weight-bold text-warning2 text-uppercase mb-1">
                                                 총 방문자 수</div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800">${todayCount }</div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800">${totalCount }</div>
                                         </div>
                                         <div class="col-auto">
                                             <i class="fas fa-users fa-3x text-gray-500"></i>
