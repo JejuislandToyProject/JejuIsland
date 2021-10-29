@@ -32,21 +32,22 @@ window.onload = () => {myWrite.click();};
 myCourse.addEventListener('click', () => {
     makeRequest('GET', 'getMyRoute').then(responses => {
         myCourseVariable.records = JSON.parse(responses);
-
-		var obj = {};
+        
+		var coursesObj = {};
         let prevId = myCourseVariable.records[0].id;
-        obj[prevId] = [myCourseVariable.records[0]];
+        coursesObj[prevId] = [myCourseVariable.records[0]];
         
         for(let i = 1; i < myCourseVariable.records.length ; i++) {
             if(prevId !== myCourseVariable.records[i].id) {
                 prevId = myCourseVariable.records[i].id
-                obj[prevId] = [myCourseVariable.records[i]]
+                coursesObj[prevId] = [myCourseVariable.records[i]]
             } else {
-            	obj[prevId].push(myCourseVariable.records[i]);
+            	coursesObj[prevId].push(myCourseVariable.records[i]);
             }
         }
-        test = Object.values(obj);
-        myCourseVariable.totalRecords = Object.keys(obj).length;
+
+        courses = Object.values(coursesObj);
+        myCourseVariable.totalRecords = Object.keys(coursesObj).length;
         myCourseVariable.totalPages = Math.ceil(myCourseVariable.totalRecords/myCourseVariable.recordPerPage);
 
         applyMyCoursePagination();
@@ -209,7 +210,7 @@ const applyMyCoursePagination = ()=> {
             let displayRecordsIndex = Math.max(page -1, 0) * myCourseVariable.recordPerPage;
             let endRecord = (displayRecordsIndex) + myCourseVariable.recordPerPage;
 
-            displayRecords = test.slice(displayRecordsIndex, endRecord);
+            displayRecords = courses.slice(displayRecordsIndex, endRecord);
             generateCourseTable();
         }
     });
