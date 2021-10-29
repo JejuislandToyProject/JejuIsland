@@ -18,6 +18,6 @@
   </insert>
   
   <update id="updateBan">
-  	UPDATE user_info SET banned=#{banned}
+  	UPDATE user_info SET banned=#{banned} WHERE user_id = #{user_id}
   </update>
 </mapper>
