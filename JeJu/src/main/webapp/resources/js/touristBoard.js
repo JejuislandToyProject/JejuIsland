@@ -119,7 +119,7 @@ const addIconPart = (card) => {
 
     outerform.innerHTML += `<form id="like_form">`;
 	
-    innerDiv1.innerHTML += `<input class="align-items-center" type="button" value="좋아요" onclick="like_func(${card.tourist_spot_id})" />`;
+    innerDiv1.innerHTML += `<input class="btn btn-outline-primary" type="button" value="좋아요" onclick="like_func(${card.tourist_spot_id})" />`;
     innerDiv1.innerHTML += `<div class="align-items-center" id="like_result"><i class="far fa-thumbs-up me-3"></i>${card.positive_num}</div>`;
 
     innerDiv2.innerHTML += `<input type="hidden" class="like" name="command" value="${card.positive_num}"/>`;

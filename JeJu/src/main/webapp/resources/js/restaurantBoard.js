@@ -125,7 +125,7 @@ const addIconPart = (card) => {
 
     outerform.innerHTML += `<form id="like_form">`;
 	
-    innerDiv1.innerHTML += `<input class="align-items-center" type="button" value="좋아요" onclick="like_func(${card.famous_restaurant_id})" />`;
+    innerDiv1.innerHTML += `<input class="btn btn-primary" type="button" value="좋아요" onclick="like_func(${card.famous_restaurant_id})" />`;
     innerDiv1.innerHTML += `<div class="align-items-center" id="like_result"><i class="far fa-thumbs-up me-3"></i>${card.positive_num}</div>`;
 
     innerDiv2.innerHTML += `<input type="hidden" class="like" name="command" value="${card.positive_num}"/>`;
@@ -167,11 +167,11 @@ const applyPagination = ()=> {
    xhttp.addEventListener('readystatechange', (e) => {
        const readyState = e.target.readyState;
        const httpStatus = e.target.status;
-           
+
        if(readyState == 4 && httpStatus == 200) {
    			console.log(JSON.parse(e.target.responseText));
-			
-          
+
+
         }
   });
      xhttp.open('GET', './restlike/' + restId, true);
@@ -184,10 +184,10 @@ const applyPagination = ()=> {
 
 
 
- searchBtn.addEventListener('click', () =>{	
+searchBtn.addEventListener('click', () =>{	
 		
 		$(document).ready(function() {
-        $("#contents-body").empty();
+        $("#body").empty();
 		var textValue = searchValue.value;		
  		searchRequest(textValue);
 
