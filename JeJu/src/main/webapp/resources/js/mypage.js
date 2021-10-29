@@ -149,18 +149,7 @@ const generateCourseTable = () => {
         addCourseRecord(displayRecords[i]);
     }
 }
-/*
-                            <div class="container">
-								<div class="row row-cols-auto">
-									<div class="col">
-										<div class="course-img m-auto"></div>
-									</div>
-									<div class="col"><i class="arrow fa fa-chevron-right fa-lg"></i></div>
-									<div class="col">
-										<div class="course-img m-auto"></div>
-									</div>
-								</div>
-*/
+
 const addCourseRecord = (course) => {
     const tr = document.createElement('tr');
     const td1 = document.createElement('td');
@@ -171,7 +160,6 @@ const addCourseRecord = (course) => {
     row.classList.add('row-cols-auto');
 
     for(let i = 0; i < course.length ; i++) {
-    	console.log(course[i].image);
     	let div1 = document.createElement('div');
         let div2 = document.createElement('div');
         let img = document.createElement('img');
