@@ -179,8 +179,8 @@ const addCourseRecord = (course) => {
         div1.classList.add('col');
         div2.classList.add('course-img');
         div2.classList.add('m-auto');
-        //img.setAttribute('src', `${course[i].image}`);
 
+		img.src = `${course[i].image.replace("..", ".")}`;
         div2.appendChild(img);
         div1.appendChild(div2);
 
