@@ -6,7 +6,7 @@
 
 #right-box1{
    width:100%;
-   padding: 6px 0px;
+   padding: 0.5rem 0rem;
    display: flex;
 }
 
@@ -15,13 +15,15 @@
    border:none;
    background-color: white;
    width: 86%;
-   text-align: center;
-   height: 40px;
+   text-align: left;
+   padding-left: 1rem;
+   height: 3rem;
    color: gray;
 }
 
 #right-box1 > input:focus{
    outline:none;
+   
 }
 
 #right-box1 > input::placeholder {
@@ -33,10 +35,11 @@
    width:14%;
    border: none;
    cursor:pointer;
-   height: 40px;
-   color: rgb(175,238,238);
+   height: 3rem;
+   color: #1d809f;
    background-color:white;
-   font-size:20px;
+   font-size:1.5rem;
+   
 }
 
 #right-box1 > #magBtn:focus{
@@ -47,7 +50,7 @@
    text-align: center;
    display: flex;
     justify-content: space-around;
-    padding: 8px 0;
+    padding: 0.4rem 0;
 }
 
 #right-box2 > button{
@@ -55,32 +58,68 @@
 }
 #right-box2 > #restaurantBtn,#spotBtn{
    width:50%;
-   height: 35px;
+   height: 3rem;
    outline: 0;
    border: 0;
    background-color: white;
 }
 
 #right-box2 > #restaurantBtn:focus{
-   background-color: rgb(175,238,238);
+   background-color: #1d809f ;
+   color: #ffffff;
 }
 
 #right-box2 > #spotBtn:focus{
-   background-color: rgb(175,238,238);
+   background-color: #1d809f ;
+   color: #ffffff;
 }
 
 #right-box3{
 text-align : center;
    overflow-y: scroll;
-   height: 872px;
+   height: 47.2rem;
 }
 
 .sidebarPadding {
-   padding: 16px 8px 0px 8px;
+   padding: 1.6rem 1rem 0rem 1rem;
 }
 
 .sidebar-section-title {
    font-size: 0.95rem;
-   margin: 8px;
+   margin: 0.7rem;
    text-align: center;
+}
+@media (max-width: 1400px){
+#right-box1{
+   width:100%;
+   padding: 0.5rem 0rem;
+   display: flex;
+}
+
+#right-box1 > #magBtn{
+   width:14%;
+   cursor:pointer;
+   padding: none;
+   height: 3rem;
+   color: #1d809f;
+   background-color:white;
+   margin-right: 0.2rem;
+   font-size:1.0rem;
+   
+}
+
+.sidebar-section-title {
+   font-size: 0.95rem;
+   margin: 0.7rem;
+   text-align: center;
+}
+#right-box2 > #restaurantBtn,#spotBtn{
+   width:50%;
+   height: 3rem;
+   outline: 0;
+   border: 0;
+   background-color: white;
+   font-size: 0.8rem;
+}
+
 }

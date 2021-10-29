@@ -15,6 +15,7 @@
 <link rel="stylesheet" href="<c:url value="/resources/css/courseCSS/modal.css"/>">
 <link rel="stylesheet" href="<c:url value="/resources/css/courseCSS/main.css"/>">
 
+
 <!-- 드래그 앤 드롭 -->
 <link href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" rel="stylesheet" type="text/css" />
 <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.min.js" ></script>
@@ -31,7 +32,7 @@
 			</div>
 			
 			<div id="courseItems"></div>
-			<div class="saveCourseModalBtn"><button type="button"class="btn btn btn-90"style="color: white; background-color: orange;">저장하기</button></div>
+			<div class="saveCourseModalBtn"><button type="button"class="btn btn btn-90"style="color: white; background-color: #1d809f;">저장하기</button></div>
 			
 		</div>
 	</div>
@@ -55,8 +56,15 @@
 			<div><a href="/jeju">J E J U</a></div>
 			<div><a href="/jeju">MAKE YOUR TRAVEL COURSE</a></div>
 		</div>
+		<div> </div>
+		<div class="courseLogoBox">
+		<div class="menu"><a href="/jeju">HOME</a></div>
+		<div class="menu"><a href="/jeju/#about">About</a></div>
+		<div class="menu"><a href="/jeju/listRestaurant">Reservation</a></div>
+		<div class="menu"><a href="/jeju/board/tourist">Best-Pick</a></div>
+		<div class="menu"><a href="/jeju/login">Login</a></div>
+		</div>
 		<div></div>
-		<div><a href="/jeju">H O M E</a></div>
 	</div>
 
 	<div class="courseGridContainer">
@@ -68,8 +76,8 @@
 				<div>Jeju Weather</div>
 				<div id="weather-flex">
 					<div id="weather-con"></div>
-					<div>
-						<div id="temp"></div>
+					<div class="weather-text">
+						<div class id="temp"></div>
 						<br>
 						<div id="pty"></div>
 					</div>
@@ -78,7 +86,7 @@
 					<button type="button"
 						onclick="location.href='https://www.kma.go.kr/jeju/html/main/index.jsp'"
 						class="btn btn btn-90"
-						style="color: white; background-color: orange;">제주도 기상청
+						style="color: white; background-color: #1d809f ;">제주도 기상청
 						가기</button>
 				</div>
 			</div>
@@ -89,7 +97,7 @@
 				<br>
 				<div>
 					<button id="allDelete" type="button"
-						class="btn btn bg-gradient-danger btn-90" style="color: white;">선택목록
+						class="btn btn btn-90" style="color: white; background-color:#1d809f ;">선택목록
 						전체삭제</button>
 				</div>
 			</div>
@@ -107,7 +115,7 @@
 					style="background-color: #FFFFFF; opacity: 0.8; color: #242424;">지도
 					원위치</button>
 				<button type="button"id="enrollRestaurantBtn"
-					onclick="location.href='../addTourist'" class="btn btn-md"
+					onclick="location.href='../addRestaurant'" class="btn btn-md"
 					style="background-color: #FFFFFF; opacity: 0.8; color: #242424;">맛집등록
 					하기</button>
 				<button type="button" id="enrollSpotBtn" onclick="location.href='../addTourist'"
@@ -150,10 +158,10 @@
 					</div>
 					<div
 						style="color: rgb(170, 170, 170); margin-top: 10px; display: block;">
-						<i class="fas fa-info-circle"></i> <br> <span
-							style="font-size: 7px;">장소명을 검색하세요.<br>검색어는 두 글자 이상
-							입력해주세요.
-						</span>
+						<i class="fas fa-info-circle"></i> <br> 
+						<span style="font-size: 10px;">장소명을 검색하세요.<br>
+							검색어는 두 글자 이상 입력해주세요.</span>
+						
 					</div>
 
 				</div>

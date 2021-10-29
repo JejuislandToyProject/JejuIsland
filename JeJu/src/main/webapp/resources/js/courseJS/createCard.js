@@ -11,14 +11,14 @@ const addToList = (jsonData) => {
       div2.setAttribute('class', 'card-main');
       
       const div3 = document.createElement('div');
-      div3.setAttribute('class', 'row');
+      div3.setAttribute('class', 'direction');
       
       const div_image = document.createElement('div');
       div_image.setAttribute('class', 'col-4');
       div_image.setAttribute('id','jsonImg');
       div_image.innerHTML = "<img id=img-size src="+ jsonData.image + "/>";
       const div4 = document.createElement('div');
-      div4.setAttribute('class', 'col-6');
+      div4.setAttribute('class', 'col-5 card-text');
       
       const div_title = document.createElement('div');
       div_title.setAttribute('class','text-sm mb-0 text-capitalize font-weight-bold');
@@ -28,6 +28,9 @@ const addToList = (jsonData) => {
       const div_location = document.createElement('div');
       div_location.setAttribute('id', 'jsonLocation');
       div_location.innerText = '좋아요 : ' + jsonData.positive_num;
+      
+      const div5 = document.createElement('div');
+      div5.setAttribute('class', 'col-1 card-btn');
 
       const btn_plus = document.createElement('button');
       btn_plus.setAttribute('class', "rightCardSmallBtn");
@@ -42,9 +45,10 @@ const addToList = (jsonData) => {
       div2.appendChild(div3);
       div3.appendChild(div_image);   
       div3.appendChild(div4);
+      div3.appendChild(div5);
       div4.appendChild(div_title);
       div4.appendChild(div_location);
-      div4.appendChild(btn_plus);
+      div5.appendChild(btn_plus);
      
 };
 
@@ -62,7 +66,7 @@ const addToListLeft = (jsonDataLeft) => {
           div2.setAttribute('class', 'card-main');
           
           const div3 = document.createElement('div');
-          div3.setAttribute('class', 'row');
+          div3.setAttribute('class', 'direction');
           
           const div_image = document.createElement('div');
           div_image.setAttribute('class', 'col-4');
@@ -71,7 +75,7 @@ const addToListLeft = (jsonDataLeft) => {
           div_image.innerHTML = "<img id=img-size src="+ jsonDataLeft.image + ">";
 
           const div4 = document.createElement('div');
-          div4.setAttribute('class', 'col-6');
+          div4.setAttribute('class', 'col-5 card-text');
           
           const div_title = document.createElement('div');
           div_title.setAttribute('class','text-sm mb-0 text-capitalize font-weight-bold');
@@ -82,6 +86,8 @@ const addToListLeft = (jsonDataLeft) => {
           div_location.setAttribute('id', 'jsonLocation');
           div_location.innerText = '좋아요 : ' + jsonDataLeft.positive_num;
           
+          const div5 = document.createElement('div');
+          div5.setAttribute('class','col-1 card-btn');
           const btn_plus = document.createElement('button');
           btn_plus.setAttribute('class', "cardSmallBtn");
           btn_plus.setAttribute('id', jsonDataLeft.title);
@@ -95,9 +101,10 @@ const addToListLeft = (jsonDataLeft) => {
           div2.appendChild(div3);
           div3.appendChild(div_image);   
           div3.appendChild(div4);
+          div3.appendChild(div5);
           div4.appendChild(div_title);
           div4.appendChild(div_location);
-          div4.appendChild(btn_plus);
+          div5.appendChild(btn_plus);
 };
 
 
@@ -124,7 +131,7 @@ const addSaveCourseModal = (jsonData) => {
      divsecond.setAttribute('class','card-body pt-2');
      
      const span1 = document.createElement('span');
-     span1.setAttribute('class','text-gradient text-primary text-uppercase text-xs font-weight-bold my-2');
+     span1.setAttribute('class','text-primary text-uppercase text-xs font-weight-bold my-2');
      span1.innerText = jsonData.title;
      
      courseItems.appendChild(maindiv);

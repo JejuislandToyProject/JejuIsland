@@ -1,5 +1,6 @@
 @charset "UTF-8";
 
+
 .leftSidebar-1 {
    text-align : center;
 }
@@ -13,33 +14,44 @@ ul{
    display: flex;
    flex-direction: row;
    width: 100%;
-   padding-left: 5px;
+   padding-left: 0.5rem;
 }
 
 #weather-con{
-   font-size: 100px;
+   font-size: 5rem;
+   margin-left : 2rem; 
+   
 }
+.weather-text > *{
+	font-size: 0.9rem;
+	margin-top: -1rem;
+} 
 
 #weather-flex > :last-child{
-   margin: 20px;
-   margin-top: 40px;
+   color: #212529 ;
+   margin-top: 3.2rem;
+   margin-left: 1rem;
+   text-align: left;
 }
 
 
 .leftSidebar-1 > :first-child {
-   font-size : 25px;
-   padding : 10px 5px 10px 10px;
-   margin-top : 20px;
+   font-size : 1.5rem;
+   text-align : center;
+   padding : 2.5rem 1.5rem 0.1rem 1.5rem; 
+ 
+   margin-top : 0rem;
    font-weight : bold;
+   color: #212529;
 }
 
 .leftSidebar-1 > :nth-child(2) {
-   color : lightgray;
-   font-size : 17px;
+   color : #838383;
+   font-size : 1rem;
 }
 
 .leftSidebar-1 > :last-child {
-   padding-top : 15px;
+   padding-top : 0.5rem;
 }
 
 .leftSidebar-2 {
@@ -47,20 +59,64 @@ ul{
 }
 
 .leftSidebar-2 > :first-child {
-   font-size : 25px;
-   padding : 10px 5px 0px 10px;
-   margin-top : 20px;
+   font-size : 1.5rem;
+   padding : 1.2rem 1.5rem 0.1rem 1.5rem; 
+   margin-top : 1rem;
    font-weight : bold;
 }
 
 .leftSidebar-2 > :nth-child(2) {
-   color : lightgray;
-   font-size : 17px;
+   color : #838383;
+   font-size : 1rem;
+}
+
+#text {
+	color: #212529 ;
+	margin-top:-3rem;
 }
 
 #leftSidebar-3{
    text-align : center;
    overflow-y: scroll;
    overflow-x: hidden;
-   height: 350px;
+   height: 25.4rem;
 }
+
+@media (max-width: 1400px){
+	
+#weather-flex{
+   display: flex;
+   flex-direction: row;
+   width: 100%;
+   padding-left: 0.5rem;
+}
+
+#weather-con{
+   font-size: 3rem;
+   margin-left : 0rem;
+   margin-top : 1.0rem; 
+   
+}
+
+.weather-text > *{
+		font-size: 0.7rem;
+		margin-bottom:: 2rem; 
+		
+} 
+
+#leftSidebar-3{
+   text-align : center;
+   overflow-y: scroll;
+   overflow-x: hidden;
+   height: 25.5rem;
+}	
+}
+@media (max-width: 850px){
+	
+#leftSidebar-3{
+   text-align : center;
+   overflow-y: scroll;
+   overflow-x: hidden;
+   height: 18rem;
+}	
+	}
