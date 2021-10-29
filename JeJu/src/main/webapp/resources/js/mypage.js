@@ -171,6 +171,7 @@ const addCourseRecord = (course) => {
 		img.src = `${course[i].image.replace("..", ".")}`;
         div2.appendChild(img);
         div1.appendChild(div2);
+        div1.innerHTML += `<p class="text-center">${course[i].title}</p>`
 
         let div3 = document.createElement('div');
         let icon = document.createElement('i');
@@ -187,12 +188,12 @@ const addCourseRecord = (course) => {
     	row.appendChild(div3);
     }
 
-	td1.innerHTML = `${course[0].id}`;
+	td1.innerText = `${course[0].id}`;
+	row.lastElementChild.remove();
 	td2.appendChild(row);
 	
 	tr.appendChild(td1);
 	tr.appendChild(td2);
-	
     myCourseTableBody.appendChild(tr);
 }
 const applyMyCoursePagination = ()=> {
