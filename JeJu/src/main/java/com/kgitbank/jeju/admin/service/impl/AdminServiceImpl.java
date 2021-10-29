@@ -45,4 +45,9 @@ public class AdminServiceImpl implements AdminService{
 		List<User> users = userMapper.listUsers();
 		return users;
 	}
+	
+	@Override
+	public void updateBan(User user) {
+		userMapper.updateBan(user);
+	}
 }

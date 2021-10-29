@@ -15,4 +15,5 @@ public interface AdminService {
 	public void getDashboardInfo(Model model);
 	public List<DailyVisit> getChartData();
 	public List<User> getUserData();
+	public void updateBan(User user);
 }
