@@ -16,4 +16,8 @@
     INSERT INTO user_info(user_id, nickname)
     VALUES(#{user_id}, #{nickname})
   </insert>
+  
+  <update id="updateBan">
+  	UPDATE user_info SET banned=#{banned}
+  </update>
 </mapper>
