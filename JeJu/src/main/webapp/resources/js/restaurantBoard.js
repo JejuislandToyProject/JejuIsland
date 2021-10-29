@@ -8,7 +8,16 @@ let displayCards = [];
 let page = 1;
 let totalPages = 0;
 
-makeRequest();
+
+const searchBtn = document.getElementById('searchBtn');
+const searchValue = document.getElementById('searchValue');
+window.onload=function(){
+	if (searchValue.value == ""){
+		makeRequest();
+	}else{
+		$("#searchBtn").trigger("click");
+	}
+};
 
 var xhttp;
 function makeRequest() {
@@ -28,6 +37,7 @@ function setVariable() {
             totalPages = Math.ceil(totalcards/cardPerPage);
             
             applyPagination();
+			$pagination.twbsPagination("changeTotalPages", totalPages , page);
         }
     }
 }
@@ -89,11 +99,12 @@ const addCardBody = (card) => {
     return cardBody;
 }
 
-const addIconPart = () => {
+const addIconPart = (card) => {
     const outerDiv = document.createElement('div');
     const innerDiv1 = document.createElement('div');
     const innerDiv2 = document.createElement('div');
 
+	
     outerDiv.classList.add('author');
     outerDiv.classList.add('align-items-center');
     outerDiv.classList.add('p-2');
@@ -104,7 +115,7 @@ const addIconPart = () => {
     innerDiv1.setAttribute('id', 'icon');
     innerDiv2.setAttribute('id', 'icon');
 
-    innerDiv1.innerHTML += '<i id="icon" onclick="like_func()" class="far fa-thumbs-up"></i>';
+    innerDiv1.innerHTML += `<i id="icon" onclick="like_func(${card.famous_restaurant_id})" class="far fa-thumbs-up"></i>`;
     innerDiv1.innerHTML += '<i class="far fa-thumbs-down"></i>';
 
     innerDiv2.innerHTML += '<p>좋아요</p>';
@@ -136,33 +147,46 @@ const applyPagination = ()=> {
     });
 }
 
-    //like addPositive
-    function like_func(){
-        var icon_thumbs = $("#icon"); // icon
-        var tourist_spot_id = $(card.tourist_spot_id).val();
+   //like addPositive
+    function like_func(restId){
+	const likeNum = document.getElementById('like_result');
 
-        $ajax({
-            url: "/jeju/likeCount",
-            type:"GET",
-            cache: false,
-            dataType:"json",
-            data: 'tourist_spot_id='+tourist_spot_id,
-            seccess: function(data){
-                var mag='';
-                var like_img='';
-                msg += data.msg;
-                alert(msg);
-                  
-                  $('#like_img', frm_read).attr('src', like_img);
-                  $('#like_cnt').html(data.like_cnt);
-                  $('#like_check').html(data.like_check);
-                },
-                error: function(request, status, error){
-                  alert("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
-            }
-        });
-            
-    }
+   const xhttp = new XMLHttpRequest(); 
+   xhttp.addEventListener('readystatechange', (e) => {
+       const readyState = e.target.readyState;
+       const httpStatus = e.target.status;
+           
+       if(readyState == 4 && httpStatus == 200) {
+   			console.log(JSON.parse(e.target.responseText));
+			
+          
+        }
+  });
+     xhttp.open('GET', './restlike/' + restId, true);
+     xhttp.setRequestHeader('content-type', 'application/json;charset=UTF-8');
+
+     xhttp.send();
+       
+     
+};
 
 
-    
+
+ searchBtn.addEventListener('click', () =>{	
+		
+		$(document).ready(function() {
+        $("#body").empty();
+		var textValue = searchValue.value;		
+ 		searchRequest(textValue);
+
+ 	   });
+});
+
+
+function searchRequest(textValue) {
+    xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = setVariable;
+
+    xhttp.open('GET', '/jeju/restSearch/'+textValue, true);
+    xhttp.send();
+}

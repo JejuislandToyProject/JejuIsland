@@ -33,4 +33,21 @@
     <select id="getFamous" resultType="com.kgitbank.jeju.dto.FamousRestaurant">
         select title, image, positive_num, latitude, longitude from famous_restaurant WHERE title =#{title}
     </select>
+    
+    <select id="getRestSearch" resultType="com.kgitbank.jeju.dto.FamousRestaurant">
+		SELECT * FROM famous_restaurant WHERE title Like '%'||#{textValue}||'%'
+	</select>
+	
+	<select id="polygonSearch" resultType="com.kgitbank.jeju.dto.FamousRestaurant">
+		SELECT * FROM famous_restaurant WHERE address = #{textValue}
+	</select>
+	
+	 <update id="addLike" >
+	 UPDATE famous_restaurant SET positive_num  = positive_num +1
+	 WHERE famous_restaurant_id = #{id} 
+	 </update>
+	 
+	 <select id="getLike" resultType="com.kgitbank.jeju.dto.FamousRestaurant">
+	 	SELECT * FROM famous_restaurant WHERE famous_restaurant_id = #{id}
+	 </select>
 </mapper>

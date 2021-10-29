@@ -5,7 +5,7 @@
 <html lang="en">
  
 <head>
-
+ 
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -15,7 +15,7 @@
     <title>Manager Page</title>
 
     <!-- Custom fonts for this template-->
-    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css" rel="stylesheet" type="text/css">
     <link
         href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
         rel="stylesheet">
@@ -23,6 +23,12 @@
     <!-- Custom styles for this template-->
     <link href="<c:url value="/resources/css/sb-admin-2.min.css"/>" rel="stylesheet">
 
+    <!-- Custom styles for this page -->
+    <link href="https://cdn.datatables.net/1.11.3/css/dataTables.bootstrap4.min.css" rel="stylesheet">
+    
+	<link href="<c:url value="/resources/css/admin.css"/>" rel="stylesheet">
+	<script src="<c:url value="/resources/js/user_ban_button.js"/>"></script>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js"></script>
 </head>
 
 <body id="page-top">
@@ -121,107 +127,436 @@
         <!-- End of Sidebar -->
 
         <!-- Content Wrapper -->
-        <div id="content-wrapper" class="d-flex flex-column">
-            <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow"></nav>
-            <!-- Main Content -->
-            <div id="content">
+       <div id="content-wrapper" class="d-flex flex-column">
+        <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow"></nav>
+        <!-- Main Content -->
+        <div id="content">
 
-                <!-- Begin Page Content -->
-                <div class="container-fluid">
+            <!-- Begin Page Content -->
+            <div class="container-fluid">
 
-                    <!-- Page Heading -->
-                    <h1 class="h3 mb-1 text-gray-800">회원 차단 기능</h1>
-
-                    <!-- Content Row -->
-                    <div class="row">
-
-                        <!-- First Column -->
-                        <div class="col-lg-4">
-
-                            <!-- Custom Text Color Utilities -->
-                            <div class="card shadow mb-4">
-                                <div class="card-header py-3">
-                                    <h6 class="m-0 font-weight-bold text-primary">Custom Text Color Utilities</h6>
-                                </div>
-                                <div class="card-body">
-                                    <p class="text-gray-100 p-3 bg-dark m-0">.text-gray-100</p>
-                                    <p class="text-gray-200 p-3 bg-dark m-0">.text-gray-200</p>
-                                    <p class="text-gray-300 p-3 bg-dark m-0">.text-gray-300</p>
-                                    <p class="text-gray-400 p-3 bg-dark m-0">.text-gray-400</p>
-                                    <p class="text-gray-500 p-3 m-0">.text-gray-500</p>
-                                    <p class="text-gray-600 p-3 m-0">.text-gray-600</p>
-                                    <p class="text-gray-700 p-3 m-0">.text-gray-700</p>
-                                    <p class="text-gray-800 p-3 m-0">.text-gray-800</p>
-                                    <p class="text-gray-900 p-3 m-0">.text-gray-900</p>
-                                </div>
-                            </div>
-
-                            <!-- Custom Font Size Utilities -->
-                            <div class="card shadow mb-4">
-                                <div class="card-header py-3">
-                                    <h6 class="m-0 font-weight-bold text-primary">Custom Font Size Utilities</h6>
-                                </div>
-                                <div class="card-body">
-                                    <p class="text-xs">.text-xs</p>
-                                    <p class="text-lg mb-0">.text-lg</p>
-                                </div>
-                            </div>
-
-                        </div>
-
-                        <!-- Second Column -->
-                        <div class="col-lg-4">
-
-                            <!-- Background Gradient Utilities -->
-                            <div class="card shadow mb-4">
-                                <div class="card-header py-3">
-                                    <h6 class="m-0 font-weight-bold text-primary">Custom Background Gradient Utilities
-                                    </h6>
-                                </div>
-                                <div class="card-body">
-                                    <div class="px-3 py-5 bg-gradient-primary text-white">.bg-gradient-primary</div>
-                                    <div class="px-3 py-5 bg-gradient-secondary text-white">.bg-gradient-secondary</div>
-                                    <div class="px-3 py-5 bg-gradient-success text-white">.bg-gradient-success</div>
-                                    <div class="px-3 py-5 bg-gradient-info text-white">.bg-gradient-info</div>
-                                    <div class="px-3 py-5 bg-gradient-warning text-white">.bg-gradient-warning</div>
-                                    <div class="px-3 py-5 bg-gradient-danger text-white">.bg-gradient-danger</div>
-                                    <div class="px-3 py-5 bg-gradient-light text-white">.bg-gradient-light</div>
-                                    <div class="px-3 py-5 bg-gradient-dark text-white">.bg-gradient-dark</div>
-                                </div>
-                            </div>
-
-                        </div>
-
-                        <!-- Third Column -->
-                        <div class="col-lg-4">
-
-                            <!-- Grayscale Utilities -->
-                            <div class="card shadow mb-4">
-                                <div class="card-header py-3">
-                                    <h6 class="m-0 font-weight-bold text-primary">Custom Grayscale Background Utilities
-                                    </h6>
-                                </div>
-                                <div class="card-body">
-                                    <div class="p-3 bg-gray-100">.bg-gray-100</div>
-                                    <div class="p-3 bg-gray-200">.bg-gray-200</div>
-                                    <div class="p-3 bg-gray-300">.bg-gray-300</div>
-                                    <div class="p-3 bg-gray-400">.bg-gray-400</div>
-                                    <div class="p-3 bg-gray-500 text-white">.bg-gray-500</div>
-                                    <div class="p-3 bg-gray-600 text-white">.bg-gray-600</div>
-                                    <div class="p-3 bg-gray-700 text-white">.bg-gray-700</div>
-                                    <div class="p-3 bg-gray-800 text-white">.bg-gray-800</div>
-                                    <div class="p-3 bg-gray-900 text-white">.bg-gray-900</div>
-                                </div>
-                            </div>
-                        </div>
-
+                <!-- Page Heading -->
+                <h1 class="h3 mb-2 text-gray-800">회원 관리</h1>
+              
+                <!-- DataTales Example -->
+                <div class="card shadow mb-4">
+                    <div class="card-header py-3">
+                        <h6 class="m-0 font-weight-bold text-primary">회원 리스트</h6>
                     </div>
-
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                <thead>
+                                    <tr>
+                                        <th>NickName</th>
+                                        <th>ID</th>
+                                        <th>Lock & UnLock</th>
+                                    </tr>
+                                </thead>
+                                <tfoot>
+                                    <tr>
+                                        <th>NickName</th>
+                                        <th>ID</th>
+                                        <th>Lock & UnLock</th>
+                                    </tr>
+                                </tfoot>
+                                <tbody>
+                                    <tr>
+                                        <td>Tiger Nixon</td>
+                                        <td>System Architect</td>
+                                        <td>
+                                            <label class="switch" style="margin-top: 5px;">
+                                                <input type="checkbox">
+                                                <span class="slider round"></span>
+                                              </label>
+                                              <p style="display:none;"></p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Garrett Winters</td>
+                                        <td>Accountant</td>
+                                        <td>
+                                            <label class="switch" style="margin-top: 5px;">
+                                                <input type="checkbox">
+                                                <span class="slider round"></span>
+                                              </label>
+                                              <p style="display:none;"></p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Ashton Cox</td>
+                                        <td>Junior Technical Author</td>
+                                        <td>
+                                            <label class="switch" style="margin-top: 5px;">
+                                                <input type="checkbox">
+                                                <span class="slider round"></span>
+                                              </label>
+                                              <p style="display:none;"></p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Cedric Kelly</td>
+                                        <td>Senior Javascript Developer</td>
+                                        <td>
+                                            <label class="switch" style="margin-top: 5px;">
+                                                <input type="checkbox">
+                                                <span class="slider round"></span>
+                                              </label>
+                                              <p style="display:none;"></p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Airi Satou</td>
+                                        <td>Accountant</td>
+                                        <td>
+                                            <label class="switch" style="margin-top: 5px;">
+                                                <input type="checkbox">
+                                                <span class="slider round"></span>
+                                              </label>
+                                              <p style="display:none;"></p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Brielle Williamson</td>
+                                        <td>Integration Specialist</td>
+                                        <td>
+                                            <label class="switch" style="margin-top: 5px;">
+                                                <input type="checkbox">
+                                                <span class="slider round"></span>
+                                              </label>
+                                              <p style="display:none;"></p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Herrod Chandler</td>
+                                        <td>Sales Assistant</td>
+                                        <td>
+                                            <label class="switch" style="margin-top: 5px;">
+                                                <input type="checkbox">
+                                                <span class="slider round"></span>
+                                              </label>
+                                              <p style="display:none;"></p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Rhona Davidson</td>
+                                        <td>Integration Specialist</td>
+                                        <td>
+                                            <label class="switch" style="margin-top: 5px;">
+                                                <input type="checkbox">
+                                                <span class="slider round"></span>
+                                              </label>
+                                              <p style="display:none;"></p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Colleen Hurst</td>
+                                        <td>Javascript Developer</td>
+                                        <td>
+                                            <label class="switch" style="margin-top: 5px;">
+                                                <input type="checkbox">
+                                                <span class="slider round"></span>
+                                              </label>
+                                              <p style="display:none;"></p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Sonya Frost</td>
+                                        <td>Software Engineer</td>
+                                        <td>
+                                            <label class="switch" style="margin-top: 5px;">
+                                                <input type="checkbox">
+                                                <span class="slider round"></span>
+                                              </label>
+                                              <p style="display:none;"></p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Jena Gaines</td>
+                                        <td>Office Manager</td>
+                                        <td>
+                                            <label class="switch" style="margin-top: 5px;">
+                                                <input type="checkbox">
+                                                <span class="slider round"></span>
+                                              </label>
+                                              <p style="display:none;"></p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Quinn Flynn</td>
+                                        <td>Support Lead</td>
+                                        <td>
+                                            <label class="switch" style="margin-top: 5px;">
+                                                <input type="checkbox">
+                                                <span class="slider round"></span>
+                                              </label>
+                                              <p style="display:none;"></p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Charde Marshall</td>
+                                        <td>Regional Director</td>
+                                        <td>
+                                            <label class="switch" style="margin-top: 5px;">
+                                                <input type="checkbox">
+                                                <span class="slider round"></span>
+                                              </label>
+                                              <p style="display:none;"></p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Haley Kennedy</td>
+                                        <td>Senior Marketing Designer</td>
+                                        <td>
+                                            <label class="switch" style="margin-top: 5px;">
+                                                <input type="checkbox">
+                                                <span class="slider round"></span>
+                                              </label>
+                                              <p style="display:none;"></p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Tatyana Fitzpatrick</td>
+                                        <td>Regional Director</td>
+                                        <td>
+                                            <label class="switch" style="margin-top: 5px;">
+                                                <input type="checkbox">
+                                                <span class="slider round"></span>
+                                              </label>
+                                              <p style="display:none;"></p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Michael Silva</td>
+                                        <td>Marketing Designer</td>
+                                        <td>
+                                            <label class="switch" style="margin-top: 5px;">
+                                                <input type="checkbox">
+                                                <span class="slider round"></span>
+                                              </label>
+                                              <p style="display:none;"></p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Paul Byrd</td>
+                                        <td>Chief Financial Officer (CFO)</td>
+                                        <td>
+                                            <label class="switch" style="margin-top: 5px;">
+                                                <input type="checkbox">
+                                                <span class="slider round"></span>
+                                              </label>
+                                              <p style="display:none;"></p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Gloria Little</td>
+                                        <td>Systems Administrator</td>
+                                        <td>
+                                            <label class="switch" style="margin-top: 5px;">
+                                                <input type="checkbox">
+                                                <span class="slider round"></span>
+                                              </label>
+                                              <p style="display:none;"></p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Bradley Greer</td>
+                                        <td>Software Engineer</td>
+                                        <td>
+                                            <label class="switch" style="margin-top: 5px;">
+                                                <input type="checkbox">
+                                                <span class="slider round"></span>
+                                              </label>
+                                              <p style="display:none;"></p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Dai Rios</td>
+                                        <td>Personnel Lead</td>
+                                        <td>
+                                            <label class="switch" style="margin-top: 5px;">
+                                                <input type="checkbox">
+                                                <span class="slider round"></span>
+                                              </label>
+                                              <p style="display:none;"></p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Jenette Caldwell</td>
+                                        <td>Development Lead</td>
+                                        <td>
+                                            <label class="switch" style="margin-top: 5px;">
+                                                <input type="checkbox">
+                                                <span class="slider round"></span>
+                                              </label>
+                                              <p style="display:none;"></p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Yuri Berry</td>
+                                        <td>Chief Marketing Officer (CMO)</td>
+                                        <td>
+                                            <label class="switch" style="margin-top: 5px;">
+                                                <input type="checkbox">
+                                                <span class="slider round"></span>
+                                              </label>
+                                              <p style="display:none;"></p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Caesar Vance</td>
+                                        <td>Pre-Sales Support</td>
+                                        <td>
+                                            <label class="switch" style="margin-top: 5px;">
+                                                <input type="checkbox">
+                                                <span class="slider round"></span>
+                                              </label>
+                                              <p style="display:none;"></p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Doris Wilder</td>
+                                        <td>Sales Assistant</td>
+                                        <td>
+                                            <label class="switch" style="margin-top: 5px;">
+                                                <input type="checkbox">
+                                                <span class="slider round"></span>
+                                              </label>
+                                              <p style="display:none;"></p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Angelica Ramos</td>
+                                        <td>Chief Executive Officer (CEO)</td>
+                                        <td>
+                                            <label class="switch" style="margin-top: 5px;">
+                                                <input type="checkbox">
+                                                <span class="slider round"></span>
+                                              </label>
+                                              <p style="display:none;"></p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Gavin Joyce</td>
+                                        <td>Developer</td>
+                                        <td>
+                                            <label class="switch" style="margin-top: 5px;">
+                                                <input type="checkbox">
+                                                <span class="slider round"></span>
+                                              </label>
+                                              <p style="display:none;"></p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Jennifer Chang</td>
+                                        <td>Regional Director</td>
+                                        <td>
+                                            <label class="switch" style="margin-top: 5px;">
+                                                <input type="checkbox">
+                                                <span class="slider round"></span>
+                                              </label>
+                                              <p style="display:none;"></p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Brenden Wagner</td>
+                                        <td>Software Engineer</td>
+                                        <td>
+                                            <label class="switch" style="margin-top: 5px;">
+                                                <input type="checkbox">
+                                                <span class="slider round"></span>
+                                              </label>
+                                              <p style="display:none;"></p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Fiona Green</td>
+                                        <td>Chief Operating Officer (COO)</td>
+                                        <td>
+                                            <label class="switch" style="margin-top: 5px;">
+                                                <input type="checkbox">
+                                                <span class="slider round"></span>
+                                              </label>
+                                              <p style="display:none;"></p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Shou Itou</td>
+                                        <td>Regional Marketing</td>
+                                        <td>
+                                            <label class="switch" style="margin-top: 5px;">
+                                                <input type="checkbox">
+                                                <span class="slider round"></span>
+                                              </label>
+                                              <p style="display:none;"></p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Michelle House</td>
+                                        <td>Integration Specialist</td>
+                                        <td>
+                                            <label class="switch" style="margin-top: 5px;">
+                                                <input type="checkbox">
+                                                <span class="slider round"></span>
+                                              </label>
+                                              <p style="display:none;"></p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Suki Burks</td>
+                                        <td>Developer</td>
+                                        <td>
+                                            <label class="switch" style="margin-top: 5px;">
+                                                <input type="checkbox">
+                                                <span class="slider round"></span>
+                                              </label>
+                                              <p style="display:none;"></p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Prescott Bartlett</td>
+                                        <td>Technical Author</td>
+                                        <td>
+                                            <label class="switch" style="margin-top: 5px;">
+                                                <input type="checkbox">
+                                                <span class="slider round"></span>
+                                              </label>
+                                              <p style="display:none;"></p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Gavin Cortez</td>
+                                        <td>Team Leader</td>
+                                        <td>
+                                            <label class="switch" style="margin-top: 5px;">
+                                                <input type="checkbox">
+                                                <span class="slider round"></span>
+                                              </label>
+                                              <p style="display:none;"></p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Martena Mccray</td>
+                                        <td>Post-Sales support</td>
+                                        <td>
+                                            <label class="switch" style="margin-top: 5px;">
+                                                <input type="checkbox">
+                                                <span class="slider round"></span>
+                                              </label>
+                                              <p style="display:none;"></p>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
                 </div>
-                <!-- /.container-fluid -->
 
             </div>
-            <!-- End of Main Content -->
+            <!-- /.container-fluid -->
+
+        </div>
+        <!-- End of Main Content -->
 
             <!-- Footer -->
             <footer class="sticky-footer bg-white">
@@ -243,17 +578,23 @@
     <a class="scroll-to-top rounded" href="#page-top">
         <i class="fas fa-angle-up"></i>
     </a>
-
+ 
     <!-- Bootstrap core JavaScript-->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Core plugin JavaScript-->
-    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
 
     <!-- Custom scripts for all pages-->
     <script src="<c:url value="/resources/js/sb-admin-2.min.js"/>"></script>
 
+	<!-- Page level plugins -->
+	<script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
+	<script src="https://cdn.datatables.net/1.11.3/js/dataTables.bootstrap4.min.js"></script>
+	
+    <!-- Page level custom scripts -->
+    <script src="<c:url value="/resources/js/admin/datatables-demo.js"/>"></script>
+    
 </body>
 
 </html>

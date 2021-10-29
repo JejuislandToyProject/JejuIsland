@@ -127,7 +127,7 @@ public class BoardController {
 	public String getRestaurantBoard(@PathVariable("title") String title, Model model) {
 		model.addAttribute("polygonSearch", title);
 		
-		return "listRestaurant";
+		return "board/restaurantBoard";
 	}
 	
 	

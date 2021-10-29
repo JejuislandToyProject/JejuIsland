@@ -60,7 +60,7 @@ var myLineChart = () => {
 	    datasets: [{
 	      label: "방문자 수 ",
 	      lineTension: 0.1, /* 곡선 */
-	      backgroundColor: "rgba(78, 115, 223, 0.05)",
+	      backgroundColor: "rgba(78, 115, 223, 0.25)",
 	      borderColor: "rgba(78, 115, 223, 1)",
 	      pointRadius: 3, /* 포인트 크기 */
 	      pointBackgroundColor: "rgba(78, 115, 223, 1)",
