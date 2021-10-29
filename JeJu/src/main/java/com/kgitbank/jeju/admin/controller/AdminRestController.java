@@ -10,17 +10,23 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.kgitbank.jeju.admin.dto.DailyVisit;
-import com.kgitbank.jeju.admin.service.VisitService;
+import com.kgitbank.jeju.admin.service.AdminService;
 
 @RestController
 public class AdminRestController {
 	
 	@Autowired
-	VisitService visitService;
+	AdminService visitService;
 
 	@RequestMapping(value = "/admin/getChartData", method= RequestMethod.GET, 
 	produces = MediaType.APPLICATION_JSON_VALUE)
 	public List<DailyVisit> getChartData() {
+		List<DailyVisit> dailyVisit = visitService.getChartData();
+		return dailyVisit;
+	};
+	@RequestMapping(value = "/admin/getUserData", method= RequestMethod.GET, 
+			produces = MediaType.APPLICATION_JSON_VALUE)
+	public List<DailyVisit> getUserData() {
 		List<DailyVisit> dailyVisit = visitService.getChartData();
 		return dailyVisit;
 	};

@@ -10,10 +10,10 @@ import org.springframework.ui.Model;
 
 import com.kgitbank.jeju.admin.dto.DailyVisit;
 import com.kgitbank.jeju.admin.mapper.VisitMapper;
-import com.kgitbank.jeju.admin.service.VisitService;
+import com.kgitbank.jeju.admin.service.AdminService;
 
 @Service
-public class VisitServiceImpl implements VisitService{
+public class AdminServiceImpl implements AdminService{
 	@Autowired
 	VisitMapper visitMapper;
 	

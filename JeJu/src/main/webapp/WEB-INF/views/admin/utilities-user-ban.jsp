@@ -27,8 +27,6 @@
     <link href="https://cdn.datatables.net/1.11.3/css/dataTables.bootstrap4.min.css" rel="stylesheet">
     
 	<link href="<c:url value="/resources/css/admin.css"/>" rel="stylesheet">
-	<script src="<c:url value="/resources/js/user_ban_button.js"/>"></script>
-    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js"></script>
 </head>
 
 <body id="page-top">
@@ -594,6 +592,9 @@
 	
     <!-- Page level custom scripts -->
     <script src="<c:url value="/resources/js/admin/datatables-demo.js"/>"></script>
+    
+    <script src="<c:url value="/resources/js/admin/user_ban_button.js"/>"></script>
+    
     
 </body>
 

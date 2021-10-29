@@ -9,14 +9,14 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import com.kgitbank.jeju.admin.service.VisitService;
+import com.kgitbank.jeju.admin.service.AdminService;
 
 
 @Controller
 public class AdminController {
 	
 	@Autowired
-	VisitService visitService;
+	AdminService visitService;
 	
 	
 	@RequestMapping(value="/admin/login", method= {RequestMethod.GET, RequestMethod.POST})
