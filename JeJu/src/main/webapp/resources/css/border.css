@@ -16,6 +16,12 @@
     font-size: 15px;
     font-weight:  bold;
 }
+	
+.img-fluid {
+  width: 240px;
+  height: 150px;
+  object-fit: cover;
+}
 
 
 #icon {
@@ -32,14 +38,6 @@
     padding: 5%;
 }
 
-.img-fluid {
-	width: auto;
-	height: 120px;
-}
-
-.text-break {
-	overflow-wrap: break-word;
-}
 
 .nav-link {
     color: black;
