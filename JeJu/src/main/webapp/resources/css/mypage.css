@@ -37,7 +37,10 @@ h1 a:hover {
   background-color: #198754;
   border-color: #157347;
 }
-
+#course table {
+	border: none;
+	border-collapse: inherit;
+}
 #myWriteTable tr:hover {
 	cursor: pointer;
 	background-color: #fff;
