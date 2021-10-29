@@ -54,6 +54,6 @@ public class courseContoller {
 			 detail.setTitle(names[i]);
 			 courseDetailMapper.insertCourse(detail);
 		}
-		return "./mypage/mypage";
+		return "redirect:/mypage";
 	}
 }
