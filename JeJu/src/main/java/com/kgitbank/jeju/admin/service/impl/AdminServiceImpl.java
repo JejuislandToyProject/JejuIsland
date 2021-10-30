@@ -66,14 +66,24 @@ public class AdminServiceImpl implements AdminService{
 		model.addAttribute("main", mainMapper.getList().get(0));
 	}
 	@Override
-	public void uploadMainInfo(MultipartFile multi, Main main, HttpServletRequest request) {
+	public void uploadMainInfo(MultipartFile multi, Main main, String prevImage, HttpServletRequest request) {
 		String fileName = multi.getOriginalFilename();
+
 		try {
-			String root_path = request.getSession().getServletContext().getRealPath("/resources/img");  
-			root_path += File.separator + fileName;
-			File file =new File(root_path);
-		    multi.transferTo(file);
-		    log.info(file.getAbsolutePath());
+			
+			if (!multi.getOriginalFilename().isEmpty()) {
+				String root_path = request.getSession().getServletContext().getRealPath("/resources/img");  
+				root_path += File.separator + fileName;
+				File file =new File(root_path);
+			    multi.transferTo(file);
+			    log.info(file.getAbsolutePath());
+			} else {
+				String[] strArray = prevImage.split("/");
+				int endIndex = strArray.length-1;
+				fileName=strArray[endIndex];
+				
+			}
+			
 		    Main updateMain = new Main(main.getInfo_id(),
 		    							"./resources/img/"+fileName,
 		    							main.getTitle(), 

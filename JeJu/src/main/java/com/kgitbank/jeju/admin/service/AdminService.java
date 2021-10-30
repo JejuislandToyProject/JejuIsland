@@ -21,5 +21,5 @@ public interface AdminService {
 	public List<User> getUserData();
 	public void getMainInfo(Model model);
 	public void updateBan(User user);
-	public void uploadMainInfo(MultipartFile multi, Main main, HttpServletRequest request);
+	public void uploadMainInfo(MultipartFile multi, Main main, String prevImage, HttpServletRequest request);
 }

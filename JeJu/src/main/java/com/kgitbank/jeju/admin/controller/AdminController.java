@@ -53,9 +53,8 @@ public class AdminController {
 	
 	@RequestMapping(value="/admin/site/success", method=RequestMethod.POST, headers = ("content-type=multipart/*"))
 	public String addTourist(@RequestParam("imageFile") MultipartFile multi, 
-			@ModelAttribute("main") Main main, HttpServletRequest request) throws Exception{	
-		
-		adminService.uploadMainInfo(multi, main, request);
+			@ModelAttribute("main") Main main, @ModelAttribute("prev-image") String prevImage, HttpServletRequest request) throws Exception{	
+		adminService.uploadMainInfo(multi, main, prevImage, request);
 		return "redirect:/admin/site";
 	}
 	
