@@ -27,9 +27,8 @@
 
     <!-- Page Wrapper -->
     <div id="wrapper">
-
-                <!-- Sidebar -->
-                <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+        <!-- Sidebar -->
+       <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
             <!-- Sidebar - Brand -->
             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
@@ -60,7 +59,7 @@
 
             <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item">
-                <a class="nav-link collapsed" href="<c:url value="/admin/main"/>" data-toggle="collapse" data-target="#collapseTwo"
+                <a class="nav-link collapsed" href="<c:url value="/admin/site"/>" data-toggle="collapse" data-target="#collapseTwo"
                     aria-expanded="true" aria-controls="collapseTwo">
                     <i class="fas fa-fw fa-cog"></i>
                     <span>사이트 관리</span>
@@ -92,7 +91,6 @@
             </div>
 
         </ul>
-        </ul>
         <!-- End of Sidebar -->
 
        <div id="content-wrapper" class="d-flex flex-column">
@@ -115,9 +113,9 @@
                     	<form action="<c:url value="/admin/site/success"/>" method="post"
                         enctype="multipart/form-data">
                     		<div>
-                    		<input type="hidden" name="prev-image" value="test">
-                    		<img src="../resources/img/bg-masthead.jpg" id="main-visual-image" class="img-fluid" alt="main-visual-image">
-	                       	<input id="file-name" class="file-name" value="첨부파일" placeholder="첨부파일">
+                    		<input type="hidden" name="prev-image" value="${main.image }">
+                    		<img src=".${main.image }" id="main-visual-image" class="img-fluid" alt="main-visual-image"><br>
+	                       	<input id="file-name" class="file-name" value="${main.image }" placeholder="첨부파일">
 	                       	<label class="input-button mt-3" for="image">
 							  업로드
 							</label>
@@ -126,12 +124,12 @@
 	                       	
 	                       	<div class="mt-3">
 	                       	<label for="title" class="form-label">Visual Title</label> 
-							<input type="text" class="form-text w-25" name="title" id="title">
+							<input type="text" class="form-text w-25" name="title" id="title" value="${main.title }">
 							</div>
 							
 							<div class="mt-3">
 	                       	<label for="sub-title" class="form-label">Visual Sub Title</label> 
-							<input type="text" class="form-text w-25" name="sub_title" id="sub-title">
+							<input type="text" class="form-text w-25" name="sub_title" id="sub-title" value="${main.sub_title }">
 							</div>
 	                       	<input class="input-button mt-5" type="submit" value="저장">
                     	</form>
