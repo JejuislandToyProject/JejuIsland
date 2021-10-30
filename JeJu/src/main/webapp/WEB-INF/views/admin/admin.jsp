@@ -84,7 +84,7 @@
 
             <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item">
-                <button class="btn-3">Log Out</button>
+                <button class="btn-3" onclick="window.location='<c:url value='/admin/logout'/>'">Logout</button>
             </li>
 
             <!-- Sidebar Toggler (Sidebar) -->
