@@ -2,11 +2,6 @@
     box-sizing: border-box;
 }
 
-#borad-bar {
-    width: 100%;
-    height: 200px;
-}
-
 #body-text{
     width: 100%;
     height: 150px;
@@ -15,6 +10,12 @@
 #nav-top {
     font-size: 15px;
     font-weight:  bold;
+}
+	
+.img-fluid {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
 }
 
 
@@ -26,20 +27,12 @@
 #contents-body {
 	display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-column-gap: 30px;
+    grid-column-gap: 3%;
     grid-row-gap: 30px;
-    margin: 3%;
-    padding: 5%;
+    margin: 1%;
+    padding: 3%;
 }
 
-.img-fluid {
-	width: auto;
-	height: 120px;
-}
-
-.text-break {
-	overflow-wrap: break-word;
-}
 
 .nav-link {
     color: black;

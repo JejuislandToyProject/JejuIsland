@@ -32,15 +32,17 @@ public class courseContoller {
 		
 	}
 	
-	// 여기서 데이터베이스에 마이페이지에서 사용할 여행경로를 저장함.
 	@PostMapping("/course/save")
 	public String getTravelCourse(HttpServletRequest req, HttpSession session) {
 		
 		if(session.getAttribute("id") == null) {
-			return "redirect:/login/save";
+			return "redirect:/login/login";
 		}
 		String user_id = session.getAttribute("id").toString();
-		 MyCourse course = new MyCourse(); course.setUser_name(user_id);
+
+		 MyCourse course = new MyCourse(); 
+     course.setUser_id(user_id);
+
 		 myCourseMapper.addCourse(course);
 		 	
 		  
@@ -55,6 +57,6 @@ public class courseContoller {
 			 detail.setTitle(names[i]);
 			 courseDetailMapper.insertCourse(detail);
 		}
-		return "./mypage/mypage";
+		return "redirect:/mypage";
 	}
 }

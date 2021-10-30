@@ -17,5 +17,9 @@
 
 </insert>
 
+	<select id="getListByCourseId" resultType="com.kgitbank.jeju.dto.CourseDetail">
+		SELECT * FROM coursedetail WHERE id=#{id} ORDER BY id, seqs
+	</select>
+
 	
 </mapper>

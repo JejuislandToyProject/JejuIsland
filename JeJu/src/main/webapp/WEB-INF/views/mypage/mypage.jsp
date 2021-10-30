@@ -6,6 +6,7 @@
 <head>
 <link href="<c:url value="/resources/css/styles.css"/>" rel="stylesheet">
 <link href="<c:url value="/resources/css/mypage.css"/>" rel="stylesheet">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 <title>MyPage</title>
 </head>
 <body>
@@ -25,24 +26,20 @@
 
 				<!-- List group -->
 				<div class="list-group col-lg-2 g-0" id="list-tab" role="tablist">
-					<a href="#notice"
+					<a href="#mywrite"
 						class="list-group-item list-group-item-action active"
-						id="list-notice-list" data-bs-toggle="list" href="#notice"
-						role="tab"> 공지사항 </a> <a href="#mywrite"
-						class="list-group-item list-group-item-action"
 						id="list-mywrite-list" data-bs-toggle="list" href="#mywrite"
-						role="tab"> 내가 쓴글 </a> <a href="#route"
+						role="tab"> 내가 쓴글 </a> 
+					<a href="#course"
 						class="list-group-item list-group-item-action"
-						id="list-route-list" data-bs-toggle="list" href="#route"
+						id="list-course-list" data-bs-toggle="list" href="#course"
 						role="tab"> 내가 만든 경로 </a>
 				</div>
 
 				<!-- Tab panes -->
 				<div id="content" class="col g-0">
 					<div class="tab-content w-75 mx-5 mt-5">
-						<div class="tab-pane fade show active" id="notice" role="tabpanel">
-							notice</div>
-						<div class="tab-pane fade show" id="mywrite" role="tabpanel">
+						<div class="tab-pane fade show active" id="mywrite" role="tabpanel">
 							<table class="table table-stripted" summary="게시판의 글제목 리스트">
 								<colgroup>
 									<col width="330">
@@ -61,19 +58,38 @@
 							</table>
 							<br>
 							<nav aria-label="Page navigation">
-								<ul id="pagination" class="pagination justify-content-center">
+								<ul id="myWrite-pagination" class="pagination justify-content-center">
 								</ul>
 							</nav>
 						</div>
-						<div class="tab-pane fade show" id="route" role="tabpanel">
-							route</div>
+						<div class="tab-pane fade show" id="course" role="tabpanel">
+							<div class="courseBtn"><a href="<c:url value="/travelCourse/course"/>">Make New Course<a></a></div>
+							<table class="table table-stripted">
+								<colgroup>
+									<col width="10">
+									<col>
+								</colgroup>
+								<thead>
+									<tr>
+										<th scope="col">no.</th>
+										<th class="text-center" scope="col">경로</th>
+									</tr>
+								</thead>
+								<tbody id="myCourseTable" class="container">
+								</tbody>
+							</table>
+							<br>
+							<nav aria-label="Page navigation">
+								<ul id="myCourse-pagination" class="pagination justify-content-center">
+								</ul>
+							</nav>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-	</div>
-	<script
-		src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 	<script src="<c:url value="/resources/js/jquery.twbsPagination.min.js"/>"></script>
 	<script src="<c:url value="/resources/js/mypage.js"/>"></script>

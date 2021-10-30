@@ -46,7 +46,7 @@
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item active">
-                <a class="nav-link" href="index.html">
+                <a class="nav-link" href="<c:url value="/admin/main"/>">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Dashboard</span></a>
             </li>
@@ -59,9 +59,26 @@
                 Interface
             </div>
 
+
+            <!-- Nav Item - Pages Collapse Menu -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="<c:url value="/admin/main"/>" data-toggle="collapse" data-target="#collapseTwo"
+                    aria-expanded="true" aria-controls="collapseTwo">
+                    <i class="fas fa-fw fa-cog"></i>
+                    <span>사이트 관리</span>
+                </a>
+                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">사이트 관리 메뉴</h6>
+                        <a class="collapse-item" href="site1.html">페이지 1번</a>
+                        <a class="collapse-item" href="site2.html">페이지 2번</a>
+                    </div>
+                </div>
+            </li>
+
             <!-- Nav Item - Utilities Collapse Menu -->
             <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
+                <a class="nav-link collapsed" href="<c:url value="/admin/user"/>" data-toggle="collapse" data-target="#collapseUtilities"
                     aria-expanded="true" aria-controls="collapseUtilities">
                     <i class="fas fa-users-cog"></i>
                     <span>회원 관리</span>
@@ -70,7 +87,9 @@
                     data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">회원 관리 메뉴</h6>
+
                         <a class="collapse-item" href="utilities-user-ban.html">회원 차단&해제</a>
+
                     </div>
                 </div>
             </li>
@@ -134,7 +153,7 @@
                                         <div class="col mr-2">
                                             <div class="text-xs font-weight-bold text-warning2 text-uppercase mb-1">
                                                 총 방문자 수</div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800">${todayCount }</div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800">${totalCount }</div>
                                         </div>
                                         <div class="col-auto">
                                             <i class="fas fa-users fa-3x text-gray-500"></i>

@@ -8,7 +8,16 @@ let displayCards = [];
 let page = 1;
 let totalPages = 0;
 
-makeRequest();
+
+const searchBtn = document.getElementById('searchBtn');
+const searchValue = document.getElementById('searchValue');
+window.onload=function(){
+	if (searchValue.value == ""){
+		makeRequest();
+	}else{
+		$("#searchBtn").trigger("click");
+	}
+};
 
 var xhttp;
 function makeRequest() {
@@ -28,6 +37,7 @@ function setVariable() {
             totalPages = Math.ceil(totalcards/cardPerPage);
             
             applyPagination();
+			$pagination.twbsPagination("changeTotalPages", totalPages , page);
         }
     }
 }
@@ -52,6 +62,7 @@ const addCard = (card) => {
     
     cardBorder.appendChild(addCardHeader(card));
     cardBorder.appendChild(addCardBody(card));
+    cardBorder.appendChild(addHashTag(card));
     cardBorder.appendChild(addIconPart(card));
 
     cardGroup.appendChild(cardBorder);
@@ -67,7 +78,7 @@ const addCardHeader = (card) => {
     cardHeader.classList.add('position-relative');
     cardHeader.classList.add('z-index-1');
 
-    cardHeader.innerHTML += `<a href="javascript:;" class="d-block"> 
+    cardHeader.innerHTML += `<a href="../board/listFamous?famous_restaurant_id=${card.famous_restaurant_id}" class="d-block"> 
                             <img src=${card.image } class="img-fluid border-radius-lg" > 
                             </a>`;
     return cardHeader;
@@ -77,43 +88,55 @@ const addCardBody = (card) => {
     cardBody.classList.add('card-body');
     cardBody.classList.add('pt-2');
 
-    cardBody.innerHTML += `<a href="/jeju/listFamous?famous_restaurant_id=${card.famous_restaurant_id}" 
+    cardBody.innerHTML += `<a href="../board/listFamous?famous_restaurant_id=${card.famous_restaurant_id}" 
     class="card-title h5 d-block text-darker text-center mt-3" id="card-title">
                                 ${card.name }
                             </a>
                             <p class="card-description text-center mb-4">
-                            	<small class="text-break text-muted">
-											${card.description}
+                            	<small class="text-muted">
+											${card.description.substr(0,30) }...
                             	</small>
                             </p>`;
     return cardBody;
 }
 
-const addIconPart = () => {
-    const outerDiv = document.createElement('div');
+const addHashTag = (card) => {
+    const hashTag = document.createElement('div');
+    hashTag.classList.add('hashTag');
+
+    hashTag.innerHTML += `<p class="text-muted text-center">${card.hashtag }</p>`;
+    return hashTag;
+}
+
+const addIconPart = (card) => {
+    const outerform = document.createElement('div');
     const innerDiv1 = document.createElement('div');
     const innerDiv2 = document.createElement('div');
-
-    outerDiv.classList.add('author');
-    outerDiv.classList.add('align-items-center');
-    outerDiv.classList.add('p-2');
+	
+	outerform.setAttribute('id','likeBtn');
+    outerform.classList.add('author');
+    outerform.classList.add('align-items-center');
+    outerform.classList.add('p-2');
 
     innerDiv1.classList.add('mt-6');
     innerDiv2.classList.add('mt-2');
 
     innerDiv1.setAttribute('id', 'icon');
-    innerDiv2.setAttribute('id', 'icon');
 
-    innerDiv1.innerHTML += '<i id="icon" onclick="like_func()" class="far fa-thumbs-up"></i>';
-    innerDiv1.innerHTML += '<i class="far fa-thumbs-down"></i>';
+    outerform.innerHTML += `<form id="like_form">`;
+	
+    innerDiv1.innerHTML += `<input class="btn btn-primary" type="button" value="좋아요" onclick="like_func(${card.famous_restaurant_id})" />`;
+    innerDiv1.innerHTML += `<div class="align-items-center" id="like_result"><i class="far fa-thumbs-up me-3"></i>${card.positive_num}</div>`;
 
-    innerDiv2.innerHTML += '<p>좋아요</p>';
-    innerDiv2.innerHTML += '<p>싫어요</p>';
+    innerDiv2.innerHTML += `<input type="hidden" class="like" name="command" value="${card.positive_num}"/>`;
+    innerDiv2.innerHTML += `<input type="hidden" class="restaurant_id" name="famous_restaurant_id" value="${card.famous_restaurant_id}"/>`;
 
-    outerDiv.appendChild(innerDiv1);
-    outerDiv.appendChild(innerDiv2);
+    outerform.appendChild(innerDiv1);
+    outerform.appendChild(innerDiv2);
     
-    return outerDiv;
+    outerform.innerHTML += `</form>`;
+
+    return outerform;
 }
 
 //page number
@@ -136,33 +159,46 @@ const applyPagination = ()=> {
     });
 }
 
-    //like addPositive
-    function like_func(){
-        var icon_thumbs = $("#icon"); // icon
-        var tourist_spot_id = $(card.tourist_spot_id).val();
+   //like addPositive
+    function like_func(restId){
+	const likeNum = document.getElementById('like_result');
 
-        $ajax({
-            url: "/jeju/likeCount",
-            type:"GET",
-            cache: false,
-            dataType:"json",
-            data: 'tourist_spot_id='+tourist_spot_id,
-            seccess: function(data){
-                var mag='';
-                var like_img='';
-                msg += data.msg;
-                alert(msg);
-                  
-                  $('#like_img', frm_read).attr('src', like_img);
-                  $('#like_cnt').html(data.like_cnt);
-                  $('#like_check').html(data.like_check);
-                },
-                error: function(request, status, error){
-                  alert("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
-            }
-        });
-            
-    }
+   const xhttp = new XMLHttpRequest(); 
+   xhttp.addEventListener('readystatechange', (e) => {
+       const readyState = e.target.readyState;
+       const httpStatus = e.target.status;
+
+       if(readyState == 4 && httpStatus == 200) {
+   			console.log(JSON.parse(e.target.responseText));
 
 
-    
+        }
+  });
+     xhttp.open('GET', './restlike/' + restId, true);
+     xhttp.setRequestHeader('content-type', 'application/json;charset=UTF-8');
+
+     xhttp.send();
+       
+     
+};
+
+
+
+searchBtn.addEventListener('click', () =>{	
+		
+		$(document).ready(function() {
+        $("#body").empty();
+		var textValue = searchValue.value;		
+ 		searchRequest(textValue);
+
+ 	   });
+});
+
+
+function searchRequest(textValue) {
+    xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = setVariable;
+
+    xhttp.open('GET', '/jeju/restSearch/'+textValue, true);
+    xhttp.send();
+}

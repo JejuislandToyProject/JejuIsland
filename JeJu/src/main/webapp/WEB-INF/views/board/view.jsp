@@ -80,7 +80,7 @@
          
       <div class="row ">
         <div class="col-lg-9 col-12 mx-auto">
-          <div class="card card-body mt-4">
+          <div class="card card-body mt-4 mx-auto">
               <img class="img-fluid border-radius-lg" src="${tourist_spot.image}" />
               <h5 class="mb-0 mt-2">제목 : ${tourist_spot.title}</h5>
               <p class="text-sm mb-1 mt-1" >

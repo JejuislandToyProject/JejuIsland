@@ -108,7 +108,7 @@ public class BoardController {
 	}
 	
 	// detail and click count
-	@RequestMapping(value="/listById", method= RequestMethod.GET)
+	@RequestMapping(value="board/listById", method= RequestMethod.GET)
 	public ModelAndView listById (@RequestParam("tourist_spot_id") int tourist_spot_id, 
 				HttpSession session) throws Exception{
 		
@@ -127,7 +127,7 @@ public class BoardController {
 	public String getRestaurantBoard(@PathVariable("title") String title, Model model) {
 		model.addAttribute("polygonSearch", title);
 		
-		return "listRestaurant";
+		return "board/restaurantBoard";
 	}
 	
 	

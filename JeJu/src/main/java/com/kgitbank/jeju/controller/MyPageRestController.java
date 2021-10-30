@@ -1,5 +1,6 @@
 package com.kgitbank.jeju.controller;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.http.HttpSession;
@@ -9,11 +10,18 @@ import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.kgitbank.jeju.dto.CourseDetail;
 import com.kgitbank.jeju.dto.FamousRestaurant;
+import com.kgitbank.jeju.dto.MyCourse;
 import com.kgitbank.jeju.dto.TouristSpot;
+import com.kgitbank.jeju.mapper.CourseDetailXMLMapper;
 import com.kgitbank.jeju.mapper.FamousRestaurantMapper;
+import com.kgitbank.jeju.mapper.MyCourseXMLMapper;
 import com.kgitbank.jeju.mapper.TouristSpotMapper;
 
+import lombok.extern.log4j.Log4j;
+
+@Log4j
 @RestController
 public class MyPageRestController {
 	@Autowired
@@ -21,6 +29,12 @@ public class MyPageRestController {
 	
 	@Autowired
 	TouristSpotMapper touristSpotMapper;
+	
+	@Autowired
+	MyCourseXMLMapper courseMapper;
+	
+	@Autowired
+	CourseDetailXMLMapper courseDetailMapper;
 	
 	@GetMapping(value = "/getMyFamousRestaurantWrite", produces= MediaType.APPLICATION_JSON_VALUE)
 	public List<FamousRestaurant> getMyFamousRestaurantWrite(HttpSession session) {
@@ -35,5 +49,17 @@ public class MyPageRestController {
 		List<TouristSpot> touristSpots = touristSpotMapper.listByUserd(id);
 		
 		return touristSpots;
+	}
+	@GetMapping(value = "/getMyRoute", produces= MediaType.APPLICATION_JSON_VALUE)
+	public List<CourseDetail> getMyRoute(HttpSession session) {
+		String id = (String) session.getAttribute("id");
+		List<MyCourse> courses = courseMapper.getListById(id);
+		List<CourseDetail> details = new ArrayList<CourseDetail>();
+		
+		for(MyCourse course: courses) {
+			details.addAll(courseDetailMapper.getListByCourseId(course.getId()));
+		}
+		log.info(details);
+		return details;
 	}
 }
