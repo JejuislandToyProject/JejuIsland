@@ -107,16 +107,18 @@
                 <!-- DataTales Example -->
                 <div class="card shadow mb-4">
                     <div class="card-header py-3">
-                        <h6 class="m-0 font-weight-bold text-primary">변경</h6>
+                        <h6 class="m-0 font-weight-bold text-primary">메인페이지 관리</h6>
                     </div>
                     <div class="card-body">
                     	<form action="<c:url value="/admin/site/success"/>" method="post"
                         enctype="multipart/form-data">
                     		<div>
                     		<input type="hidden" name="prev-image" value="${main.image }">
+                    		
                     		<img src=".${main.image }" id="main-visual-image" class="img-fluid" alt="main-visual-image"><br>
+	                       	<p class="mt-3">Visual Image</p>
 	                       	<input id="file-name" class="file-name" value="${main.image }" placeholder="첨부파일">
-	                       	<label class="input-button mt-3" for="image">
+	                       	<label class="input-button" for="image">
 							  업로드
 							</label>
 	                       	<input type="file" name="imageFile" id="image">
