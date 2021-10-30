@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.kgitbank.jeju.admin.mapper.MainMapper;
 import com.kgitbank.jeju.mapper.FamousRestaurantMapper;
 import com.kgitbank.jeju.mapper.UserMapper;
 
@@ -24,9 +25,12 @@ public class JejuController {
 	@Autowired
 	FamousRestaurantMapper restaurantMapper;
 	
+	@Autowired
+	MainMapper mainMapper;
+	
 	@RequestMapping(value="/", method = {RequestMethod.GET, RequestMethod.POST})
-	public String index() {
-		log.info("show main");
+	public String index(Model model) {
+		model.addAttribute("main_info", mainMapper.getList().get(0));
 		return "/index";
 	}
 	
