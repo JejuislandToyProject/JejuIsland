@@ -35,7 +35,7 @@
     <div id="wrapper">
 
         <!-- Sidebar -->
-        <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+                <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
             <!-- Sidebar - Brand -->
             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
@@ -63,6 +63,7 @@
                 Interface
             </div>
 
+
             <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item">
                 <a class="nav-link collapsed" href="<c:url value="/admin/main"/>" data-toggle="collapse" data-target="#collapseTwo"
@@ -70,13 +71,6 @@
                     <i class="fas fa-fw fa-cog"></i>
                     <span>사이트 관리</span>
                 </a>
-                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">사이트 관리 메뉴</h6>
-                        <a class="collapse-item" href="site1.html">페이지 1번</a>
-                        <a class="collapse-item" href="site2.html">페이지 2번</a>
-                    </div>
-                </div>
             </li>
 
             <!-- Nav Item - Utilities Collapse Menu -->
@@ -86,41 +80,24 @@
                     <i class="fas fa-users-cog"></i>
                     <span>회원 관리</span>
                 </a>
-                <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
-                    data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">회원 관리 메뉴</h6>
-                        <a class="collapse-item" href="utilities-user-ban.html">회원 차단&해제</a>
-                        <a class="collapse-item" href="utilities-user1.html">회원 기능1</a>
-                        <a class="collapse-item" href="utilities-user2.html">회원 기능2</a>
-                        <a class="collapse-item" href="utilities-other.html">Other</a>
-                    </div>
-                </div>
+
             </li>
 
             <!-- Divider -->
             <hr class="sidebar-divider">
 
-            <!-- Heading -->
-            <div class="sidebar-heading">
-                Addons
-            </div>
 
-            <!-- Nav Item - Tables -->
+            <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item">
-                <a class="nav-link" href="notice-board.html">
-                    <i class="fas fa-fw fa-table"></i>
-                    <span>게시판 관리</span></a>
+                <button class="btn-3">Log Out</button>
             </li>
-
-            <!-- Divider -->
-            <hr class="sidebar-divider d-none d-md-block">
 
             <!-- Sidebar Toggler (Sidebar) -->
             <div class="text-center d-none d-md-inline">
-                <button class="rounded-circle border-0" id="sidebarToggle"></button>
+                <button class="rounded-circle border-0" id="sidebarToggle" style="margin-top: 140px;"></button>
             </div>
 
+        </ul>
         </ul>
         <!-- End of Sidebar -->
 
