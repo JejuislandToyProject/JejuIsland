@@ -34,78 +34,37 @@
 	href="<c:url value='/resources/css/border.css' />">
 </head>
 <body>
-	<!-- Navigation-->
-	<nav
-		class="navbar navbar-expand-lg navbar-light fixed-top py-3 navbar-shrink"
-		id="mainNav">
-		<div class="container px-4 px-lg-5">
-			<h1 class="fs-4 fw-normal"><a class="navbar-brand" href="#page-top">TRAVEL JEJU</a></h1>
-			<button class="navbar-toggler navbar-toggler-right" type="button"
-				data-bs-toggle="collapse" data-bs-target="#navbarResponsive"
-				aria-controls="navbarResponsive" aria-expanded="false"
-				aria-label="Toggle navigation">
-				<span class="navbar-toggler-icon"></span>
-			</button>
-			<div class="collapse navbar-collapse" id="navbarResponsive">
-				<ul class="navbar-nav ms-auto my-2 my-lg-0">
-					<li class="nav-item"><a class="nav-link" href="#page-top">Home</a></li>
-					<li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-					<li class="nav-item"><a class="nav-link" href="#reservation">Reservation</a></li>
-					<li class="nav-item"><a class="nav-link" href="#bestpick">Best
-							Pick</a></li>
-					<li class="nav-item"><a class="nav-link" href="#">Board</a></li>
-
-					<c:choose>
-						<c:when test="${sessionScope.id ne null}">
-							<li class="nav-item dropdown"><a
-								class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
-								role="button" data-bs-toggle="dropdown" aria-expanded="false">
-									<i class="fa fa-user-circle fa-lg"></i>
-							</a>
-								<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-									<li><a class="dropdown-item" href="<c:url value="/mypage"/>"> 
-										<i class="fa fa-home fa-lg"></i> 
-										<font style="vertical-align: inherit;"> 
-											<font style="vertical-align: inherit;">Mypage</font>
-										</font>
-									</a></li>
-									
-									<li class="divider dropdown-divider"></li>
-									
-									<li><a class="dropdown-item" href="<c:url value="/logout"/>"> 
-										<i class="fas fa-power-off fa-lg"></i> 
-										<font style="vertical-align: inherit;"> 
-											<font style="vertical-align: inherit;">Logout</font>
-										</font>
-									</a></li>
-									
-								</ul></li>
-						</c:when>
-						<c:otherwise>
-							<li class="nav-item"><a class="nav-link"
-								href="<c:url value="/login"/>">Login</a></li>
-						</c:otherwise>
-					</c:choose>
-				</ul>
-			</div>
-		</div>
-	</nav>
-
-
-	<!-- body -->
-	<div id="body"></div>
-	<!-- About-->
-	<section class="content-section bg-light" id="about">
-		<div class="container px-4 px-lg-5 text-center">
-			<div class="row gx-4 gx-lg-5 justify-content-center">
-				<div class="col-lg-10">
-					<h2>맛집 소개</h2>
-					<p class="lead mb-5 mt-2">제주도의 유명한 맛집을 소개합니다</p>
+	    <!-- Navigation-->
+	    <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3 navbar-shrink" id="mainNav">
+	        <div class="container px-4 px-lg-5">
+	            <h1 class="fs-4 fw-normal"><a class="navbar-brand" href="#page-top">TRAVEL JEJU</a></h1>
+	            <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+	            <div class="collapse navbar-collapse" id="navbarResponsive">
+	                <ul class="navbar-nav ms-auto my-2 my-lg-0">
+	                    <li class="nav-item"><a class="nav-link" href="#index.html">Home</a></li>
+	                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+	                    <li class="nav-item"><a class="nav-link" href="/jeju/listRestaurant">Reservation</a></li>
+	                    <li class="nav-item"><a class="nav-link" href="/jeju/board/tourist">Best Pick</a></li>
+	                    <li class="nav-item"><a class="nav-link" href="#">Board</a></li>
+	                    <li class="nav-item"><a class="nav-link" href="./login.html">Login</a></li>
+	                </ul>
+	            </div>
+	        </div>
+	    </nav>
+		<!-- body -->
+		<div id="body">
+		<!-- About-->
+		<section class="content-section bg-light" id="about">
+			<div class="container px-4 px-lg-5 text-center">
+				<div class="row gx-4 gx-lg-5 justify-content-center">
+					<div class="col-lg-10">
+						<h2>맛집 소개</h2>
+						<p class="lead mb-5 mt-2">제주도의 유명한 맛집을 소개합니다</p>
+					</div>
 				</div>
 			</div>
-		</div>
+		</section>
 
-	</section>
 
 	<!-- border top navigation -->
 	<!-- 기능 만들어야 함-->
@@ -125,26 +84,6 @@
 			</ul>
 		</div>
 	</div>
-	
-	            <!-- search navbar -->
-      <!-- Navbar Transparent -->
-	<nav
-	  class="navbar navbar-expand-lg top-0 z-index-3 w-100 shadow-none my-3  navbar-transparent ">
-	  <div class="container">
-	    <div class="collapse navbar-collapse" id="navigation">
-	      <ul class="navbar-nav navbar-nav-hover ms-auto">
-	        <div class="row">
-	          <div class="col-auto">
-	            <div class="bg-white border-radius-lg d-flex me-2">
-	              <input id="searchValue" type="text" class="form-control border-0 ps-3" placeholder="Type here...">
-	              <button id="searchBtn" class="btn bg-gradient-primary my-1 me-1">Search</button>
-	            </div>
-	          </div>
-	        </div>
-	      </ul>  
-	    </div>
-	  </div>
-	</nav>
 
 	<!-- card layout -->
 	<div id="contents-body"></div>
@@ -152,16 +91,32 @@
             <!-- writing navbar -->
       <!-- Navbar Transparent -->
 	<nav
-	  class="navbar navbar-expand-lg top-0 z-index-3 w-100 shadow-none my-3  navbar-transparent ">
-	  <div class="container">
-	    <div class="collapse navbar-collapse" id="navigation">
-	      <ul class="navbar-nav navbar-nav-hover ms-auto">
-	        <div class="row">
-	          <div class="col-auto">
-	              <div class="me-3">
-				     <button href="#" onclick="addTourist()" class="btn btn-outline-info float-end me-5 mt-2"> 글쓰기</button>
-				      
-				      <script type="text/javascript">
+		class="navbar navbar-expand-lg top-0 z-index-3 w-100 shadow-none my-3  navbar-transparent ">
+		<div class="container">
+			<div class="collapse navbar-collapse" id="navigation">
+				<ul class="navbar-nav navbar-nav-hover ms-auto">
+					<div class="row">
+						<div class="col-auto">
+							<div class="bg-white border-radius-lg d-flex me-2">
+								<c:choose>
+									<c:when test="${polygonSearch ne null}">
+										<input id="searchValue" type="text"
+											class="form-control border-0 ps-3" placeholder="Type here..."
+											value="${polygonSearch }">
+									</c:when>
+									<c:otherwise>
+										<input id="searchValue" type="text"
+											class="form-control border-0 ps-3" placeholder="Type here...">
+									</c:otherwise>
+
+								</c:choose>
+								<button id="searchBtn" class="btn bg-gradient-primary my-1 me-1">Search</button>
+
+							<div class="me-3">
+								<button href="#" onclick="addTourist()"
+									class="btn btn-outline-info float-end me-5 mt-2">글쓰기</button>
+
+								<script type="text/javascript">
 				      function addTourist(){
 				          var uid="<%=(String)session.getAttribute("id") %>";
 				          
@@ -172,12 +127,13 @@
 				          }
 				      }
 				      </script>
-			      </div>
-	          </div>
-	        </div>
-	      </ul>
-	    </div>
-	  </div>
+				      	</div>
+						</div>
+					</div>
+				</div>
+			</ul>
+		</div>
+	</div>
 	</nav>
 	<!-- End Navbar -->
 
