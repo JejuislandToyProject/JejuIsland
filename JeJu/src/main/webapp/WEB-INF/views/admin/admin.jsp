@@ -27,11 +27,10 @@
 </head>
 
 <body id="page-top">
-    <!-- Page Wrapper -->
+ <!-- Page Wrapper -->
     <div id="wrapper">
-
         <!-- Sidebar -->
-        <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+       <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
             <!-- Sidebar - Brand -->
             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
@@ -62,18 +61,11 @@
 
             <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item">
-                <a class="nav-link collapsed" href="<c:url value="/admin/main"/>" data-toggle="collapse" data-target="#collapseTwo"
+                <a class="nav-link collapsed" href="<c:url value="/admin/site"/>" data-toggle="collapse" data-target="#collapseTwo"
                     aria-expanded="true" aria-controls="collapseTwo">
                     <i class="fas fa-fw fa-cog"></i>
                     <span>사이트 관리</span>
                 </a>
-                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">사이트 관리 메뉴</h6>
-                        <a class="collapse-item" href="site1.html">페이지 1번</a>
-                        <a class="collapse-item" href="site2.html">페이지 2번</a>
-                    </div>
-                </div>
             </li>
 
             <!-- Nav Item - Utilities Collapse Menu -->
@@ -83,15 +75,7 @@
                     <i class="fas fa-users-cog"></i>
                     <span>회원 관리</span>
                 </a>
-                <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
-                    data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">회원 관리 메뉴</h6>
 
-                        <a class="collapse-item" href="utilities-user-ban.html">회원 차단&해제</a>
-
-                    </div>
-                </div>
             </li>
 
             <!-- Divider -->
@@ -100,7 +84,7 @@
 
             <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item">
-                <button class="btn-3">Log Out</button>
+                <button class="btn-3" onclick="window.location='<c:url value='/admin/logout'/>'">Logout</button>
             </li>
 
             <!-- Sidebar Toggler (Sidebar) -->

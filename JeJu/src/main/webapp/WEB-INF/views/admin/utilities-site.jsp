@@ -5,12 +5,6 @@
 <html lang="en">
  
 <head>
- 
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
 
     <title>Manager Page</title>
 
@@ -31,7 +25,7 @@
 
 <body id="page-top">
 
-     <!-- Page Wrapper -->
+    <!-- Page Wrapper -->
     <div id="wrapper">
         <!-- Sidebar -->
        <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
@@ -99,9 +93,8 @@
         </ul>
         <!-- End of Sidebar -->
 
-        <!-- Content Wrapper -->
        <div id="content-wrapper" class="d-flex flex-column">
-        <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow"></nav>
+        
         <!-- Main Content -->
         <div id="content">
 
@@ -109,43 +102,48 @@
             <div class="container-fluid">
 
                 <!-- Page Heading -->
-                <h1 class="h3 mb-2 text-gray-800">회원 관리</h1>
+                <h1 class="h3 mb-2 text-gray-800">사이트 관리</h1>
               
                 <!-- DataTales Example -->
                 <div class="card shadow mb-4">
                     <div class="card-header py-3">
-                        <h6 class="m-0 font-weight-bold text-primary">회원 리스트</h6>
+                        <h6 class="m-0 font-weight-bold text-primary">메인페이지 관리</h6>
                     </div>
                     <div class="card-body">
-                        <div class="table-responsive">
-                            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                                <thead>
-                                    <tr>
-                                        <th>NickName</th>
-                                        <th>ID</th>
-                                        <th>Lock & UnLock</th>
-                                    </tr>
-                                </thead>
-                                <tfoot>
-                                    <tr>
-                                        <th>NickName</th>
-                                        <th>ID</th>
-                                        <th>Lock & UnLock</th>
-                                    </tr>
-                                </tfoot>
-                                <tbody>
-                                
-                                </tbody>
-                            </table>
-                        </div>
+                    	<form action="<c:url value="/admin/site/success"/>" method="post"
+                        enctype="multipart/form-data">
+                    		<div>
+                    		<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
+                    		<input type="hidden" name="prev-image" value="${main.image }">
+                    		
+                    		<img src=".${main.image }" id="main-visual-image" class="img-fluid" alt="main-visual-image"><br>
+	                       	<p class="mt-3">Visual Image</p>
+	                       	<input id="file-name" class="file-name" value="${main.image }" placeholder="첨부파일">
+	                       	<label class="input-button" for="image">
+							  업로드
+							</label>
+	                       	<input type="file" name="imageFile" id="image">
+	                       	</div>
+	                       	
+	                       	<div class="mt-3">
+	                       	<label for="title" class="form-label">Visual Title</label> 
+							<input type="text" class="form-text w-25" name="title" id="title" value="${main.title }">
+							</div>
+							
+							<div class="mt-3">
+	                       	<label for="sub-title" class="form-label">Visual Sub Title</label> 
+							<input type="text" class="form-text w-25" name="sub_title" id="sub-title" value="${main.sub_title }">
+							</div>
+	                       	<input class="input-button mt-5" type="submit" value="저장">
+                    	</form>
+                    	
                     </div>
                 </div>
 
             </div>
-            <!-- /.container-fluid -->
 
-        </div>
-        <!-- End of Main Content -->
+            </div>
+            <!-- End of Main Content -->
 
             <!-- Footer -->
             <footer class="sticky-footer bg-white">
@@ -167,7 +165,7 @@
     <a class="scroll-to-top rounded" href="#page-top">
         <i class="fas fa-angle-up"></i>
     </a>
- 
+
     <!-- Bootstrap core JavaScript-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
@@ -176,15 +174,8 @@
 
     <!-- Custom scripts for all pages-->
     <script src="<c:url value="/resources/js/sb-admin-2.min.js"/>"></script>
+    <script src="<c:url value="/resources/js/admin/admin_site.js"/>"></script>
 
-	<!-- Page level plugins -->
-	<script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
-	<script src="https://cdn.datatables.net/1.11.3/js/dataTables.bootstrap4.min.js"></script>
-	
-    <!-- Page level custom scripts -->
-    <script src="<c:url value="/resources/js/admin/user_datatables.js"/>"></script>
-    
-    
 </body>
 
 </html>

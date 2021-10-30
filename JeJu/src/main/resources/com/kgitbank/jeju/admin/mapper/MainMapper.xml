@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.kgitbank.jeju.admin.mapper.MainMapper">
+
+  <select id="getList" resultType="com.kgitbank.jeju.admin.dto.Main">
+    SELECT * FROM main_info
+  </select>
+  
+  <update id="updateMainInfo">
+  	UPDATE main_info SET (image, title, sub_title) = 
+  	(SELECT #{image},#{title}, #{sub_title} FROM dual)
+  </update>
+
+</mapper>
