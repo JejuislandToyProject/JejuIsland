@@ -100,3 +100,63 @@ input:checked + .slider:before {
 .text-warning2 {
     color: #5061fb!important;
 }
+
+/*log out button*/
+.btn-3,
+.btn-3::after {
+  -webkit-transition: all 0.3s;
+	-moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
+	transition: all 0.3s;
+}
+
+.btn-3 {
+  background: none;
+  background-color: #579b73;
+  border: 3px solid #f3f3f3;
+  border-radius: 5px;
+  color: #f3f3f3;
+  display: block;
+  font-size: 12px;
+  font-weight: bold;
+  margin: 0.6em auto;
+  padding: 0.6em 1.8em;
+
+  position: relative;
+  text-transform: uppercase;
+}
+
+.btn-3::before,
+.btn-3::after {
+  background: #fff;
+  content: '';
+  position: absolute;
+  z-index: -1;
+}
+
+.btn-3:hover {
+  color: #ff0000;
+  border: 3px solid #ff0000;
+  background-color: #f3f3f3;
+}
+
+.btn-3::after {
+  height: 0;
+  left: 50%;
+  top: 50%;
+  width: 0;
+}
+
+.btn-3:hover:after {
+  height: 100%;
+  left: 0;
+  top: 0;
+  width: 100%;
+}
+
+
+
+
+
+
+
