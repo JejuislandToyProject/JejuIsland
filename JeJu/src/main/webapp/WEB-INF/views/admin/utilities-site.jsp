@@ -113,6 +113,7 @@
                     	<form action="<c:url value="/admin/site/success"/>" method="post"
                         enctype="multipart/form-data">
                     		<div>
+                    		<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
                     		<input type="hidden" name="prev-image" value="${main.image }">
                     		
                     		<img src=".${main.image }" id="main-visual-image" class="img-fluid" alt="main-visual-image"><br>
