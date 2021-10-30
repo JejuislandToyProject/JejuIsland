@@ -28,8 +28,8 @@
     <!-- Page Wrapper -->
     <div id="wrapper">
 
-        <!-- Sidebar -->
-        <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+                <!-- Sidebar -->
+                <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
             <!-- Sidebar - Brand -->
             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
@@ -44,7 +44,7 @@
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item active">
-                <a class="nav-link" href="index.html">
+                <a class="nav-link" href="<c:url value="/admin/main"/>">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Dashboard</span></a>
             </li>
@@ -57,64 +57,41 @@
                 Interface
             </div>
 
+
             <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
+                <a class="nav-link collapsed" href="<c:url value="/admin/main"/>" data-toggle="collapse" data-target="#collapseTwo"
                     aria-expanded="true" aria-controls="collapseTwo">
                     <i class="fas fa-fw fa-cog"></i>
                     <span>사이트 관리</span>
                 </a>
-                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">사이트 관리 메뉴</h6>
-                        <a class="collapse-item" href="site1.html">페이지 1번</a>
-                        <a class="collapse-item" href="site2.html">페이지 2번</a>
-                    </div>
-                </div>
             </li>
 
             <!-- Nav Item - Utilities Collapse Menu -->
             <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
+                <a class="nav-link collapsed" href="<c:url value="/admin/user"/>" data-toggle="collapse" data-target="#collapseUtilities"
                     aria-expanded="true" aria-controls="collapseUtilities">
                     <i class="fas fa-users-cog"></i>
                     <span>회원 관리</span>
                 </a>
-                <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
-                    data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">회원 관리 메뉴</h6>
-                        <a class="collapse-item" href="utilities-user-ban.html">회원 차단&해제</a>
-                        <a class="collapse-item" href="utilities-user1.html">회원 기능1</a>
-                        <a class="collapse-item" href="utilities-user2.html">회원 기능2</a>
-                        <a class="collapse-item" href="utilities-other.html">Other</a>
-                    </div>
-                </div>
+
             </li>
 
             <!-- Divider -->
             <hr class="sidebar-divider">
 
-            <!-- Heading -->
-            <div class="sidebar-heading">
-                Addons
-            </div>
 
-            <!-- Nav Item - Tables -->
+            <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item">
-                <a class="nav-link" href="notice-board.html">
-                    <i class="fas fa-fw fa-table"></i>
-                    <span>게시판 관리</span></a>
+                <button class="btn-3">Log Out</button>
             </li>
-
-            <!-- Divider -->
-            <hr class="sidebar-divider d-none d-md-block">
 
             <!-- Sidebar Toggler (Sidebar) -->
             <div class="text-center d-none d-md-inline">
-                <button class="rounded-circle border-0" id="sidebarToggle"></button>
+                <button class="rounded-circle border-0" id="sidebarToggle" style="margin-top: 140px;"></button>
             </div>
 
+        </ul>
         </ul>
         <!-- End of Sidebar -->
 
@@ -135,8 +112,30 @@
                         <h6 class="m-0 font-weight-bold text-primary">변경</h6>
                     </div>
                     <div class="card-body">
-                    	<img src="..." class="img-fluid" alt="...">
-                       <input type="file" name="image" id="image">
+                    	<form action="<c:url value="/admin/site/success"/>" method="post"
+                        enctype="multipart/form-data">
+                    		<div>
+                    		<input type="hidden" name="prev-image" value="test">
+                    		<img src="../resources/img/bg-masthead.jpg" id="main-visual-image" class="img-fluid" alt="main-visual-image">
+	                       	<input id="file-name" class="file-name" value="첨부파일" placeholder="첨부파일">
+	                       	<label class="input-button mt-3" for="image">
+							  업로드
+							</label>
+	                       	<input type="file" name="imageFile" id="image">
+	                       	</div>
+	                       	
+	                       	<div class="mt-3">
+	                       	<label for="title" class="form-label">Visual Title</label> 
+							<input type="text" class="form-text w-25" name="title" id="title">
+							</div>
+							
+							<div class="mt-3">
+	                       	<label for="sub-title" class="form-label">Visual Sub Title</label> 
+							<input type="text" class="form-text w-25" name="sub_title" id="sub-title">
+							</div>
+	                       	<input class="input-button mt-5" type="submit" value="저장">
+                    	</form>
+                    	
                     </div>
                 </div>
 
@@ -174,6 +173,7 @@
 
     <!-- Custom scripts for all pages-->
     <script src="<c:url value="/resources/js/sb-admin-2.min.js"/>"></script>
+    <script src="<c:url value="/resources/js/admin/admin_site.js"/>"></script>
 
 </body>
 
