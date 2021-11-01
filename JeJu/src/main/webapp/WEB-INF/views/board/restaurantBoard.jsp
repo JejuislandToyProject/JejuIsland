@@ -98,6 +98,7 @@
 					<div class="row">
 						<div class="col-auto">
 							<div class="bg-white border-radius-lg d-flex me-2">
+								
 								<c:choose>
 									<c:when test="${polygonSearch ne null}">
 										<input id="searchValue" type="text"
@@ -108,8 +109,8 @@
 										<input id="searchValue" type="text"
 											class="form-control border-0 ps-3" placeholder="Type here...">
 									</c:otherwise>
-
 								</c:choose>
+								
 								<button id="searchBtn" class="btn bg-gradient-primary my-1 me-1">Search</button>
 
 							<div class="me-3">

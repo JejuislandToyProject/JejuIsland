@@ -42,12 +42,12 @@
 		SELECT * FROM famous_restaurant WHERE address = #{textValue}
 	</select>
 	
-	 <update id="addLike" >
+	 <update id="addDTORestPositiveNum" >
 	 UPDATE famous_restaurant SET positive_num  = positive_num +1
 	 WHERE famous_restaurant_id = #{id} 
 	 </update>
 	 
-	 <select id="getLike" resultType="com.kgitbank.jeju.dto.FamousRestaurant">
+	 <select id="getListByRestPositiveNum" resultType="com.kgitbank.jeju.dto.FamousRestaurant">
 	 	SELECT * FROM famous_restaurant WHERE famous_restaurant_id = #{id}
 	 </select>
 </mapper>
