@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.kgitbank.jeju.admin.mapper.MainMapper;
+import com.kgitbank.jeju.common.LoginVerifier;
 import com.kgitbank.jeju.mapper.FamousRestaurantMapper;
 import com.kgitbank.jeju.mapper.TouristSpotMapper;
 import com.kgitbank.jeju.mapper.UserMapper;
@@ -40,7 +41,7 @@ public class JejuController {
 	@GetMapping("/mypage")
 	public String mypage(HttpSession session, Model model) throws ParseException {
 		String id = (String) session.getAttribute("id");
-		if(id == null) {
+		if(LoginVerifier.isLogin(session)) {
 			return "redirect:/login";
 		}
 		
