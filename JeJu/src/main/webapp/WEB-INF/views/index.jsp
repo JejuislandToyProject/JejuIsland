@@ -327,14 +327,12 @@
 		<br> <br>
 		<div class="best-img1">
 			<div class="contents project-card">
-				<div class="project-thumbnail1" id="project-macbook"></div>
+				<div class="project-thumbnail1" id="project-macbook" style="background: no-repeat center/cover url(${famous_restaurant[0].image })"></div>
 				<div class="project-explain">
 					<p>
-						<i class="fas fa-utensils" style="color: hotpink;"></i>이번 달 맛집 :
-						우진해장국
+						<i class="fas fa-utensils" style="color: hotpink;"></i>${famous_restaurant[0].name }
 					</p>
-					<p style="font-weight: bold;">loaction : 제주특별자치도 제주시 특별자치도 삼도2동
-						831</p>
+					<p style="font-weight: bold;">Hashtag: ${famous_restaurant[0].hashtag }</p>
 
 				</div>
 			</div>
@@ -342,14 +340,12 @@
 
 		<div class="best-img2">
 			<div class="contents project-card">
-				<div class="project-thumbnail" id="project-macbook"></div>
+				<div class="project-thumbnail" id="project-macbook" style="background: no-repeat center/cover url(${tourist_spot[0].image })"></div>
 				<div class="project-explain">
 					<p>
-						<i class="fas fa-plane-departure" style="color: green;"></i>이번 달
-						관광지 : 빛의 벙커
+						<i class="fas fa-plane-departure" style="color: green;"></i>${tourist_spot[0].name }
 					</p>
-					<p style="font-weight: bold;">loaction : 제주특별자치도 서귀포시 특별자치도 성산읍
-						고성리 2039-22</p>
+					<p style="font-weight: bold;">Hashtag : ${tourist_spot[0].hashtag }</p>
 				</div>
 			</div>
 		</div>
