@@ -14,6 +14,7 @@ import com.kgitbank.jeju.admin.mapper.MainMapper;
 import com.kgitbank.jeju.mapper.FamousRestaurantMapper;
 import com.kgitbank.jeju.mapper.TouristSpotMapper;
 import com.kgitbank.jeju.mapper.UserMapper;
+import com.kgitbank.jeju.service.MainService;
 
 import lombok.extern.log4j.Log4j;
 
@@ -27,15 +28,12 @@ public class JejuController {
 	FamousRestaurantMapper restaurantMapper;
 	
 	@Autowired
-	TouristSpotMapper touristMapper;
+	MainService mainService;
 	
-	@Autowired
-	MainMapper mainMapper;
 	
 	@RequestMapping(value="/", method = {RequestMethod.GET, RequestMethod.POST})
 	public String index(Model model) {
-		model.addAttribute("main_info", mainMapper.getList().get(0));
-		model.addAttribute("tourist_spot", touristMapper.listOrderByLike());
+		mainService.setMainAttribute(model);
 		return "/index";
 	}
 	
