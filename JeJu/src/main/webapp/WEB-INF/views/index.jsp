@@ -105,6 +105,7 @@
 					<p class="lead mb-5">Make a plan with excitement for your trip
 						to Jeju Island!</p>
 					<a class="btn btn-dark btn-xl" href="#services">Make a Plan</a>
+					<a class="btn-open-popup-sub btn btn-dark btn-xl ">JEJU Quiz</a>
 				</div>
 			</div>
 		</div>
