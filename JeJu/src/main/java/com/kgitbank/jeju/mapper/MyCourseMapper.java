@@ -4,9 +4,9 @@ import java.util.List;
 
 import com.kgitbank.jeju.dto.MyCourse;
 
-public interface MyCourseXMLMapper {
+public interface MyCourseMapper {
 	public List<MyCourse> getListById(String id);
-	public void addCourse(MyCourse mycourse);
+	public void addDTOCourse(MyCourse mycourse);
 	
 
 }

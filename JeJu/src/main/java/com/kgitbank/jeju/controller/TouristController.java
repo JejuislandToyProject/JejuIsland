@@ -38,16 +38,18 @@ public class TouristController {
 	public String execute(HttpServletRequest request, HttpServletResponse response) throws IOException {
 		int tourist_id = Integer.parseInt(request.getParameter("tourist_spot_id"));
 		
-		touristSpotMapper.addPositive(tourist_id);
+		touristSpotMapper.addDTOSpotPositiveNum(tourist_id);
 		
-		int positive_num = touristSpotMapper.listPositive(tourist_id);
+		/* int positive_num = touristSpotMapper.getListBySpotPositiveNum(tourist_id); */
 		
-		JSONObject obj = new JSONObject();
-		obj.put("positive_num", positive_num);
+		/*
+		 * JSONObject obj = new JSONObject(); obj.put("positive_num", positive_num);
+		 */
 		
-		response.setContentType("application/x-json; charset=UTF-8");
-		response.getWriter().print(obj);
-		
+		/*
+		 * response.setContentType("application/x-json; charset=UTF-8");
+		 * response.getWriter().print(obj);
+		 */
 		return "redirect:/board/tourist";
 		
 	}

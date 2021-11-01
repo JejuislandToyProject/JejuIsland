@@ -8,10 +8,11 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.kgitbank.jeju.common.LoginVerifier;
 import com.kgitbank.jeju.dto.CourseDetail;
 import com.kgitbank.jeju.dto.MyCourse;
-import com.kgitbank.jeju.mapper.CourseDetailXMLMapper;
-import com.kgitbank.jeju.mapper.MyCourseXMLMapper;
+import com.kgitbank.jeju.mapper.CourseDetailMapper;
+import com.kgitbank.jeju.mapper.MyCourseMapper;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -22,10 +23,10 @@ public class courseContoller {
 	
 	
 	@Autowired
-	MyCourseXMLMapper myCourseMapper;
+	MyCourseMapper myCourseMapper;
 	
 	@Autowired
-	CourseDetailXMLMapper courseDetailMapper;
+	CourseDetailMapper courseDetailMapper;
 	
 	@GetMapping("/course")
 	public void getGrid() {
@@ -34,19 +35,15 @@ public class courseContoller {
 	
 	@PostMapping("/course/save")
 	public String getTravelCourse(HttpServletRequest req, HttpSession session) {
-		
-		if(session.getAttribute("id") == null) {
+
+		if(!LoginVerifier.isLogin(session)) {
 			return "redirect:/login/login";
 		}
 		String user_id = session.getAttribute("id").toString();
-
-		 MyCourse course = new MyCourse(); 
-     course.setUser_id(user_id);
-
-		 myCourseMapper.addCourse(course);
-		 	
-		  
-		 
+		MyCourse course = new MyCourse(); 
+		course.setUser_id(user_id);
+		myCourseMapper.addDTOCourse(course);
+		 			  		 
 		String[] images = req.getParameter("imagePath").split(",");
 		String[] names = req.getParameter("namePath").split(",");
 		
@@ -55,7 +52,7 @@ public class courseContoller {
 			 detail.setSeqs(i+1);
 			 detail.setImage(images[i]);
 			 detail.setTitle(names[i]);
-			 courseDetailMapper.insertCourse(detail);
+			 courseDetailMapper.insertDTOCourse(detail);
 		}
 		return "redirect:/mypage";
 	}

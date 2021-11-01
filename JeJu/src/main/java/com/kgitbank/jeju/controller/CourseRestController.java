@@ -13,7 +13,7 @@ import com.kgitbank.jeju.dto.SpotAndRestaurant;
 import com.kgitbank.jeju.dto.Weather;
 import com.kgitbank.jeju.mapper.AreaXMLMapper;
 import com.kgitbank.jeju.mapper.FamousRestaurantMapper;
-import com.kgitbank.jeju.mapper.SpotAndRestaurantXMLMapper;
+import com.kgitbank.jeju.mapper.SpotAndRestaurantMapper;
 import com.kgitbank.jeju.mapper.TouristSpotMapper;
 import com.kgitbank.jeju.service.impl.WeatherServiceImpl;
 
@@ -22,7 +22,7 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 @RequestMapping("/travelCourse")
 @RestController
-public class courseRestController {
+public class CourseRestController {
 
 	@Autowired
 	AreaXMLMapper areaMapper;
@@ -34,7 +34,7 @@ public class courseRestController {
 	FamousRestaurantMapper matzipMapper;
 	
 	@Autowired
-	SpotAndRestaurantXMLMapper spotAndMatzipMapper;
+	SpotAndRestaurantMapper spotAndMatzipMapper;
 	
 	@Autowired
 	WeatherServiceImpl weatherServiceImpl;
@@ -52,14 +52,14 @@ public class courseRestController {
 	@GetMapping(value="/select/{title}", produces = "application/json; charset=UTF-8")
 	public SpotAndRestaurant getSelecte(@PathVariable("title") String title) {
 		
-		return spotAndMatzipMapper.getItem(title);
+		return spotAndMatzipMapper.getDTOSpotAndRestaurant(title);
 
 	}
 	
 	@GetMapping(value="/search/{textValue}", produces = "application/json; charset=UTF-8")
 	public List<SpotAndRestaurant> getSearch(@PathVariable("textValue") String textValue) {
 			
-		return spotAndMatzipMapper.getSearch(textValue);
+		return spotAndMatzipMapper.getListBySearchTitle(textValue);
 	}
 	
 	@GetMapping(value="/modalSearch/{title}", produces = "application/json; charset=UTF-8")
@@ -69,7 +69,7 @@ public class courseRestController {
 		List<SpotAndRestaurant> list = new ArrayList<>();
 		
 		for(int i =0; i < names.length; ++i) {
-			list.add((SpotAndRestaurant) spotAndMatzipMapper.getItem(names[i]));
+			list.add((SpotAndRestaurant) spotAndMatzipMapper.getDTOSpotAndRestaurant(names[i]));
 			
 		}
 		return list;	
