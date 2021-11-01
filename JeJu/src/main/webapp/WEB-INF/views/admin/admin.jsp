@@ -31,67 +31,67 @@
     <div id="wrapper">
         <!-- Sidebar -->
        <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
-
-            <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
-                <div class="sidebar-brand-icon rotate-n-15">
-                    <i class="fab fa-whmcs"></i>
-                </div>
-                <div class="sidebar-brand-text mx-3">관리자 페이지</div>
-            </a>
-
-            <!-- Divider -->
-            <hr class="sidebar-divider my-0">
-
-            <!-- Nav Item - Dashboard -->
-            <li class="nav-item active">
-                <a class="nav-link" href="<c:url value="/admin/main"/>">
-                    <i class="fas fa-fw fa-tachometer-alt"></i>
-                    <span>Dashboard</span></a>
-            </li>
-
-            <!-- Divider -->
-            <hr class="sidebar-divider">
-
-            <!-- Heading -->
-            <div class="sidebar-heading">
-                Interface
-            </div>
-
-
-            <!-- Nav Item - Pages Collapse Menu -->
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="<c:url value="/admin/site"/>" data-toggle="collapse" data-target="#collapseTwo"
-                    aria-expanded="true" aria-controls="collapseTwo">
-                    <i class="fas fa-fw fa-cog"></i>
-                    <span>사이트 관리</span>
-                </a>
-            </li>
-
-            <!-- Nav Item - Utilities Collapse Menu -->
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="<c:url value="/admin/user"/>" data-toggle="collapse" data-target="#collapseUtilities"
-                    aria-expanded="true" aria-controls="collapseUtilities">
-                    <i class="fas fa-users-cog"></i>
-                    <span>회원 관리</span>
-                </a>
-
-            </li>
-
-            <!-- Divider -->
-            <hr class="sidebar-divider">
-
-
-            <!-- Nav Item - Pages Collapse Menu -->
-            <li class="nav-item">
-                <button class="btn-3" onclick="window.location='<c:url value='/admin/logout'/>'">Logout</button>
-            </li>
-
-            <!-- Sidebar Toggler (Sidebar) -->
-            <div class="text-center d-none d-md-inline">
-                <button class="rounded-circle border-0" id="sidebarToggle" style="margin-top: 140px;"></button>
-            </div>
-
+			<div class="nav-content">
+	            <!-- Sidebar - Brand -->
+	            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+	                <div class="sidebar-brand-icon rotate-n-15">
+	                    <i class="fab fa-whmcs"></i>
+	                </div>
+	                <div class="sidebar-brand-text mx-3">관리자 페이지</div>
+	            </a>
+	
+	            <!-- Divider -->
+	            <hr class="sidebar-divider my-0">
+	
+	            <!-- Nav Item - Dashboard -->
+	            <li class="nav-item active">
+	                <a class="nav-link" href="<c:url value="/admin/main"/>">
+	                    <i class="fas fa-fw fa-tachometer-alt"></i>
+	                    <span>Dashboard</span></a>
+	            </li>
+	
+	            <!-- Divider -->
+	            <hr class="sidebar-divider">
+	
+	            <!-- Heading -->
+	            <div class="sidebar-heading">
+	                Interface
+	            </div>
+	
+	
+	            <!-- Nav Item - Pages Collapse Menu -->
+	            <li class="nav-item">
+	                <a class="nav-link collapsed" href="<c:url value="/admin/site"/>" data-toggle="collapse" data-target="#collapseTwo"
+	                    aria-expanded="true" aria-controls="collapseTwo">
+	                    <i class="fas fa-fw fa-cog"></i>
+	                    <span>사이트 관리</span>
+	                </a>
+	            </li>
+	
+	            <!-- Nav Item - Utilities Collapse Menu -->
+	            <li class="nav-item">
+	                <a class="nav-link collapsed" href="<c:url value="/admin/user"/>" data-toggle="collapse" data-target="#collapseUtilities"
+	                    aria-expanded="true" aria-controls="collapseUtilities">
+	                    <i class="fas fa-users-cog"></i>
+	                    <span>회원 관리</span>
+	                </a>
+	
+	            </li>
+	
+	            <!-- Divider -->
+	            <hr class="sidebar-divider">
+	
+	
+	            <!-- Nav Item - Pages Collapse Menu -->
+	            <li class="nav-item">
+	                <button class="btn-3" onclick="window.location='<c:url value='/admin/logout'/>'">Logout</button>
+	            </li>
+	
+	            <!-- Sidebar Toggler (Sidebar) -->
+	            <div class="text-center d-none d-md-inline">
+	                <button class="rounded-circle border-0" id="sidebarToggle" style="margin-top: 140px;"></button>
+	            </div>
+			</div>
         </ul>
         <!-- End of Sidebar -->
 
@@ -106,7 +106,7 @@
                 <div class="container-fluid">
 
                     <!-- Content Row -->
-                    <div class="row">
+                    <div class="row visit-counts">
                         <!-- Pending Requests Card Example -->
                         <div class="col-xl-3 col-md-6 mb-4">
                             <div class="card border-left-warning shadow h-100 py-2">
@@ -124,13 +124,8 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <!-- Content Row -->
-
-					<!-- Content Row2 -->
-                    <div class="row">
-                        <!-- Pending Requests Card Example2 -->
-                        <div class="col-xl-3 col-md-6 mb-4" style="left: 30%; bottom: 124px;">
+                        <!-- Pending Requests Card Example -->
+                        <div class="col-xl-3 col-md-6 mb-4">
                             <div class="card border-left-warning2 shadow h-100 py-2">
                                 <div class="card-body">
                                     <div class="row no-gutters align-items-center">
@@ -146,9 +141,9 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <!-- Content Row2 -->
 
+                    </div>
+                    <!-- Content Row -->
                     <div class="row">
 
                         <!-- Area Chart -->
