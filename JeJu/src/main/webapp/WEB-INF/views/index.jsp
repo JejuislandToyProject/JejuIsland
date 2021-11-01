@@ -101,19 +101,16 @@
 		<div class="container px-4 px-lg-5 text-center">
 			<div class="row gx-4 gx-lg-5 justify-content-center">
 				<div class="col-lg-10">
-					<h2>제주도 여행으로의 한걸음 설레는 마음으로 계획을 세워보세요!</h2>
-					<p class="lead mb-5">Make a plan with excitement for your trip
-						to Jeju Island!</p>
-					<a class="btn btn-dark btn-xl" href="#services">Make a Plan</a>
+					
+					<h2 class="mb-2">나는 제주도를 얼마나 알고 있을까?</h2>
+					<p class="lead mb-5">나의 제주도 지식을 테스트 해보세요!</p>
 					<a class="btn-open-popup-sub btn btn-dark btn-xl ">JEJU Quiz</a>
 				</div>
 			</div>
 		</div>
 	</section>
 	<div id="fixed" class="btn-open-popup">
-
 		<i class="far fa-question-circle "></i>
-
 	</div>
 
 
@@ -125,21 +122,35 @@
 				<h3 class="text-secondary mb-0">Search</h3>
 				<h2 class="mb-5">Travel Course</h2>
 			</div>
-			<div class="row gx-4 gx-lg-5">
-				<p>검색창 넣기</p>
-
-			</div>
 		</div>
 
 		<div class="container px-5">
 			<div class="row gx-5 align-items-center justify-content-center">
-				<div class="col-lg-8 col-xl-7 col-xxl-6">
+				<div class="col-lg-8 col-xl-7 col-xxl-6 plan-image">
 				</div>
-				<div class="col-xl-5 col-xxl-6 d-none d-xl-block text-center">
-					<img class="img-fluid rounded-3 my-5"
-						src="<c:url value="resources/img/여행코스.png"/>" alt="travel cource">
+				<div class="col-xl-5 col-xxl-6 d-none d-xl-block showcase-text">
+					<h2 class="mb-3 plan-sub-title">Kakao Map으로 보는 내 여행 경로</h2>
+					<p class="lead">
+						제주도 여행으로의 한걸음 설레는 마음으로 계획을 세워보세요! <br>
+						다른 사람들이 올린 맛집과 관광지를 바탕으로 <br>
+						나만의 여행 경로를 만들고 저장해보세요
+					</p>
+					<a class="btn plan-btn" href="<c:url value="travelCourse/course"/>">Make a Plan</a>
 				</div>
 			</div>
+		</div>
+		<div class="svg-water-animation">
+			<svg class="water-background" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+			   width="100%" height="140px" viewBox="0 0 2000 120" enable-background="new 0 0 574.558 120" xml:space="preserve">
+			  
+			 <defs>
+			    <pattern id="water" width=".25" height="1.1" patternContentUnits="objectBoundingBox">
+			      <path fill="#fff" d="M0.25,1H0c0,0,0-0.659,0-0.916c0.083-0.303,0.158,0.334,0.25,0C0.25,0.327,0.25,1,0.25,1z"/>
+			    </pattern>
+			  </defs>
+			  
+			  <rect class="water-fill" fill="url(#water)" x="-400" y="0" width="3000" height="120"/>
+			</svg>
 		</div>
 	</section>
 
@@ -187,8 +198,8 @@
 			</div>
 		</div>
 
-		<div class="row g-0">
-			<div class="col-md-8 mx-auto mt-4">
+		<div class="row g-0" id="tourist-spot">
+			<div class="col-md-8 mx-auto mt-4 mb-3">
 				<h2 class="text-center my-3">제주도 관광 명소 찾기</h2>
 				<p class="text-center lead  mb-0">수 많은 관광지 속 숨은 진주까지 프로계획러들을 위한
 					서비스!</p>
@@ -304,7 +315,7 @@
 					</a>
 				</div>
 				<div class="col-lg-6">
-					<a class="portfolio-item" href="#!">
+					<a class="portfolio-item" href="<c:url value="/board/restaurant"/>">
 						<div class="caption">
 							<div class="caption-content">
 								<div class="h2">A Tourist attraction</div>
@@ -313,8 +324,7 @@
 										관광명소&맛집 한번에 알아보기 </span>
 								</p>
 							</div>
-						</div> <img class="img-fluid"
-						src="<c:url value="resources/img/관광지.png"/>" alt="popular place" />
+						</div> <img class="img-fluid" src="<c:url value="resources/img/관광지.png"/>" alt="popular place" />
 					</a>
 				</div>
 			</div>
@@ -328,26 +338,30 @@
 		<br> <br>
 		<div class="best-img1">
 			<div class="contents project-card">
-				<div class="project-thumbnail1" id="project-macbook" style="background: no-repeat center/cover url(${famous_restaurant[0].image })"></div>
-				<div class="project-explain">
-					<p>
-						<i class="fas fa-utensils" style="color: hotpink;"></i>${famous_restaurant[0].name }
-					</p>
-					<p style="font-weight: bold;">Hashtag: ${famous_restaurant[0].hashtag }</p>
-
-				</div>
+				<a href="<c:url value="/board/listFamous?famous_restaurant_id=${famous_restaurant[0].famous_restaurant_id}"/>">
+					<div class="project-thumbnail1" id="project-macbook" style="background: no-repeat center/cover url(${famous_restaurant[0].image })"></div>
+					<div class="project-explain">
+						<p>
+							<i class="fas fa-utensils" style="color: hotpink;"></i>${famous_restaurant[0].name }
+						</p>
+						<p style="font-weight: bold;">Hashtag: ${famous_restaurant[0].hashtag }</p>
+	
+					</div>
+				</a>
 			</div>
 		</div>
 
 		<div class="best-img2">
 			<div class="contents project-card">
-				<div class="project-thumbnail" id="project-macbook" style="background: no-repeat center/cover url(${tourist_spot[0].image })"></div>
-				<div class="project-explain">
-					<p>
-						<i class="fas fa-plane-departure" style="color: green;"></i>${tourist_spot[0].name }
-					</p>
-					<p style="font-weight: bold;">Hashtag : ${tourist_spot[0].hashtag }</p>
-				</div>
+				<a href="<c:url value="/board/listById?tourist_spot_id=${tourist_spot[0].tourist_spot_id}"/>">
+					<div class="project-thumbnail" id="project-macbook" style="background: no-repeat center/cover url(${tourist_spot[0].image })"></div>
+					<div class="project-explain">
+						<p>
+							<i class="fas fa-plane-departure" style="color: green;"></i>${tourist_spot[0].name }
+						</p>
+						<p style="font-weight: bold;">Hashtag : ${tourist_spot[0].hashtag }</p>
+					</div>
+				</a>
 			</div>
 		</div>
 	</section>
