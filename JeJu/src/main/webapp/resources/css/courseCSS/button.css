@@ -108,11 +108,11 @@
    width:7.5rem;
    height: 4.375rem;
 }
-SmallBtn {
+
+.cardSmallBtn {
    border : none;
    outline : none;
    background-color : white;
-   
 }
 
 .rightCardSmallBtn {
