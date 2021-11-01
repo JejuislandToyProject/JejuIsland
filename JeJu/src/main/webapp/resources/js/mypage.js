@@ -27,7 +27,7 @@ const myCourseVariable = {
 }
 
 window.onload = () => {myWrite.click();};
-
+var courses = [];
 myCourse.addEventListener('click', () => {
     makeRequest('GET', 'getMyRoute').then(responses => {
         myCourseVariable.records = JSON.parse(responses);
@@ -45,7 +45,7 @@ myCourse.addEventListener('click', () => {
             }
         }
 
-        var courses = Object.values(coursesObj);
+        courses = Object.values(coursesObj);
         myCourseVariable.totalRecords = Object.keys(coursesObj).length;
         myCourseVariable.totalPages = Math.ceil(myCourseVariable.totalRecords/myCourseVariable.recordPerPage);
 
