@@ -37,22 +37,19 @@
 	    <!-- Navigation-->
 	    <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3 navbar-shrink" id="mainNav">
 	        <div class="container px-4 px-lg-5">
-	            <h1 class="fs-4 fw-normal"><a class="navbar-brand" href="#page-top">TRAVEL JEJU</a></h1>
+	            <h1 class="fs-4 fw-normal"><a class="navbar-brand" href="/jeju">TRAVEL JEJU</a></h1>
 	            <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
 	            <div class="collapse navbar-collapse" id="navbarResponsive">
 	                <ul class="navbar-nav ms-auto my-2 my-lg-0">
-	                    <li class="nav-item"><a class="nav-link" href="#index.html">Home</a></li>
-	                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-	                    <li class="nav-item"><a class="nav-link" href="/jeju/listRestaurant">Reservation</a></li>
-	                    <li class="nav-item"><a class="nav-link" href="/jeju/board/tourist">Best Pick</a></li>
-	                    <li class="nav-item"><a class="nav-link" href="#">Board</a></li>
-	                    <li class="nav-item"><a class="nav-link" href="./login.html">Login</a></li>
+	                    <li class="nav-item"><a class="nav-link" href="/jeju">Home</a></li>
+	              
+	                    <li class="nav-item"><a class="nav-link" href="../login">Login</a></li>
 	                </ul>
 	            </div>
 	        </div>
 	    </nav>
 		<!-- body -->
-		<div id="body">
+		<div id="body"></div>
 		<!-- About-->
 		<section class="content-section bg-light" id="about">
 			<div class="container px-4 px-lg-5 text-center">
@@ -78,9 +75,7 @@
 
 				<li class="nav-item"><a class="nav-link"
 					href="<c:url value="/travelCourse/course"/>">여행 코스</a></li>
-				<li class="nav-item">
-					<a class="nav-link" href="./login.html">제주도 새 소식</a>
-				</li>
+				
 			</ul>
 		</div>
 	</div>

@@ -43,7 +43,7 @@
 					<li class="nav-item"><a class="nav-link" href="#reservation">Reservation</a></li>
 					<li class="nav-item"><a class="nav-link" href="#bestpick">Best
 							Pick</a></li>
-					<li class="nav-item"><a class="nav-link" href="#">Board</a></li>
+					<li class="nav-item"><a class="nav-link" href="./board/tourist">Board</a></li>
 
 					<c:choose>
 						<c:when test="${sessionScope.id ne null}">

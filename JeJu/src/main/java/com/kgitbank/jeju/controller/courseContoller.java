@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.kgitbank.jeju.common.LoginVerifier;
 import com.kgitbank.jeju.dto.CourseDetail;
 import com.kgitbank.jeju.dto.MyCourse;
 import com.kgitbank.jeju.mapper.CourseDetailXMLMapper;
@@ -35,7 +36,7 @@ public class courseContoller {
 	@PostMapping("/course/save")
 	public String getTravelCourse(HttpServletRequest req, HttpSession session) {
 		
-		if(session.getAttribute("id") == null) {
+		if(!LoginVerifier.isLogin(session)) {
 			return "redirect:/login/login";
 		}
 		String user_id = session.getAttribute("id").toString();
