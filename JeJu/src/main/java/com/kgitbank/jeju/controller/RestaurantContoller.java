@@ -43,8 +43,7 @@ public class RestaurantContoller {
 	@RequestMapping(value = "board/restaurant", method = RequestMethod.GET)
 	public String TourList(HttpSession session) throws Exception {
 		String id = (String)session.getAttribute("id");
-		
-		log.info("id: "+id);
+
 		return "board/restaurantBoard";
 	}
 
@@ -54,7 +53,6 @@ public class RestaurantContoller {
 		public String addRestaurant(Model model, HttpSession session) throws IllegalStateException, IOException {
 			List<Locations> locationList = locationMapper.ListLocations();
 			session.getAttribute("id");
-			log.info(session.getAttribute("id")+" ��");
 			
 			model.addAttribute("locations", locationMapper.ListLocations());
 			return "board/restaurantForm";

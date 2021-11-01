@@ -4,7 +4,7 @@ import java.util.List;
 
 import com.kgitbank.jeju.dto.CourseDetail;
 
-public interface CourseDetailXMLMapper {
+public interface CourseDetailMapper {
 	public List<CourseDetail> getListByCourseId(int id);
-	public void insertCourse(CourseDetail mycourse);
+	public void insertDTOCourse(CourseDetail mycourse);
 }

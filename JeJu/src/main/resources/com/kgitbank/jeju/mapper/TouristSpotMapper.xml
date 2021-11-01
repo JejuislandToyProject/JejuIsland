@@ -94,12 +94,12 @@
 		SELECT * FROM tourist_spot WHERE title Like '%'||#{textValue}||'%'
 	</select>
 	
-	 <update id="addLike" >
+	 <update id="addDTOSpotPositiveNum" >
 	 UPDATE tourist_spot SET positive_num  = positive_num +1
 	 WHERE tourist_spot_id = #{id} 
 	 </update>
 	 
-	 <select id="getLike" resultType="com.kgitbank.jeju.dto.TouristSpot">
+	 <select id="getListBySpotPositiveNum" resultType="com.kgitbank.jeju.dto.TouristSpot">
 	 	SELECT * FROM tourist_spot WHERE tourist_spot_id = #{id}
 	 </select>
 	 

@@ -20,7 +20,7 @@ public interface TouristSpotMapper {
 	public void addLike(int id);
 	public TouristSpot getLike(int id);
 	
-	public TouristSpot addPositive(int tourist_spot_id);
-	public int listPositive(int tourist_spot_id);
+	public void addDTOSpotPositiveNum(int tourist_spot_id);
+	public TouristSpot getListBySpotPositiveNum(int tourist_spot_id);
 		
 }

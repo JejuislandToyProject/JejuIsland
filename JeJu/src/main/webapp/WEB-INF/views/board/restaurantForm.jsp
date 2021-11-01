@@ -25,7 +25,7 @@
 <link rel="stylesheet" type="text/css"
 	href="<c:url value='/resources/css/cssmodal.css'/>">
 <script type="text/javascript" 
-					src="//dapi.kakao.com/v2/maps/sdk.js?appkey=115edfd07bd1f09ac3a8881810a2bb4b"></script>
+					src="//dapi.kakao.com/v2/maps/sdk.js?appkey=115edfd07bd1f09ac3a8881810a2bb4b&libraries=services"></script>
 
 <script src="/resources/js/polugon.js"></script>
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
@@ -45,10 +45,11 @@
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 <script type="text/javascript" charset="utf8"
 	src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.js"></script>
-
+	
 <!-- map API -->
-<script>
+<style>
 .map_wrap, .map_wrap * {margin:0;padding:0;font-family:'Malgun Gothic',dotum,'돋움',sans-serif;font-size:12px;}
+<<<<<<< HEAD
 	.map_wrap a, .map_wrap a:hover, .map_wrap a:active{color:#000;text-decoration: none;}
 	.map_wrap {position:relative;width:100%;height:500px;}
 	#menu_wrap {position:absolute;top:0;left:0;bottom:0;width:250px;margin:10px 0 30px 10px;padding:5px;overflow-y:auto;background:rgba(255, 255, 255, 0.7);z-index: 1;font-size:12px;border-radius: 10px;}
@@ -84,7 +85,8 @@
 	#pagination {margin:10px auto;text-align: center;}
 	#pagination a {display:inline-block;margin-right:10px;}
 	#pagination .on {font-weight: bold; cursor: default;color:#777;}
-</script>
+</style>
+
 </head>
 <body>
 	<!-- Navigation-->
@@ -107,7 +109,7 @@
 					<li class="nav-item"><a class="nav-link" href="<c:url value="/listTourist"/>">Best
 							Pick</a></li>
 					<li class="nav-item"><a class="nav-link" href="#">Board</a></li>
-					<li class="nav-item"><a class="nav-link" href="<c:url value="/login/"/>">Login</a></li>
+					
 				</ul>
 
 			</div>
@@ -199,7 +201,10 @@
 						<input type="file" name="image" id="image">
 
 						<div id="user_id">${id }</div>
-						<!-- map API  -->
+						
+					</form>
+					
+					<!-- map API  -->
 						<div class="map_wrap">
 					    <div id="map" style="width:100%;height:100%;position:relative;overflow:hidden;"></div>
 					
@@ -223,8 +228,49 @@
 						    경도 : <div id="longitude"></div>
 						</div>
 
-					
-					<script>
+						<div class="d-flex justify-content-end mt-4">
+							<button type="button" onclick="history.back()" 
+								name="button" class="btn btn-light btn-outline-dark m-0">Cancel</button>
+							<button id="btnSave" type="submit"
+                                class="btn btn-success m-0 ms-2">Upload</button>
+						</div>
+
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
+
+	<!-- Form -->
+
+	<!-- Footer-->
+	<footer class="footer text-center">
+		<div class="container px-4 px-lg-5">
+			<!-- <ul class="list-inline mb-5">
+	                <li class="list-inline-item">
+	                    <a class="social-link rounded-circle text-white mr-3" href="#!"><i class="icon-social-facebook"></i></a>
+	                </li>
+	                <li class="list-inline-item">
+	                    <a class="social-link rounded-circle text-white mr-3" href="#!"><i class="icon-social-twitter"></i></a>
+	                </li>
+	                <li class="list-inline-item">
+	                    <a class="social-link rounded-circle text-white" href="#!"><i class="icon-social-github"></i></a>
+	                </li>
+	            </ul> -->
+			<div class="logoimg">
+				<!-- <img src="./assets/img/최종팀플 제주도 로고.png" alt=""> -->
+			</div>
+			<p class="text-muted small mb-0">Jeju Island</p>
+		</div>
+	</footer>
+	<!-- scripts -->
+	<script src="<c:url value='/resources/js/scripts.js' />"></script>
+
+	<script src="<c:url value='/resources/js/restaurantForm.js/'/>"></script>
+	
+	<script>
 					// 마커를 담을 배열입니다
 					var markers = [];
 					
@@ -498,49 +544,6 @@
 					    
 					}); */
 					</script>
-
-						<div class="d-flex justify-content-end mt-4">
-							<button type="button" onclick="history.back()" 
-								name="button" class="btn btn-light btn-outline-dark m-0">Cancel</button>
-							<button id="btnSave" type="submit"
-                                class="btn btn-success m-0 ms-2">Upload</button>
-						</div>
-					</form>
-
-				</div>
-			</div>
-		</div>
-	</div>
-
-
-
-
-	<!-- Form -->
-
-	<!-- Footer-->
-	<footer class="footer text-center">
-		<div class="container px-4 px-lg-5">
-			<!-- <ul class="list-inline mb-5">
-	                <li class="list-inline-item">
-	                    <a class="social-link rounded-circle text-white mr-3" href="#!"><i class="icon-social-facebook"></i></a>
-	                </li>
-	                <li class="list-inline-item">
-	                    <a class="social-link rounded-circle text-white mr-3" href="#!"><i class="icon-social-twitter"></i></a>
-	                </li>
-	                <li class="list-inline-item">
-	                    <a class="social-link rounded-circle text-white" href="#!"><i class="icon-social-github"></i></a>
-	                </li>
-	            </ul> -->
-			<div class="logoimg">
-				<!-- <img src="./assets/img/최종팀플 제주도 로고.png" alt=""> -->
-			</div>
-			<p class="text-muted small mb-0">Jeju Island</p>
-		</div>
-	</footer>
-	<!-- scripts -->
-	<script src="<c:url value='/resources/js/scripts.js' />"></script>
-
-	<script src="<c:url value='/resources/js/restaurantForm.js/'/>"></script>
 
 
 </body>

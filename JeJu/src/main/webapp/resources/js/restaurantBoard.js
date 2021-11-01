@@ -160,26 +160,30 @@ const applyPagination = ()=> {
 }
 
    //like addPositive
-    function like_func(restId){
-	const likeNum = document.getElementById('like_result');
-
+    function like_func(spotId){
+	const likeNum = document.querySelectorAll('#like_result');
+	
    const xhttp = new XMLHttpRequest(); 
    xhttp.addEventListener('readystatechange', (e) => {
+	
+	const test = document.querySelectorAll('.restaurant_id');
+	
        const readyState = e.target.readyState;
        const httpStatus = e.target.status;
-
        if(readyState == 4 && httpStatus == 200) {
-   			console.log(JSON.parse(e.target.responseText));
-
-
+   			
+			for(var i = 0; i < test.length; ++i){
+				if(spotId == $(test[i]).val()){
+					likeNum[i].innerHTML = '<i class="far fa-thumbs-up me-3"></i>' + Object.values(JSON.parse(xhttp.responseText))[9];
+				}
+			}		
         }
   });
-     xhttp.open('GET', './restlike/' + restId, true);
+     xhttp.open('GET', './restlike/' + spotId, true);
      xhttp.setRequestHeader('content-type', 'application/json;charset=UTF-8');
 
      xhttp.send();
-       
-     
+  
 };
 
 
