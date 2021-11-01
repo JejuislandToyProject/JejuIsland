@@ -133,78 +133,6 @@
 		<div class="container px-5">
 			<div class="row gx-5 align-items-center justify-content-center">
 				<div class="col-lg-8 col-xl-7 col-xxl-6">
-					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 470.14 247.47">
-						<defs>
-						<style>
-.cls-1 {
-	fill: none;
-	stroke: #000;
-	stroke-miterlimit: 10;
-}
-</style></defs>
-						<g id="레이어_1" data-name="레이어 1">
-						<path class="cls-1"
-							d="M501,490s-7-2-12-12a39.57,39.57,0,0,0-7-5s-6-5-7-11c0,0,0-2-3-5,0,0-7-5-9-11s-2-19-2-19a15.3,15.3,0,0,0-2-10s-2-17,9-26c3-3,3-4,10-6,3-1,6-1,8-9,0,0,1-4,7-5,0,0,8-2,18-10,4-3,8-1,8-9s1-21,6-22c2-2,5-3,12-3s8-10,8-10,2-6,10-8c0,0,12,1,22-3a169.61,169.61,0,0,1,21-6c3-1,3,0,12-5,0,0,16-7,28-7s17,1,17,1,5,0,6-4c2-2,6-1,6-1s9,2,15-1,15-8,15-8,8-6,15-7,33-2,33-2l11-2,23-2a25.94,25.94,0,0,0,10-5c5-4,8-8,16-11s16.21,0,16.21,0l7.79,2s11,2,18-1,16,5,16,5l18,11,12,8s3,1,11,2c0,0,6-1,9,13,0,0,6,19,8,21,0,0,7,13,7,19s-3,14-3,14-11,22-12,27c0,0-1,4-8,10s-9,17-9,21c0,0,1,1-7,6l-4,4s-15,12-17,17-2,8-10,10h-9s-7-2-12,2-12,12-27,14-33,3-33,3-7,0-11,3c0,0-13,7-16,8s-8,1-12,4a11,11,0,0,1-4,2s-18,0-23,3-12,1-12,1-8-2-15,2c0,0-5,3-17,1a17.94,17.94,0,0,0-10-3c-6,0-12,3-16,3s-12-2-12-2a50.54,50.54,0,0,0-23,0c-12,3-13-1-13-1s-5-5-15-2-17,1-17,1a22.36,22.36,0,0,0-16,3c-8,5-18,3-18,3s-8,0-12,7S501,490,501,490Z"
-							transform="translate(-458.36 -244.17)" /></g>
-						<g id="레이어_15" data-name="레이어 15">
-						<path class="cls-1"
-							d="M928,328.86A20.72,20.72,0,0,0,912,333c-8,6-9,3-13,5s-23,10-28,15-11.55,11.8-16.28,14.9a10.68,10.68,0,0,0-4.59,8.6S849,387,838,389c-7,4-4,12-4,12l1,12s-4.34,16.25-23.17,7.13c0,0-7.19-4.38-12-1.25"
-							transform="translate(-458.36 -244.17)" /></g>
-						<g id="레이어_16" data-name="레이어 16">
-						<path class="cls-1"
-							d="M729.62,292S735,281,743,280s10.13,7.2,18.06,7.1,7-1.1,13,4.9,13.79-9.5,13.79-9.5,7.26-8.68,10.21,1.41,8.58,8.85,12.77,9.47,8.3,3.95,11.74,7.79A13.84,13.84,0,0,0,833,306c3,0,5.81,1.67,6.4,4.33S848,312,848,312a24.69,24.69,0,0,1,16,7c7,7,12,4,12,4s8.47-3.38,15.23,2.81S901,328,901,328s7-4,7,4-5.79,19-10.89,24.5S889,373,889,373s-6.79,10-15.89,3.5S860,375,860,375s-10.67,1-11.33-3.49"
-							transform="translate(-458.36 -244.17)" /></g>
-						<g id="레이어_14" data-name="레이어 14">
-						<path class="cls-1"
-							d="M756,264v13.43s0,5.57,4,8.57,2.34,11.72,2.34,11.72S763,314,767,316s2,14,2,14-1,6,5,12-1,12,5,16,2.23,29.25,2.23,29.25,2.77,13.43,11.27,18.09,14.25,46.07,14.25,46.07"
-							transform="translate(-458.36 -244.17)" /></g>
-						<g id="레이어_9" data-name="레이어 9">
-						<path class="cls-1"
-							d="M683,282.5s2.5,7.74,6,10.37,8.5,12.63,7.5,18.63,3,13,3,13,1,4,7,5,13,7,13,7,3,3,6,3,12,3,14,10,2.94,8.64,1,13.32,0,10.68,0,10.68,4,4,4,7-2.37,6.75-2.37,6.75l-.63,10.25s-3,4-3,6-3,5-3,5-4.4,5-3.2,6-.8,3-4.8,3-2,7-2,7v2.11s2,2.89,1,7.89-3,6-3,13a16.33,16.33,0,0,1-4,11s-3,2-3,7-4,1-5,5"
-							transform="translate(-458.36 -244.17)" /></g>
-						<g id="레이어_10" data-name="레이어 10">
-						<path class="cls-1"
-							d="M577.73,371.51s21.64-2,29.21-10.51S633,349.3,633,349.3s8.5-1.8,12.5.2,9,0,9,0,5-1,5-6a13.05,13.05,0,0,1,8-1c4,1,6,6,9,6,0,0,3,1,5,0s4-4,6-4c0,0,3-1,5,0,0,0,8,2,8-5V325.81"
-							transform="translate(-458.36 -244.17)" /></g>
-						<g id="레이어_11" data-name="레이어 11">
-						<path class="cls-1"
-							d="M652.08,297.72s3.42,9,2.92,15.39a40.46,40.46,0,0,0,1.34,12.7,19.53,19.53,0,0,1,0,7.4c-.84,3.29,2.16,11.29,3.16,10.29s-2,6-12,9c0,0-2,9,5,13s-1.33,6-1.33,6L644.83,378s-1.33.48-1.33,4.48,2,6-2,9-1,9-1,9,1,3-3,5,1,7,1,7a8.4,8.4,0,0,1,3,8s2,11-3,11,.62,6.84.62,6.84,1.28,8-3.17,9.57-3,8.24-3,8.24.73,7.35-5.38,11.85-6.14,6.83-6.14,6.83"
-							transform="translate(-458.36 -244.17)" /></g>
-						<g id="레이어_12" data-name="레이어 12">
-						<path class="cls-1"
-							d="M695.77,275.68S717.5,289.5,731.5,295.5s9.35,5.67,9.35,5.67,8.65-.67,11.65,3.33,8.62,6.5,10.31,5.25,14.69-.25,18.69,1.75,15,11,18,12,11,5,14,9,9,5,12,7,4,9,7,11a75.09,75.09,0,0,1,8,7s6.66,5.8,7.33,10.4,1.54,5.6,5.11,8.6,12.56,13,14.56,17,4,7,4,17,1.61,9.62,1.61,9.62"
-							transform="translate(-458.36 -244.17)" /></g>
-						<g id="레이어_13" data-name="레이어 13">
-						<path class="cls-1"
-							d="M735.89,344s5.61-6.51,19.61-3.51,9,0,17-3,11.81-1.43,18.9-1.22,19.87,3.59,23-.6,16.23-9.56,20.17-9.87,5-8.31,6-12.31,6-18,11-20,16.62-5.18,19.31-9.59,6.69-4.41,7.69-13.41,4-6.47,4-6.47"
-							transform="translate(-458.36 -244.17)" /></g>
-						<g id="레이어_8" data-name="레이어 8">
-						<path class="cls-1"
-							d="M655,296a12.92,12.92,0,0,1,10,6s2,3,3,3,4,4,4,4,2,3,4,0a10.76,10.76,0,0,1,5-4l11.82-1.83L699,302s7-1,9,2,3,5,5,5a5.5,5.5,0,0,0,5-3c1-2,1-3,3-5s2-9,2-9"
-							transform="translate(-458.36 -244.17)" /></g>
-						<g id="레이어_7" data-name="레이어 7">
-						<path class="cls-1"
-							d="M515,487a27.3,27.3,0,0,1,11.13-14.18S527,465,538,457s13-13,13-13l13-16s7-9,7.5-14.5S571,401,576,393a31.13,31.13,0,0,0,5-15l1-11s0-7,5-10,38-33,44-42,9-8,9-8,2,0,4-3,11-8,11-8,6.29-7.18,8.14-12.09"
-							transform="translate(-458.36 -244.17)" /></g>
-						<g id="레이어_2" data-name="레이어 2">
-						<path class="cls-1"
-							d="M459.62,406.06s8.88.44,15.88,4.44,24.41-4.44,24.41-4.44,2.53-3.43,14.56,0c0,0,6-.56,13-8.56s18,4,18,4,1.83,3.33,8.41,1.66S571.5,413.5,571.5,413.5s14-5,21,8,15,17,15,17,2,2,9,2,17,1,17,1,8,1,11,2,41,2,41,2,17-1,26-7a81,81,0,0,0,15-13s0-1,7-1,17.34,2.25,31.67-4.38,13.33-6.62,13.33-6.62,11-6,17-6"
-							transform="translate(-458.36 -244.17)" />
-						<path class="cls-1"
-							d="M511,361l-1,30s-2,5.72,0,15.36c0,0,0,6.64-8,11.64s-6,17-6,17,2,1-5,8,4,10,4,10,8,3,11,7,10-1,10-1l9-7a5.57,5.57,0,0,1,6-2c4,1,6-3,6-3a11.6,11.6,0,0,1,9-4,23.86,23.86,0,0,1,11,3s3,3,13,3c0,0,5-1,11,5,0,0,3,2,9,3s18,7,18,7a4.38,4.38,0,0,0,3,1h25s6-1,10,3h27s18-3,31-3a84.66,84.66,0,0,0,13-1c5-1,13-8,13-8s2-2,2-4-.5-5,1.75-6.5S740,449,740,449a12.13,12.13,0,0,0,5,1c3,0,18-1,18-1s7,2,12-6a30.83,30.83,0,0,1,5-7c3-3,6-6,8-6s4,0,6,2,7-1,7-1"
-							transform="translate(-458.36 -244.17)" /></g>
-						<g id="레이어_4" data-name="레이어 4">
-						<path class="cls-1"
-							d="M501,490s3-7,1-10-1-9.17-1-9.17,2.5-9.83-.25-12.83a8.52,8.52,0,0,1-1.75-5V439s-.31-6.36,1.84-7.68c0,0,1.16-.32,1.16-1.32V418"
-							transform="translate(-458.36 -244.17)" /></g>
-						<g id="레이어_5" data-name="레이어 5">
-						<path class="cls-1"
-							d="M517.5,356.5S523,360,523,366s1.5,6.5,1.5,6.5,3.5,4.1,1.5,6.8,3.19,7.95,3.19,7.95l6.1,7.74,11.43,7.68S557,406,557,411s4,11,4,11,3,3,3,9,4,7,4,7,4.7,3,4.85,7.5S573,456,579,460s10.08,12.82,10.08,12.82"
-							transform="translate(-458.36 -244.17)" /></g>
-						<g id="레이어_6" data-name="레이어 6">
-						<path class="cls-1"
-							d="M522.47,362.82S528,358,530,357a24.78,24.78,0,0,0,9-9,13.23,13.23,0,0,1,8-6s9-5,12-13a30.83,30.83,0,0,1,5-7c3-3,5-5,9-5s7-4,7-4,2-3,7-3h31.68s6.32-1,9.32,1,5,2,5,2"
-							transform="translate(-458.36 -244.17)" /></g></svg>
 				</div>
 				<div class="col-xl-5 col-xxl-6 d-none d-xl-block text-center">
 					<img class="img-fluid rounded-3 my-5"
@@ -253,7 +181,7 @@
 						세분화된 맛집 로드뷰를 바탕으로 맛집투어를 기획해보세요!<br>신빙성 있는 자료를 위해 정회원 이상만 등록
 						가능합니다
 					</p>
-					<div><a href="">정회원 등록하러 가기!</a></div>
+					<div class="login-btn btn btn-success"><a href="<c:url value="/login"/>">정회원 등록하러 가기!</a></div>
 				</div>
 			</div>
 		</div>
@@ -285,16 +213,24 @@
 								</c:otherwise>
 							</c:choose>
 									<div class="col-xs-3 col-sm-3 col-md-3" data-bs-interval="10000">
-										<img src="${tourist_spot[i].image }" />
+										<a href="<c:url value="board/listById?tourist_spot_id=${tourist_spot[i].tourist_spot_id }"/>">
+											<img src="${tourist_spot[i].image }" />
+										</a>
 									</div>
 									<div class="col-xs-3 col-sm-3 col-md-3">
-										<img src="${tourist_spot[i + 1].image }" />
+										<a href="<c:url value="board/listById?tourist_spot_id=${tourist_spot[i + 1].tourist_spot_id }"/>">
+											<img src="${tourist_spot[i + 1].image }" />
+										</a>
 									</div>
 									<div class="col-xs-3 col-sm-3 col-md-3">
-										<img src="${tourist_spot[i + 2].image }" />
+										<a href="<c:url value="board/listById?tourist_spot_id=${tourist_spot[i + 2].tourist_spot_id }"/>">
+											<img src="${tourist_spot[i + 2].image }" />
+										</a>
 									</div>
 									<div class="col-xs-3 col-sm-3 col-md-3">
-										<img src="${tourist_spot[i + 3].image }" />
+										<a href="<c:url value="board/listById?tourist_spot_id=${tourist_spot[i + 3].tourist_spot_id }"/>">
+											<img src="${tourist_spot[i + 3].image }" />
+										</a>
 									</div>
 								</div>
 						</c:forEach>
@@ -390,9 +326,9 @@
 		</h2>
 		<br> <br>
 		<div class="best-img1">
-			<section class="contents project-card">
-				<section class="project-thumbnail1" id="project-macbook"></section>
-				<section class="project-explain">
+			<div class="contents project-card">
+				<div class="project-thumbnail1" id="project-macbook"></div>
+				<div class="project-explain">
 					<p>
 						<i class="fas fa-utensils" style="color: hotpink;"></i>이번 달 맛집 :
 						우진해장국
@@ -400,29 +336,28 @@
 					<p style="font-weight: bold;">loaction : 제주특별자치도 제주시 특별자치도 삼도2동
 						831</p>
 
-				</section>
-			</section>
+				</div>
+			</div>
 		</div>
 
 		<div class="best-img2">
-			<section class="contents project-card">
-				<section class="project-thumbnail" id="project-macbook"></section>
-				<section class="project-explain">
+			<div class="contents project-card">
+				<div class="project-thumbnail" id="project-macbook"></div>
+				<div class="project-explain">
 					<p>
 						<i class="fas fa-plane-departure" style="color: green;"></i>이번 달
 						관광지 : 빛의 벙커
 					</p>
 					<p style="font-weight: bold;">loaction : 제주특별자치도 서귀포시 특별자치도 성산읍
 						고성리 2039-22</p>
-				</section>
-			</section>
+				</div>
+			</div>
 		</div>
 	</section>
 
 	<div class="modal">
 
 		<div class="modal_body">
-			<!--style="display: none;" 밑에 슬라이더 컨테이너에 넣어주면됨-->
 			<button id="closs_btn" class="modal_closs_btn">
 				<i class="fas fa-times"></i>
 			</button>
@@ -430,12 +365,9 @@
 				<!-- #00c73c -->
 				<span style="color: orange;">Q &nbsp;</span>제주도 관련 퀴즈
 
-				<ul class="slider_list"
-					style="width: auto; height: auto; overflow: visible;">
+				<ul class="slider_list" >
 
-					<li
-						style="float: none; position: absolute; top: 0px; width: 400px; left: 0px; transition: none 0s ease 0s; transform: translate3d(0px, 0px, 0px);"
-						class="mySlides" onclick="currentSlide(1)">
+					<li class="mySlides" onclick="currentSlide(1)">
 						<div class="quiz_page" style="color: black;">
 							<span> Quiz <em>1</em>
 							</span> / <span>20</span> </span>
@@ -474,9 +406,7 @@
 												</button>
 											</div>
 					</li>
-					<li
-						style="float: none; position: absolute; top: 0px; width: 400px; left: 0px; transition: none 0s ease 0s; transform: translate3d(0px, 0px, 0px);"
-						class="mySlides" onclick="currentSlide(2)">
+					<li class="mySlides" onclick="currentSlide(2)">
 						<div class="quiz_page" style="color: black;">
 							<span> Quiz <em>2</em>
 							</span> / <span>20</span> </span>
@@ -514,9 +444,7 @@
 												</button>
 											</div>
 					</li>
-					<li
-						style="float: none; position: absolute; top: 0px; width: 400px; left: 0px; transition: none 0s ease 0s; transform: translate3d(0px, 0px, 0px);"
-						class="mySlides" onclick="currentSlide(3)">
+					<li class="mySlides" onclick="currentSlide(3)">
 						<div class="quiz_page" style="color: black;">
 							<span> Quiz <em>3</em>
 							</span> / <span>20</span> </span>
@@ -554,9 +482,7 @@
 												</button>
 											</div>
 					</li>
-					<li
-						style="float: none; position: absolute; top: 0px; width: 400px; left: 0px; transition: none 0s ease 0s; transform: translate3d(0px, 0px, 0px);"
-						class="mySlides" onclick="currentSlide(4)">
+					<li class="mySlides" onclick="currentSlide(4)">
 						<div class="quiz_page" style="color: black;">
 							<span> Quiz <em>4</em>
 							</span> / <span>20</span> </span>
@@ -594,9 +520,7 @@
 												</button>
 											</div>
 					</li>
-					<li
-						style="float: none; position: absolute; top: 0px; width: 400px; left: 0px; transition: none 0s ease 0s; transform: translate3d(0px, 0px, 0px);"
-						class="mySlides" onclick="currentSlide(5)">
+					<li class="mySlides" onclick="currentSlide(5)">
 						<div class="quiz_page" style="color: black;">
 							<span> Quiz <em>5</em>
 							</span> / <span>20</span> </span>
@@ -634,9 +558,7 @@
 												</button>
 											</div>
 					</li>
-					<li
-						style="float: none; position: absolute; top: 0px; width: 400px; left: 0px; transition: none 0s ease 0s; transform: translate3d(0px, 0px, 0px);"
-						class="mySlides" onclick="currentSlide(6)">
+					<li class="mySlides" onclick="currentSlide(6)">
 						<div class="quiz_page" style="color: black;">
 							<span> Quiz <em>6</em>
 							</span> / <span>20</span> </span>
@@ -674,9 +596,7 @@
 												</button>
 											</div>
 					</li>
-					<li
-						style="float: none; position: absolute; top: 0px; width: 400px; left: 0px; transition: none 0s ease 0s; transform: translate3d(0px, 0px, 0px);"
-						class="mySlides" onclick="currentSlide(7)">
+					<li class="mySlides" onclick="currentSlide(7)">
 						<div class="quiz_page" style="color: black;">
 							<span> Quiz <em>7</em>
 							</span> / <span>20</span> </span>
@@ -714,9 +634,7 @@
 												</button>
 											</div>
 					</li>
-					<li
-						style="float: none; position: absolute; top: 0px; width: 400px; left: 0px; transition: none 0s ease 0s; transform: translate3d(0px, 0px, 0px);"
-						class="mySlides" onclick="currentSlide(8)">
+					<li class="mySlides" onclick="currentSlide(8)">
 						<div class="quiz_page" style="color: black;">
 							<span> Quiz <em>8</em>
 							</span> / <span>20</span> </span>
@@ -754,9 +672,7 @@
 												</button>
 											</div>
 					</li>
-					<li
-						style="float: none; position: absolute; top: 0px; width: 400px; left: 0px; transition: none 0s ease 0s; transform: translate3d(0px, 0px, 0px);"
-						class="mySlides" onclick="currentSlide(9)">
+					<li class="mySlides" onclick="currentSlide(9)">
 						<div class="quiz_page" style="color: black;">
 							<span> Quiz <em>9</em>
 							</span> / <span>20</span> </span>
@@ -794,9 +710,7 @@
 												</button>
 											</div>
 					</li>
-					<li
-						style="float: none; position: absolute; top: 0px; width: 400px; left: 0px; transition: none 0s ease 0s; transform: translate3d(0px, 0px, 0px);"
-						class="mySlides" onclick="currentSlide(10)">
+					<li class="mySlides" onclick="currentSlide(10)">
 						<div class="quiz_page" style="color: black;">
 							<span> Quiz <em>10</em>
 							</span> / <span>20</span> </span>
@@ -833,9 +747,7 @@
 												</button>
 											</div>
 					</li>
-					<li
-						style="float: none; position: absolute; top: 0px; width: 400px; left: 0px; transition: none 0s ease 0s; transform: translate3d(0px, 0px, 0px);"
-						class="mySlides" onclick="currentSlide(11)">
+					<li class="mySlides" onclick="currentSlide(11)">
 						<div class="quiz_page" style="color: black;">
 							<span> Quiz <em>11</em>
 							</span> / <span>20</span> </span>
@@ -873,8 +785,7 @@
 												</button>
 											</div>
 					</li>
-					<li
-						style="float: none; position: absolute; top: 0px; width: 400px; left: 0px; transition: none 0s ease 0s; transform: translate3d(0px, 0px, 0px);"
+					<li style="float: none; position: absolute; top: 0px; width: 400px; left: 0px; transition: none 0s ease 0s; transform: translate3d(0px, 0px, 0px);"
 						class="mySlides" onclick="currentSlide(12)">
 						<div class="quiz_page" style="color: black;">
 							<span> Quiz <em>12</em>
@@ -913,9 +824,7 @@
 												</button>
 											</div>
 					</li>
-					<li
-						style="float: none; position: absolute; top: 0px; width: 400px; left: 0px; transition: none 0s ease 0s; transform: translate3d(0px, 0px, 0px);"
-						class="mySlides" onclick="currentSlide(13)">
+					<li class="mySlides" onclick="currentSlide(13)">
 						<div class="quiz_page" style="color: black;">
 							<span> Quiz <em>13</em>
 							</span> / <span>20</span> </span>
@@ -953,9 +862,7 @@
 												</button>
 											</div>
 					</li>
-					<li
-						style="float: none; position: absolute; top: 0px; width: 400px; left: 0px; transition: none 0s ease 0s; transform: translate3d(0px, 0px, 0px);"
-						class="mySlides" onclick="currentSlide(14)">
+					<li class="mySlides" onclick="currentSlide(14)">
 						<div class="quiz_page" style="color: black;">
 							<span> Quiz <em>14</em>
 							</span> / <span>20</span> </span>
@@ -993,9 +900,7 @@
 												</button>
 											</div>
 					</li>
-					<li
-						style="float: none; position: absolute; top: 0px; width: 400px; left: 0px; transition: none 0s ease 0s; transform: translate3d(0px, 0px, 0px);"
-						class="mySlides" onclick="currentSlide(15)">
+					<li class="mySlides" onclick="currentSlide(15)">
 						<div class="quiz_page" style="color: black;">
 							<span> Quiz <em>15</em>
 							</span> / <span>20</span> </span>
@@ -1033,9 +938,7 @@
 												</button>
 											</div>
 					</li>
-					<li
-						style="float: none; position: absolute; top: 0px; width: 400px; left: 0px; transition: none 0s ease 0s; transform: translate3d(0px, 0px, 0px);"
-						class="mySlides" onclick="currentSlide(16)">
+					<li class="mySlides" onclick="currentSlide(16)">
 						<div class="quiz_page" style="color: black;">
 							<span> Quiz <em>16</em>
 							</span> / <span>20</span> </span>
@@ -1073,9 +976,7 @@
 												</button>
 											</div>
 					</li>
-					<li
-						style="float: none; position: absolute; top: 0px; width: 400px; left: 0px; transition: none 0s ease 0s; transform: translate3d(0px, 0px, 0px);"
-						class="mySlides" onclick="currentSlide(17)">
+					<li class="mySlides" onclick="currentSlide(17)">
 						<div class="quiz_page" style="color: black;">
 							<span> Quiz <em>17</em>
 							</span> / <span>20</span> </span>
@@ -1113,9 +1014,7 @@
 												</button>
 											</div>
 					</li>
-					<li
-						style="float: none; position: absolute; top: 0px; width: 400px; left: 0px; transition: none 0s ease 0s; transform: translate3d(0px, 0px, 0px);"
-						class="mySlides" onclick="currentSlide(18)">
+					<li class="mySlides" onclick="currentSlide(18)">
 						<div class="quiz_page" style="color: black;">
 							<span> Quiz <em>18</em>
 							</span> / <span>20</span> </span>
@@ -1153,9 +1052,7 @@
 												</button>
 											</div>
 					</li>
-					<li
-						style="float: none; position: absolute; top: 0px; width: 400px; left: 0px; transition: none 0s ease 0s; transform: translate3d(0px, 0px, 0px);"
-						class="mySlides" onclick="currentSlide(19)">
+					<li class="mySlides" onclick="currentSlide(19)">
 						<div class="quiz_page" style="color: black;">
 							<span> Quiz <em>19</em>
 							</span> / <span>20</span> </span>
@@ -1250,9 +1147,7 @@
 							</div>
 				</ul>
 			</div>
-			<li id="on"
-				style="margin: 48px; float: none; position: absolute; top: 0px; width: 400px; left: 0px; transition: none 0s ease 0s; transform: translate3d(0px, 0px, 0px);"
-				class="mySlides" onclick="currentSlide(21)">
+			<li id="on" class="mySlides" onclick="currentSlide(21)">
 
 				<div class="quiz_rolling_group">
 					<div class="quiz_rolling ">
@@ -1267,6 +1162,8 @@
 						<div class="clrear_select"></div>
 						<button id="answer">정답 보러가기</button>
 						<button id="adios" onclick="quiz_close()">닫기</button>
+					</div>
+				</div>
 			</li>
 		</div>
 	</div>
@@ -1279,23 +1176,10 @@
 	<!-- Footer-->
 	<footer class="footer text-center">
 		<div class="container px-4 px-lg-5">
-			<!-- <ul class="list-inline mb-5">
-                    <li class="list-inline-item">
-                        <a class="social-link rounded-circle text-white mr-3" href="#!"><i class="icon-social-facebook"></i></a>
-                    </li>
-                    <li class="list-inline-item">
-                        <a class="social-link rounded-circle text-white mr-3" href="#!"><i class="icon-social-twitter"></i></a>
-                    </li>
-                    <li class="list-inline-item">
-                        <a class="social-link rounded-circle text-white" href="#!"><i class="icon-social-github"></i></a>
-                    </li>
-                </ul> -->
-			<div class="logoimg">
-				<!-- <img src="./assets/img/최종팀플 제주도 로고.png" alt=""> -->
-			</div>
-			<p class="text-muted small mb-0">Jeju Island</p>
+			<p class="text-muted small">Copyright © Jeju Website 2021</p>
 		</div>
 	</footer>
+	
 	<!-- Scroll to Top Button-->
 	<a class="scroll-to-top rounded" href="#page-top"><i
 		class="fas fa-angle-up"></i></a>
