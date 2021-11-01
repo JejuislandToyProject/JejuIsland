@@ -11,6 +11,9 @@ import com.kgitbank.jeju.dto.TouristSpot;
 import com.kgitbank.jeju.mapper.TouristSpotMapper;
 import com.kgitbank.jeju.service.MainService;
 
+import lombok.extern.log4j.Log4j;
+
+@Log4j
 @Service
 public class MainServiceImpl implements MainService{
 	@Autowired
@@ -26,7 +29,13 @@ public class MainServiceImpl implements MainService{
 			spots.addAll(spots);
 		}
 		int end = spots.size()/4 > 3? 3 * 4: (spots.size()/4) * 4;
+		spots = spots.subList(0, end);
+		
+		for(TouristSpot spot: spots) {
+			spot.setImage(spot.getImage().replace("..", "."));
+		}
 		model.addAttribute("main_info", mainMapper.getList().get(0));
-		model.addAttribute("tourist_spot", spots.subList(0, end));
+		model.addAttribute("tourist_spot", spots);
+		model.addAttribute("tourist_spot_size", spots.size());
 	}
 }
