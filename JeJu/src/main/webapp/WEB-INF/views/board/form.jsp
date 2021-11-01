@@ -194,9 +194,6 @@
 						<!-- file add -->
 
 						<input type="file" name="image" id="image">
-
-						<div id="user_id">${id }</div>
-						
 					</form>
 					
 					<!-- map API  -->
@@ -215,31 +212,23 @@
 						        <hr>
 						        <ul id="placesList"></ul>
 						        <div id="pagination"></div>
-						        
-						        
 						    </div>
-						    
-						    위도 : <div id="latitude"></div>
-						    경도 : <div id="longitude"></div>
-						</div>
-
-					<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=115edfd07bd1f09ac3a8881810a2bb4b&libraries=services"></script>
-					
-
+						</div>	
+						
+						<div id="user_id">${id }</div>
+						 위도 : <div id="latitude"></div>
+						 경도 : <div id="longitude"></div>
+											
 						<div class="d-flex justify-content-end mt-4">
 							<button type="button" onclick="history.back()" 
 								name="button" class="btn btn-light btn-outline-dark m-0">Cancel</button>
 							<button id="btnSave" type="submit"
                                 class="btn btn-success m-0 ms-2">Upload</button>
 						</div>
-
 				</div>
 			</div>
 		</div>
 	</div>
-
-
-
 
 	<!-- Form -->
 
@@ -265,10 +254,10 @@
 	</footer>
 	<!-- scripts -->
 	<script src="<c:url value='/resources/js/scripts.js' />"></script>
-
 	<script src="<c:url value='/resources/js/form.js/'/>"></script>
-	
-	<script>
+	<script type="text/javascript"  
+					src="//dapi.kakao.com/v2/maps/sdk.js?appkey=115edfd07bd1f09ac3a8881810a2bb4b&libraries=services"></script>
+					<script>
 					// 마커를 담을 배열입니다
 					var markers = [];
 					

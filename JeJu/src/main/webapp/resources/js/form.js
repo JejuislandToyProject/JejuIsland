@@ -15,19 +15,22 @@ $(document).ready(function(){
                    alert("제목을 입력하세요");
                    document.form1.title.focus();
            }
-
-           if(name ==""){
+            else if(name ==""){
                 alert("제목을 입력하세요");
                 document.form1.name.focus();
            }
-           if(description ==""){
+           else if(description ==""){
                 alert("내용을 입력하세요");
                 document.form1.description.focus();
            }
-           if(image ==""){
+           else if(image ==""){
                 alert("이미지를 선택하세요");
                 document.form1.image.focus();
-           }
+           }else{
+	 		console.log('글 작성 자격 주어짐.');
+			}
+
+		   
 			
         });
 });
