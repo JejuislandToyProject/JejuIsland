@@ -8,6 +8,7 @@ import com.kgitbank.jeju.dto.TouristSpot;
 public interface TouristSpotMapper {
 	
 	public void addTourist(TouristSpot touristSpot);
+	public List<TouristSpot> listOrderByLike();
 	public TouristSpot listById(int tourist_id);
 	public TouristSpot listView(int tourist_spot_id);
 	public  List<TouristSpot> listByUserd(String user_id);

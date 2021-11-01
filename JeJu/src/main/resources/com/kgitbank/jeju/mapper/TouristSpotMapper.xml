@@ -10,6 +10,9 @@
     <select id="listTourist" resultType="com.kgitbank.jeju.dto.TouristSpot">
         select * from tourist_spot INNER JOIN user_info USING (user_id)
     </select>
+    <select id="listOrderByLike" resultType="com.kgitbank.jeju.dto.TouristSpot">
+    	select * from tourist_spot ORDER BY positive_num;
+    </select>
     
     <select id="courseList" resultType="com.kgitbank.jeju.dto.TouristSpot">
         select title, image, positive_num, latitude, longitude from tourist_spot ORDER BY positive_num DESC
