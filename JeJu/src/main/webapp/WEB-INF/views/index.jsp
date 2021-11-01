@@ -4,18 +4,15 @@
 <!DOCTYPE html>
 <html lang="kr">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport"
-	content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-<meta name="description" content="" />
-<meta name="author" content="" />
+
 <title>Jeju Island</title>
 
-<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet"
+	href="https://fonts.googleapis.com/icon?family=Material+Icons">
 <!-- Core theme CSS (includes Bootstrap)-->
 <link href="<c:url value="/resources/css/styles.css"/>" rel="stylesheet">
-<link href="<c:url value="/resources/css/cssmodal.css"/>" rel="stylesheet">
+<link href="<c:url value="/resources/css/cssmodal.css"/>"
+	rel="stylesheet">
 <link href="<c:url value="/resources/css/index.css"/>" rel="stylesheet">
 
 <!-- polygon css -->
@@ -29,7 +26,9 @@
 		class="navbar navbar-expand-lg navbar-light fixed-top py-3 navbar-shrink"
 		id="mainNav">
 		<div class="container px-4 px-lg-5">
-			<h1 class="fs-4 fw-normal"><a class="navbar-brand" href="#page-top">TRAVEL JEJU</a></h1>
+			<h1 class="fs-4 fw-normal">
+				<a class="navbar-brand" href="#page-top">TRAVEL JEJU</a>
+			</h1>
 			<button class="navbar-toggler navbar-toggler-right" type="button"
 				data-bs-toggle="collapse" data-bs-target="#navbarResponsive"
 				aria-controls="navbarResponsive" aria-expanded="false"
@@ -53,22 +52,24 @@
 									<i class="fa fa-user-circle fa-lg"></i>
 							</a>
 								<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-									<li><a class="dropdown-item" href="<c:url value="/mypage"/>"> 
-										<i class="fa fa-home fa-lg"></i> 
-										<font style="vertical-align: inherit;"> 
-											<font style="vertical-align: inherit;">Mypage</font>
+									<li><a class="dropdown-item"
+										href="<c:url value="/mypage"/>"> <i
+											class="fa fa-home fa-lg"></i> <font
+											style="vertical-align: inherit;"> <font
+												style="vertical-align: inherit;">Mypage</font>
 										</font>
 									</a></li>
-									
+
 									<li class="divider dropdown-divider"></li>
-									
-									<li><a class="dropdown-item" href="<c:url value="/logout"/>"> 
-										<i class="fas fa-power-off fa-lg"></i> 
-										<font style="vertical-align: inherit;"> 
-											<font style="vertical-align: inherit;">Logout</font>
+
+									<li><a class="dropdown-item"
+										href="<c:url value="/logout"/>"> <i
+											class="fas fa-power-off fa-lg"></i> <font
+											style="vertical-align: inherit;"> <font
+												style="vertical-align: inherit;">Logout</font>
 										</font>
 									</a></li>
-									
+
 								</ul></li>
 						</c:when>
 						<c:otherwise>
@@ -82,7 +83,8 @@
 	</nav>
 
 	<!-- Header-->
-	<header class="masthead d-flex align-items-center" style="background-image: url(${main_info.image })">
+	<header class="masthead d-flex align-items-center"
+		style="background-image: url(${main_info.image })">
 		<div class="container px-4 px-lg-5 text-center">
 			<h2 class="h1 mb-1">${main_info.title }</h2>
 
@@ -103,6 +105,7 @@
 					<p class="lead mb-5">Make a plan with excitement for your trip
 						to Jeju Island!</p>
 					<a class="btn btn-dark btn-xl" href="#services">Make a Plan</a>
+					<a class="btn-open-popup-sub btn btn-dark btn-xl ">JEJU Quiz</a>
 				</div>
 			</div>
 		</div>
@@ -131,7 +134,6 @@
 		<div class="container px-5">
 			<div class="row gx-5 align-items-center justify-content-center">
 				<div class="col-lg-8 col-xl-7 col-xxl-6">
-					<p>코스상세설명</p>
 				</div>
 				<div class="col-xl-5 col-xxl-6 d-none d-xl-block text-center">
 					<img class="img-fluid rounded-3 my-5"
@@ -140,54 +142,37 @@
 			</div>
 		</div>
 	</section>
-	<!-- Callout-->
-	<!-- <section class="callout">
-            <div class="container px-4 px-lg-5 text-center">
-                <h2 class="mx-auto mb-5">
-                    Welcome to
-                    <em>your</em>
-                    next website!
-                </h2>
-                <a class="btn btn-primary btn-xl" href="https://startbootstrap.com/theme/stylish-portfolio/">Download Now!</a>
-            </div>
-        </section> -->
-	<section class="showcase">
-	<div class="polygon-modal">
-					<div class="polygon-modal-content">
-						<div id="polygon-image-box">
-						</div>
 
-						<div class="polygon-text-box">
-						
-							<div class="polygon-text-title">
-								<div id="polygon-title"></div>
-								<div id="polygon-location"></div>
-								<div class="polygon-zero_padding20"></div>
-								<button class="polygon-btn-close">&times;</button>
-							</div>
-							<div id="polygon-text-desc"></div>
-							<div class="polygon-icon-pasing">
-								<i class="far fa-thumbs-up"></i> <i class="fas fa-bolt"></i> <i
-									class="fas fa-globe-americas"></i>
-							</div>
-							
-							<button id="polygon-modalBtn">상세보기</button>
-							
-						</div>
+	<section class="showcase">
+		<div class="polygon-modal">
+			<div class="polygon-modal-content">
+				<div id="polygon-image-box"></div>
+
+				<div class="polygon-text-box">
+
+					<div class="polygon-text-title">
+						<div id="polygon-title"></div>
+						<div id="polygon-location"></div>
+						<div class="polygon-zero_padding20"></div>
+						<button class="polygon-btn-close">&times;</button>
 					</div>
+					<div id="polygon-text-desc"></div>
+					<div class="polygon-icon-pasing">
+						<i class="far fa-thumbs-up"></i> <i class="fas fa-bolt"></i> <i
+							class="fas fa-globe-americas"></i>
+					</div>
+
+					<button id="polygon-modalBtn">상세보기</button>
+
 				</div>
-				<div class="polygon-overlay"></div>
+			</div>
+		</div>
+		<div class="polygon-overlay"></div>
 		<div class="container-fluid p-0 my-5">
 			<div class="row g-0">
 
 				<!-- 폴리곤이 들어가야할 구역. -->
-				<div id="map" style="width: 50%; height: 350px;"></div>
-			
-				
-
-
-				<!-- <div class="col-lg-6 order-lg-2 text-white showcase-img"
-					style="background-image: url('./resources/img/제주도 나눈사진.png')"></div> -->
+				<div id="map"></div>
 
 				<!-- 폴리곤이 들어가야할 구역. -->
 
@@ -195,8 +180,9 @@
 					<h2>행정구역별 맛집 찾기</h2>
 					<p class="lead mb-0">
 						세분화된 맛집 로드뷰를 바탕으로 맛집투어를 기획해보세요!<br>신빙성 있는 자료를 위해 정회원 이상만 등록
-						가능합니다 <br> <a href="">정회원 등록하러 가기!</a>
+						가능합니다
 					</p>
+					<div class="login-btn btn btn-success"><a href="<c:url value="/login"/>">정회원 등록하러 가기!</a></div>
 				</div>
 			</div>
 		</div>
@@ -218,48 +204,37 @@
 							data-bs-slide-to="2" aria-label="Slide 3"></button>
 					</div>
 					<div class="carousel-inner">
-						<div class="carousel-item active">
-							<div class="col-xs-3 col-sm-3 col-md-3" data-bs-interval="10000">
-								<img src="<c:url value="/resources/img/관광지.png"/>" />
-							</div>
-							<div class="col-xs-3 col-sm-3 col-md-3">
-								<img src="<c:url value="/resources/img/관광지.png"/>" />
-							</div>
-							<div class="col-xs-3 col-sm-3 col-md-3">
-								<img src="<c:url value="/resources/img/관광지.png"/>" />
-							</div>
-							<div class="col-xs-3 col-sm-3 col-md-3">
-								<img src="<c:url value="/resources/img/관광지.png"/>" />
-							</div>
-						</div>
-						<div class="carousel-item">
-							<div class="col-xs-3 col-sm-3 col-md-3">
-								<img src="<c:url value="/resources/img/관광지.png"/>" />
-							</div>
-							<div class="col-xs-3 col-sm-3 col-md-3">
-								<img src="<c:url value="/resources/img/관광지.png"/>" />
-							</div>
-							<div class="col-xs-3 col-sm-3 col-md-3">
-								<img src="<c:url value="/resources/img/관광지.png"/>" />
-							</div>
-							<div class="col-xs-3 col-sm-3 col-md-3">
-								<img src="<c:url value="/resources/img/관광지.png"/>" />
-							</div>
-						</div>
-						<div class="carousel-item">
-							<div class="col-xs-3 col-sm-3 col-md-3">
-								<img src="<c:url value="/resources/img/관광지.png"/>" />
-							</div>
-							<div class="col-xs-3 col-sm-3 col-md-3">
-								<img src="<c:url value="/resources/img/관광지.png"/>" />
-							</div>
-							<div class="col-xs-3 col-sm-3 col-md-3">
-								<img src="<c:url value="/resources/img/관광지.png"/>" />
-							</div>
-							<div class="col-xs-3 col-sm-3 col-md-3">
-								<img src="<c:url value="/resources/img/관광지.png"/>" />
-							</div>
-						</div>
+						<c:forEach var="i" begin="0" end="${tourist_spot_size-1 }" step="4" varStatus="status">
+							<c:choose>
+								<c:when test="${status.first }">
+									<div class="carousel-item active">
+								</c:when>
+								<c:otherwise>
+									<div class="carousel-item">
+								</c:otherwise>
+							</c:choose>
+									<div class="col-xs-3 col-sm-3 col-md-3" data-bs-interval="10000">
+										<a href="<c:url value="board/listById?tourist_spot_id=${tourist_spot[i].tourist_spot_id }"/>">
+											<img src="${tourist_spot[i].image }" />
+										</a>
+									</div>
+									<div class="col-xs-3 col-sm-3 col-md-3">
+										<a href="<c:url value="board/listById?tourist_spot_id=${tourist_spot[i + 1].tourist_spot_id }"/>">
+											<img src="${tourist_spot[i + 1].image }" />
+										</a>
+									</div>
+									<div class="col-xs-3 col-sm-3 col-md-3">
+										<a href="<c:url value="board/listById?tourist_spot_id=${tourist_spot[i + 2].tourist_spot_id }"/>">
+											<img src="${tourist_spot[i + 2].image }" />
+										</a>
+									</div>
+									<div class="col-xs-3 col-sm-3 col-md-3">
+										<a href="<c:url value="board/listById?tourist_spot_id=${tourist_spot[i + 3].tourist_spot_id }"/>">
+											<img src="${tourist_spot[i + 3].image }" />
+										</a>
+									</div>
+								</div>
+						</c:forEach>
 						<button class="carousel-control-prev" type="button"
 							data-bs-target="#myCarousel" data-bs-slide="prev">
 							<span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -352,39 +327,34 @@
 		</h2>
 		<br> <br>
 		<div class="best-img1">
-			<section class="contents project-card">
-				<section class="project-thumbnail1" id="project-macbook"></section>
-				<section class="project-explain">
+			<div class="contents project-card">
+				<div class="project-thumbnail1" id="project-macbook" style="background: no-repeat center/cover url(${famous_restaurant[0].image })"></div>
+				<div class="project-explain">
 					<p>
-						<i class="fas fa-utensils" style="color: hotpink;"></i>이번 달 맛집 :
-						우진해장국
+						<i class="fas fa-utensils" style="color: hotpink;"></i>${famous_restaurant[0].name }
 					</p>
-					<p style="font-weight: bold;">loaction : 제주특별자치도 제주시 특별자치도 삼도2동
-						831</p>
+					<p style="font-weight: bold;">Hashtag: ${famous_restaurant[0].hashtag }</p>
 
-				</section>
-			</section>
+				</div>
+			</div>
 		</div>
 
 		<div class="best-img2">
-			<section class="contents project-card">
-				<section class="project-thumbnail" id="project-macbook"></section>
-				<section class="project-explain">
+			<div class="contents project-card">
+				<div class="project-thumbnail" id="project-macbook" style="background: no-repeat center/cover url(${tourist_spot[0].image })"></div>
+				<div class="project-explain">
 					<p>
-						<i class="fas fa-plane-departure" style="color: green;"></i>이번 달
-						관광지 : 빛의 벙커
+						<i class="fas fa-plane-departure" style="color: green;"></i>${tourist_spot[0].name }
 					</p>
-					<p style="font-weight: bold;">loaction : 제주특별자치도 서귀포시 특별자치도 성산읍
-						고성리 2039-22</p>
-				</section>
-			</section>
+					<p style="font-weight: bold;">Hashtag : ${tourist_spot[0].hashtag }</p>
+				</div>
+			</div>
 		</div>
 	</section>
 
 	<div class="modal">
 
 		<div class="modal_body">
-			<!--style="display: none;" 밑에 슬라이더 컨테이너에 넣어주면됨-->
 			<button id="closs_btn" class="modal_closs_btn">
 				<i class="fas fa-times"></i>
 			</button>
@@ -392,12 +362,9 @@
 				<!-- #00c73c -->
 				<span style="color: orange;">Q &nbsp;</span>제주도 관련 퀴즈
 
-				<ul class="slider_list"
-					style="width: auto; height: auto; overflow: visible;">
+				<ul class="slider_list" >
 
-					<li
-						style="float: none; position: absolute; top: 0px; width: 400px; left: 0px; transition: none 0s ease 0s; transform: translate3d(0px, 0px, 0px);"
-						class="mySlides" onclick="currentSlide(1)">
+					<li class="mySlides" onclick="currentSlide(1)">
 						<div class="quiz_page" style="color: black;">
 							<span> Quiz <em>1</em>
 							</span> / <span>20</span> </span>
@@ -436,9 +403,7 @@
 												</button>
 											</div>
 					</li>
-					<li
-						style="float: none; position: absolute; top: 0px; width: 400px; left: 0px; transition: none 0s ease 0s; transform: translate3d(0px, 0px, 0px);"
-						class="mySlides" onclick="currentSlide(2)">
+					<li class="mySlides" onclick="currentSlide(2)">
 						<div class="quiz_page" style="color: black;">
 							<span> Quiz <em>2</em>
 							</span> / <span>20</span> </span>
@@ -476,9 +441,7 @@
 												</button>
 											</div>
 					</li>
-					<li
-						style="float: none; position: absolute; top: 0px; width: 400px; left: 0px; transition: none 0s ease 0s; transform: translate3d(0px, 0px, 0px);"
-						class="mySlides" onclick="currentSlide(3)">
+					<li class="mySlides" onclick="currentSlide(3)">
 						<div class="quiz_page" style="color: black;">
 							<span> Quiz <em>3</em>
 							</span> / <span>20</span> </span>
@@ -516,9 +479,7 @@
 												</button>
 											</div>
 					</li>
-					<li
-						style="float: none; position: absolute; top: 0px; width: 400px; left: 0px; transition: none 0s ease 0s; transform: translate3d(0px, 0px, 0px);"
-						class="mySlides" onclick="currentSlide(4)">
+					<li class="mySlides" onclick="currentSlide(4)">
 						<div class="quiz_page" style="color: black;">
 							<span> Quiz <em>4</em>
 							</span> / <span>20</span> </span>
@@ -556,9 +517,7 @@
 												</button>
 											</div>
 					</li>
-					<li
-						style="float: none; position: absolute; top: 0px; width: 400px; left: 0px; transition: none 0s ease 0s; transform: translate3d(0px, 0px, 0px);"
-						class="mySlides" onclick="currentSlide(5)">
+					<li class="mySlides" onclick="currentSlide(5)">
 						<div class="quiz_page" style="color: black;">
 							<span> Quiz <em>5</em>
 							</span> / <span>20</span> </span>
@@ -596,9 +555,7 @@
 												</button>
 											</div>
 					</li>
-					<li
-						style="float: none; position: absolute; top: 0px; width: 400px; left: 0px; transition: none 0s ease 0s; transform: translate3d(0px, 0px, 0px);"
-						class="mySlides" onclick="currentSlide(6)">
+					<li class="mySlides" onclick="currentSlide(6)">
 						<div class="quiz_page" style="color: black;">
 							<span> Quiz <em>6</em>
 							</span> / <span>20</span> </span>
@@ -636,9 +593,7 @@
 												</button>
 											</div>
 					</li>
-					<li
-						style="float: none; position: absolute; top: 0px; width: 400px; left: 0px; transition: none 0s ease 0s; transform: translate3d(0px, 0px, 0px);"
-						class="mySlides" onclick="currentSlide(7)">
+					<li class="mySlides" onclick="currentSlide(7)">
 						<div class="quiz_page" style="color: black;">
 							<span> Quiz <em>7</em>
 							</span> / <span>20</span> </span>
@@ -676,9 +631,7 @@
 												</button>
 											</div>
 					</li>
-					<li
-						style="float: none; position: absolute; top: 0px; width: 400px; left: 0px; transition: none 0s ease 0s; transform: translate3d(0px, 0px, 0px);"
-						class="mySlides" onclick="currentSlide(8)">
+					<li class="mySlides" onclick="currentSlide(8)">
 						<div class="quiz_page" style="color: black;">
 							<span> Quiz <em>8</em>
 							</span> / <span>20</span> </span>
@@ -716,9 +669,7 @@
 												</button>
 											</div>
 					</li>
-					<li
-						style="float: none; position: absolute; top: 0px; width: 400px; left: 0px; transition: none 0s ease 0s; transform: translate3d(0px, 0px, 0px);"
-						class="mySlides" onclick="currentSlide(9)">
+					<li class="mySlides" onclick="currentSlide(9)">
 						<div class="quiz_page" style="color: black;">
 							<span> Quiz <em>9</em>
 							</span> / <span>20</span> </span>
@@ -756,9 +707,7 @@
 												</button>
 											</div>
 					</li>
-					<li
-						style="float: none; position: absolute; top: 0px; width: 400px; left: 0px; transition: none 0s ease 0s; transform: translate3d(0px, 0px, 0px);"
-						class="mySlides" onclick="currentSlide(10)">
+					<li class="mySlides" onclick="currentSlide(10)">
 						<div class="quiz_page" style="color: black;">
 							<span> Quiz <em>10</em>
 							</span> / <span>20</span> </span>
@@ -795,9 +744,7 @@
 												</button>
 											</div>
 					</li>
-					<li
-						style="float: none; position: absolute; top: 0px; width: 400px; left: 0px; transition: none 0s ease 0s; transform: translate3d(0px, 0px, 0px);"
-						class="mySlides" onclick="currentSlide(11)">
+					<li class="mySlides" onclick="currentSlide(11)">
 						<div class="quiz_page" style="color: black;">
 							<span> Quiz <em>11</em>
 							</span> / <span>20</span> </span>
@@ -835,8 +782,7 @@
 												</button>
 											</div>
 					</li>
-					<li
-						style="float: none; position: absolute; top: 0px; width: 400px; left: 0px; transition: none 0s ease 0s; transform: translate3d(0px, 0px, 0px);"
+					<li style="float: none; position: absolute; top: 0px; width: 400px; left: 0px; transition: none 0s ease 0s; transform: translate3d(0px, 0px, 0px);"
 						class="mySlides" onclick="currentSlide(12)">
 						<div class="quiz_page" style="color: black;">
 							<span> Quiz <em>12</em>
@@ -875,9 +821,7 @@
 												</button>
 											</div>
 					</li>
-					<li
-						style="float: none; position: absolute; top: 0px; width: 400px; left: 0px; transition: none 0s ease 0s; transform: translate3d(0px, 0px, 0px);"
-						class="mySlides" onclick="currentSlide(13)">
+					<li class="mySlides" onclick="currentSlide(13)">
 						<div class="quiz_page" style="color: black;">
 							<span> Quiz <em>13</em>
 							</span> / <span>20</span> </span>
@@ -915,9 +859,7 @@
 												</button>
 											</div>
 					</li>
-					<li
-						style="float: none; position: absolute; top: 0px; width: 400px; left: 0px; transition: none 0s ease 0s; transform: translate3d(0px, 0px, 0px);"
-						class="mySlides" onclick="currentSlide(14)">
+					<li class="mySlides" onclick="currentSlide(14)">
 						<div class="quiz_page" style="color: black;">
 							<span> Quiz <em>14</em>
 							</span> / <span>20</span> </span>
@@ -955,9 +897,7 @@
 												</button>
 											</div>
 					</li>
-					<li
-						style="float: none; position: absolute; top: 0px; width: 400px; left: 0px; transition: none 0s ease 0s; transform: translate3d(0px, 0px, 0px);"
-						class="mySlides" onclick="currentSlide(15)">
+					<li class="mySlides" onclick="currentSlide(15)">
 						<div class="quiz_page" style="color: black;">
 							<span> Quiz <em>15</em>
 							</span> / <span>20</span> </span>
@@ -995,9 +935,7 @@
 												</button>
 											</div>
 					</li>
-					<li
-						style="float: none; position: absolute; top: 0px; width: 400px; left: 0px; transition: none 0s ease 0s; transform: translate3d(0px, 0px, 0px);"
-						class="mySlides" onclick="currentSlide(16)">
+					<li class="mySlides" onclick="currentSlide(16)">
 						<div class="quiz_page" style="color: black;">
 							<span> Quiz <em>16</em>
 							</span> / <span>20</span> </span>
@@ -1035,9 +973,7 @@
 												</button>
 											</div>
 					</li>
-					<li
-						style="float: none; position: absolute; top: 0px; width: 400px; left: 0px; transition: none 0s ease 0s; transform: translate3d(0px, 0px, 0px);"
-						class="mySlides" onclick="currentSlide(17)">
+					<li class="mySlides" onclick="currentSlide(17)">
 						<div class="quiz_page" style="color: black;">
 							<span> Quiz <em>17</em>
 							</span> / <span>20</span> </span>
@@ -1075,9 +1011,7 @@
 												</button>
 											</div>
 					</li>
-					<li
-						style="float: none; position: absolute; top: 0px; width: 400px; left: 0px; transition: none 0s ease 0s; transform: translate3d(0px, 0px, 0px);"
-						class="mySlides" onclick="currentSlide(18)">
+					<li class="mySlides" onclick="currentSlide(18)">
 						<div class="quiz_page" style="color: black;">
 							<span> Quiz <em>18</em>
 							</span> / <span>20</span> </span>
@@ -1115,9 +1049,7 @@
 												</button>
 											</div>
 					</li>
-					<li
-						style="float: none; position: absolute; top: 0px; width: 400px; left: 0px; transition: none 0s ease 0s; transform: translate3d(0px, 0px, 0px);"
-						class="mySlides" onclick="currentSlide(19)">
+					<li class="mySlides" onclick="currentSlide(19)">
 						<div class="quiz_page" style="color: black;">
 							<span> Quiz <em>19</em>
 							</span> / <span>20</span> </span>
@@ -1212,9 +1144,7 @@
 							</div>
 				</ul>
 			</div>
-			<li id="on"
-				style="margin: 48px; float: none; position: absolute; top: 0px; width: 400px; left: 0px; transition: none 0s ease 0s; transform: translate3d(0px, 0px, 0px);"
-				class="mySlides" onclick="currentSlide(21)">
+			<li id="on" class="mySlides" onclick="currentSlide(21)">
 
 				<div class="quiz_rolling_group">
 					<div class="quiz_rolling ">
@@ -1229,6 +1159,8 @@
 						<div class="clrear_select"></div>
 						<button id="answer">정답 보러가기</button>
 						<button id="adios" onclick="quiz_close()">닫기</button>
+					</div>
+				</div>
 			</li>
 		</div>
 	</div>
@@ -1241,23 +1173,10 @@
 	<!-- Footer-->
 	<footer class="footer text-center">
 		<div class="container px-4 px-lg-5">
-			<!-- <ul class="list-inline mb-5">
-                    <li class="list-inline-item">
-                        <a class="social-link rounded-circle text-white mr-3" href="#!"><i class="icon-social-facebook"></i></a>
-                    </li>
-                    <li class="list-inline-item">
-                        <a class="social-link rounded-circle text-white mr-3" href="#!"><i class="icon-social-twitter"></i></a>
-                    </li>
-                    <li class="list-inline-item">
-                        <a class="social-link rounded-circle text-white" href="#!"><i class="icon-social-github"></i></a>
-                    </li>
-                </ul> -->
-			<div class="logoimg">
-				<!-- <img src="./assets/img/최종팀플 제주도 로고.png" alt=""> -->
-			</div>
-			<p class="text-muted small mb-0">Jeju Island</p>
+			<p class="text-muted small">Copyright © Jeju Website 2021</p>
 		</div>
 	</footer>
+	
 	<!-- Scroll to Top Button-->
 	<a class="scroll-to-top rounded" href="#page-top"><i
 		class="fas fa-angle-up"></i></a>
@@ -1270,6 +1189,7 @@
 
 <script src="<c:url value="/resources/js/scripts.js"/>"></script>
 <script src="<c:url value="/resources/js/js모달.js"/>"></script>
-<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=115edfd07bd1f09ac3a8881810a2bb4b"></script>
+<script type="text/javascript"
+	src="//dapi.kakao.com/v2/maps/sdk.js?appkey=115edfd07bd1f09ac3a8881810a2bb4b"></script>
 <script src="<c:url value="/resources/js/polygon.js"/>"></script>
 </html>

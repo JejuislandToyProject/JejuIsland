@@ -11556,26 +11556,27 @@ footer.footer .social-link:hover {
             clip-path: inset(0px);
   }
   .portfolio-item .caption .caption-content {
-    transition: opacity 0.25s;
-    margin-left: 5rem;
-    margin-right: 5rem;
-    margin-bottom: 5rem;
+    transition: All 0.25s;
+    margin: 2rem 5rem 5rem 5rem;
   }
   .portfolio-item img {
-    transition: -webkit-clip-path 0.25s ease-out;
-    transition: clip-path 0.25s ease-out;
-    transition: clip-path 0.25s ease-out, -webkit-clip-path 0.25s ease-out;
+    transition: -webkit-clip-path 0.2s ease-out;
+    transition: clip-path 0.2s ease-out;
+    transition: clip-path 0.2s ease-out, -webkit-clip-path 0.2s ease-out;
     -webkit-clip-path: inset(-1px);
             clip-path: inset(-1px);
   }
   .portfolio-item:hover img {
-    -webkit-clip-path: inset(2rem);
-            clip-path: inset(2rem);
+    -webkit-clip-path: inset(2rem 2rem 3.3rem 2rem);
+            clip-path: inset(2rem 2rem 3.3rem 2rem);
   }
   .portfolio-item:hover .caption {
     background-color: rgba(29, 128, 159, 0.9);
     -webkit-clip-path: inset(2rem);
             clip-path: inset(2rem);
+  }
+  .portfolio-item:hover .caption .caption-content {
+  	margin: 5rem 5rem 5rem 5rem;
   }
 }
 
@@ -11597,14 +11598,13 @@ footer.footer .social-link:hover {
   border: 1px solid rgb(0, 0, 0);
   position: relative;
   box-shadow: 5px 5px 20px;
-  transition: all 0.5s;
+  transition: transform 0.3s;
   transition-delay: 0.4s;
   margin: auto;
 }
 
 .project-card:hover {
-  width: 680px;
-  height: 400px;
+  transform: scale(1.1);
 }
 
 .project-thumbnail {

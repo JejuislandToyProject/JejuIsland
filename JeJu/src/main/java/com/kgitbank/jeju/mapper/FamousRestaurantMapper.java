@@ -7,6 +7,7 @@ import com.kgitbank.jeju.dto.TouristSpot;
 
 public interface FamousRestaurantMapper {
 	public List<FamousRestaurant> list();
+	public List<FamousRestaurant> listOrderByLike();
 	public List<FamousRestaurant> listByUser(String user_id);
 	public void addRestaurant(FamousRestaurant fr);
 	public List<FamousRestaurant> famousList();
