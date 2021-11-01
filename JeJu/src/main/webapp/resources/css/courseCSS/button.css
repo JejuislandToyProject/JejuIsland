@@ -4,7 +4,7 @@
    margin-bottom: 1rem;
    letter-spacing: -0.025rem;
    text-transform: uppercase;
-   box-shadow: 0 4px 7px -1px rgba(0, 0, 0, 0.11), 0 2px 4px -1px
+   box-shadow: 0 0.2rem 0.4rem -0.8rem rgba(0, 0, 0, 0.11), 0 0.8rem 1rem -0.8rem
       rgba(0, 0, 0, 0.07);
    background-size: 150%;
    background-position-x: 25%;
@@ -41,14 +41,15 @@
 
 .btn-danger .btn.bg-outline-danger,
 .btn.bg-gradient-danger .btn.bg-outline-danger {
-  border: 1px solid #ea0606; }
+  border: 0.8rem solid #ea0606; }
+
 
 .btn.bg-gradient-warning:hover {
   background-color: #fbcf33;
   border-color: #fbcf33; }
 
 .btn.bg-gradient-warning .btn.bg-outline-warning {
-  border: 1px solid #fbcf33; }
+  border: 0.7rem solid #fbcf33; }
 
 .bg-gradient-warning {
   background-image: linear-gradient(310deg, #f53939 0%, #fbcf33 100%); }
@@ -56,15 +57,17 @@
 .btn-90 {
   width: 90% !important; }
   
+
+  
  /* 버튼 박스 ===================================================================== */ 
 .btn-box{
    display: flex;
    flex-direction: column;
    position: relative;
    z-index: 980;
-   top: -970px;
-   width: 220px;
-   margin: 15px;
+   top: -60rem;
+   width: 13rem;
+   margin: 1.5rem;
 }
     
 #useMethodBtn{
@@ -92,18 +95,18 @@
 }
 
 #jsonImg{
-   height: 70px; 
-   width: 120px;   
+   height: 4.375rem; 
+   width: 7.5rem;   
 }
 
 #jsonLocation{
-   color: orange; 
-   font-size: 10px;
+   color: #1d809f; 
+   font-size: 0.75 rem;
 }
 
 #img-size{
-   width:120px;
-   height: 70px;
+   width:7.5rem;
+   height: 4.375rem;
 }
 .cardSmallBtn {
    border : none;
@@ -126,11 +129,41 @@
    font-weight: 600;
 }
 
-.customoverlay {position:relative;bottom:45px;border-radius:6px;border: 1px solid #ccc;border-bottom:2px solid #ddd;float:left;}
-.customoverlay:nth-of-type(n) {border:0; box-shadow:0px 1px 2px #888;}
-.customoverlay a {display:block;text-decoration:none;color:#000;text-align:center;border-radius:6px;font-size:12px;font-weight:bold;overflow:hidden;background:#3ec5f1;background: #3ec5f1 no-repeat right 14px center;}
-.customoverlay .title {display:inline;text-align:center;background:#fff;padding:8px 13px;font-size:13px;font-weight:bold;}
-.customoverlay:after {content:'';position:absolute;margin-left:-12px;left:50%;bottom:-12px;width:20px;height:12px;background:url('https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/vertex_white.png')}
+.customoverlay {
+	position:relative;
+	bottom:2.8125rem;
+	border-radius:0.375rem;
+	border: 0.0625rem solid #ccc;
+	border-bottom:0.125rem solid #ddd;
+	float:left;}
+.customoverlay:nth-of-type(n) {
+	border:0; box-shadow:0px 0.0625rem 0.125rem #888;}
+.customoverlay a {
+	display:block;
+	text-decoration:none;
+	color:#000;text-align:center;
+	border-radius:0.375rem;
+	font-size:0.75rem;
+	font-weight:bold;
+	overflow:hidden;
+	background:#3ec5f1;
+	background: #3ec5f1 no-repeat right 0.875rem center;}
+.customoverlay .title {
+	display:inline;
+	text-align:center;
+	background:#fff;
+	padding:0.5rem 0.8125rem;
+	font-size:0.8125rem;
+	font-weight:bold;}
+.customoverlay:after {
+	content:'';
+	position:absolute;
+	margin-left: -0.75rem;
+	left:50%;
+	bottom:-0.75rem;
+	width: 1.25rem;
+	height:0.75rem;
+	background:url('https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/vertex_white.png')}
 .customoverlay #numbers{
-	padding : 3px 3px;
+	padding : 0.1875rem 0.1875rem;
 }
