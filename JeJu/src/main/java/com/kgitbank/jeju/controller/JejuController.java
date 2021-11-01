@@ -41,7 +41,7 @@ public class JejuController {
 	@GetMapping("/mypage")
 	public String mypage(HttpSession session, Model model) throws ParseException {
 		String id = (String) session.getAttribute("id");
-		if(LoginVerifier.isLogin(session)) {
+		if(!LoginVerifier.isLogin(session)) {
 			return "redirect:/login";
 		}
 		
