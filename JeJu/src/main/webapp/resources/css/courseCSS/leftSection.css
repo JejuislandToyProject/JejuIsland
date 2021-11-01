@@ -9,7 +9,6 @@ ul{
    list-style:none;
    padding-left:0px;
   }
-
 #weather-flex{
    display: flex;
    flex-direction: row;
@@ -100,7 +99,7 @@ ul{
 
 .weather-text > *{
 		font-size: 0.7rem;
-		margin-bottom:: 2rem; 
+		margin-bottom: 2rem; 
 		
 } 
 
@@ -110,7 +109,7 @@ ul{
    overflow-x: hidden;
    height: 25.5rem;
 }	
-}
+
 @media (max-width: 850px){
 	
 #leftSidebar-3{
@@ -118,5 +117,6 @@ ul{
    overflow-y: scroll;
    overflow-x: hidden;
    height: 18rem;
+ }
+}
 }	
-	}
