@@ -142,7 +142,7 @@ const addSaveCourseModal = (jsonData) => {
      maindiv.appendChild(divfirst);
      divfirst.appendChild(div1);
      div1.appendChild(spanPass);
-	 spanPass.appendChild(itemimage); // 여기임 새로 만든거 ㅅㅂ 제발좀 돼라;
+	 spanPass.appendChild(itemimage);
      maindiv.appendChild(divsecond);
      divsecond.appendChild(span1);   
     

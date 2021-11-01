@@ -179,7 +179,7 @@ const applyPagination = ()=> {
 			}		
         }
   });
-     xhttp.open('GET', './restlike/' + spotId, true);
+     xhttp.open('GET', '/jeju/board/restlike/' + spotId, true);
      xhttp.setRequestHeader('content-type', 'application/json;charset=UTF-8');
 
      xhttp.send();

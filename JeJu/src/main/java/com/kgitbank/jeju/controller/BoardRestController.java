@@ -86,7 +86,7 @@ public class BoardRestController {
 	public TouristSpot updateLikeCnt(@PathVariable int id) {
 		touristSpotMapper.addDTOSpotPositiveNum(id);
 		TouristSpot getLike = touristSpotMapper.getListBySpotPositiveNum(id);
-		 log.info(getLike+""); 
+
 		return getLike;	
 	}
 	
@@ -94,7 +94,7 @@ public class BoardRestController {
 	public FamousRestaurant updateRestLike(@PathVariable int id) {
 		famousRestaurantMapper.addDTORestPositiveNum(id);
 		FamousRestaurant getLike = famousRestaurantMapper.getListByRestPositiveNum(id);
-		 log.info(getLike+""); 
+
 		return getLike;	
 	}
 

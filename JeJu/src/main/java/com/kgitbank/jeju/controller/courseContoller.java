@@ -37,7 +37,7 @@ public class courseContoller {
 	public String getTravelCourse(HttpServletRequest req, HttpSession session) {
 
 		if(!LoginVerifier.isLogin(session)) {
-			return "redirect:/login/login";
+			return "redirect:/login";
 		}
 		String user_id = session.getAttribute("id").toString();
 		MyCourse course = new MyCourse(); 
