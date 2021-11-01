@@ -135,9 +135,8 @@ input:checked + .slider:before {
 }
 
 .btn-3:hover {
-  color: #ff0000;
-  border: 3px solid #ff0000;
-  background-color: #f3f3f3;
+  color: #f3f3f3;
+  border: 3px solid #f3f3f3;
 }
 
 .btn-3::after {
