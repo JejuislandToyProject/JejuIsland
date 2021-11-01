@@ -30,7 +30,7 @@
     <!-- Navigation-->
     <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3 navbar-shrink" id="mainNav">
         <div class="container px-4 px-lg-5">
-            <a class="navbar-brand" href="#page-top">🍊Travel Jeju🍊</a>
+            <h1 class="fs-4 fw-normal"><a class="navbar-brand" href="#page-top">TRAVEL JEJU</a></h1>
             <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ms-auto my-2 my-lg-0">
@@ -45,7 +45,6 @@
         </div>
     </nav>
 
-    
     <!-- body -->
     <div id="body"></div>
     <!-- About-->
@@ -63,7 +62,6 @@
               </div>
           </div>
       </div>
-
   </section>
   
     <!-- border top navigation -->
@@ -75,24 +73,24 @@
          <a class="nav-link" href="<c:url value="/board/tourist"/>">관광지 명소</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="<c:url value="/listRestaurant"/>">맛집 정보</a>
+          <a class="nav-link" href="<c:url value="/board/restaurant"/>">맛집 정보</a>
         </li>
         
         <li class="nav-item">
-          <a class="nav-link" href="./login.html">여행 코스</a>
+          <a class="nav-link" href="/jeju/travelCourse/course">여행 코스</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="./login.html">제주도 새 소식</a>
+          <a class="nav-link" href="/jeju/login.html">제주도 새 소식</a>
         </li>
     </ul>
   </div>
 </div>
-      
+	  
       <!-- card layout -->
       <div id="contents-body">
       </div>
       
-            <!-- navbar -->
+            <!-- writing navbar -->
       <!-- Navbar Transparent -->
 	<nav
 	  class="navbar navbar-expand-lg top-0 z-index-3 w-100 shadow-none my-3  navbar-transparent ">
@@ -102,13 +100,13 @@
 	        <div class="row">
 	          <div class="col-auto">
 	            <div class="bg-white border-radius-lg d-flex me-2">
-	              <input type="text" class="form-control border-0 ps-3" placeholder="Type here...">
-	              <button class="btn bg-gradient-primary my-1 me-1">Search</button>
+	              <input id="searchValue" type="text" class="form-control border-0 ps-3" placeholder="Type here...">
+	              <button id="searchBtn" class="btn bg-gradient-primary my-1 me-1">Search</button>
 	            </div>
 	            
 	              <div class="me-3">
 				     <button href="#" onclick="addTourist()" class="btn btn-outline-info float-end me-5 mt-2"> 글쓰기</button>
-				      
+
 				      <script type="text/javascript">
 				      function addTourist(){
 				          var uid="<%=(String)session.getAttribute("id") %>";
@@ -121,8 +119,6 @@
 				      }
 				      </script>
 			      </div>
-			      
-			      
 	          </div>
 	        </div>
 	      </ul>

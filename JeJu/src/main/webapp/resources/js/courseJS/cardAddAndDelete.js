@@ -21,7 +21,6 @@ function addText(pos, con){  // 줘야할 매개변수는  포지션(좌표), �
                yAnchor: 1
            });      
          ovarlays.push(customOverlay);
-		 
 };
   
 // 오른쪽 카드 선택시 왼쪽으로 카드를 넘겨주는 기능 
@@ -41,7 +40,7 @@ function addCard(cardTitle, value){
       
    }else{
       names.push(cardTitle);
-         const xhttp = new XMLHttpRequest();
+        
          var checker = value.split('/');
          
  var markerPosition = new kakao.maps.LatLng(checker[0],checker[1]); // 마커가 표시될 위치입니다
@@ -66,6 +65,8 @@ function addCard(cardTitle, value){
      // 마커가 지도 위에 표시되도록 설정합니다
      marker.setMap(map);  
      markers.push(marker);
+
+		 const xhttp = new XMLHttpRequest();
 
          xhttp.addEventListener('readystatechange', (e) => {
               const readyState = e.target.readyState;
@@ -140,3 +141,38 @@ const allDelete = document.getElementById('allDelete');
       lines = [];
       
 });
+
+// GET방식
+/*const courseSaveBtn = document.getElementById('courseSaveBtn');
+	courseSaveBtn.addEventListener('click', () =>{
+		const imagePath = document.querySelectorAll('.modalimg-fluid');
+		var images = [];
+
+		for(var i = 0; i < imagePath.length; ++i){
+			var checker = imagePath[i].getAttribute('src');
+			
+		}		
+		
+		location.href = "./course/save/"+names;
+	});*/
+	
+// POST 방식	
+	$(document).ready(function(){
+		$('#courseSaveBtn').click(function(){
+			const imagePath = document.querySelectorAll('.modalimg-fluid');
+			var images = [];
+			
+			for(var i = 0; i < imagePath.length; ++i){
+			var checker = imagePath[i].getAttribute('src');
+			images.push(checker);
+			}			
+			var form = $('<form></form>');
+			form.attr('action', './course/save');
+			form.attr('method', 'post');
+			form.appendTo('body');
+			form.append("<input type='hidden' value="+images+" name='imagePath'>");
+			form.append('<input type="hidden" value="'+names+'" name="namePath">');
+			form.submit();
+		})
+		
+	})

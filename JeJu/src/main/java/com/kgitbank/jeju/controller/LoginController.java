@@ -9,6 +9,7 @@ import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -32,26 +33,24 @@ public class LoginController {
 		@Autowired
 		private LoginService loginservice;
 		
-		// ·Î±×ÀÎ È­¸é
 		@RequestMapping(value = "/login", method = { RequestMethod.GET, RequestMethod.POST })
 		public String login(HttpServletRequest request, HttpServletResponse response, Model model, HttpSession session) {
 
 			String serverUrl = request.getScheme()+"://"+request.getServerName();
+
 			if(request.getServerPort() != 80) {
 				serverUrl = serverUrl + ":" + request.getServerPort();
 			}
 			
 			String naverAuthUrl = naverLoginBO.getAuthorizationUrl(session, serverUrl);
 			String kakaoAuthUrl = kakaoLoginBO.getAuthorizationUrl(session, serverUrl);
-			
-			
+
 			model.addAttribute("kakaoAuthUrl", kakaoAuthUrl);
 			model.addAttribute("naverAuthUrl", naverAuthUrl);
 
 			return "/login/login";
 		}
-
-		// ³×ÀÌ¹ö ·Î±×ÀÎ ¼º°ø½Ã callback
+		
 		@RequestMapping(value = "/naverAuth", method = { RequestMethod.GET, RequestMethod.POST })
 		public String naverOauth2ClientCallback(HttpServletRequest request, HttpServletResponse response, Model model, @RequestParam String code, @RequestParam String state, HttpSession session) throws Exception {
 			String serverUrl = request.getScheme()+"://"+request.getServerName();
@@ -62,7 +61,7 @@ public class LoginController {
 			OAuth2AccessToken oauthToken;
 			oauthToken = naverLoginBO.getAccessToken(session, code, state, serverUrl);
 			if(oauthToken == null) {
-				model.addAttribute("msg", "³×ÀÌ¹ö ·Î±×ÀÎ access ÅäÅ« ¹ß±Þ ¿À·ù ÀÔ´Ï´Ù.");
+				model.addAttribute("msg", "ï¿½ï¿½ï¿½Ì¹ï¿½ ï¿½Î±ï¿½ï¿½ï¿½ access ï¿½ï¿½Å« ï¿½ß±ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ô´Ï´ï¿½.");
 				model.addAttribute("url", "/");
 				log.info("oauthToken null");
 				return "/login/login";
@@ -82,7 +81,7 @@ public class LoginController {
 			String oauthToken = kakaoLoginBO.getAccessToken(request, code);
 
 			if(oauthToken == null) {
-				model.addAttribute("msg", "Ä«Ä«¿À ·Î±×ÀÎ access ÅäÅ« ¹ß±Þ ¿À·ù ÀÔ´Ï´Ù.");
+				model.addAttribute("msg", "Ä«Ä«ï¿½ï¿½ ï¿½Î±ï¿½ï¿½ï¿½ access ï¿½ï¿½Å« ï¿½ß±ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ô´Ï´ï¿½.");
 				model.addAttribute("url", "/");
 				return "/login/login";
 			}
@@ -91,10 +90,15 @@ public class LoginController {
 			return "redirect:/login/callback";
 		}
 		
-		//·Î±×¾Æ¿ô 
+		//logout
 		@RequestMapping(value = "/logout", method = { RequestMethod.GET, RequestMethod.POST }) 
 		public String logout(HttpSession session)throws IOException { 
-			session.invalidate(); 
+			session.removeAttribute("id");
 			return "redirect:/"; 
+		}
+		
+		@GetMapping("/login/callback")
+		public String callback() {
+			return "redirect:/";
 		}
 }

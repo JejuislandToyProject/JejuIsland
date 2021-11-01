@@ -30,3 +30,148 @@
 .sidebar-dark .nav-item .nav-link[data-toggle=collapse]::after {
     color: #f3f3f3;
 }
+
+/* The switch - utilities-user-ban.jsp button  */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+  vertical-align:middle;
+}
+
+/* Hide default HTML checkbox */
+.switch input {display:none;}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #32da11;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+/* The switch - utilities-user-ban.jsp button end*/
+
+.border-left-warning2{
+  border-left: 0.25rem
+ solid #5061fb!important;
+}
+ 
+.text-warning2 {
+    color: #5061fb!important;
+}
+
+/*log out button*/
+.btn-3,
+.btn-3::after {
+  -webkit-transition: all 0.3s;
+	-moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
+	transition: all 0.3s;
+}
+
+.btn-3 {
+  background: none;
+  background-color: #579b73;
+  border: 3px solid #f3f3f3;
+  border-radius: 5px;
+  color: #f3f3f3;
+  display: block;
+  font-size: 12px;
+  font-weight: bold;
+  margin: 0.6em auto;
+  padding: 0.6em 1.8em;
+
+  position: relative;
+  text-transform: uppercase;
+}
+
+.btn-3::before,
+.btn-3::after {
+  background: #fff;
+  content: '';
+  position: absolute;
+  z-index: -1;
+}
+
+.btn-3:hover {
+  color: #ff0000;
+  border: 3px solid #ff0000;
+  background-color: #f3f3f3;
+}
+
+.btn-3::after {
+  height: 0;
+  left: 50%;
+  top: 50%;
+  width: 0;
+}
+
+.btn-3:hover:after {
+  height: 100%;
+  left: 0;
+  top: 0;
+  width: 100%;
+}
+
+/* utilities-site */
+.input-button{
+  padding: 6px 25px;
+  background-color:#198754;
+  border-radius: 4px;
+  color: white;
+  cursor: pointer;
+}
+input[type=file] {
+	display:none;
+}
+input[type=submit] {
+	border: none;
+	margin-bottom: 5rem;
+	margin-left: 80%;
+}
+
+
+
+
+

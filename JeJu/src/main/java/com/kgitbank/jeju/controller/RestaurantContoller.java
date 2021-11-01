@@ -10,7 +10,9 @@ import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -38,7 +40,7 @@ public class RestaurantContoller {
 	@Autowired
 	LocationMapper locationMapper; 
 	
-	@RequestMapping(value = "/listRestaurant", method = RequestMethod.GET)
+	@RequestMapping(value = "board/restaurant", method = RequestMethod.GET)
 	public String TourList(HttpSession session) throws Exception {
 		String id = (String)session.getAttribute("id");
 		
@@ -52,7 +54,7 @@ public class RestaurantContoller {
 		public String addRestaurant(Model model, HttpSession session) throws IllegalStateException, IOException {
 			List<Locations> locationList = locationMapper.ListLocations();
 			session.getAttribute("id");
-			log.info(session.getAttribute("id")+" °ª");
+			log.info(session.getAttribute("id")+" ï¿½ï¿½");
 			
 			model.addAttribute("locations", locationMapper.ListLocations());
 			return "board/restaurantForm";
@@ -92,7 +94,7 @@ public class RestaurantContoller {
 		}
 		
 		// detail and click count
-		@RequestMapping(value="/listFamous", method= RequestMethod.GET)
+		@RequestMapping(value="/board/listFamous", method= RequestMethod.GET)
 		public ModelAndView listById (@RequestParam("famous_restaurant_id") int famous_restaurant_id, 
 					HttpSession session) throws Exception{
 			
@@ -105,4 +107,6 @@ public class RestaurantContoller {
 			log.info(mav);
 			return mav;
 		}
+		
+
 }

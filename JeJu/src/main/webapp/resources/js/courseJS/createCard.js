@@ -121,10 +121,14 @@ const addSaveCourseModal = (jsonData) => {
      const div1 = document.createElement('div');
      div1.setAttribute('class','d-block');
     
-     
+	 const spanPass = document.createElement('span');
+	 spanPass.setAttribute('class','passImageValue');
+	
      const itemimage = document.createElement('img');
-     itemimage.src = jsonData.image;
+	 itemimage.setAttribute('id','image-box');
+	 itemimage.setAttribute('value',jsonData.image);
      itemimage.setAttribute('class','modalimg-fluid border-radius-lg');
+     itemimage.src = jsonData.image;
      
      
      const divsecond = document.createElement('div');
@@ -137,7 +141,8 @@ const addSaveCourseModal = (jsonData) => {
      courseItems.appendChild(maindiv);
      maindiv.appendChild(divfirst);
      divfirst.appendChild(div1);
-     div1.appendChild(itemimage);
+     div1.appendChild(spanPass);
+	 spanPass.appendChild(itemimage); // 여기임 새로 만든거 ㅅㅂ 제발좀 돼라;
      maindiv.appendChild(divsecond);
      divsecond.appendChild(span1);   
     

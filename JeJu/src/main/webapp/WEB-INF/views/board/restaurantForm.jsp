@@ -408,26 +408,11 @@
 					    
 					    const coord = document.getElementById('coord');
 					    
-					    kakao.maps.event.addListener(marker, 'click', function() {
-					    	console.log(Object.values(position)[0]);
-					    	/* var mapContainer = document.getElementById('map'), // 지도를 표시할 div
-					    	mapOption = {
-					    	        center: new kakao.maps.LatLng(Object.values(position)[1],Object.values(position)[0]), // 지도의 중심좌표
-					    	        level: 5 // 지도의 확대 레벨
-					    	}; */
-					    	
+					    kakao.maps.event.addListener(marker, 'click', function() {				    	
 					    	var moveLatLon = new kakao.maps.LatLng(Object.values(position)[1],Object.values(position)[0]);
 					    	map.setLevel(5);
-					        // 지도 중심을 부드럽게 이동시킵니다
-					        // 만약 이동할 거리가 지도 화면보다 크면 부드러운 효과 없이 이동합니다
 					        map.panTo(moveLatLon);
-					        
-					        // 지도를 1레벨 올립니다 (지도가 축소됩니다)
-					        
-					        
-					
-							
-					        
+
 					    	latitude.innerHTML = Object.values(position)[1];
 					    	longitude.innerHTML = Object.values(position)[0];
 					    	

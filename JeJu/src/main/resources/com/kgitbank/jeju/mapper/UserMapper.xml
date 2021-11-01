@@ -5,7 +5,7 @@
 <mapper namespace="com.kgitbank.jeju.mapper.UserMapper">
 
   <select id="listUsers" resultType="com.kgitbank.jeju.dto.User">
-    SELECT * FROM user_info;
+    SELECT * FROM user_info
   </select>
 
   <select id="listUser" resultType="com.kgitbank.jeju.dto.User">
@@ -13,7 +13,11 @@
   </select>
 
   <insert id="addUser">
-    INSERT INTO user_info
+    INSERT INTO user_info(user_id, nickname)
     VALUES(#{user_id}, #{nickname})
   </insert>
+  
+  <update id="updateBan">
+  	UPDATE user_info SET banned=#{banned} WHERE user_id = #{user_id}
+  </update>
 </mapper>

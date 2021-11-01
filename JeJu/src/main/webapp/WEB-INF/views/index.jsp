@@ -76,24 +76,19 @@
 								href="<c:url value="/login"/>">Login</a></li>
 						</c:otherwise>
 					</c:choose>
-
-
-
 				</ul>
-
 			</div>
 		</div>
 	</nav>
 
 	<!-- Header-->
-	<header class="masthead d-flex align-items-center">
+	<header class="masthead d-flex align-items-center" style="background-image: url(${main_info.image })">
 		<div class="container px-4 px-lg-5 text-center">
-			<h2 class="h1 mb-1">Travel Jeju</h2>
+			<h2 class="h1 mb-1">${main_info.title }</h2>
 
 
 			<h3 class="mb-5">
-				<em><span style="color: whitesmoke;">Start Jeju Island
-						Travel Plan</span></em>
+				<em><span style="color: whitesmoke;">${main_info.sub_title }</span></em>
 			</h3>
 			<a class="btn btn-success btn-xl" type="reset" value="Reset"
 				href="#about">Find Out More</a>

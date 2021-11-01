@@ -36,7 +36,6 @@ saveCourseBtn.addEventListener('click', event => {
 		names = [];
 		for(var j = 0; j < vcheck.length; ++j){
 			var checker = vcheck[j].getAttribute('id');
-			console.log('네임스에 들어가는 값들 : '+checker);
 			names.push(checker);
 		};
 		
