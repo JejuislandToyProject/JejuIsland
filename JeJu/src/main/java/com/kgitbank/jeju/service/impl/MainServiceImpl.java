@@ -7,7 +7,9 @@ import org.springframework.stereotype.Service;
 import org.springframework.ui.Model;
 
 import com.kgitbank.jeju.admin.mapper.MainMapper;
+import com.kgitbank.jeju.dto.FamousRestaurant;
 import com.kgitbank.jeju.dto.TouristSpot;
+import com.kgitbank.jeju.mapper.FamousRestaurantMapper;
 import com.kgitbank.jeju.mapper.TouristSpotMapper;
 import com.kgitbank.jeju.service.MainService;
 
@@ -20,11 +22,16 @@ public class MainServiceImpl implements MainService{
 	TouristSpotMapper touristMapper;
 	
 	@Autowired
+	FamousRestaurantMapper restaurantMapper;
+	
+	@Autowired
 	MainMapper mainMapper;
 	
 	@Override
 	public void setMainAttribute(Model model) {
 		List<TouristSpot> spots = touristMapper.listOrderByLike();
+		List<FamousRestaurant> restaurants = restaurantMapper.listOrderByLike();
+		
 		if(spots.size() < 4) {
 			spots.addAll(spots);
 		}
@@ -34,8 +41,13 @@ public class MainServiceImpl implements MainService{
 		for(TouristSpot spot: spots) {
 			spot.setImage(spot.getImage().replace("..", "."));
 		}
+		for(FamousRestaurant restaurant: restaurants) {
+			restaurant.setImage(restaurant.getImage().replace("..", "."));
+		}
+		
 		model.addAttribute("main_info", mainMapper.getList().get(0));
 		model.addAttribute("tourist_spot", spots);
+		model.addAttribute("famous_restaurant", restaurants);
 		model.addAttribute("tourist_spot_size", spots.size());
 	}
 }
