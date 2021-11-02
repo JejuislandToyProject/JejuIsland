@@ -154,17 +154,17 @@
 								<button id="searchBtn" class="btn bg-gradient-primary my-1 me-1">Search</button>
 							</div>
 							<div class="me-3">
-								<button href="#" onclick="addTourist()"
+								<button href="#" onclick="addRestList()"
 									class="btn btn-outline-info float-end me-5 mt-2">글쓰기</button>
 
 								<script type="text/javascript">
-				      function addTourist(){
+				      function addRestList(){
 				          var uid="<%=(String)session.getAttribute("id") %>";
 				          
 				          if(uid=="null"){
 				        	  alert("로그인이 팔요한 항목입니다.")
 				          }else{
-				        	  location.replace("/jeju/addTourist");
+				        	  location.replace("/jeju/addRestList");
 				          }
 				      }
 				      </script>
