@@ -1,5 +1,5 @@
 @charset "UTF-8";
-
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
 
 * {
@@ -43,13 +43,18 @@ body{
    flex-direction: row;   
 }
 
-.courseLogoBox > :first-child{
-   font-size : 2.5rem;
-   font-weight : 700;
+.courseLogoBox > :first-child {
    vertical-align : middle;
    margin-top : 0.6rem;
 }
-
+.logo {
+	user-select: none;
+}
+.courseLogoBox > :first-child .logo {
+	font-size : 2.5rem;
+   	font-weight : normal;
+	font-family:'Bebas Neue', cursive, sans-serif;
+}
 .courseLogoBox > :nth-child(2){
    font-size : 0.9rem;
    font-weight : 100;
@@ -58,7 +63,9 @@ body{
    margin-top : 2.0rem;
    padding-left : 0.6rem;
 }
-
+.courseLogoBox a:hover {
+	color: #000;
+}
 .courseTopbar > :nth-child(3){
    font-size : 2.5rem;
    font-weight : 400;
@@ -121,7 +128,7 @@ body{
 	background-color: #f3f3f3; 
 }
 
-@media (max-width: 1400px){
+@media (max-width: 1500px){
 .courseTopbar{
    display: grid;
     grid-template-columns: 0fr 1fr 0fr 1fr;
@@ -177,7 +184,6 @@ body{
 .direction > :first-child{
 	width:100%;
 	align-items: center;
-	margin-left:3.15rem;
 }
 
 #card-plus-btn {

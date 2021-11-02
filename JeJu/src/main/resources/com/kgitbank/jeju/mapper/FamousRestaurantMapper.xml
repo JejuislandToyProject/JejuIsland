@@ -7,6 +7,9 @@
   <select id="list" resultType="com.kgitbank.jeju.dto.FamousRestaurant">
     SELECT * FROM famous_restaurant INNER JOIN user_info USING (user_id)
   </select>
+  <select id="listOrderByLike" resultType="com.kgitbank.jeju.dto.FamousRestaurant">
+    SELECT * FROM famous_restaurant ORDER BY positive_num DESC
+  </select>
  
    <select id="listByUser" resultType="com.kgitbank.jeju.dto.FamousRestaurant">
     SELECT * FROM famous_restaurant INNER JOIN user_info USING (user_id)
@@ -42,12 +45,12 @@
 		SELECT * FROM famous_restaurant WHERE address = #{textValue}
 	</select>
 	
-	 <update id="addLike" >
+	 <update id="addDTORestPositiveNum" >
 	 UPDATE famous_restaurant SET positive_num  = positive_num +1
 	 WHERE famous_restaurant_id = #{id} 
 	 </update>
 	 
-	 <select id="getLike" resultType="com.kgitbank.jeju.dto.FamousRestaurant">
+	 <select id="getListByRestPositiveNum" resultType="com.kgitbank.jeju.dto.FamousRestaurant">
 	 	SELECT * FROM famous_restaurant WHERE famous_restaurant_id = #{id}
 	 </select>
 </mapper>

@@ -10,6 +10,9 @@
     <select id="listTourist" resultType="com.kgitbank.jeju.dto.TouristSpot">
         select * from tourist_spot INNER JOIN user_info USING (user_id)
     </select>
+    <select id="listOrderByLike" resultType="com.kgitbank.jeju.dto.TouristSpot">
+    	select * from tourist_spot ORDER BY positive_num DESC
+    </select>
     
     <select id="courseList" resultType="com.kgitbank.jeju.dto.TouristSpot">
         select title, image, positive_num, latitude, longitude from tourist_spot ORDER BY positive_num DESC
@@ -26,7 +29,7 @@
     name,
     title,
     description,
-    location_id,
+    location,
     image,
     hashtag,
     latitude,
@@ -38,8 +41,8 @@
     #{name},
     #{title},
     #{description},
-    #{location_id },
-    #{image },
+    #{location},
+    #{image},
     #{hashtag},
     #{latitude},
     #{longitude},
@@ -94,12 +97,12 @@
 		SELECT * FROM tourist_spot WHERE title Like '%'||#{textValue}||'%'
 	</select>
 	
-	 <update id="addLike" >
+	 <update id="addDTOSpotPositiveNum" >
 	 UPDATE tourist_spot SET positive_num  = positive_num +1
 	 WHERE tourist_spot_id = #{id} 
 	 </update>
 	 
-	 <select id="getLike" resultType="com.kgitbank.jeju.dto.TouristSpot">
+	 <select id="getListBySpotPositiveNum" resultType="com.kgitbank.jeju.dto.TouristSpot">
 	 	SELECT * FROM tourist_spot WHERE tourist_spot_id = #{id}
 	 </select>
 	 

@@ -1,14 +1,19 @@
 const body = document.querySelector('body');
 const modal = document.querySelector('.modal');
 const btnOpenPopup = document.querySelector('.btn-open-popup');
+const btnOpenPopupSub = document.querySelector('.btn-open-popup-sub');
+popupEvent(btnOpenPopup);
+popupEvent(btnOpenPopupSub);
 
- btnOpenPopup.addEventListener('click', () => {
-  modal.classList.toggle('show');
-  
-//   if (modal.classList.contains('show')) {
-//     body.style.overflow = 'hidden'; // 퀴즈 페이지가 열리면 본문의 스크롤이 감춰진다
-//   }
-});
+function popupEvent(btn) {
+	btn.addEventListener('click', () => {
+	  modal.classList.toggle('show');
+	  
+	   if (modal.classList.contains('show')) {
+	     body.style.overflow = 'hidden'; // 퀴즈 페이지가 열리면 본문의 스크롤이 감춰진다
+	  }
+	})
+};
 
 /* 모달창 영역 밖으로 벗어나 버튼을 누를시 닫히는 기능이나 문제를 풀다가
     창이 닫혀서 초기화되면 기분이 나쁠 가능성이 있어 막아두고 버튼을 눌러야 닫을수 있게 해둔다 */

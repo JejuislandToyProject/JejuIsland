@@ -89,7 +89,7 @@
 
 .save-modal-content{
    width: 62.5rem;
-   height: 20.625rem;
+   height: 24.625rem;
    background-color: white;
    overflow: hidden;
    box-shadow: 0 0 0.7rem rgba(0, 0, 0, 0,15);
@@ -446,5 +446,4 @@
  }
 }
 
-	}
 

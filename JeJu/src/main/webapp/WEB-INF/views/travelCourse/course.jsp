@@ -31,7 +31,7 @@
 			</div>
 			
 			<div id="courseItems"></div>
-			<div class="saveCourseModalBtn"><button type="button"class="btn btn btn-90"style="color: white; background-color: #1d809f;">저장하기</button></div>
+			<div class="saveCourseModalBtn"><button id="courseSaveBtn" type="button"class="btn btn btn-90"style="color: white; background-color: #1d809f;">저장하기</button></div>
 			
 		</div>
 	</div>
@@ -72,16 +72,45 @@
 	 <div class="courseTopbar">
 		<div></div>
 		<div class="courseLogoBox">
-			<div><a href="/jeju">TRAVEL JEJU</a></div>
-			<div><a href="/jeju">MAKE YOUR TRAVEL COURSE</a></div>
+			<div><a href="/jeju" class="logo">TRAVEL JEJU</a></div>
+			<div><a href="/jeju" class="logo">MAKE YOUR TRAVEL COURSE</a></div>
 		</div>
 		<div></div>
 		<div class="courseLogoBox">
 		<div class="menu"><a href="/jeju">HOME</a></div>
 		<div class="menu"><a href="/jeju/#about">About</a></div>
-		<div class="menu"><a href="/jeju/listRestaurant">Reservation</a></div>
 		<div class="menu"><a href="/jeju/board/tourist">Best-Pick</a></div>
-		<div class="menu"><a href="/jeju/login">Login</a></div>
+		<c:choose>
+						<c:when test="${sessionScope.id ne null}">
+							<li style="list-style:none; margin-top:24px; margin-left: -10px" class="nav-item dropdown"><a style="color:black;"
+								class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
+								role="button" data-bs-toggle="dropdown" aria-expanded="false">
+									<i class="fa fa-user-circle fa-lg"></i>
+							</a>
+								<ul style="list-style:none;" class="dropdown-menu" aria-labelledby="navbarDropdown">
+									<li><a class="dropdown-item" href="<c:url value="/mypage"/>"> 
+										<i class="fa fa-home fa-lg"></i> 
+										<font style="vertical-align: inherit;"> 
+											<font style="vertical-align: inherit;">Mypage</font>
+										</font>
+									</a></li>
+									
+									<li class="divider dropdown-divider"></li>
+									
+									<li><a class="dropdown-item" href="<c:url value="/logout"/>"> 
+										<i class="fas fa-power-off fa-lg"></i> 
+										<font style="vertical-align: inherit;"> 
+											<font style="vertical-align: inherit;">Logout</font>
+										</font>
+									</a></li>
+									
+								</ul></li>
+						</c:when>
+						<c:otherwise>
+							<div class="menu"><a style="color:black;"
+								href="<c:url value="/login"/>">Login</a></div>
+						</c:otherwise>
+					</c:choose>
 		</div>
 	</div> 
 

@@ -1,3 +1,8 @@
+body .no-padding {
+	padding-left: 0;
+	padding-right: 0;
+}
+
 /* nav dropdown */
 .navbar .nav-item span {
     position: relative;
@@ -67,18 +72,108 @@
     background-color: #e9ecef !important;
 }
 
-@media (max-width: 975px) {
-	.navbar .dropdown-menu {
-		margin-left: 0;
-	}
+/* visual */
+.masthead h2, .masthead h3 {
+	user-select: none;
+}
+/* about */
+#about {
+	padding-top: 4rem;
+	padding-bottom: 4rem;
+}
+/* course */
+#services {
+	padding-top: 3rem;
+	padding-bottom: 0;
+}
+.plan-sub-title {
+	color: #f9e000;
+}
+.plan-image {
+	width: 50%;
+	height: 400px;
+	background: no-repeat center/cover url(../img/course-illustration.svg);
+}
+.plan-btn {
+	margin-top: 2rem;
+	padding: 0.6rem 1.3rem;
+	background-color: #f9e000;
+}
+.plan-btn:hover {
+	background-color: #e2cc03;
+	color: #fff;
+}
+.svg-water-animation {
+	overflow: hidden;
+	position: relative;
+	height: 200px;
+}
+.water-background {
+	position: absolute;
+	left: 0;
+	bottom: -20px;
+}
+.water-fill {
+  	animation: wave 0.7s infinite linear, 
+             fill-up 10s infinite ease-out alternate;
 }
 
+@keyframes wave {
+  0% { x: -400px; }
+  100% { x: 0; }
+}
+
+
+@keyframes fill-up {
+  0% {
+    height: 100px;
+    y: 130px;
+  }
+  100% {
+    height: 200px;
+    y: -30px;
+  }
+}
+
+/*map*/
+#map {
+	margin: 3rem 0 0 5rem;
+	width: calc(50% - 5rem); 
+	height: 350px;
+	border: 5px solid #9dbad1;
+	border-radius: 5px;
+}
+
+.showcase-text h2 {
+	line-height: 1.6;
+}
+.login-btn {
+	width: 250px;
+	height: 50px;
+	padding: 0;
+	float: right;
+    margin: 4rem 3rem 0 0;
+}
+.login-btn a {
+	line-height: 50px;
+	color: #fff;
+	text-decoration: none;
+	text-align: center;
+}
+/* tourist spot */
+#tourist-spot {
+	background-color: #faf5dd;
+}
 /* carousel */
 .col-md-3 {
 	display: inline-block;
 	margin-left: -4px;
 }
-
+.col-md-3 a {
+	display: block;
+	width: 100%;
+	height: 100%;
+}
 .col-md-3 img {
 	width: 100%;
 	height: auto;
@@ -93,10 +188,71 @@ body .carousel-indicators {
 }
 
 body .carousel-control-prev-icon, body .carousel-control-next-icon {
-	background-color: black;
+	background-color: none;
+}
+.carousel-item img{
+	width: 100%;
+	height: 200px;
 }
 
-body .no-padding {
-	padding-left: 0;
-	padding-right: 0;
+/*reservation*/
+#reservation .row .col-lg-6 .portfolio-item{
+	overflow: hidden;
+	height: 350px;
+}
+#reservation .row .col-lg-6 .portfolio-item img {
+	width: 100%;
+	height: 350px;
+}
+
+/*best pick*/ 
+#bestpick {
+	height: 500px;
+}
+.project-card a {
+	display: block;
+	width: 100%;
+	height: 100%;
+	text-decoration: none;
+	font-weight: normal;
+	color: #212529;
+}
+
+/* quiz */ 
+.far.fa-question-circle:hover {
+	cursor: pointer;
+}
+.slider_list {
+	width: auto; 
+	height: auto; 
+	overflow: visible;
+}
+li#on {
+	margin: 48px; 
+}
+.mySlides {
+	float: none; 
+	position: absolute; 
+	top: 0px; 
+	width: 400px; 
+	left: 0px; 
+	transition: none 0s ease 0s; 
+	transform: translate3d(0px, 0px, 0px);
+}
+/* footer */
+
+@media (max-width: 975px) {
+	.plan-image {
+		width: 100%;
+	}
+	.water-background {
+		bottom: -50px
+	}
+	.navbar .dropdown-menu {
+		margin-left: 0;
+	}
+	#map {
+		margin-left: 0;
+		width: 100%;
+	}
 }

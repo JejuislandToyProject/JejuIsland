@@ -2,15 +2,15 @@
 <!DOCTYPE mapper
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.kgitbank.jeju.mapper.SpotAndRestaurantXMLMapper">
+<mapper namespace="com.kgitbank.jeju.mapper.SpotAndRestaurantMapper">
 	
-	<select id="getItem" resultType="com.kgitbank.jeju.dto.SpotAndRestaurant">
+	<select id="getDTOSpotAndRestaurant" resultType="com.kgitbank.jeju.dto.SpotAndRestaurant">
 		SELECT title, image, positive_num, latitude, longitude FROM 
 		(SELECT title, image, positive_num, latitude, longitude FROM tourist_spot 
 		UNION SELECT title, image, positive_num, latitude, longitude FROM famous_restaurant)WHERE title = #{title}
 	</select>
 	
-	<select id="getSearch" resultType="com.kgitbank.jeju.dto.SpotAndRestaurant">
+	<select id="getListBySearchTitle" resultType="com.kgitbank.jeju.dto.SpotAndRestaurant">
 		SELECT title, image, positive_num, latitude, longitude FROM 
 		(SELECT title, image, positive_num, latitude, longitude FROM tourist_spot 
 		UNION SELECT title, image, positive_num, latitude, longitude FROM famous_restaurant)WHERE title LIKE '%'||#{textValue}||'%'

@@ -84,17 +84,17 @@ public class BoardRestController {
 	
 	@GetMapping(value="/board/like/{id}", produces = "application/json; charset=UTF-8")
 	public TouristSpot updateLikeCnt(@PathVariable int id) {
-		touristSpotMapper.addLike(id);
-		TouristSpot getLike = touristSpotMapper.getLike(id);
-		 log.info(getLike+""); 
+		touristSpotMapper.addDTOSpotPositiveNum(id);
+		TouristSpot getLike = touristSpotMapper.getListBySpotPositiveNum(id);
+
 		return getLike;	
 	}
 	
 	@GetMapping(value="/board/restlike/{id}", produces = "application/json; charset=UTF-8")
 	public FamousRestaurant updateRestLike(@PathVariable int id) {
-		famousRestaurantMapper.addLike(id);
-		FamousRestaurant getLike = famousRestaurantMapper.getLike(id);
-		 log.info(getLike+""); 
+		famousRestaurantMapper.addDTORestPositiveNum(id);
+		FamousRestaurant getLike = famousRestaurantMapper.getListByRestPositiveNum(id);
+
 		return getLike;	
 	}
 

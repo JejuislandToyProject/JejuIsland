@@ -3,6 +3,9 @@
 .bg-gradient-primary {
 	background-color: #198754;
 }
+.sidebar {
+	width: 16rem!important;
+}
 .sidebar-dark .sidebar-brand {
     color: #f3f3f3;
 }
@@ -30,7 +33,13 @@
 .sidebar-dark .nav-item .nav-link[data-toggle=collapse]::after {
     color: #f3f3f3;
 }
-
+.nav-content {
+	position: fixed;
+}
+#sidebarToggle {
+	margin-left: 50%;
+  	transform: translate(-50%, -50%);
+}
 /* The switch - utilities-user-ban.jsp button  */
 .switch {
   position: relative;
@@ -117,7 +126,7 @@ input:checked + .slider:before {
   border-radius: 5px;
   color: #f3f3f3;
   display: block;
-  font-size: 12px;
+  font-size: 0.8rem;
   font-weight: bold;
   margin: 0.6em auto;
   padding: 0.6em 1.8em;
@@ -152,7 +161,14 @@ input:checked + .slider:before {
   top: 0;
   width: 100%;
 }
+.sidebar.toggled  .btn-3 {
+	font-size: 0.5rem;
+}
 
+/*dashboard*/
+.visit-counts {
+	padding: 0 0 5rem 0;
+}
 /* utilities-site */
 .input-button{
   padding: 6px 25px;
