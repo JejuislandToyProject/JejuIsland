@@ -72,8 +72,8 @@
 	 <div class="courseTopbar">
 		<div></div>
 		<div class="courseLogoBox">
-			<div><a href="/jeju">TRAVEL JEJU</a></div>
-			<div><a href="/jeju">MAKE YOUR TRAVEL COURSE</a></div>
+			<div><a href="/jeju" class="logo">TRAVEL JEJU</a></div>
+			<div><a href="/jeju" class="logo">MAKE YOUR TRAVEL COURSE</a></div>
 		</div>
 		<div></div>
 		<div class="courseLogoBox">

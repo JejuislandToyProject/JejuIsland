@@ -5,7 +5,7 @@
 <html lang="kr">
 <head>
 
-<title>Jeju Island</title>
+<title>Travel Jeju</title>
 
 <link rel="stylesheet"
 	href="https://fonts.googleapis.com/icon?family=Material+Icons">
