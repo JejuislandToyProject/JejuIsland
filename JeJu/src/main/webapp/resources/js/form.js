@@ -5,13 +5,16 @@ document.getElementById("user_id").style.display="none";
 
 $(document).ready(function(){
         $("#btnSave").click(function(){
+	const testForm = document.getElementById('sortBy')
+	console.log(testForm);
          var title = $("#title");
          var name = $("#name");
          var description = $("description");
          var image = $("#image");
          var latitude = $("#latitude").text();
          var longitude = $("#longitude").text();
-         var location = $("#location_id option:selected").text();
+         var location = $("#location").val();
+		console.log(location);
 
            if(title ==""){
                    alert("제목을 입력하세요");

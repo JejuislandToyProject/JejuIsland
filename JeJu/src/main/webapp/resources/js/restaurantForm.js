@@ -5,8 +5,7 @@ document.getElementById("user_id").style.display="none";
 
 $(document).ready(function(){
         $("#btnSave").click(function(){
-         
-          var title = $("#title");
+           var title = $("#title");
 		   var name = $("#name");
 		   var description = $("description");
 		   var image = $("#image");
