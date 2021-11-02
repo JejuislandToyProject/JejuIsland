@@ -128,7 +128,7 @@ body{
 	background-color: #f3f3f3; 
 }
 
-@media (max-width: 1400px){
+@media (max-width: 1500px){
 .courseTopbar{
    display: grid;
     grid-template-columns: 0fr 1fr 0fr 1fr;
@@ -184,7 +184,6 @@ body{
 .direction > :first-child{
 	width:100%;
 	align-items: center;
-	margin-left:3.15rem;
 }
 
 #card-plus-btn {

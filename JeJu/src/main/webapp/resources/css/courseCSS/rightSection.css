@@ -75,9 +75,10 @@
 }
 
 #right-box3{
-text-align : center;
+   text-align : center;
+   overflow-x: hidden;
    overflow-y: scroll;
-   height: 47.2rem;
+   height: 35%;
 }
 
 .sidebarPadding {
@@ -89,7 +90,7 @@ text-align : center;
    margin: 0.7rem;
    text-align: center;
 }
-@media (max-width: 1400px){
+@media (max-width: 1500px){
 #right-box1{
    width:100%;
    padding: 0.5rem 0rem;
@@ -125,6 +126,6 @@ text-align : center;
 #right-box3{
 text-align : center;
    overflow-y: scroll;
-   height: 45rem;
+   height: 500px;
 }
 }

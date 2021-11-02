@@ -106,7 +106,7 @@
               </svg>
             </a>
           </li>
-          <li class="breadcrumb-item text-sm"><a class="opacity-5 text-dark" href="javascript:;">TouristSpot</a></li>
+          <li class="breadcrumb-item text-sm"><a class="opacity-5 text-dark" href="javascript:;">FamousRestaurant</a></li>
           <li class="breadcrumb-item text-sm text-dark active" aria-current="page">${famous_restraurant.location}</li>
         </ol>
        
@@ -119,7 +119,7 @@
       <div class="row ">
         <div class="col-lg-9 col-12 mx-auto">
           <div class="card card-body mt-4">
-              <img class="img-fluid border-radius-lg" src="${famous_restraurant.image}" />
+              <img class="img-fluid border-radius-lg viewImg" src="${famous_restraurant.image}" />
               <h5 class="mb-0 mt-2">제목 : ${famous_restraurant.title}</h5>
               <p class="text-sm mb-1 mt-1" >
               <label for="projectName" class="form-label">식당이름 : ${famous_restraurant.name}</label>

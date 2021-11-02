@@ -128,7 +128,7 @@
 			<div class="row gx-5 align-items-center justify-content-center">
 				<div class="col-lg-8 col-xl-7 col-xxl-6 plan-image">
 				</div>
-				<div class="col-xl-5 col-xxl-6 d-none d-xl-block showcase-text">
+				<div class="col-lg-6 order-lg-1 my-auto showcase-text">
 					<h2 class="mb-3 plan-sub-title">Kakao Map으로 보는 내 여행 경로</h2>
 					<p class="lead">
 						제주도 여행으로의 한걸음 설레는 마음으로 계획을 세워보세요! <br>
