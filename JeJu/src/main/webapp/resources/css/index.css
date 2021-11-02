@@ -111,7 +111,7 @@ body .no-padding {
 .water-background {
 	position: absolute;
 	left: 0;
-	bottom: 0;
+	bottom: -20px;
 }
 .water-fill {
   	animation: wave 0.7s infinite linear, 
@@ -242,6 +242,12 @@ li#on {
 /* footer */
 
 @media (max-width: 975px) {
+	.plan-image {
+		width: 100%;
+	}
+	.water-background {
+		bottom: -50px
+	}
 	.navbar .dropdown-menu {
 		margin-left: 0;
 	}
