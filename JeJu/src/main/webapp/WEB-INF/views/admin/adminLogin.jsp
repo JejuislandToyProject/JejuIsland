@@ -41,11 +41,6 @@
 				<label for="floatingPassword">Password</label>
 			</div>
 
-			<div class="checkbox mb-3">
-				<label> <input type="checkbox" value="remember-me">
-					Remember me
-				</label>
-			</div>
 			<input type="hidden" name="${_csrf.parameterName}"
 				value="${_csrf.token}" />
 			<button class="w-100 btn btn-lg btn-primary align-middle" type="submit">Sign in</button>
