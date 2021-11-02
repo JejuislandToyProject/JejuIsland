@@ -6,7 +6,6 @@ document.getElementById("user_id").style.display="none";
 $(document).ready(function(){
         $("#btnSave").click(function(){
 
-		const testForm = document.getElementById('sortBy')
          var title = $("#title");
          var name = $("#name");
          var description = $("description");
