@@ -99,7 +99,7 @@ public class BoardController {
 		MultipartFile file = multipartRequest.getFile("imageFile");
 		
 		// 경로 값 2개 root_path, attach_path
-		String rearPath = request.getSession().getServletContext().getRealPath("/resources/img/famous_restraurant/"); 	
+		String rearPath = request.getSession().getServletContext().getRealPath("../resources/img/famous_restraurant/"); 	
 		try (
                 FileOutputStream fos = new FileOutputStream(rearPath + file.getOriginalFilename());
                 InputStream is = file.getInputStream();
@@ -134,7 +134,7 @@ public class BoardController {
 	
 		MultipartFile file = multipartRequest.getFile("imageFile");
 
-		String rearPath = request.getSession().getServletContext().getRealPath("/resources/img/spot/"); 
+		String rearPath = request.getSession().getServletContext().getRealPath("../resources/img/spot/"); 
 		try (
                 FileOutputStream fos = new FileOutputStream(rearPath + file.getOriginalFilename());
                 InputStream is = file.getInputStream();
