@@ -45,11 +45,12 @@ function boardPath(location,latitude, longitude){
 	const sortbyLocation = document.querySelector('#sortBy > #location_path');
 	const sortbyLatitude = document.querySelector('#sortBy > #getlatitude');
 	const sortbyLongitude = document.querySelector('#sortBy > #getlongitude');
+	console.log(sortbyForm);
 	sortbyForm.action= './addRestaurant/success';
 	sortbyForm.method = 'post';
 	sortbyForm.enctype = 'multipart/form-data';
 	sortbyLocation.value = location;
 	sortbyLatitude.value = latitude;
 	sortbyLongitude.value = longitude;
-	sortbyForm.submit();
+	/*sortbyForm.submit();*/
 }

@@ -96,10 +96,11 @@ public class BoardController {
 		model.addAttribute("locations",locationMapper.ListLocations());
 		model.addAttribute("user_id", touristSpot.getUser_id());
 		
+		
 		MultipartFile file = multipartRequest.getFile("imageFile");
 		
 		// 경로 값 2개 root_path, attach_path
-		String rearPath = request.getSession().getServletContext().getRealPath("../resources/img/famous_restraurant/"); 	
+		String rearPath = request.getSession().getServletContext().getRealPath("/resources/img/famous_restraurant/"); 	
 		try (
                 FileOutputStream fos = new FileOutputStream(rearPath + file.getOriginalFilename());
                 InputStream is = file.getInputStream();
@@ -119,7 +120,7 @@ public class BoardController {
 		touristSpot.setLocation(new String (request.getParameter("location_path").getBytes("8859_1"), "UTF-8"));
 		touristSpot.setHashtag(new String (request.getParameter("hashtag").getBytes("8859_1"), "UTF-8"));
 		touristSpot.setDescription(new String (request.getParameter("description").getBytes("8859_1"), "UTF-8"));
-		touristSpot.setImage("/resources/img/spot/"+file.getOriginalFilename());
+		touristSpot.setImage("../resources/img/spot/"+file.getOriginalFilename());
 		touristSpot.setLatitude(Double.parseDouble(new String (request.getParameter("getlatitude").getBytes("8859_1"), "UTF-8")));
 		touristSpot.setLongitude(Double.parseDouble(new String (request.getParameter("getlongitude").getBytes("8859_1"), "UTF-8")));
 		touristSpotMapper.addTourist(touristSpot);
@@ -134,7 +135,7 @@ public class BoardController {
 	
 		MultipartFile file = multipartRequest.getFile("imageFile");
 
-		String rearPath = request.getSession().getServletContext().getRealPath("../resources/img/spot/"); 
+		String rearPath = request.getSession().getServletContext().getRealPath("/resources/img/spot/"); 
 		try (
                 FileOutputStream fos = new FileOutputStream(rearPath + file.getOriginalFilename());
                 InputStream is = file.getInputStream();
@@ -154,7 +155,7 @@ public class BoardController {
 		famousRestaurant.setLocation(new String (request.getParameter("location_path").getBytes("8859_1"), "UTF-8"));
 		famousRestaurant.setHashtag(new String (request.getParameter("hashtag").getBytes("8859_1"), "UTF-8"));
 		famousRestaurant.setDescription(new String (request.getParameter("description").getBytes("8859_1"), "UTF-8"));
-		famousRestaurant.setImage("/resources/img/spot/"+file.getOriginalFilename());
+		famousRestaurant.setImage("../resources/img/famous_restraurant/"+file.getOriginalFilename());
 		famousRestaurant.setLatitude(Double.parseDouble(new String (request.getParameter("getlatitude").getBytes("8859_1"), "UTF-8")));
 		famousRestaurant.setLongitude(Double.parseDouble(new String (request.getParameter("getlongitude").getBytes("8859_1"), "UTF-8")));
 		restaurantMapper.addRestaurant(famousRestaurant);
@@ -183,7 +184,6 @@ public class BoardController {
 		
 		return "board/restaurantBoard";
 	}
-	
-	
+		
 	
 }

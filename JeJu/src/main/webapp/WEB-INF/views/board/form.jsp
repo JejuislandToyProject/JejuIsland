@@ -159,7 +159,7 @@
 					<hr class="horizontal dark my-3">
 
 					
-					<form id="sortBy">
+					<form id="sortByForm">
 					
 						<label for="projectName" class="form-label">제목</label> <input
 							type="text" class="form-control" name="title" id="title"
@@ -259,7 +259,7 @@
 	</footer>
 	<!-- scripts -->
 	<script src="<c:url value='/resources/js/scripts.js' />"></script>
-	<script src="<c:url value='/resources/js/form.js/'/>"></script>
+	<script src="<c:url value='/resources/js/form.js'/>"></script>
 	<script type="text/javascript"  
 					src="//dapi.kakao.com/v2/maps/sdk.js?appkey=115edfd07bd1f09ac3a8881810a2bb4b&libraries=services"></script>
 					<script>

@@ -34,6 +34,7 @@
     hashtag,
     latitude,
     longitude,
+    positive_num,
     user_id, registration_time) 
     VALUES(
     <!-- db에 시퀀스 넣어주기 -->
@@ -46,6 +47,7 @@
     #{hashtag},
     #{latitude},
     #{longitude},
+    0,
     #{user_id}, sysdate
     )
     </insert>

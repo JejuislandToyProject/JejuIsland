@@ -23,10 +23,10 @@
   <insert id="addRestaurant">
     INSERT INTO famous_restaurant(famous_restaurant_id,
     name, user_id, title, image, description, hashtag, location,  
- 	latitude, longitude, registration_time )
+ 	latitude, longitude, positive_num, registration_time )
     VALUES(FR_ID_SEQ.nextval, #{name}, #{user_id}, #{title}, 
     		#{image}, #{description}, #{hashtag}, 
-    		#{location}, #{latitude}, #{longitude}, sysdate)
+    		#{location}, #{latitude}, #{longitude}, 0, sysdate)
   </insert>
   
    <select id="famousList" resultType="com.kgitbank.jeju.dto.FamousRestaurant">

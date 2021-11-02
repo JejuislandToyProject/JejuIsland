@@ -38,12 +38,13 @@ $(document).ready(function(){
 			
         });
 });
-const sortbyForm = document.getElementById('sortBy');
+
 function boardPath(location,latitude, longitude){
-    
-	const sortbyLocation = document.querySelector('#sortBy > #location_path');
-	const sortbyLatitude = document.querySelector('#sortBy > #getlatitude');
-	const sortbyLongitude = document.querySelector('#sortBy > #getlongitude');
+    const sortbyForm = document.getElementById('sortByForm');
+	const sortbyLocation = document.querySelector('#sortByForm > #location_path');
+	const sortbyLatitude = document.querySelector('#sortByForm > #getlatitude');
+	const sortbyLongitude = document.querySelector('#sortByForm > #getlongitude');
+	console.log(sortbyForm);
 	sortbyForm.action= './addTourist/success';
 	sortbyForm.method = 'post';
 	sortbyForm.enctype = 'multipart/form-data';
