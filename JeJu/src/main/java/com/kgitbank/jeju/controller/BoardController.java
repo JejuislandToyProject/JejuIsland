@@ -71,7 +71,7 @@ public class BoardController {
 	public String addTourist(Model model, HttpSession session) throws IllegalStateException, IOException {
 		List<Locations> list = locationMapper.ListLocations();		
 		model.addAttribute("locations", locationMapper.ListLocations());
-		return "board/form";
+		return "board/touristForm";
 	}
 	
 
@@ -113,7 +113,7 @@ public class BoardController {
 				HttpSession session) throws Exception{
 		
 		ModelAndView mav = new ModelAndView();
-		mav.setViewName("board/view");
+		mav.setViewName("board/touristView");
 		mav.addObject("tourist_spot_id",tourist_spot_id);
 		mav.addObject("tourist_spot",touristSpotMapper.listView(tourist_spot_id));
 		
