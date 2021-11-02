@@ -38,9 +38,9 @@ $(document).ready(function(){
 			
         });
 });
-
+const sortbyForm = document.getElementById('sortBy');
 function boardPath(location,latitude, longitude){
-    const sortbyForm = document.getElementById('sortBy');
+    
 	const sortbyLocation = document.querySelector('#sortBy > #location_path');
 	const sortbyLatitude = document.querySelector('#sortBy > #getlatitude');
 	const sortbyLongitude = document.querySelector('#sortBy > #getlongitude');
