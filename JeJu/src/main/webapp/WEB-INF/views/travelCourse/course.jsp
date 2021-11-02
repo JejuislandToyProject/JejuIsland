@@ -38,23 +38,23 @@
 	<div class="save-overlay"></div>
 
 
-	<div class="introduce-modal">
+	<div class="introduce-modal" style="width: inherit; max-width:100%; height: auto;">
 		<div class="modal-content">
 			<button class="introduce-close">&times;</button>
 			<div id="carouselExampleControls" class="carousel slide"
 				data-bs-ride="carousel">
 				<div class="carousel-inner">
 					<div class="carousel-item active">
-						<img src="../resources/img/firstModal.jpg" class="d-block w-100" alt="...">
+						<img style="width: inherit; max-width:100%; height: auto;" src="../resources/img/firstModal.jpg" class="d-block" alt="...">
 					</div>
 					<div class="carousel-item">
-						<img src="../resources/img/twoModal.jpg" class="d-block w-100" alt="...">
+						<img style="width: inherit; max-width:100%; height: auto;" src="../resources/img/twoModal.jpg" class="d-block" alt="...">
 					</div>
 					<div class="carousel-item">
-						<img src="../resources/img/threeModal.jpg" class="d-block w-100" alt="…">
+						<img style="width: inherit; max-width:100%; height: auto;" src="../resources/img/threeModal.jpg" class="d-block" alt="…">
 					</div>
 					<div class="carousel-item">
-						<img src="../resources/img/fourModal.jpg" class="d-block w-100" alt="…">
+						<img style="width: inherit; max-width:100%; height: auto;" src="../resources/img/fourModal.jpg" class="d-block" alt="…">
 					</div>
 				</div>
 				<button class="carousel-control-prev" type="button"
