@@ -333,7 +333,7 @@
 	<!-- Call to Action-->
 	<section id="bestpick">
 		<h2 style="text-align: center;">
-			<i class="fas fa-crown" style="color: gold;"></i>이번 달 Best Pick
+			<i class="fas fa-crown" style="color: gold;"></i>Best Pick
 		</h2>
 		<br> <br>
 		<div class="best-img1">
