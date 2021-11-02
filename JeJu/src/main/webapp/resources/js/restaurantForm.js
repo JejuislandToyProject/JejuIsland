@@ -12,7 +12,7 @@ $(document).ready(function(){
 		   var image = $("#image");
 		   var latitude = $("#latitude").text();
 		   var longitude = $("#longitude").text();
-		   var location = $("#location_id option:selected").text();
+		   var location = $("#location").val();
         
            
            if(title ==""){
@@ -45,7 +45,6 @@ function boardPath(location,latitude, longitude){
 	const sortbyLocation = document.querySelector('#sortBy > #location_path');
 	const sortbyLatitude = document.querySelector('#sortBy > #getlatitude');
 	const sortbyLongitude = document.querySelector('#sortBy > #getlongitude');
-
 	sortbyForm.action= './addRestaurant/success';
 	sortbyForm.method = 'post';
 	sortbyForm.enctype = 'multipart/form-data';
