@@ -1171,8 +1171,7 @@
 						<div id="ment">즐거운 제주도, 행복한 제주도</div>
 
 						<div class="clrear_select"></div>
-						<button id="answer">정답 보러가기</button>
-						<button id="adios" onclick="quiz_close()">닫기</button>
+						<button style="margin-left: 12px;" id="adios" onclick="quiz_close()">닫기</button>
 					</div>
 				</div>
 			</li>

@@ -45,13 +45,16 @@
 				data-bs-ride="carousel">
 				<div class="carousel-inner">
 					<div class="carousel-item active">
-						<img src="../resources/img/firstModal.png" class="d-block w-100" alt="...">
+						<img src="../resources/img/firstModal.jpg" class="d-block w-100" alt="...">
 					</div>
 					<div class="carousel-item">
-						<img src="../resources/img/twoModal.png" class="d-block w-100" alt="...">
+						<img src="../resources/img/twoModal.jpg" class="d-block w-100" alt="...">
 					</div>
 					<div class="carousel-item">
-						<img src="../resources/img/threeModal.png" class="d-block w-100" alt="…">
+						<img src="../resources/img/threeModal.jpg" class="d-block w-100" alt="…">
+					</div>
+					<div class="carousel-item">
+						<img src="../resources/img/fourModal.jpg" class="d-block w-100" alt="…">
 					</div>
 				</div>
 				<button class="carousel-control-prev" type="button"
