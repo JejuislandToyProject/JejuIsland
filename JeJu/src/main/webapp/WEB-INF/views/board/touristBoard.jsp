@@ -7,45 +7,96 @@
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>CardBorder</title>
+<title>TouristBorder</title>
 
-    <!-- Font Awesome icons (free version)-->
-    <script src="https://use.fontawesome.com/releases/v5.15.3/js/all.js" crossorigin="anonymous"></script>
-    <!-- Simple line icons-->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.5.5/css/simple-line-icons.min.css" rel="stylesheet" />
-    <!-- Google fonts-->
-    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css" />
-    <!-- Core theme CSS (includes Bootstrap)-->
-    <link href="<c:url value='/resources/css/styles.css'/>" rel="stylesheet" />
-    <link rel="stylesheet" type="text/css" href="<c:url value='/resources/css/cssmodal.css'/>">
-    
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-        rel="stylesheet">
-       
-    <!-- Border CSS-->
-    
-    <link rel="stylesheet" type="text/css" href="<c:url value='/resources/css/border.css' />">
+<!-- Font Awesome icons (free version)-->
+<script src="https://use.fontawesome.com/releases/v5.15.3/js/all.js"
+	crossorigin="anonymous"></script>
+<!-- Simple line icons-->
+<link
+	href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.5.5/css/simple-line-icons.min.css"
+	rel="stylesheet" />
+<!-- Google fonts-->
+<link
+	href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic"
+	rel="stylesheet" type="text/css" />
+<!-- Core theme CSS (includes Bootstrap)-->
+<link href="<c:url value='/resources/css/styles.css'/>" rel="stylesheet" />
+<link rel="stylesheet" type="text/css"
+	href="<c:url value='/resources/css/cssmodal.css'/>">
+
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+	rel="stylesheet">
+
+<!-- Border CSS-->
+
+<link rel="stylesheet" type="text/css"
+	href="<c:url value='/resources/css/border.css' />">
+	
 </head>
-<body>
-    <!-- Navigation-->
-    <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3 navbar-shrink" id="mainNav">
-        <div class="container px-4 px-lg-5">
-            <h1 class="fs-4 fw-normal"><a class="navbar-brand" href="/jeju">TRAVEL JEJU</a></h1>
-            <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-            <div class="collapse navbar-collapse" id="navbarResponsive">
-                <ul class="navbar-nav ms-auto my-2 my-lg-0">
-                    <li class="nav-item"><a class="nav-link" href="/jeju">Home</a></li>
-       
-                    <li class="nav-item"><a class="nav-link" href="../login">Login</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+<body id="page-top">
+	<!-- Navigation-->
+	<nav
+		class="navbar navbar-expand-lg navbar-light fixed-top py-3 navbar-shrink"
+		id="mainNav">
+		<div class="container px-4 px-lg-5">
+			<h1 class="fs-4 fw-normal">
+				<a class="navbar-brand" href="#page-top">TRAVEL JEJU</a>
+			</h1>
+			<button class="navbar-toggler navbar-toggler-right" type="button"
+				data-bs-toggle="collapse" data-bs-target="#navbarResponsive"
+				aria-controls="navbarResponsive" aria-expanded="false"
+				aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarResponsive">
+				<ul class="navbar-nav ms-auto my-2 my-lg-0">
+					<li class="nav-item"><a class="nav-link" href="/jeju">Home</a></li>
+
+					<c:choose>
+						<c:when test="${sessionScope.id ne null}">
+							<li class="nav-item dropdown"><a
+								class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
+								role="button" data-bs-toggle="dropdown" aria-expanded="false">
+									<i class="fa fa-user-circle fa-lg"></i>
+							</a>
+								<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+									<li><a class="dropdown-item"
+										href="<c:url value="/mypage"/>"> <i
+											class="fa fa-home fa-lg"></i> <font
+											style="vertical-align: inherit;"> <font
+												style="vertical-align: inherit;">Mypage</font>
+										</font>
+									</a></li>
+
+									<li class="divider dropdown-divider"></li>
+
+									<li><a class="dropdown-item"
+										href="<c:url value="/logout"/>"> <i
+											class="fas fa-power-off fa-lg"></i> <font
+											style="vertical-align: inherit;"> <font
+												style="vertical-align: inherit;">Logout</font>
+										</font>
+									</a></li>
+
+								</ul></li>
+						</c:when>
+						<c:otherwise>
+							<li class="nav-item"><a class="nav-link"
+								href="<c:url value="../login"/>">Login</a></li>
+						</c:otherwise>
+					</c:choose>
+				</ul>
+			</div>
+		</div>
+	</nav>
+    
+    <div class="bg-image"></div>
 
     <!-- body -->
     <div id="body"></div>
     <!-- About-->
-    <section class="content-section bg-light" id="about">
+    <section class="content-section bg-text" id="about">
       <div class="container px-4 px-lg-5 text-center">
           <div class="row gx-4 gx-lg-5 justify-content-center">
               <div class="col-lg-10">
@@ -130,31 +181,25 @@
         </ul>
       </nav>
     
-    <!-- Footer 부분 수정해야함-->
-    <!-- Footer-->
-    <footer class="footer text-center">
-      <div class="container px-4 px-lg-5">
-          <!-- <ul class="list-inline mb-5">
-              <li class="list-inline-item">
-                  <a class="social-link rounded-circle text-white mr-3" href="#!"><i class="icon-social-facebook"></i></a>
-              </li>
-              <li class="list-inline-item">
-                  <a class="social-link rounded-circle text-white mr-3" href="#!"><i class="icon-social-twitter"></i></a>
-              </li>
-              <li class="list-inline-item">
-                  <a class="social-link rounded-circle text-white" href="#!"><i class="icon-social-github"></i></a>
-              </li>
-          </ul> -->
-          <div class="logoimg">
-              <!-- <img src="./assets/img/최종팀플 제주도 로고.png" alt=""> -->
-          </div>
-          <p class="text-muted small mb-0">Jeju Island</p>
-      </div>
-  </footer>
-  
+	<!-- Footer-->
+	<footer class="footer text-center">
+		<div class="container px-4 px-lg-5">
+			<p class="text-muted small">Copyright © Jeju Website 2021</p>
+		</div>
+	</footer>
+	
+		<!-- Scroll to Top Button-->
+	<a class="scroll-to-top rounded" href="#page-top"><i
+		class="fas fa-angle-up"></i></a>
+	<!-- Bootstrap core JS-->
+	<script
+		src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
+	<!-- Core theme JS-->
+ 
+</body>
+
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 	<script src="<c:url value="/resources/js/jquery.twbsPagination.min.js"/>"></script>
   	<script src="<c:url value="/resources/js/touristBoard.js"/>"></script>
- 
-</body>
+
 </html>

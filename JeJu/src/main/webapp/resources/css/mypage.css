@@ -12,6 +12,7 @@ html {
 h1 {
 	user-select: none;
 	margin: 2rem 0 1.2rem 3.4rem;
+	font-weight: normal;
 	font-family: 'Bebas Neue', cursive, sans-serif;
 }
 h1:hover {

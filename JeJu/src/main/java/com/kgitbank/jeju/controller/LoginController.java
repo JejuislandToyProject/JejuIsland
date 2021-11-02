@@ -61,7 +61,7 @@ public class LoginController {
 			OAuth2AccessToken oauthToken;
 			oauthToken = naverLoginBO.getAccessToken(session, code, state, serverUrl);
 			if(oauthToken == null) {
-				model.addAttribute("msg", "���̹� �α��� access ��ū �߱� ���� �Դϴ�.");
+				model.addAttribute("msg", "accessToken null");
 				model.addAttribute("url", "/");
 				log.info("oauthToken null");
 				return "/login/login";
@@ -81,7 +81,7 @@ public class LoginController {
 			String oauthToken = kakaoLoginBO.getAccessToken(request, code);
 
 			if(oauthToken == null) {
-				model.addAttribute("msg", "īī�� �α��� access ��ū �߱� ���� �Դϴ�.");
+				model.addAttribute("msg", "accessToken null");
 				model.addAttribute("url", "/");
 				return "/login/login";
 			}

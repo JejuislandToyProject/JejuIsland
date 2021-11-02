@@ -216,9 +216,9 @@ const addURLMappingEvent = (ele, id, isTourist)=>{
 	ele.onclick = () => {
         let detailUrl = "";
         if(isTourist) {
-            detailUrl = `../board/listById?tourist_spot_id=${id}`;
+            detailUrl = `./board/listById?tourist_spot_id=${id}`;
         } else {
-            detailUrl = `../board/listFamous?famous_restaurant_id=${id}`;
+            detailUrl = `./board/listFamous?famous_restaurant_id=${id}`;
         }
         window.location = detailUrl;
     }
