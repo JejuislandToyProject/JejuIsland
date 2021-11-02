@@ -158,9 +158,9 @@
 					<p class="text-sm mb-0 mt-1">새로운 제주의 볼거리를 추가해보세요</p>
 					<hr class="horizontal dark my-3">
 
-					<form action="<c:url value="/addTourist/success"/>" method="post"
-                        enctype="multipart/form-data">
-
+					
+					<form id="sortBy">
+					
 						<label for="projectName" class="form-label">제목</label> <input
 							type="text" class="form-control" name="title" id="title"
 							placeholder="제목을 적어주세요"> <label for="projectName"
@@ -169,14 +169,15 @@
 							placeholder="이름을 적어주세요"> 
 							<label for="projectName" class="form-label mt-2">장소</label>
 						<div class="col-6">
-							<Select name="location_id ">
+							<Select id="location_id" name="location_id ">
 								<c:forEach items="${locations }" var="location" varStatus="i">
 									<option id="location" name="location"
-										value="${location.location_id }">${location.location }
+										value="${location.location_id }">${location.location }										
 									</option>
 									<br>
 								</c:forEach>
 							</Select>
+							
 						</div>
 						<label for="projectName" class="form-label">해시태그</label> 
 						<input type="text" class="form-control" name="hashtag" id="hashtag"
@@ -192,8 +193,12 @@
 						 <label
 							class="mt-4 mb-4 form-label">Starting Files</label>
 						<!-- file add -->
-
-						<input type="file" name="image" id="image">
+						
+						<input type="file" name="imageFile" id="image" >
+						<input type="hidden" id="user_id" name="user_id" value="${id }">
+						<input type="hidden" id="location_path" name="location_path">
+						<input type="hidden" id="getlatitude" name="getlatitude">
+						<input type="hidden" id="getlongitude" name="getlongitude">
 					</form>
 					
 					<!-- map API  -->
@@ -204,8 +209,8 @@
 						        <div class="option">
 						            <div>
 						                <form onsubmit="searchPlaces(); return false;">
-						                    키워드 : <input type="text" value="제주도 맛집" id="keyword" size="15"> 
-						                    <button type="submit">검색하기</button> 
+						                    키워드 : <input type="text" value="제주도 맛집" id="keyword" size="15">
+						                    <button type="submit">검색하기</button>
 						                </form>
 						            </div>
 						        </div>
@@ -215,7 +220,7 @@
 						    </div>
 						</div>	
 						
-						<div id="user_id">${id }</div>
+						
 						 위도 : <div id="latitude"></div>
 						 경도 : <div id="longitude"></div>
 											
