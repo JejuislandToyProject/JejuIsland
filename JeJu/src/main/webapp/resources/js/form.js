@@ -13,7 +13,6 @@ $(document).ready(function(){
          var longitude = $("#longitude").text();
          var location = $("#location_id option:selected").text();
 
-
            if(title ==""){
                    alert("제목을 입력하세요");
             /*document.form1.title.focus();*/
