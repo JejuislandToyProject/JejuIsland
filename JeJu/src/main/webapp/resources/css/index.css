@@ -71,6 +71,11 @@ body .no-padding {
 .navbar .divider {
     background-color: #e9ecef !important;
 }
+
+/* visual */
+.masthead h2, .masthead h3 {
+	user-select: none;
+}
 /* about */
 #about {
 	padding-top: 4rem;
