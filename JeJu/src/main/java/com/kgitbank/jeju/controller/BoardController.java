@@ -1,21 +1,13 @@
 package com.kgitbank.jeju.controller;
 
-
-import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.util.Arrays;
-import java.util.HashMap;
 import java.util.List;
-
 import javax.inject.Inject;
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -27,7 +19,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 import org.springframework.web.servlet.ModelAndView;
-
 import com.kgitbank.jeju.dto.FamousRestaurant;
 import com.kgitbank.jeju.dto.Locations;
 import com.kgitbank.jeju.dto.TouristSpot;
@@ -35,7 +26,6 @@ import com.kgitbank.jeju.mapper.FamousRestaurantMapper;
 import com.kgitbank.jeju.mapper.LocationMapper;
 import com.kgitbank.jeju.mapper.TouristSpotMapper;
 import com.kgitbank.jeju.service.BoardService;
-import com.kgitbank.jeju.service.impl.BoardServiceImpl;
 
 import lombok.extern.log4j.Log4j;
 import lombok.extern.slf4j.Slf4j;
@@ -74,15 +64,13 @@ public class BoardController {
 	
 	// 2. insert form
 	@ RequestMapping(value="/addTourist", method = RequestMethod.GET)
-	public String addTourist(Model model, HttpSession session) throws IllegalStateException, IOException {
-		List<Locations> list = locationMapper.ListLocations();		
+	public String addTourist(Model model, HttpSession session) throws IllegalStateException, IOException {	
 		model.addAttribute("locations", locationMapper.ListLocations());
 		return "board/touristForm";
 	}
 	
 	@ RequestMapping(value="/addRestList", method = RequestMethod.GET)
-	public String addRestList(Model model, HttpSession session) throws IllegalStateException, IOException {
-		List<Locations> list = locationMapper.ListLocations();		
+	public String addRestList(Model model, HttpSession session) throws IllegalStateException, IOException {	
 		model.addAttribute("locations", locationMapper.ListLocations());
 		return "board/restaurantForm";
 	}

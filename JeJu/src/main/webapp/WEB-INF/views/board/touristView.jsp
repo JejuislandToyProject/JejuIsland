@@ -137,7 +137,7 @@
              
               </div>
               <hr class="horizontal dark my-3">
-            <label for="projectName" class="col-6 form-label">지역명: ${locations.location}</label>
+            <label for="projectName" class="col-6 form-label">지역명: ${tourist_spot.location}</label>
             <label for="projectName" class="col-6 form-label">설명</label>
             <label for="projectName" class="col-6 form-label">${tourist_spot.description}</label>
             <label for="projectName" class="col-6 form-label">해시태그 : ${tourist_spot.hashtag}</label>

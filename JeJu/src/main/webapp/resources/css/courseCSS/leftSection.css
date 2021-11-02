@@ -78,10 +78,10 @@ ul{
    text-align : center;
    overflow-y: scroll;
    overflow-x: hidden;
-   height: 25.4rem;
+   height: 15%;
 }
 
-@media (max-width: 1400px){
+@media (max-width: 1500px){
 	
 #weather-flex{
    display: flex;
@@ -107,16 +107,24 @@ ul{
    text-align : center;
    overflow-y: scroll;
    overflow-x: hidden;
-   height: 25.5rem;
+   height: 10%;
 }	
 
 @media (max-width: 850px){
-	
-#leftSidebar-3{
-   text-align : center;
-   overflow-y: scroll;
-   overflow-x: hidden;
-   height: 18rem;
- }
+.courseLogoBox > :first-child .logo {
+	font-size: 1.8rem;
+}
+.courseLogoBox > :last-child .logo {
+	display: none;
+}
+.leftSidebar-1 > :first-child {
+    font-size: 0.8rem;
+}
+.leftSidebar-2 > :first-child {
+	font-size: 0.8rem;
+}
+.btn {
+	font-size: 0.8rem;
+}
 }
 }	

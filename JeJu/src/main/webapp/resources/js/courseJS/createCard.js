@@ -14,7 +14,7 @@ const addToList = (jsonData) => {
       div3.setAttribute('class', 'direction'); 
       
       const div_image = document.createElement('div');
-      div_image.setAttribute('class', 'col-4');
+      //div_image.setAttribute('class', 'col-4');
       div_image.setAttribute('id','jsonImg');
       div_image.innerHTML = "<img id=img-size src="+ jsonData.image + "/>";
       const div4 = document.createElement('div');
@@ -69,7 +69,7 @@ const addToListLeft = (jsonDataLeft) => {
           div3.setAttribute('class', 'direction');
           
           const div_image = document.createElement('div');
-          div_image.setAttribute('class', 'col-4');
+          //div_image.setAttribute('class', 'col-4');
           div_image.setAttribute('id','jsonImg');
           div_image.setAttribute('ondragstart' ,'return false'); // 이미지의 드래그를 막아줌
           div_image.innerHTML = "<img id=img-size src="+ jsonDataLeft.image + ">";

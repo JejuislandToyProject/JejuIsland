@@ -5,8 +5,8 @@ document.getElementById("user_id").style.display="none";
 
 $(document).ready(function(){
         $("#btnSave").click(function(){
-	const testForm = document.getElementById('sortBy')
-	console.log(testForm);
+
+		const testForm = document.getElementById('sortBy')
          var title = $("#title");
          var name = $("#name");
          var description = $("description");
@@ -14,7 +14,6 @@ $(document).ready(function(){
          var latitude = $("#latitude").text();
          var longitude = $("#longitude").text();
          var location = $("#location").val();
-		console.log(location);
 
            if(title ==""){
                    alert("제목을 입력하세요");

@@ -34,14 +34,14 @@
     <div id="wrapper">
         <!-- Sidebar -->
        <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
-			<div class="nav-content">
+          <<div class="nav-content">
 	            <!-- Sidebar - Brand -->
-	            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
-	                <div class="sidebar-brand-icon rotate-n-15">
-	                    <i class="fab fa-whmcs"></i>
-	                </div>
-	                <div class="sidebar-brand-text mx-3">관리자 페이지</div>
-	            </a>
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="<c:url value="/admin/main"/>">
+                <div class="sidebar-brand-icon rotate-n-15">
+                    <i class="fab fa-whmcs"></i>
+                </div>
+                <div class="sidebar-brand-text mx-3">관리자 페이지</div>
+            </a>
 	
 	            <!-- Divider -->
 	            <hr class="sidebar-divider my-0">
@@ -95,6 +95,7 @@
 	                <button class="rounded-circle border-0" id="sidebarToggle" style="margin-top: 140px;"></button>
 	            </div>
 			</div>
+
         </ul>
         <!-- End of Sidebar -->
 
