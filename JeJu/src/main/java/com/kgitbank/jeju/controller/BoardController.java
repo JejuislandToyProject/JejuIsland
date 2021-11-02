@@ -1,21 +1,13 @@
 package com.kgitbank.jeju.controller;
 
-
-import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.util.Arrays;
-import java.util.HashMap;
 import java.util.List;
-
 import javax.inject.Inject;
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -27,7 +19,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 import org.springframework.web.servlet.ModelAndView;
-
 import com.kgitbank.jeju.dto.FamousRestaurant;
 import com.kgitbank.jeju.dto.Locations;
 import com.kgitbank.jeju.dto.TouristSpot;
@@ -35,7 +26,6 @@ import com.kgitbank.jeju.mapper.FamousRestaurantMapper;
 import com.kgitbank.jeju.mapper.LocationMapper;
 import com.kgitbank.jeju.mapper.TouristSpotMapper;
 import com.kgitbank.jeju.service.BoardService;
-import com.kgitbank.jeju.service.impl.BoardServiceImpl;
 
 import lombok.extern.log4j.Log4j;
 import lombok.extern.slf4j.Slf4j;
@@ -74,15 +64,13 @@ public class BoardController {
 	
 	// 2. insert form
 	@ RequestMapping(value="/addTourist", method = RequestMethod.GET)
-	public String addTourist(Model model, HttpSession session) throws IllegalStateException, IOException {
-		List<Locations> list = locationMapper.ListLocations();		
+	public String addTourist(Model model, HttpSession session) throws IllegalStateException, IOException {	
 		model.addAttribute("locations", locationMapper.ListLocations());
 		return "board/touristForm";
 	}
 	
 	@ RequestMapping(value="/addRestList", method = RequestMethod.GET)
-	public String addRestList(Model model, HttpSession session) throws IllegalStateException, IOException {
-		List<Locations> list = locationMapper.ListLocations();		
+	public String addRestList(Model model, HttpSession session) throws IllegalStateException, IOException {	
 		model.addAttribute("locations", locationMapper.ListLocations());
 		return "board/restaurantForm";
 	}
@@ -96,10 +84,12 @@ public class BoardController {
 		model.addAttribute("locations",locationMapper.ListLocations());
 		model.addAttribute("user_id", touristSpot.getUser_id());
 		
+		
 		MultipartFile file = multipartRequest.getFile("imageFile");
 		
 		// 경로 값 2개 root_path, attach_path
-		String rearPath = request.getSession().getServletContext().getRealPath("/resources/img/famous_restraurant/"); 	
+		String rearPath = request.getSession().getServletContext().getRealPath("/resources/img/spot/"); 
+
 		try (
                 FileOutputStream fos = new FileOutputStream(rearPath + file.getOriginalFilename());
                 InputStream is = file.getInputStream();
@@ -119,7 +109,7 @@ public class BoardController {
 		touristSpot.setLocation(new String (request.getParameter("location_path").getBytes("8859_1"), "UTF-8"));
 		touristSpot.setHashtag(new String (request.getParameter("hashtag").getBytes("8859_1"), "UTF-8"));
 		touristSpot.setDescription(new String (request.getParameter("description").getBytes("8859_1"), "UTF-8"));
-		touristSpot.setImage("/resources/img/spot/"+file.getOriginalFilename());
+		touristSpot.setImage("../resources/img/spot/"+file.getOriginalFilename());
 		touristSpot.setLatitude(Double.parseDouble(new String (request.getParameter("getlatitude").getBytes("8859_1"), "UTF-8")));
 		touristSpot.setLongitude(Double.parseDouble(new String (request.getParameter("getlongitude").getBytes("8859_1"), "UTF-8")));
 		touristSpotMapper.addTourist(touristSpot);
@@ -134,7 +124,7 @@ public class BoardController {
 	
 		MultipartFile file = multipartRequest.getFile("imageFile");
 
-		String rearPath = request.getSession().getServletContext().getRealPath("/resources/img/spot/"); 
+		String rearPath = request.getSession().getServletContext().getRealPath("/resources/img/famous_restraurant/"); 
 		try (
                 FileOutputStream fos = new FileOutputStream(rearPath + file.getOriginalFilename());
                 InputStream is = file.getInputStream();
@@ -154,7 +144,7 @@ public class BoardController {
 		famousRestaurant.setLocation(new String (request.getParameter("location_path").getBytes("8859_1"), "UTF-8"));
 		famousRestaurant.setHashtag(new String (request.getParameter("hashtag").getBytes("8859_1"), "UTF-8"));
 		famousRestaurant.setDescription(new String (request.getParameter("description").getBytes("8859_1"), "UTF-8"));
-		famousRestaurant.setImage("/resources/img/spot/"+file.getOriginalFilename());
+		famousRestaurant.setImage("../resources/img/famous_restraurant/"+file.getOriginalFilename());
 		famousRestaurant.setLatitude(Double.parseDouble(new String (request.getParameter("getlatitude").getBytes("8859_1"), "UTF-8")));
 		famousRestaurant.setLongitude(Double.parseDouble(new String (request.getParameter("getlongitude").getBytes("8859_1"), "UTF-8")));
 		restaurantMapper.addRestaurant(famousRestaurant);
@@ -183,7 +173,6 @@ public class BoardController {
 		
 		return "board/restaurantBoard";
 	}
-	
-	
+		
 	
 }

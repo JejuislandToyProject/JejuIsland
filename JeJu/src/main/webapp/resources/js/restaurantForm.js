@@ -5,14 +5,13 @@ document.getElementById("user_id").style.display="none";
 
 $(document).ready(function(){
         $("#btnSave").click(function(){
-         
-          var title = $("#title");
+           var title = $("#title");
 		   var name = $("#name");
 		   var description = $("description");
 		   var image = $("#image");
 		   var latitude = $("#latitude").text();
 		   var longitude = $("#longitude").text();
-		   var location = $("#location_id option:selected").text();
+		   var location = $("#location").val();
         
            
            if(title ==""){
@@ -45,12 +44,12 @@ function boardPath(location,latitude, longitude){
 	const sortbyLocation = document.querySelector('#sortBy > #location_path');
 	const sortbyLatitude = document.querySelector('#sortBy > #getlatitude');
 	const sortbyLongitude = document.querySelector('#sortBy > #getlongitude');
-
+	console.log(sortbyForm);
 	sortbyForm.action= './addRestaurant/success';
 	sortbyForm.method = 'post';
 	sortbyForm.enctype = 'multipart/form-data';
 	sortbyLocation.value = location;
 	sortbyLatitude.value = latitude;
 	sortbyLongitude.value = longitude;
-	sortbyForm.submit();
+	/*sortbyForm.submit();*/
 }
