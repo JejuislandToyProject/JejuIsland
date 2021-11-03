@@ -74,7 +74,29 @@ names 배열 (추가한 카드들의 제목들을 담고 있는 배열) 을 반�
 
 ## 📝  _Troubles_   
 <details>
-	<summary> add Trouble code</summary>      
+	<summary> add Trouble code</summary>
+	```java
+	kakao.maps.event.addListener(polygon, 'click', function(mouseEvent) {
+
+           const xhttp = new XMLHttpRequest();
+           var param = title;
+          xhttp.addEventListener('readystatechange', (e) => {
+             const readyState = e.target.readyState;
+             const httpStatus = e.target.status;
+
+             if(readyState == 4 && httpStatus == 200) {
+                addToList(JSON.parse(e.target.responseText));
+             }
+          });
+          xhttp.open('GET', '/jeju/test/map/'+param, true)
+          xhttp.setRequestHeader('content-type', 'application/json;charset=UTF-8')
+
+          xhttp.send();
+
+          $('.modal, .overlay').addClass('active')
+
+        });
+	```
 </details> 
 <details>
 	<summary> add Trouble code</summary>      
