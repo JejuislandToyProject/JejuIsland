@@ -66,7 +66,7 @@ https://github.com/JejuislandToyProject/JejuIsland/blob/dev/Project_travel_jeju_
 ## 📸 _Demonstration Video_   
 
 
-
+https://user-images.githubusercontent.com/77534863/140022485-3896cdac-8eae-47d1-884c-779528603486.mp4
 
 
 
