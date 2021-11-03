@@ -20,6 +20,11 @@
 프로젝트 사전발표
 https://woongbin96.tistory.com/184?category=876841
 
+***      
+### ⚙️ _Result_  
+프로젝트 완성 PPT
+
+https://github.com/JejuislandToyProject/JejuIsland/blob/dev/Project_travel_jeju_ppt.pdf
 
 *** 
 ### 📌 _ER Diagram_
