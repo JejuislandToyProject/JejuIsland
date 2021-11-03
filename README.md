@@ -110,9 +110,8 @@ jsp로부터 받아온 값의 형태를 지정하는것인 줄 알았는데
 produces를 추가한 결과 정상적으로 모달이 작동되는 것을 확인할 수 있었다
 	
 	
-	```java
-	
-	kakao.maps.event.addListener(polygon, 'click', function(mouseEvent) {
+```java
+kakao.maps.event.addListener(polygon, 'click', function(mouseEvent) {
 
            const xhttp = new XMLHttpRequest();
            var param = title;
@@ -132,7 +131,9 @@ produces를 추가한 결과 정상적으로 모달이 작동되는 것을 확�
           $('.modal, .overlay').addClass('active')
 
         });
-	```
+```
+	
+
 </details> 
 <details>
 	<summary> add Trouble code</summary>      
