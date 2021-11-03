@@ -136,7 +136,36 @@ kakao.maps.event.addListener(polygon, 'click', function(mouseEvent) {
 
 </details> 
 <details>
-	<summary> add Trouble code</summary>      
+	<summary> 카카오 로그인 error </summary>
+	
+ScribeJava 라이브러리를 통해 access token을 발급하려 했지만 OAuth2.0 카카로 로그인 Api가 error
+
+KOE010 오류가 계속 난다.
+카카오 API 문서를 보면 잘못된 시크릿이라고 하는데 log를 확인해봐도 제대로 된 값임을 확인함.
+ScribeJava 라이브러리 github에서 에러 메세지에 나온 class 들을 모두 확인해봤지만, 이유를 발견하지 못함
+	
+기존코드 
+	
+```java
+public OAuth2AccessToken getAccessToken(HttpSession session, String code, String state, String serverUrl) throws Exception {
+			
+			String sessionState = getSession(session);
+			log.info("state: "+state+" code: "+code);
+			if (StringUtils.pathEquals(sessionState, state)) {
+				OAuth20Service oauthService = new ServiceBuilder(KAKAO_CLIENT_ID)
+						.apiSecret(KAKAO_CLIENT_SECRET)
+						.callback(serverUrl + KAKAO_REDIRECT_URI)
+						.build(NaverLoginApi.instance());
+				OAuth2AccessToken accessToken = oauthService.getAccessToken(code);
+				return accessToken;
+			}
+			return null;
+}
+```
+	
+	
+	
+	
 </details> 
 <details>
 	<summary> add Trouble code</summary>      
