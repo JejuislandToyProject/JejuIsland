@@ -40,7 +40,37 @@ https://github.com/JejuislandToyProject/JejuIsland/blob/dev/Project_travel_jeju_
 
 ***
 ## 📌 _Core Trouble shooting_   
+![image](https://user-images.githubusercontent.com/77534863/140027521-2902b2f5-86c8-4cf6-ac0d-c6cdaee566fe.png)
+![image](https://user-images.githubusercontent.com/77534863/140027581-10accb49-e055-4a19-a1af-340396e8985e.png)
 
+names 배열 (추가한 카드들의 제목들을 담고 있는 배열) 을 반복문을 돌려 RestController로 값을 보내는데
+이때 컨트롤러에서 log를 찍어보면 반복문으로 보낸 순서와 다르게 값을 받음
+이유는 반복문과 ajax는 처리하는 속도가 다르기 때문에 처리되는 순서대로 값을 받아옴
+
+![image](https://user-images.githubusercontent.com/77534863/140027601-756d3ff2-abe5-4012-a44b-86de70f4bf3b.png)
+
+그래서 배열자체를 컨트롤러로 보냄
+그러면 컨트롤러에서는 파라미터로 배열을 받는데 이 때 각 배열 사이사이에 ',' 를 자동으로 추가하여 받음
+컨트롤러에서는 ',' 기준으로 스플릿하여 DB에서 데이터를 가져와 다시 jsp로 보내주는 코드로 변경
+
+```java
+@GetMapping(value="/modalSearch/{title}", produces = "application/json; charset=UTF-8")
+    public List<SpotAndMatzip> getModalSearch(@PathVariable("title") String title) {
+
+        log.info(title);
+        String names[] = title.split(",");
+        List<SpotAndMatzip> list = new ArrayList<>();
+
+        for(int i =0; i < names.length; ++i) {
+            list.add((SpotAndMatzip) spotAndmatzipMapper.getItem(names[i]));
+
+        }
+
+        return list;
+
+
+    }
+```
 
 ## 📝  _Troubles_   
 <details>
