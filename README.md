@@ -14,18 +14,7 @@
 > DataBase
 > > Oracle DB version 18c
 > > > 외부 라이브러리
-> > > > ojdbc6.jar/HikariCP.jar/sql.jar.
-> > > > mybatis
-> > > > mybatis-spring
-> > > > scribejava-core
-> > > > lombok
-> > > > HikariCP
-> > > > jackson-databind
-> > > > jackson-dataformat-xm
-> > > > gson
-> > > > json
-> > > > commons-fileupload
-> > > > commons-io
+> > > > ojdbc6.jar/HikariCP.jar/sql.jar. 
 ***      
 ### ⚙️ _Blueprint_  
 프로젝트 사전발표
@@ -512,53 +501,54 @@ HashMap으로 변환했을때의 내용물
 
 <details>
 	<summary> Socket Timeout Exception Error</summary> 
-  문제점: Controller에서 API값을 받아 View로 이동할때에 Socket Timeout Exception 오류가 난다면
-페이지를 로딩하지 못하는 문제가 생김
+	문제점: Controller에서 API값을 받아 View로 이동할때에 Socket Timeout Exception 오류가 난다면
+	페이지를 로딩하지 못하는 문제가 생김
 
-해결방법: RestController와 ajax를 이용해 비동기 방식으로 문제를 해결함.
+	해결방법: RestController와 ajax를 이용해 비동기 방식으로 문제를 해결함.
 
-보완해야할점: 소켓으로 데이터를 읽어오지 못할때에 날씨 데이터를 가져오지못하기 때문에
-데이터베이스를 이용하여 이 문제를 보완해야할 것으로 보인다.
+	보완해야할점: 소켓으로 데이터를 읽어오지 못할때에 날씨 데이터를 가져오지못하기 때문에
+	데이터베이스를 이용하여 이 문제를 보완해야할 것으로 보인다.
 
-기상청 API를 이용하여 날씨정보를 가져왔지만 Socket Timeout Exception오류가 한번씩 발생한다.
-반복적으로 API URL을 호출하는 경우 특정 차례에 요청 후 응답을 받지 못한다면 무한 대기상태(교착상태)가
-시작되며 다음 순서의 API URL 호출은 시작하지 못하게된다고 한다. 
-여기서 배치 시 사용할 수 있는 스레드 풀 개수를 설정해 놓은 상태라면 모든 스레드가 사용중인 상태가되는
-경우 해당 인스턴스는 모든 작업을 진행하지 못하고 멈추게되고
-LOG상에서도 URL호출시 발생하는 무한 대기 상태에는 어떠한 Exception로그도 찾아볼수 없다고한다.
-그래서 setConnectTimeOut(), setReadTimeOut() 을 설정하여 미리 선언한 시간만큼 대기하고
-응답이 없다면 EXCEPTION을 반환하여 작업을 마치게하는것이다. 
-이때 발생하는 exception이 Socket Timeout Exception이라고한다
+	기상청 API를 이용하여 날씨정보를 가져왔지만 Socket Timeout Exception오류가 한번씩 발생한다.
+	반복적으로 API URL을 호출하는 경우 특정 차례에 요청 후 응답을 받지 못한다면 무한 대기상태(교착상태)가
+	시작되며 다음 순서의 API URL 호출은 시작하지 못하게된다고 한다. 
+	여기서 배치 시 사용할 수 있는 스레드 풀 개수를 설정해 놓은 상태라면 모든 스레드가 사용중인 상태가되는
+	경우 해당 인스턴스는 모든 작업을 진행하지 못하고 멈추게되고
+	LOG상에서도 URL호출시 발생하는 무한 대기 상태에는 어떠한 Exception로그도 찾아볼수 없다고한다.
+	그래서 setConnectTimeOut(), setReadTimeOut() 을 설정하여 미리 선언한 시간만큼 대기하고
+	응답이 없다면 EXCEPTION을 반환하여 작업을 마치게하는것이다. 
+	이때 발생하는 exception이 Socket Timeout Exception이라고한다
 
 
-#초기의 방법(Socket Timeout Exception발생을 가정한 과정)
-(@Controller + 기상청API 데이터 값) → Socket Timeout Exception → View를 만들지 못함.
+	#초기의 방법(Socket Timeout Exception발생을 가정한 과정)
+	(@Controller + 기상청API 데이터 값) → Socket Timeout Exception → View를 만들지 못함.
 
-#해결 방법(Socket Timeout Exception발생을 가정한 과정)
-@Controller → View → (@RestController +  기상청API 데이터값)
-→ Socket Timeout Exception →  View는 앞서 로딩이되어있고 날씨의 정보만 들어가지 못함.
+	#해결 방법(Socket Timeout Exception발생을 가정한 과정)
+	@Controller → View → (@RestController +  기상청API 데이터값)
+	→ Socket Timeout Exception →  View는 앞서 로딩이되어있고 날씨의 정보만 들어가지 못함.
 </details> 
 
 	
 <details>
 	<summary> validation.BindException </summary>
-error log:
-WARN : org.springframework.web.servlet.mvc.support.DefaultHandlerExceptionResolver - Resolved [org.springframework.validation.BindException: org.springframework.validation.BeanPropertyBindingResult: 1 errors
-Field error in object 'touristSpot' on field 'image': rejected value [org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile@71968e84]; codes [typeMismatch.touristSpot.image,typeMismatch.image,typeMismatch.java.lang.String,typeMismatch]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [touristSpot.image,image]; arguments []; default message [image]]; default message [Failed to convert property value of type 'org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile' to required type 'java.lang.String' for property 'image'; nested exception is java.lang.IllegalStateException: Cannot convert value of type 'org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile' to required type 'java.lang.String' for property 'image': no matching editors or conversion strategy found]]
+	error log:
+	WARN : org.springframework.web.servlet.mvc.support.DefaultHandlerExceptionResolver - Resolved [org.springframework.validation.BindException: 			org.springframework.validation.BeanPropertyBindingResult: 1 errors
+	Field error in object 'touristSpot' on field 'image': rejected value 								[org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile@71968e84]; codes [typeMismatch.touristSpot.image,typeMismatch.image,typeMismatch.java.lang.String,typeMismatch]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [touristSpot.image,image]; arguments []; default message [image]]; default message [Failed to convert property value of type 'org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile' to required type 'java.lang.String' for property 'image'; nested exception is java.lang.IllegalStateException: Cannot convert value of type 'org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile' to required type 'java.lang.String' for property 'image': 		no matching editors or conversion strategy found]]
 
 
-원인:
-<input type="file" name="image" id="image">
-컨트롤러에서 image 파일을 @RequestParam("image") MultipartFile로 받아온다.
-그 후 @ModelAttribute TouristSpot touristSpot 를 하니 위와 같은 에러 로그가 나왔다.
-에러 로그를 자세히 보니 [typeMismatch.touristSpot.image,typeMismatch.image,typeMismatch.java.lang.String,typeMismatch] 가 눈에 띈다.
-TouristSpot의 String 타입 image 멤버 변수와 MultipartFile로 받아온 image가 type 에러를 일으킨 것.
+	원인:
+	<input type="file" name="image" id="image">
+	컨트롤러에서 image 파일을 @RequestParam("image") MultipartFile로 받아온다.
+	그 후 @ModelAttribute TouristSpot touristSpot 를 하니 위와 같은 에러 로그가 나왔다.
+	에러 로그를 자세히 보니 [typeMismatch.touristSpot.image,typeMismatch.image,typeMismatch.java.lang.String,typeMismatch] 가 눈에 띈다.
+	TouristSpot의 String 타입 image 멤버 변수와 MultipartFile로 받아온 image가 type 에러를 일으킨 것.
 
-해결:
-input 태그의 name을 TouristSpot의 멤버 변수 이름과 다르게 바꾸어 주고, 
-image path를 string 타입으로 변환해 TouristSpot의 setImage 메서드를 사용해 추가한다.
-<input type="file" name="imageFile" id="image">
-@RequestParam("imageFile") MultipartFile
+	
+	해결:
+	input 태그의 name을 TouristSpot의 멤버 변수 이름과 다르게 바꾸어 주고, 
+	image path를 string 타입으로 변환해 TouristSpot의 setImage 메서드를 사용해 추가한다.
+	<input type="file" name="imageFile" id="image">
+	@RequestParam("imageFile") MultipartFile
 </details> 
 	
 	
