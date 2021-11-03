@@ -226,6 +226,15 @@ public String getAccessToken(HttpServletRequest request, String autorizeCode) th
 		    return access_token;
 }
 ```
+
+	카카오 에러 설명
+	
+	![image](https://user-images.githubusercontent.com/77534863/140028521-451b0dd1-718b-43ce-bc5c-8681062c7290.png)
+	
+	
+	scribejava 라이브러리의  accessToken 발급 flow
+	
+	![image](https://user-images.githubusercontent.com/77534863/140028528-da91bf30-5cf3-4b48-a40a-45299b0226f7.png)
 	
 	
 </details> 
