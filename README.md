@@ -238,6 +238,265 @@ scribejava 라이브러리의  accessToken 발급 flow
 	
 	
 </details> 
+
+
+<details>
+	<summary> JSON 파싱 오류 </summary>   
+	
+JSON 파싱과정에 대하여.
+코드를 작성할때에 HashMap을 이용하여 데이터를 뽑아오는 방법을 읽고 참고하였고
+참고한 블로그를 따라했을때에 json안의 데이터를 볼수는 있었으나
+json안에 내가 필요한 데이터들을 추출하는 방법은 나와있지않았다.
+추가적인 자료를 참고하여 데이터를 추출하려고 하였으나 HashMap으로 받는다면  json의 내용의 쌍따옴표(" ")를
+제거하고 (":") 기호를 ("=")으로 변환시키는 일이 발생하여 HashMap을 이용하는 방법으로는 데이터를
+추출할 방법을 찾지 못하였다.
+
+따라서 json을 HashMap으로 변환하지 않고 JObject와 JSONArray를 이용하여
+필요로 하는 데이터들을 추출하였다.
+
+사용된 라이브러리(json)
+<dependency>
+    	<groupId>org.json</groupId>
+    	<artifactId>json</artifactId>
+    	<version>20180813</version>
+</dependency>
+	
+```java
+Date today = new Date();
+	SimpleDateFormat date = new SimpleDateFormat("yyyyMMdd");
+	@GetMapping(value ="/nomal",  produces ="application/json; charset=UTF-8")
+	
+	public String restApiGetWeather() throws Exception{
+		
+		String url = "http://apis.data.go.kr/1360000/VilageFcstInfoService_2.0/getVilageFcst"
+				+ "?serviceKey=GGNGzKyHIGayjNsUzlbzneX46MH8FeY93vryk5cjBe6%2FcMzK75D51Vc%2BjdsVcXRTrRkXeuBpkrYYG4ndqX%2FXLA%3D%3D"
+				+ "&dataType=JSON" // 	요청자료형식 : JSON, XML
+				+ "&numOfRows=10"   //  한 페이지 결과 수 : Default: 10
+				+ "&pageNo=1"	   //  페이지 번호 : Defalut: 1
+				+ "&base_date="+date.format(today)+"" // 발표일자 : 2021년10월15일 발표
+				+ "&base_time=0800" //     발표시각 : 08시(정시단위)
+				+ "&nx=52"	// 예보지점 x좌표값 격자 좌표값을 이용한다.  
+				+ "&ny=38"; //예보지점 y좌표값
+		
+		HashMap<String, Object> resultMap = getDataFromJson(url, "UTF-8", "GET", "");
+		
+		System.out.println("# RESULT : " + resultMap);
+		
+		JSONObject jsonObj = new JSONObject();
+		
+		jsonObj.put("result", resultMap);
+		
+		return jsonObj.toString();
+	}
+	
+	public HashMap<String, Object> getDataFromJson(String url, String encoding,
+			String type, String jsonStr) throws Exception{
+		
+				boolean isPost = false;
+				
+				if ("post".equals(type)){
+					isPost = true;
+				}else {
+					url = "".equals(jsonStr) ? url : url + "?request=" + jsonStr;
+				}
+				log.info("[url : "+ url + "] [encoding : "+ encoding + "] type : "+ type +"] [jsonStr : "+ jsonStr +"]");
+				return getStringFromURL(url, encoding, isPost, jsonStr, "application/json");
+
+	}
+	
+	public HashMap<String, Object> getStringFromURL(String url, String encoding, boolean isPost, String parameter,
+			String contentType) throws Exception{
+		
+		URL apiURL = new URL(url); 
+		
+		
+		HttpURLConnection conn = null; 
+		BufferedReader br = null;
+		BufferedWriter bw = null;
+		
+		HashMap<String, Object> resultMap = new HashMap<String, Object>();
+		
+		try {
+			conn = (HttpURLConnection) apiURL.openConnection();
+			conn.setConnectTimeout(5000);
+			conn.setReadTimeout(5000);
+			conn.setDoOutput(true);
+			conn.setUseCaches(false);
+			
+			if(isPost) {
+				conn.setRequestMethod("POST");
+				conn.setRequestProperty("Content-Type", contentType);
+				conn.setRequestProperty("Accept", "*/*");
+			}else {
+				conn.setRequestMethod("GET");
+			}
+			conn.connect();
+			
+			if(isPost) {
+				bw = new BufferedWriter(new OutputStreamWriter(conn.getOutputStream(), "UTF-8"));
+				bw.write(parameter);
+				bw.flush();
+				bw = null;
+			}
+			br = new BufferedReader(new InputStreamReader(conn.getInputStream(), encoding));
+			
+			String line = null;
+			
+			StringBuffer result = new StringBuffer();
+			
+			while ((line = br.readLine()) != null)result.append(line);
+			
+			ObjectMapper mapper = new ObjectMapper();
+			
+			resultMap = mapper.readValue(result.toString(), HashMap.class);
+		
+		}catch (Exception e) {
+			e.printStackTrace();
+			throw new Exception(url + " interface failed " + e.toString());	
+		}finally {
+			if(conn != null) conn.disconnect();
+			if(br != null) br.close();
+			if(bw != null) bw.close();
+		}
+		
+		return resultMap;
+	}
+
+
+// JObject와 JSONArray를 이용하여 작성한 코드
+Date today = new Date();
+	SimpleDateFormat date = new SimpleDateFormat("yyyyMMdd");
+	
+	@GetMapping("/nomal")
+	public void getGrids(Model model) throws Exception {
+		String url = "http://apis.data.go.kr/1360000/VilageFcstInfoService_2.0/getVilageFcst"
+				+ "?serviceKey=GGNGzKyHIGayjNsUzlbzneX46MH8FeY93vryk5cjBe6%2FcMzK75D51Vc%2BjdsVcXRTrRkXeuBpkrYYG4ndqX%2FXLA%3D%3D"
+				+ "&dataType=JSON" // 	요청자료형식 : JSON, XML
+				+ "&numOfRows=10"   //  한 페이지 결과 수 : Default: 10
+				+ "&pageNo=1"	   //  페이지 번호 : Defalut: 1
+				+ "&base_date="+date.format(today)+"" // 발표일자 : 2021년10월15일 발표
+				+ "&base_time=0800" //     발표시각 : 08시(정시단위)
+				+ "&nx=52"	// 예보지점 x좌표값 격자 좌표값을 이용한다.  
+				+ "&ny=38"; //예보지점 y좌표값
+		
+		boolean isPost = false;
+		
+		if ("post".equals("get")){
+			isPost = true;
+		}else {
+			url = "".equals("") ? url : url + "?request=" + "";
+		}
+		
+		String resultMap = getStringFromURL(url, "UTF-8", isPost, "", "application/json").toString();
+				
+		JSONObject obj = new JSONObject(resultMap);
+			
+		JSONObject parse_response = (JSONObject) obj.get("response"); 
+		// response 로 부터 body 찾기
+		JSONObject parse_body = (JSONObject) parse_response.get("body"); 
+		// body 로 부터 items 찾기 
+		JSONObject parse_items = (JSONObject) parse_body.get("items");
+		log.info(parse_items.toString());
+		// items로 부터 itemlist 를 받기 
+				JSONArray parse_item = parse_items.getJSONArray("item");
+				String category;
+				JSONObject weather; // parse_item은 배열형태이기 때문에 하나씩 데이터를 하나씩 가져올때 사용
+				
+				String day="";
+				String time="";
+				for(int i = 0 ; i < parse_item.length(); i++) {
+					weather = (JSONObject) parse_item.get(i);
+					Object fcstValue = weather.get("fcstValue");
+					Object fcstDate = weather.get("fcstDate");
+					Object fcstTime = weather.get("fcstTime");
+					
+					category = (String)weather.get("category"); 
+		
+					if(!day.equals(fcstDate.toString())) {
+						day=fcstDate.toString();
+					}
+					if(!time.equals(fcstTime.toString())) {
+						time=fcstTime.toString();
+						System.out.println(day+"  "+time);
+					}
+					System.out.print("\tcategory : "+ category);
+					System.out.print(", fcst_Value : "+ fcstValue);
+					System.out.print(", fcstDate : "+ fcstDate);
+					System.out.println(", fcstTime : "+ fcstTime);
+				}
+	
+		//model.addAttribute("nameList", jsonObj.toString());	
+	}
+	
+	public StringBuffer getStringFromURL(String url, String encoding, boolean isPost, String parameter,
+			String contentType) throws Exception{
+
+		URL apiURL = new URL(url); 	
+		
+		HttpURLConnection conn = null;
+		BufferedReader br = null;
+		BufferedWriter bw = null;
+		StringBuffer result = new StringBuffer();
+		
+		try {
+			
+			conn = (HttpURLConnection) apiURL.openConnection();
+			conn.setConnectTimeout(5000);
+			conn.setReadTimeout(5000);
+			conn.setDoOutput(true);
+			conn.setUseCaches(false);
+			
+			if(isPost) {
+				conn.setRequestMethod("POST");
+				conn.setRequestProperty("Content-Type", contentType);
+				conn.setRequestProperty("Accept", "*/*");
+			}else {
+				conn.setRequestMethod("GET");
+			}
+			conn.connect();
+			
+			if(isPost) {
+				bw = new BufferedWriter(new OutputStreamWriter(conn.getOutputStream(), "UTF-8"));
+				bw.write(parameter);
+				bw.flush();
+				bw = null;
+			}
+			br = new BufferedReader(new InputStreamReader(conn.getInputStream(), encoding));
+			
+			String line = null;			
+			
+			while ((line = br.readLine()) != null) {
+				result.append(line);
+			}
+			log.info(result.toString());
+		
+		}catch (Exception e) {
+			e.printStackTrace();
+			throw new Exception(url + " interface failed " + e.toString());	
+		}finally {
+			if(conn != null) conn.disconnect();
+			if(br != null) br.close();
+			if(bw != null) bw.close();
+		}	
+		return result;
+}
+									
+JSON 파싱과정중의 주의할점
+HashMap을 사용하면 값을 꺼내기 정말 어렵다(나는 
+ 데이터를 꺼내는 것을 실패하였다.)  json은 json을 지원하는 라이브러리를 이용하자.
+HashMap으로 변환했을때의 내용물
+									
+![image](https://user-images.githubusercontent.com/77534863/140028968-dd8c498e-714f-4e94-9c80-3b7d4393f037.png)
+									
+원래 json의 내용물
+									
+![image](https://user-images.githubusercontent.com/77534863/140028984-7ea8a7f9-617d-46f2-baba-c68fb37e175e.png)
+									
+									
+```
+</details> 
+
+
 <details>
 	<summary> add Trouble code</summary>      
 </details> 
