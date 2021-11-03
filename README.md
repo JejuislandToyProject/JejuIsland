@@ -501,7 +501,7 @@ HashMap으로 변환했을때의 내용물
 
 <details>
 	<summary> Socket Timeout Exception Error</summary> 
-문제점: Controller에서 API값을 받아 View로 이동할때에 Socket Timeout Exception 오류가 난다면
+  문제점: Controller에서 API값을 받아 View로 이동할때에 Socket Timeout Exception 오류가 난다면
 페이지를 로딩하지 못하는 문제가 생김
 
 해결방법: RestController와 ajax를 이용해 비동기 방식으로 문제를 해결함.
