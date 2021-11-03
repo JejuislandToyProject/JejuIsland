@@ -592,7 +592,46 @@ HashMap으로 변환했을때의 내용물
 	
 	
 <details>
-	<summary> Socket Timeout Exception Error</summary>      
+	<summary> ;기호를 XXS(크로스사이트스크립팅) 유발 문자로 인식 오류 </summary>   
+	오류: org.springframework.security.web.firewall.RequestRejectedException: The request was rejected because the URL contained a potentially malicious String ";"
+	at org.springframework.security.web.firewall.StrictHttpFirewall.rejectedBlocklistedUrls(StrictHttpFirewall.java:456)
+	at org.springframework.security.web.firewall.StrictHttpFirewall.getFirewalledRequest(StrictHttpFirewall.java:429)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:196)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:183)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:358)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:271)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:542)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:687)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:357)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:382)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:893)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1726)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+
+원인:  
+Spring security 버전도 업그레이드 되었고 ;기호를 XXS(크로스사이트스크립팅) 유발 문자로 인식
+같이 첨부하는 사진과 같이 경로 뒤에 세션ID 값이 붙으며 문제가됨
+세션 ID값이 붙는 이유는 톰캣서버에서 jstl <c:url/>을 사용할 때 최초호출시 세션ID를 붙이기 때문.
+새 세션이 만들어지면 클라이언트가 쿠키를 지원하는지 여부를 서버가 알 수 없으므로 쿠키와 URL에 모두 jsessionid 가 만들어진다.
+
+해결방안:
+web.xml에 아래와 같은 session-config 값을 추가
+<session-config>
+    <session-timeout>600</session-timeout>
+    <tracking-mode>COOKIE</tracking-mode>
+</session-config>
 </details> 
 
 ***  
