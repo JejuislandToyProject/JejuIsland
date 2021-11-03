@@ -552,38 +552,41 @@ image path를 string 타입으로 변환해 TouristSpot의 setImage 메서드를
 	
 	
 <details>
-	<summary> Socket Timeout Exception Error</summary>
+	<summary> Multiple annotations Error</summary>
 	
 	error: 
-Multiple annotations found at this line:
-	- cvc-complex-type.2.4.c: The matching wildcard is strict, but no declaration can be found for element 'security:http'.
-	- You cannot use a spring-security-2.0.xsd or spring-security-3.0.xsd or spring-security-3.1.xsd schema or spring-security-3.2.xsd schema or spring-security-4.0.xsd schema with Spring 
-	 Security 5.4. Please update your schema declarations to the 5.4 schema.
-	- schema_reference.4: Failed to read schema document 'http://www.springframework.org/schema/security/spring-security-5.5.xsd', because 1) could not find the document; 2) the 
-	 document could not be read; 3) the root element of the document is not <xsd:schema>.
-	- Configuration problem: You cannot use a spring-security-2.0.xsd or spring-security-3.0.xsd or spring-security-3.1.xsd schema or spring-security-3.2.xsd schema or spring-security-4.0.xsd 
-	 schema with Spring Security 5.4. Please update your schema declarations to the 5.4 schema. Offending resource: file [D:/2021_Spring/Web project/JejuIsland/JeJu/src/main/webapp/WEB-INF/
-	 spring/security-context.xml]
+	Multiple annotations found at this line:
+		- cvc-complex-type.2.4.c: The matching wildcard is strict, but no declaration can be found for element 'security:http'.
+		- You cannot use a spring-security-2.0.xsd or spring-security-3.0.xsd or spring-security-3.1.xsd schema or spring-security-3.2.xsd schema or 		spring-security-4.0.xsd schema with Spring 
+		 Security 5.4. Please update your schema declarations to the 5.4 schema.
+		- schema_reference.4: Failed to read schema document 'http://www.springframework.org/schema/security/spring-security-5.5.xsd', because 1) could 	not find the document; 2) the 
+		 document could not be read; 3) the root element of the document is not <xsd:schema>.
+		- Configuration problem: You cannot use a spring-security-2.0.xsd or spring-security-3.0.xsd or spring-security-3.1.xsd schema or spring-		security-3.2.xsd schema or spring-security-4.0.xsd 
+		 schema with Spring Security 5.4. Please update your schema declarations to the 5.4 schema. Offending resource: file [D:/2021_Spring/Web 		project/JejuIsland/JeJu/src/main/webapp/WEB-INF/
+		 spring/security-context.xml]
 
-solution:
-xsi:schemaLocation="http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security-5.5.xsd
+	solution:
+	xsi:schemaLocation="http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security-5.5.xsd
+	
+	xsi:schemaLocation="http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security.xsd
 
-xsi:schemaLocation="http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security.xsd
+	
+	shema 버전을 삭제
+	------
+	error: Failed to evaluate expression 'ROLE_USER'
+	solution:
+	<security:intercept-url pattern="/**" access="ROLE_USER" />
+	<security:intercept-url pattern="/**" access="hasRole('ROLE_USER')" />
 
-shema 버전을 삭제
-------
-error: Failed to evaluate expression 'ROLE_USER'
-solution:
-<security:intercept-url pattern="/**" access="ROLE_USER" />
-<security:intercept-url pattern="/**" access="hasRole('ROLE_USER')" />
+	hasRole을 추가
+	
+	error: There is no PasswordEncoder mapped for the id "null"
+	solution:
+	스프링 버전 5이상부터는 password 앞에 식별자를 넣어야 함
+	암호화를 사용하지 않는다면 {noop}을 추가
+	<security:user name="guest" password="{noop}guest" authorities="hasRole('ROLE_USER')"/>
 
-hasRole을 추가
-
-error: There is no PasswordEncoder mapped for the id "null"
-solution:
-스프링 버전 5이상부터는 password 앞에 식별자를 넣어야 함
-암호화를 사용하지 않는다면 {noop}을 추가
-<security:user name="guest" password="{noop}guest" authorities="hasRole('ROLE_USER')"/>
+	
 </details> 
 	
 	
