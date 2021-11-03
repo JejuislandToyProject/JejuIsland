@@ -620,18 +620,18 @@ HashMap으로 변환했을때의 내용물
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
 	at java.base/java.lang.Thread.run(Thread.java:834)
 
-원인:  
-Spring security 버전도 업그레이드 되었고 ;기호를 XXS(크로스사이트스크립팅) 유발 문자로 인식
-같이 첨부하는 사진과 같이 경로 뒤에 세션ID 값이 붙으며 문제가됨
-세션 ID값이 붙는 이유는 톰캣서버에서 jstl <c:url/>을 사용할 때 최초호출시 세션ID를 붙이기 때문.
-새 세션이 만들어지면 클라이언트가 쿠키를 지원하는지 여부를 서버가 알 수 없으므로 쿠키와 URL에 모두 jsessionid 가 만들어진다.
+	원인:  
+	Spring security 버전도 업그레이드 되었고 ;기호를 XXS(크로스사이트스크립팅) 유발 문자로 인식
+	같이 첨부하는 사진과 같이 경로 뒤에 세션ID 값이 붙으며 문제가됨
+	세션 ID값이 붙는 이유는 톰캣서버에서 jstl <c:url/>을 사용할 때 최초호출시 세션ID를 붙이기 때문.
+	새 세션이 만들어지면 클라이언트가 쿠키를 지원하는지 여부를 서버가 알 수 없으므로 쿠키와 URL에 모두 jsessionid 가 만들어진다.
 
-해결방안:
-web.xml에 아래와 같은 session-config 값을 추가
-<session-config>
-    <session-timeout>600</session-timeout>
-    <tracking-mode>COOKIE</tracking-mode>
-</session-config>
+	해결방안:
+	web.xml에 아래와 같은 session-config 값을 추가
+	<session-config>
+	    <session-timeout>600</session-timeout>
+ 	   <tracking-mode>COOKIE</tracking-mode>
+	</session-config>
 </details> 
 
 ***  
