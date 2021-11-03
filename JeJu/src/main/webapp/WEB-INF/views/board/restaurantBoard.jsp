@@ -159,10 +159,13 @@
 
 								<script type="text/javascript">
 				      function addRestList(){
-				          var uid="<%=(String)session.getAttribute("id") %>";
+				          var login= ${login};
+				          let banned = ${banned};
 				          
-				          if(uid=="null"){
-				        	  alert("로그인이 팔요한 항목입니다.")
+				          if(!login){
+				        	  alert("로그인이 팔요한 항목입니다.");
+				          }if(banned){
+				        	  alert("현재 관리자에 의해 글쓰기가 금지되었습니다.");
 				          }else{
 				        	  location.replace("/jeju/addRestList");
 				          }
