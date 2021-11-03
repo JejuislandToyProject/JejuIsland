@@ -24,6 +24,7 @@
 
 *** 
 ### 📌 _ER Diagram_
+<img width="1387" alt="스크린샷 2021-11-03 오전 10 19 44" src="https://user-images.githubusercontent.com/77534863/139987794-d973e3b4-5d24-4596-977d-fbf96aa88ac4.png">
 
 ***   
 ### 📌 _Usecase Diagram_  
