@@ -78,7 +78,7 @@
    text-align : center;
    overflow-x: hidden;
    overflow-y: scroll;
-   height: 35%;
+   height: 70vh;
 }
 
 .sidebarPadding {
@@ -126,6 +126,5 @@
 #right-box3{
 text-align : center;
    overflow-y: scroll;
-   height: 500px;
 }
 }
