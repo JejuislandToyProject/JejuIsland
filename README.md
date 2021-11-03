@@ -69,6 +69,17 @@ https://github.com/JejuislandToyProject/JejuIsland/blob/dev/Project_travel_jeju_
 https://user-images.githubusercontent.com/77534863/140022922-ea4abd8b-bc11-41ad-9e34-d50f3f15bc84.mp4
 
 
+유저 로그인 영상
+
+
+https://user-images.githubusercontent.com/77534863/140023092-b2b53490-74bb-489e-b198-48fd1c0abd79.mp4
+
+
+메인 페이지 영상
+
+
+https://user-images.githubusercontent.com/77534863/140023221-a89a92f1-c6d6-40c4-b7fd-adc9c1ae7dd5.mp4
+
 
 게시글 좋아요 영상
 
