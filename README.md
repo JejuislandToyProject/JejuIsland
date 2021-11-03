@@ -480,6 +480,8 @@ Date today = new Date();
 		}	
 		return result;
 }
+```
+									
 									
 JSON 파싱과정중의 주의할점
 HashMap을 사용하면 값을 꺼내기 정말 어렵다(나는 
@@ -493,7 +495,7 @@ HashMap으로 변환했을때의 내용물
 ![image](https://user-images.githubusercontent.com/77534863/140028984-7ea8a7f9-617d-46f2-baba-c68fb37e175e.png)
 									
 									
-```
+
 </details> 
 
 
