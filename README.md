@@ -14,7 +14,18 @@
 > DataBase
 > > Oracle DB version 18c
 > > > 외부 라이브러리
-> > > > ojdbc6.jar/HikariCP.jar/sql.jar. 
+> > > > ojdbc6.jar/HikariCP.jar/sql.jar.
+> > > > mybatis
+> > > > mybatis-spring
+> > > > scribejava-core
+> > > > lombok
+> > > > HikariCP
+> > > > jackson-databind
+> > > > jackson-dataformat-xm
+> > > > gson
+> > > > json
+> > > > commons-fileupload
+> > > > commons-io
 ***      
 ### ⚙️ _Blueprint_  
 프로젝트 사전발표
