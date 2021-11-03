@@ -1,7 +1,8 @@
 # _🍊JejuIsland Project🍊_
 ***
 ### Period : October 2021,  3 weeks. 
-### Personnel : 6 명  
+### Personnel : 6 명
+### Team Member : 오수빈 최진호 최웅빈 최두식 양승모 진희
 ***
 ## 📌 _Environment_       
 > UI       
@@ -16,10 +17,8 @@
 > > > > ojdbc6.jar/HikariCP.jar/sql.jar. 
 ***      
 ### ⚙️ _Blueprint_  
-
-
-
-
+프로젝트 사전발표
+https://woongbin96.tistory.com/184?category=876841
 
 
 *** 
@@ -32,9 +31,6 @@
 ![최종팀플유스케이스](https://user-images.githubusercontent.com/77534863/139987082-0b4b7178-cb54-4b94-b3aa-8dd3a17b1945.png)
 
    
-*** 
-## 📌 _Important_
-
 
 ***
 ## 📌 _Core Trouble shooting_   
