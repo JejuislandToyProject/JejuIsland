@@ -12,7 +12,8 @@
   </select>
  
    <select id="listByUser" resultType="com.kgitbank.jeju.dto.FamousRestaurant">
-    SELECT * FROM famous_restaurant INNER JOIN user_info USING (user_id)
+    SELECT * FROM famous_restaurant INNER JOIN user_info USING (user_id) 
+    WHERE user_id = #{user_id)
   </select>
 
   <select id="listView" resultType="com.kgitbank.jeju.dto.FamousRestaurant">
