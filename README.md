@@ -60,15 +60,26 @@ https://github.com/JejuislandToyProject/JejuIsland/blob/dev/Project_travel_jeju_
  
 *** 
 
-## 📌 _Video Solution_
-
 
 ## 📸 _Demonstration Video_   
+
+관리자 페이지 영상 
+
+
+https://user-images.githubusercontent.com/77534863/140022922-ea4abd8b-bc11-41ad-9e34-d50f3f15bc84.mp4
+
+
 
 게시글 좋아요 영상
 
 
 https://user-images.githubusercontent.com/77534863/140022485-3896cdac-8eae-47d1-884c-779528603486.mp4
+
+
+폴리곤 영상
+
+
+https://user-images.githubusercontent.com/77534863/140022679-477f4222-4c91-48bb-b9c7-e8326401797e.mp4
 
 
 
