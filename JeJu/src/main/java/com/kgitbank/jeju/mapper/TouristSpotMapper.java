@@ -11,7 +11,7 @@ public interface TouristSpotMapper {
 	public List<TouristSpot> listOrderByLike();
 	public TouristSpot listById(int tourist_id);
 	public TouristSpot listView(int tourist_spot_id);
-	public  List<TouristSpot> listByUserd(String user_id);
+	public  List<TouristSpot> listByUserId(String user_id);
 	public void updateTourist(TouristSpot touristSpot);
 	public void deleteTourist(int tourist_spot_id);
 	public List<TouristSpot> listTourist();
