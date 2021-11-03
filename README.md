@@ -74,8 +74,44 @@ names 배열 (추가한 카드들의 제목들을 담고 있는 배열) 을 반�
 
 ## 📝  _Troubles_   
 <details>
-	<summary> add Trouble code</summary>
+	<summary> 비동기처리 방식 오류 </summary>
+	
+ajax 이용 전 Controller에서 값을 꺼낸 코드
+Polygon 클릭 시 모달을 띄워서 클릭한 Polygon의 행정구역 정보를 DB에서 가져와 모달 값을 수정해주어야 하는 기능이 필요했다
+
+처음에는 POST 방식으로 Method를 정의하고 
+
+html단에서 버튼을 hidden으로 숨겨놓고 Polygon이 클릭했을 때 같이 클릭된 것처럼 하여 submit 했었다 
+
+
+
+jsp->(클릭한 Polygon의 행정구역명) -> Controller -> DB (데이터를 넘겨받아 행정구역 소개 정보들을 꺼내옴)
+
+-> Controller -> jsp (DB값들 전달 받음)
+
+
+
+순서로 진행했지만 마지막 jsp 부분에서 데이터를 받아왔을 때 모달을 띄우는 것보다 
+
+(jsp에서 데이터를 받았을 때만 Modal을 띄운다는 조건문을 쓰기 까다로웠다 )
+
+페이지 자체를 reloding하지 않고 모달을 미리 hidden으로 띄어놓고 ajax로 json데이터만 가져오는 방식으로 수정하였다 
+
+
+
+바꾸는 와중에 오류가 나왔는데 
+
+지금까지 RestController 에서의 produces=“application/json; charset=UTF-8” 부분이 
+
+jsp로부터 받아온 값의 형태를 지정하는것인 줄 알았는데
+
+반대로 controller 에서 jsp로 값을 보낼 때 필요한 조건이었다
+
+produces를 추가한 결과 정상적으로 모달이 작동되는 것을 확인할 수 있었다
+	
+	
 	```java
+	
 	kakao.maps.event.addListener(polygon, 'click', function(mouseEvent) {
 
            const xhttp = new XMLHttpRequest();
