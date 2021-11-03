@@ -19,12 +19,13 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.kgitbank.jeju.common.LoginVerifier;
 import com.kgitbank.jeju.dto.FamousRestaurant;
 import com.kgitbank.jeju.dto.Locations;
-
+import com.kgitbank.jeju.dto.User;
 import com.kgitbank.jeju.mapper.FamousRestaurantMapper;
 import com.kgitbank.jeju.mapper.LocationMapper;
-
+import com.kgitbank.jeju.mapper.UserMapper;
 
 import lombok.extern.log4j.Log4j;
 import lombok.extern.slf4j.Slf4j;
@@ -40,10 +41,21 @@ public class RestaurantContoller {
 	@Autowired
 	LocationMapper locationMapper; 
 	
+	@Autowired
+	UserMapper userMapper;
+	
 	@RequestMapping(value = "board/restaurant", method = RequestMethod.GET)
-	public String TourList(HttpSession session) throws Exception {
-		String id = (String)session.getAttribute("id");
-
+	public String TourList(HttpSession session, Model model) throws Exception {
+		boolean login;
+		boolean banned = false;
+		if(login = LoginVerifier.isLogin(session)) {
+			User user = userMapper.listUser((String) session.getAttribute("id"));
+			banned = user.getBanned() == 1? true: false;
+		};
+		
+		model.addAttribute("login",login);
+		model.addAttribute("banned", banned);
+		
 		return "board/restaurantBoard";
 	}
 
@@ -52,7 +64,6 @@ public class RestaurantContoller {
 		@ RequestMapping(value="/addRestaurant", method = RequestMethod.GET)
 		public String addRestaurant(Model model, HttpSession session) throws IllegalStateException, IOException {
 			List<Locations> locationList = locationMapper.ListLocations();
-			session.getAttribute("id");
 			
 			model.addAttribute("locations", locationMapper.ListLocations());
 			return "board/restaurantForm";

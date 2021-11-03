@@ -75,7 +75,7 @@ public class BoardServiceImpl implements BoardService {
 	@Override
 	public List<TouristSpot> listByUserd(String user_id, HttpSession session) {
 		
-		List<TouristSpot> touristSpots =touristSpotMapper.listByUserd(user_id);
+		List<TouristSpot> touristSpots =touristSpotMapper.listByUserId(user_id);
 		String id = (String) session.getAttribute("id");
 		
 		return touristSpots;

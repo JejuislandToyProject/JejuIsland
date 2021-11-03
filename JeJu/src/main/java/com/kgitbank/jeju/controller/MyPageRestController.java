@@ -46,7 +46,7 @@ public class MyPageRestController {
 	@GetMapping(value = "/getMyTouristSpotWrite", produces= MediaType.APPLICATION_JSON_VALUE)
 	public List<TouristSpot> getMyTouristSpotWrite(HttpSession session) {
 		String id = (String) session.getAttribute("id");
-		List<TouristSpot> touristSpots = touristSpotMapper.listByUserd(id);
+		List<TouristSpot> touristSpots = touristSpotMapper.listByUserId(id);
 		
 		return touristSpots;
 	}

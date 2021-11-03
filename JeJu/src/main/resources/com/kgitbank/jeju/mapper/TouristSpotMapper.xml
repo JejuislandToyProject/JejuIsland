@@ -62,7 +62,7 @@
 	 WHERE tourist_spot_id = #{tourist_spot_id}
 	 </select>
 	 
-	 <select id="listByUserd" resultType="com.kgitbank.jeju.dto.TouristSpot">
+	 <select id="listByUserId" resultType="com.kgitbank.jeju.dto.TouristSpot">
 	SELECT * FROM tourist_spot INNER JOIN user_info USING(user_id)
 	WHERE user_id = #{user_id}
 	 </select>
