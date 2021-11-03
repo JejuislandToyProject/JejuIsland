@@ -162,8 +162,70 @@ public OAuth2AccessToken getAccessToken(HttpSession session, String code, String
 			return null;
 }
 ```
+
+	해결 방안:
+	ScribeJava 라이브러리를 사용하지 않고 직접 요청을 보내 값을 받아옴
 	
 	
+```java
+public String getAccessToken(HttpServletRequest request, String autorizeCode) throws UnsupportedEncodingException {
+		    String clientId = KAKAO_CLIENT_ID;
+		    String clientSecret = KAKAO_CLIENT_SECRET;
+			String code = autorizeCode;
+		    String state = request.getParameter("state");
+		    String redirectURI = URLEncoder.encode("http://localhost:8080/jeju/kakaoAuth", "UTF-8");
+		    String apiURL;
+		    apiURL = "https://kauth.kakao.com/oauth/token?grant_type=authorization_code&";
+		    apiURL += "client_id=" + clientId;
+		    apiURL += "&client_secret=" + clientSecret;
+		    apiURL += "&redirect_uri=" + redirectURI;
+		    apiURL += "&code=" + code;
+		    apiURL += "&state=" + state;
+		    
+		    log.info("apiURL="+apiURL);
+		    
+		    
+		    String access_token = "";
+		    String refresh_token = "";
+		    
+		    try {
+		      URL url = new URL(apiURL);
+		      HttpURLConnection con = (HttpURLConnection)url.openConnection();
+		      con.setRequestMethod("POST");
+		      //con.setDoInput(true);
+		      
+		      int responseCode = con.getResponseCode();
+		      log.info("responseCode="+responseCode);
+		      
+		      
+		      BufferedReader br;
+		      if(responseCode==200) { // 정상 호출
+		        br = new BufferedReader(new InputStreamReader(con.getInputStream()));
+		      } else {  // 에러 발생
+		        br = new BufferedReader(new InputStreamReader(con.getErrorStream()));
+		      }
+		      
+		      String inputLine;
+		      StringBuffer res = new StringBuffer();
+		      
+		      while ((inputLine = br.readLine()) != null) {
+		        res.append(inputLine);
+		      }
+		      
+		      if(responseCode==200) {
+				JsonElement element = JsonParser.parseString(res.toString());
+				access_token = element.getAsJsonObject().get("access_token").getAsString();
+				refresh_token = element.getAsJsonObject().get("refresh_token").getAsString();
+		      }
+		      br.close();
+		      
+		    } catch (Exception e) {
+		    	log.error(e);
+		    }
+		    
+		    return access_token;
+}
+```
 	
 	
 </details> 
