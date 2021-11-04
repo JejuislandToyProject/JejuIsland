@@ -636,10 +636,7 @@ HashMap으로 변환했을때의 내용물
 
 ***  
 
-## 🔆 _Bragging Code_    
- 
- 
-*** 
+
 
 
 ## 📸 _Demonstration Video_   
